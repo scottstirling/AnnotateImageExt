@@ -1,0 +1,18 @@
+#!/bin/bash
+
+NAME=AnnotateImageExt
+BUILD_DIR=./build
+DATE=`date +%F` # yyyy-mm-dd
+TGZ_FILENAME="${DATE}-AnnotateImageExt.tar.gz"
+
+mkdir -vp $BUILD_DIR/doc/scripts/$NAME
+mkdir -vp $BUILD_DIR/src/scripts/$NAME
+
+#TODO: update for AnnotateImageExt
+cp -v pi2llm-main.js etc/pi2llm-main.xsgn AGENTS.md README.md LICENSE $BUILD_DIR/src/scripts/$NAME/
+cp -rv lib $BUILD_DIR/src/scripts/$NAME/
+cp -rv doc/scripts/$NAME/*.html $BUILD_DIR/doc/scripts/$NAME/
+
+tar -C $BUILD_DIR -czvf $TGZ_FILENAME doc/ src/
+
+sha1sum $TGZ_FILENAME
