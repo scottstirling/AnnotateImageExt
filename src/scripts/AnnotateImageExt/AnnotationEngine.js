@@ -145,7 +145,7 @@ var AnnotationEngine = class extends PersistentObject
 
       // START TEMPLATE FOR NEW CUSTOM CATALOG LAYER 
       /*
-      layer = new CatalogLayer( new MessierCatalog );
+      layer = new CatalogLayer( new FooCatalog );
       layer.visible = true;
       layer.gprops.lineColor = 0xff8080ff;
       layer.gprops.labelColor = 0xff8080ff;
@@ -154,7 +154,23 @@ var AnnotationEngine = class extends PersistentObject
       */
       // END TEMPLATE FOR NEW CUSTOM CATALOG LAYER 
 
-      // TODO figure out how to make this dynamic based on catalogs-config.json
+      // TODO figure out how to make these dynamic based on catalogs-config.json
+      // or ... from a separate setting somewhere ... hmm ... but this is for the *defaults* available to selected ...
+      // which could be a subset of all available catalogs ... maybe, separately defined. But ... then we're pushing another "layer" haha
+      // of configuration ... for now let's use what's in catalogs-config.json for starters ...
+	   // pseudocode:
+	   //
+	   // parse JSON file and get the list of catalog classes
+	   // for (each catalog class in JSON set) {
+	   //     layer = new CatalogLayer( new <type from name string in JSON> );
+	   //     layer.visible = true;
+           //     layer.gprops.lineColor = 0xff8080ff;
+           //     layer.gprops.labelColor = 0xff8080ff;
+           //     layer.gprops.labelSize = 16;
+           //     this.layers.push( layer );
+	   // }
+	   //
+	   // TODO: could put lineColor, labelColor, labelSize and visible true/false in the JSON config too per catalog to override defaults
       layer = new CatalogLayer( new BFSCatalog );
       layer.visible = true;
       layer.gprops.lineColor = 0xff8080ff;

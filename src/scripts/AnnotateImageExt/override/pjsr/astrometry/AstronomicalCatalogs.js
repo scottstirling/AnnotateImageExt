@@ -119,8 +119,9 @@ var CatalogRegistry = class
     // NEW 
     static loadCatalogsFromJSON(jsonFilePath) {
     
-    // TODO: not sure whether to keep catalogs hard-coded but, for now, keeps the files separate from the js files dir, relative to LocalFileCatalog path logic
-    const CATALOGS_ROOT = "catalogs";
+        // TODO: not sure whether to keep "catalogs" subdirectory name hard-coded but, 
+	// for now, keeps the files separate from the js files dir, relative to LocalFileCatalog path logic
+        const CATALOGS_ROOT = "catalogs"; // relative to the current js script
 
         if (!File.exists(jsonFilePath)) {
             console.writeln("** Error: Catalogs JSON not found: " + jsonFilePath);
@@ -1124,7 +1125,7 @@ var LocalFileCatalog = class extends Catalog
 // ----------------------------------------------------------------------------
 
 // NEW
-// TODO: fix hardcoded path
+// TODO: fix hardcoded path / figure out how to reliably determine the path location
 CatalogRegistry.loadCatalogsFromJSON("/media/scott/data/astro-work/pixinsight-files/AnnotateImageExt/src/scripts/AnnotateImageExt/catalogs-config.json");
 
 /*

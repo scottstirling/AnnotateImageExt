@@ -31,7 +31,8 @@ CoreApplication.ensureMinimumVersion( 1, 9, 4 );
 #include <pjsr/astrometry/AstrometricMetadata.js>
 // TODO: remove dev hack to load dev version of catalogs
 // #include <pjsr/astrometry/AstronomicalCatalogs.js>
-#include "../../../include/pjsr/astrometry/AstronomicalCatalogs.js"
+// #include "../../../include/pjsr/astrometry/AstronomicalCatalogs.js"
+#include "./override/pjsr/astrometry/AstronomicalCatalogs.js"
 #include <pjsr/astrometry/UtilityControls.js>
 #include <pjsr/controls/GeodeticCoordinatesEditor.js>
 #include <pjsr/controls/ImageView.js>
