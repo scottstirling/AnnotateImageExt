@@ -6,11 +6,11 @@ DIST_DIR=./dist
 DATE=`date +%F` # yyyy-mm-dd
 TGZ_FILENAME="${DATE}-${NAME}.tar.gz"
 
-mkdir -vp $BUILD_DIR/doc/scripts/$NAME
-mkdir -vp $BUILD_DIR/src/scripts/$NAME
+mkdir -vp ${BUILD_DIR}/doc/scripts/${NAME}
+mkdir -vp ${BUILD_DIR}/src/scripts/${NAME}
 
 #TODO: update for AnnotateImageExt
-cp -vR src/scripts/${NAME}/ etc/*.xsgn README.md LICENSE ${BUILD_DIR}/src/scripts/${NAME}/
+cp -vR src/scripts/${NAME}/* etc/*.xsgn README.md LICENSE ${BUILD_DIR}/src/scripts/${NAME}/
 cp -rv doc/scripts/${NAME}/*.html ${BUILD_DIR}/doc/scripts/${NAME}/
 
 tar -C ${BUILD_DIR} -czvf ${TGZ_FILENAME} doc/ src/
