@@ -40,6 +40,14 @@
     "fields": ["GId", "Name", "RA", "Dec", "Diameter", "Type", "AKA"]
   },
   {
+    "className": "GumCatalog",
+    "id": "Gum",
+    "name": "Gum",
+    "file": "Gum-Southern_HII_Regions_1955_revised-by-Kevin-Jardine-2009-for-PI.csv",
+    "description": "Gum Southern HII Regions (85 objects) Colin S. Gum (1955)",
+    "fields": ["Name", "RA", "Dec", "Diameter", "Common name"]
+  },
+  {
     "className": "MWSCCatalog",
     "id": "MWSC",
     "name": "MWSC",

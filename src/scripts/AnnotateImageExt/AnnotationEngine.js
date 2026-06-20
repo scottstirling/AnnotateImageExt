@@ -190,6 +190,13 @@ var AnnotationEngine = class extends PersistentObject
       layer.gprops.labelSize = 16;
       this.layers.push( layer );
 
+      layer = new CatalogLayer( new GumCatalog );
+      layer.visible = true;
+      layer.gprops.lineColor = 0xff8080ff;
+      layer.gprops.labelColor = 0xff8080ff;
+      layer.gprops.labelSize = 16;
+      this.layers.push( layer );
+
       layer = new CatalogLayer( new MBMCatalog );
       layer.visible = true;
       layer.gprops.lineColor = 0xff8080ff;
