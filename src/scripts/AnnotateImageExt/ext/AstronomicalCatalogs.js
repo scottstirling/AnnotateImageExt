@@ -95,65 +95,68 @@ var CatalogRegistry = class
 
   // NEW 
   static createAndRegisterCatalog(config) {
-     // Dynamically create the class extending your LocalFileCatalog
-     const DynamicCatalogClass = class extends LocalFileCatalog {
-        constructor() {
-           super(config.id, config.name, config.file);
-           this.description = config.description;
-           this.fields = config.fields;
-         }
+      // Dynamically create the class extending your LocalFileCatalog
+      const DynamicCatalogClass = class extends LocalFileCatalog {
+          constructor() {
+              super(config.id, config.name, config.file);
+              this.description = config.description;
+              this.fields = config.fields;
+          }
  
-        GetConstructor() {
-           // Replicate string behavior for script generation/serialization
-           return "new " + config.className + "()";
-        }
-     };
+          GetConstructor() {
+              // Replicate string behavior for script generation/serialization
+              return "new " + config.className + "()";
+          }
+      };
 
-     // Expose to PJSR's global scope so that eval("new FooCatalog()") works
-     globalThis[config.className] = DynamicCatalogClass;
+      // Expose to PJSR's global scope so that eval("new FooCatalog()") works
+      globalThis[config.className] = DynamicCatalogClass;
 
-     // Register a new instance into CatalogRegistry
-     CatalogRegistry.register(new DynamicCatalogClass());
+      // Register a new instance into CatalogRegistry
+      CatalogRegistry.register(new DynamicCatalogClass());
   }
 
-    // NEW 
-    static loadCatalogsFromJSON(jsonFilePath) {
-    
-        // TODO: not sure whether to keep "catalogs" subdirectory name hard-coded but, 
-	// for now, keeps the files separate from the js files dir, relative to LocalFileCatalog path logic
-        const CATALOGS_ROOT = "catalogs"; // relative to the current js script
+  // NEW 
+  static loadCatalogsFromJSON(jsonFilePath) {
+      // TODO: not sure whether to keep "catalogs" subdirectory name hard-coded but, 
+      // for now, keeps the files separate from the js files dir, relative to LocalFileCatalog path logic
+      const CATALOGS_SUBDIR = "catalogs"; // relative to the current js script
 
-        if (!File.exists(jsonFilePath)) {
-            console.writeln("** Error: Catalogs JSON not found: " + jsonFilePath);
-            return;
-        }
+      if (!File.exists(jsonFilePath)) {
+          console.writeln("** Error: file not found: " + jsonFilePath);
+          return;
+      }
 
-        let jsonText = File.readTextFile(jsonFilePath);
-        let catalogsConfig = JSON.parse(jsonText);
+      let jsonText = File.readTextFile(jsonFilePath);
 
-        for (let i = 0; i < catalogsConfig.length; ++i) {
-            let config = catalogsConfig[i];
+      // catalogsConfig object encapsulates the parsed JSON config
+      let catalogsConfig = JSON.parse(jsonText);
 
-            // 1. Create the Catalog subclass dynamically
-            const DynamicCatalogClass = class extends LocalFileCatalog {
-                constructor() {
-                    super(config.id, config.name, CATALOGS_ROOT + "/" + config.file);
-                    this.description = config.description;
-                    this.fields = config.fields;
-                }
-                GetConstructor() {
-                    return "new " + config.className + "()";
-                }
-            };
+      for (let i = 0; i < catalogsConfig.length; ++i) {
+          let config = catalogsConfig[i];
 
-            // 2. Expose to global scope
-            globalThis[config.className] = DynamicCatalogClass;
+          // Create Catalog subclasses extending LocalFileCatalog dynamically
+          const DynamicCatalogClass = class extends LocalFileCatalog {
 
-            // 3. Register it using the existing static method
-            CatalogRegistry.register(new DynamicCatalogClass());
-        }
-        console.writeln("Successfully loaded " + catalogsConfig.length + " dynamic catalogs.");
-    }
+              constructor() {
+                  super(config.id, config.name, CATALOGS_SUBDIR + "/" + config.file);
+                  this.description = config.description;
+                  this.fields = config.fields;
+              }
+
+              GetConstructor() {
+                  return "new " + config.className + "()";
+              }
+          };
+
+          // 2. Expose to global scope
+          globalThis[config.className] = DynamicCatalogClass;
+
+          // 3. Register it using the existing static method
+          CatalogRegistry.register(new DynamicCatalogClass());
+      }
+      console.writeln("Successfully loaded " + catalogsConfig.length + " dynamic catalogs.");
+  }
 
    static reset()
    {
@@ -1123,10 +1126,17 @@ var LocalFileCatalog = class extends Catalog
 
 
 // ----------------------------------------------------------------------------
-
 // NEW
-// TODO: fix hardcoded path / figure out how to reliably determine the path location
-CatalogRegistry.loadCatalogsFromJSON("/media/scott/data/astro-work/pixinsight-files/AnnotateImageExt/src/scripts/AnnotateImageExt/catalogs-config.json");
+const CATALOGS_CONFIG_FILENAME = "catalogs-config.json";
+let scriptFileDir = File.extractDirectory(#__FILE__); // built-in PSJR macro to get this current file's location at runtime 
+let catalogsConfigJSON = scriptFileDir + "/" + CATALOGS_CONFIG_FILENAME;
+
+if (File.exists(catalogsConfigJSON)) {
+    console.writeln("Config file exists: " + catalogsConfigJSON);
+} else {
+    console.warningln("File not found: " + catalogsConfigJSON);
+}
+CatalogRegistry.loadCatalogsFromJSON(catalogsConfigJSON);
 
 /*
  * Messier Catalog (local CSV file)

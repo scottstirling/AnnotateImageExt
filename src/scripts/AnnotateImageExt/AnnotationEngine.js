@@ -170,6 +170,43 @@ var AnnotationEngine = class extends PersistentObject
            //     this.layers.push( layer );
 	   // }
 	   //
+	   /*
+      let jsonText = File.readTextFile(jsonFilePath); // TODO: get the config JSON file path ...
+
+      // catalogsConfig object encapsulates the parsed JSON config
+      let catalogsConfig = JSON.parse(jsonText);
+
+      for (let i = 0; i < catalogsConfig.length; ++i) {
+          let config = catalogsConfig[i];
+
+          // Create CatalalogLayers dynamically
+          const DynamicCatalogLayerClass = class extends CatalogLayer {
+
+              constructor() {
+                  super(config.id, config.name, CATALOGS_SUBDIR + "/" + config.file);
+	          this.visible = true;
+                  this.gprops.lineColor = 0xff8080ff;
+                  this.gprops.labelColor = 0xff8080ff;
+                  this.gprops.labelSize = 16;
+                  this.description = config.description;
+                  this.fields = config.fields;
+              }
+
+              GetConstructor() {
+                  return "new " + config.className + "()";
+              }
+          };
+
+          // 2. Expose to global scope
+          globalThis[config.className] = DynamicCatalogClass;
+
+          // 3. Register it using the existing static method
+          CatalogRegistry.register(new DynamicCatalogClass());
+      }
+      console.writeln("Successfully loaded " + catalogsConfig.length + " dynamic catalogs.");
+	   */
+	   //
+	   //
 	   // TODO: could put lineColor, labelColor, labelSize and visible true/false in the JSON config too per catalog to override defaults
       layer = new CatalogLayer( new BFSCatalog );
       layer.visible = true;
