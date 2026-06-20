@@ -1,0 +1,692 @@
+===============================================================================
+AnnotateImage Script Changelog
+===============================================================================
+
+2026/03/03 - v2.3.0
+
+- Ported to the new V8 JavaScript runtime on PixInsight 1.9.4 Lockhart.
+
+- Complete revision and reimplementation of critical user interface features:
+
+  * Improved annotation preview interface with significantly faster image
+    renditions, arbitrary zoom factors in the [-100,+100] range (as in core
+    image views), reduced memory requirements, and a new 'Zoom to Fit' feature.
+
+  * Improved layer management functions in the script's main dialog. The Layers
+    TreeBox supports multiple selections for moving and removing layers and
+    many small bugs have been fixed in these operations.
+
+  * Improved main dialog layout. The Layers list no longer changes its
+    dimensions when different layers are selected.
+
+  * The label placement optimization routine shows a message box to give the
+    user a chance to abort time-consuming optimization tasks.
+
+- Released under PCL License 2.0.
+
+- PixInsight core version >= 1.9.4 required.
+
+-------------------------------------------------------------------------------
+2025/01/09 - v2.2.19
+
+- Bugfix: Added missing entry for IC 4955 in the NGC-IC.csv file.
+  Original bug report:
+  https://pixinsight.com/forum/index.php?threads/
+                               annotation-script-does-not-find-my-object.24866/
+
+-------------------------------------------------------------------------------
+2024/11/04 - v2.2.18
+
+- Availability of valid observation time metadata is now verified in advance
+  for annotation layers using solar system ephemerides (planets, asteroids,
+  etc.), XPSD databases (such as Gaia (E)DR3 and Gaia DR2), and user-defined
+  local catalogs, so the appropriate error messages can be generated when
+  necessary.
+
+-------------------------------------------------------------------------------
+2024/11/04 - v2.2.17
+
+- New menu items with #feature-id directive:
+    Astrometry > AnnotateImage
+    Render > AnnotateImage
+
+- PixInsight core version >= 1.9.0 required.
+
+-------------------------------------------------------------------------------
+2024/06/28 - v2.2.16
+
+- Bugfix: For images with astrometric solutions using of date coordinates (such
+  as true of date or apparent), the field center coordinates used for catalog
+  search operations must be transformed to the ICRS. Original bug report:
+  https://pixinsight.com/forum/index.php?threads/catalogstargenerator-not-
+                                              producing-all-of-the-image.23564/
+
+- PixInsight core version >= 1.8.9-3 required.
+
+-------------------------------------------------------------------------------
+2024/06/24 - v2.2.15
+
+- Bugfix: Constellation lines not drawn when longer than the image dimensions.
+  Original bug report:
+  https://pixinsight.com/forum/index.php?threads/
+      constellation-lines-are-not-drawn-by-the-annotate-image-script-for-some
+      -image-resolution.23537/
+
+-------------------------------------------------------------------------------
+2024/06/04 - v2.2.14
+
+- New grid layers: Ecliptic and Galactic Equator.
+
+- CustomCatalog is now derived from LocalFileCatalog. Plain text custom catalog
+  files in CSV format (also TSV for compatibility) can now include the
+  following fields (case-sensitive headers):
+
+    id,alpha,delta,magnitude,diameter,axisRatio,posAngle
+
+  The following case-insensitive field headers are also supported for
+  compatibility with existing custom catalog files:
+
+    Name,RA,Dec,Magnitude,Diameter
+
+  Besides standard CSV files, tabulator-separated text files are still
+  supported for compatibility with existing plain text custom files used by
+  older versions.
+
+- Bugfix: CatalogDownloaderDialog was broken. It now works and generates CSV
+  files compatible with CustomCatalog.
+
+- PixInsight core version >= 1.8.9-2 build 1607 required.
+
+-------------------------------------------------------------------------------
+2024/05/06 - v2.2.13
+
+- Added support for the WDS catalog: Washington Visual Double Star Catalog
+  (Mason+ 2001-2020), with 156,557 objects. VizieR catalog: B/wds.
+
+-------------------------------------------------------------------------------
+2024/04/04 - v2.2.12
+
+- Bugfix: Wrong sign management in detecting out-of-bounds projected
+  coordinates, leading to missing annotations in images with zero right
+  ascension in the field. Original bug report:
+  https://pixinsight.com/forum/index.php?threads/
+                                imagesolver-issues-on-wide-field-images.23114/
+
+-------------------------------------------------------------------------------
+2024/02/28 - v2.2.11
+
+- Improved robustness of test routines for object inclusion verification. On
+  rare occasions, high-order surface splines can lead to false inclusions in
+  coordinate transformations extrapolated far away from image boundaries. This
+  can happen when checking visibility of arbitrarily selected objects such as
+  planets, asteroids, and local catalogs. We perform an additional inverse
+  transformation to validate object inclusion in these cases.
+
+- New DE440 Kuiper Belt Objects (KBOs) annotation layer (30 objects).
+
+- Magnitude limit controls are now available for the Asteroids layer.
+
+-------------------------------------------------------------------------------
+2024/01/12 - v2.2.10
+
+- New Gaia DR3/SP XPSD catalog avilable for annotations. This is useful to
+  identify the sources available for SpectrophotometricColorCalibration.
+
+-------------------------------------------------------------------------------
+2024/01/12 - v2.2.9
+
+- Bugfix: NamedStars local CSV catalog regenerated with VizieR data to solve
+  corruption of coordinates:
+  https://pixinsight.com/forum/index.php?threads/
+                                error-in-annotateimage-named-stars-file.22166/
+
+- Spectral type data added to the NamedStars catalog.
+
+- Messier and NGC/IC local CSV catalogs regenerated with accurate data retrieved
+  from online database services (SIMBAD, VizieR, theskylive.com).
+
+- PGC cross references added to local Messier and NGC/IC CSV catalogs.
+
+- Improved representation of rotated ellipses with accurate position angles
+  calculated individually for each object.
+
+-------------------------------------------------------------------------------
+2023/06/16 - v2.2.8
+
+- Object annotations can now be defined and represented as rotated ellipses.
+
+- Improved PGC2003, NGC/IC and Messier catalog support with galaxy aspect
+  ratios and position angles. Galaxies are now represented as rotated ellipses
+  when the necessary data are available.
+
+- Local file catalogs (Named Stars, NGC/IC and Messier) have been improved with
+  more accurate coordinates and magnitudes acquired from online database
+  services. Local catalogs are now serialized in standard CSV format.
+
+- Improved Lyra and Cygnus constellation shapes.
+
+- New 'small size threshold' parameter. Representations of small objects can
+  now be enlarged artificially to make them more visible in the annotation.
+  This parameter is the radius in pixels of the largest elliptical annotations
+  to which these artificial enlargement factors will be applied. Enlargement
+  functions are logarithmic to achieve a smooth zooming effect without visible
+  discontinuities. Set this parameter to zero to disable this feature and
+  represent all objects with their (known) actual angular dimensions.
+
+- Gaia XPSD catalog layers have a new parameter to select a coordinate
+  precision in the 0-3 range (from arcseconds to milliarcseconds). This
+  precision is the number of decimal digits shown for arcseconds in declination
+  coordinate labels (an additional decimal digit is always shown for right
+  ascension).
+
+- Updates the new jsScriptInformation global variable.
+
+- PixInsight core version >= 1.8.9-2 required.
+
+-------------------------------------------------------------------------------
+2022/12/26 - v2.2.7
+
+- Improved Custom XEPH Files layer with a new directory search feature.
+
+-------------------------------------------------------------------------------
+2022/07/30 - v2.2.6
+
+- Gaia DR3 support / local Gaia DR3 XPSD database with the new Gaia XPSD server
+  version 1.1.3.
+
+- Bugfix: In ConstellationLabels.json: 'Ophiuchus' instead of 'Ophiucus'.
+
+-------------------------------------------------------------------------------
+2022/06/01 - v2.2.5
+
+- New HD Cross-Reference special catalog for annotation of HD star numbers.
+  This catalog uses data from the All-sky Compiled Catalogue of 2.5 million
+  stars (Kharchenko+ 2009), VizieR catalog: I/280B.
+
+- Render numeric superscripts in Bayer star designations (e.g. alph01, pi.04)
+  using Unicode superscript entities.
+
+-------------------------------------------------------------------------------
+2022/04/04 - v2.2.4
+
+- Bugfix: Added missing IC 4277 data in ngc2000.txt:
+  https://pixinsight.com/forum/index.php?threads/
+                          annotateimage-missing-ic-4277-from-ngc2000-txt.18330/
+
+-------------------------------------------------------------------------------
+2021/12/14 - v2.2.3
+
+- Use Table 4 of the Catalogue of Galactic Planetary Nebulae (CGPN) instead of
+  Table 1 for accurate J2000 object positions. Since Table 4 contains multiple
+  records for each object, a special routine has been implemented to remove
+  catalog records with duplicate object names.
+
+-------------------------------------------------------------------------------
+2021/05/20 - v2.2.2
+
+- Bugfix: Solved a rare numerical degeneracy problem in the construction of
+  BRQuadTree structures used by the label placement optimization algorith,
+  leading to recursion without control and severe out-of-memory conditions.
+
+- Coordinate grid labels are no longer drawn or generated when clipped by the
+  image bounding rectangle.
+
+- Coordinate grid labels in right ascension are now generated as superscript
+  time unit specifiers 'h', 'm' and 's' using the Unicode characters U+02B0,
+  U+1D50 and U+02E2, respectively.
+
+- The NamedStars catalog has now a maximum magnitude filter.
+
+- PixInsight core version >= 1.8.8-9 required.
+
+-------------------------------------------------------------------------------
+2021/05/20 - v2.2.1
+
+- Custom XEPH layers with persistent file paths and magnitude filters.
+
+- Refactored to use the new GeodeticCoordinatesEditor common control.
+
+-------------------------------------------------------------------------------
+2021/04/11 - v2.2.0
+
+- Added support for annotation of solar system bodies with positions computed
+  from custom XEPH files.
+
+- PixInsight core version >= 1.8.8-8 required as a result of new astrometric
+  solutions with selectable reference system support.
+
+-------------------------------------------------------------------------------
+2020/12/17 - v2.1.8
+
+- New VizieR catalog: LBN (Lynds' Catalogue of Bright Nebulae, Lynds 1965),
+  with 1125 objects.
+
+- New VizieR catalog: LDN (Lynds' Catalogue of Dark Nebulae, Lynds 1962), with
+  1791 objects.
+
+- PixInsight core version >= 1.8.8-7 required.
+
+-------------------------------------------------------------------------------
+2020/07/02 - v2.1.7
+
+- Updated for the new #feature-id directive syntax in core version 1.8.8-6:
+   #feature-id [<script-id> : ]<menu-item-list>
+
+- Added #feature-icon directive with a standard icon in SVG format, using the
+  new @script_icons_dir/ standard prefix available since core 1.8.8-6.
+
+-------------------------------------------------------------------------------
+2020/05/29 - v2.1.6
+
+- Fixed a bug in the NGC 2000 catalog (ngc2000.txt file). The declination for
+  NGC 3521 was positive, while it must be negative. Original bug report:
+
+     https://gitlab.com/pixinsight/PCL/-/issues/55
+
+-------------------------------------------------------------------------------
+2020/03/30 - v2.1.5
+
+- New VizieR catalog: CGPN (Catalogue of Galactic Planetary Nebulae, Kohoutek
+  2001), with 1759 objects.
+
+-------------------------------------------------------------------------------
+2020/03/23 - v2.1.4
+
+- More robust error handling in non-interactive mode (avoid message boxes).
+
+- Improved error and warning messages.
+
+- Special engine parameters required by the AstroBin+PixInsight project:
+
+   * entityInfoPath: Generation of entity information files for interactive
+     metadata functionality.
+
+   * scalingFactor: Apply a reduction factor to the whole annotation drawing,
+     for generation of thumbnail annotations.
+
+- PixInsight core version >= 1.8.8-6 required.
+
+-------------------------------------------------------------------------------
+2020/03/04 - v2.1.3
+
+- Generation of entity information files.
+
+-------------------------------------------------------------------------------
+2020/03/02 - v2.1.2
+
+- Bugfix: Undefined variable error if markers are disabled for any layer except
+  grid and constellation lines/borders.
+
+- Bugfix: Objects not rendered if the drop shadow effect is enabled and label
+  placement optimization is disabled.
+
+-------------------------------------------------------------------------------
+2020/02/27 - v2.1.1
+
+- New drop shadow feature.
+
+- Improved label placement optimization algorithm.
+
+- Improved user interface.
+
+- PixInsight core version >= 1.8.8-5 required.
+
+-------------------------------------------------------------------------------
+2020/02/25 - v2.1
+
+- New label placement optimization algorithm.
+
+- Improved label typography:
+
+   * Label dimensions and locations are now correct on all platforms.
+
+   * Supports applicable fonts included in the standard PixInsight
+     distribution, selectable for all layers.
+
+   * The Named stars catalog translates SIMBAD abbreviations of greek letters
+     in star names to Unicode characters (from \u03b1 to \u03c9):
+     http://simbad.u-strasbg.fr/Pages/guide/chA.htx
+
+- Improved user interface.
+
+- Removed the limit to annotate images larger than 500 Mpx.
+
+- Code revision.
+
+- The script's change log is now stored as a separate text file (this file).
+
+- PixInsight core version >= 1.8.8 required.
+
+-------------------------------------------------------------------------------
+v2.0.2:
+
+- Fixed broken generation of SVG overlays.
+
+-------------------------------------------------------------------------------
+v2.0.1:
+
+- Fix dialog layout problems on KDE Plasma 5 generated in
+  SectionBar.onToggleSection() event handlers.
+
+-------------------------------------------------------------------------------
+v2.0:
+
+- New layers for visible planets and asteroids using the integrated ephemerides
+  system in PixInsight version >= 1.8.6.
+
+- New controls for extended observation time and geodetic coordinates of the
+  observer, required for calculation of topocentric positions of solar system
+  bodies.
+
+- The layers list box includes two new columns, 'M' and 'L', which indicate the
+  drawing state of markers and labels, respectively, for each selected layer.
+
+- Improvements to the information provided by tool tips and console messages.
+
+- Source code refactoring and clean-up.
+
+-------------------------------------------------------------------------------
+v1.9.5
+
+- AnnotateImage can now be used from another script.
+
+-------------------------------------------------------------------------------
+v1.9.4
+
+- Better error management in the online catalogs.
+
+-------------------------------------------------------------------------------
+v1.9.3
+
+- Changed the ambiguous term "Epoch" by "Obs date".
+
+-------------------------------------------------------------------------------
+v1.9.2
+
+- Added Gaia DR1 and APASS DR9 catalogs.
+
+-------------------------------------------------------------------------------
+v1.9.1
+
+- Added test for too big images (> 0.5 GigaPixels).
+
+-------------------------------------------------------------------------------
+v1.9
+
+- Use downloaded catalogs.
+
+-------------------------------------------------------------------------------
+v1.8.5
+
+- Fixed: When the script was executed from the console it ignored the
+  parameters in the command and it used the saved parameters.
+
+-------------------------------------------------------------------------------
+v1.8.4
+
+- Fixed: The grid layer didn't use the selected font.
+
+- Improved star marker figure.
+
+- Catalog GCVS.
+
+-------------------------------------------------------------------------------
+v1.8.3
+
+- Fixed a bug in a bad interaction between the catalog cache and the removal of
+  object duplicates.
+
+- Fixed the coordinates of Mintaka in the catalog NamedStars.
+
+-------------------------------------------------------------------------------
+v1.8.2
+
+- Fixed the configuration panel of Custom Catalog Layer.
+
+- The layers Messier and IC/NGC can now read files with any endline code.
+
+-------------------------------------------------------------------------------
+v1.8.1
+
+- New Messier catalog.
+
+- Improved NamedStars catalog.
+
+- Improved "Constellation Lines" layer.
+
+-------------------------------------------------------------------------------
+v1.8
+
+- Optionally writes a text file with the catalog objects inside the image.
+
+- New button for clearing the catalog cache.
+
+-------------------------------------------------------------------------------
+v1.7.4
+
+- The queries to the catalog are now more efficient and the cache is kept
+  across executions.
+
+- New option "non-interactive" for non-interactive execution.
+
+-------------------------------------------------------------------------------
+v1.7.3
+
+- The images with polynomials of high degree had problems of oscillations in
+  the layers with lines (constellations and grid).
+
+-------------------------------------------------------------------------------
+v1.7.2
+
+- Fixed the asterisms of Bootes and Ursa Major.
+
+- Fixed problem drawing constellation lines around RA = 0h/24h.
+
+-------------------------------------------------------------------------------
+v1.7.1
+
+- Fixed magnitude filter in USNO B1 catalog.
+
+-------------------------------------------------------------------------------
+v1.7
+
+- Constellations layers.
+
+-------------------------------------------------------------------------------
+v1.6.3
+
+- New catalog Bright Star Catalog, 5th ed. (Hoffleit+).
+
+- Fixed an error in the catalog cache when the epoch value changes.
+
+-------------------------------------------------------------------------------
+v1.6.2
+
+- Provide a default path for the NGC/IC local catalog file if the stored script
+  settings point to a nonexistent file (changes to the NGCICCatalog object, in
+  AstronomicalCatalogs.jsh). For example, this happens if we move the script
+  within the core application's directory tree.
+
+-------------------------------------------------------------------------------
+v1.6.1
+
+- Fixed rendering of the grid and NGC/IC catalog in images that cross the 0/24h
+  boundary.
+
+-------------------------------------------------------------------------------
+v1.6
+
+- Cursor coordinates in J2000 in PreviewDialog.
+
+- Layout fixes for PixInsight 1.8.
+
+- Changed all icons to standard PI Core 1.8 resources.
+
+- Button icons also shown on Mac OS X.
+
+- Fixed copyright years (2012-2013).
+
+- The default dialog button is now 'OK' (defaultButton property).
+
+-------------------------------------------------------------------------------
+v1.5
+
+- Graphics scale: Allow to change the graphics properties of all elements at
+  the same time.
+
+- Preview dialog: Shows a previsualization of the annotation in an interactive
+  image viewer with zoom and scroll.
+
+-------------------------------------------------------------------------------
+v1.4
+
+- Catalog ARP
+- Use of VectorGraphics object that allows using floating point coordinates
+- SVG overlay
+
+-------------------------------------------------------------------------------
+v1.3
+
+- Fixed for PI v1.8.
+
+- Better dialog for adding layers.
+
+- Catalog CMC14.
+
+-------------------------------------------------------------------------------
+v1.2
+
+- The user can choose the filter used in the magnitude filter.
+
+- Catalog SDSS Release 8 with object class filter (star/galaxy).
+
+- Catalog GSC 2.3 with object class filter (star/non-star).
+
+- Fixed the magnitude filter in some catalogs.
+
+- Fixed problem in the combo OutputMode.
+
+- After downloading a catalog it logs the number of objects inside the image.
+
+-------------------------------------------------------------------------------
+v1.11
+
+- 2012 Apr 19 - Released as an official update.
+
+- Removed all instances of the 'with' JavaScript statement.
+
+- Fixed several GUI control dimension issues.
+
+- Fixed some text messages.
+
+-------------------------------------------------------------------------------
+v1.1
+
+- Multiple labels per object.
+
+- NOMAD-1 catalog with B-V filtering for white balance.
+
+- Fields B, V and B-V in Tycho-2 catalog.
+
+-------------------------------------------------------------------------------
+v1.0
+
+- Label alignment.
+
+- Fixed grid around the poles.
+
+- New field "NGC/IC code" in NGC/IC catalog. Cleaned name column in the
+  catalog.
+
+- Hipparcos Main Catalog (VizieR I/239) with B-V and Spectral Type fields.
+
+- Catalog of Reflection Nebulae - Van den Bergh (VizieR VII/21).
+
+- Catalog of HII Regions - Sharpless (VizieR VII/20).
+
+- Barnard's Catalog of Dark Objects in the Sky (VizieR VII/220A).
+
+-------------------------------------------------------------------------------
+v0.7
+
+- Layer management fixed. The delete button didn't work as expected.
+
+- Security fix in parameters persistence.
+
+- Layout fixed when there are no layers.
+
+-------------------------------------------------------------------------------
+v0.65
+
+- Fixed a couple problems with dialog dimensions.
+
+- Fixed a few message strings.
+
+- More robust method to compute the local path to the NGC/IC catalog.
+
+-------------------------------------------------------------------------------
+v0.6
+
+- Fix for custom catalogs that cover the entire sky.
+
+- Support of custom catalogs with line endings in Mac format [CR].
+
+- Fixed problem in the labels of the grid near RA = 0h.
+
+- More fields for the labels in the catalogs NamedStars and Tycho2.
+
+- Shortened the names of the variables in the persistence. PI seems to have a
+  limit in the length of the parameter list
+
+-------------------------------------------------------------------------------
+v0.5
+
+- Buttons for adding, removing and moving layers.
+
+- Custom catalog layer.
+
+- Text layer.
+
+-------------------------------------------------------------------------------
+v0.4:
+
+- Adds support for saving the parameters as an icon.
+
+- It can be applied to an image container.
+
+- When Reset is pressed now it is not necessary to reopen the script.
+
+- Fixed problem with incomplete values in DATE-OBS.
+
+- Better grid spacing.
+
+- Code clean up.
+
+-------------------------------------------------------------------------------
+v0.3:
+
+- Faster removing of duplicates (at most a few seconds in any case).
+
+- Warning when VizieR limit is reached.
+
+-------------------------------------------------------------------------------
+v0.2
+
+- New layout.
+
+- Proper Motion in Tycho-2, PPMXL, UCAC3 and USNO-B1.
+
+- Filter by magnitude (minimum and maximum).
+
+- The label can be chosen between name, coordinates and magnitude.
+
+- New catalogs: Named Stars, UCAC3.
+
+- Faster removing of duplicates.
+
+- The font family can be changed.
+
+-------------------------------------------------------------------------------
+v0.1
+
+Initial test version.
