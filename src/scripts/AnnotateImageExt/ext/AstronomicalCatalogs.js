@@ -107,6 +107,7 @@ var CatalogRegistry = class
       let jsonText = File.readTextFile(jsonFilePath);
 
       // catalogsConfig object encapsulates the parsed JSON config
+	   // TODO: possibly make globally available in scope for layers config per catalog later
       let catalogsConfig = JSON.parse(jsonText);
 
       for (let i = 0; i < catalogsConfig.length; ++i) {

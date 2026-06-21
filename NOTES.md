@@ -131,7 +131,23 @@ To:
 
 
 
-### Bug Fixes (Minor)
+### Bug Fixes for PixInsight AnnotateImage
+
+#### AnnotateImage preferences / settings reset if Custom catalog configuration clicks "OK" with empty field
+
+The script should continue and preserve settings, not reset or delete all previous settings when one Custom catalog configuration step is missed.
+
+To reproduce:
+  - Add a Custom catalog layer through the Add Layers dialog
+  - Do not set a value for the custom catalog file path
+  - Click "OK" to execute AnnotateImage
+  - Re-open AnnotateImage script and check preferences/settings and previously added layers, they will be missing if not totally reset to defaults
+
+To fix:
+  - TBD!
+  - In theory, just check if the Custom layer has a file input in the field before allowing OK on the main script.  Or, drop the new Custom layer and log a warning to the user but continue functioning and preserve other preferences/settings.
+
+TODO: update
 
 #### `Warning: OpenFileDialog.fileName is deprecated: Use OpenFileDialog.filePath instead.`
 
@@ -151,7 +167,7 @@ Fixed in `AstronomicalCatalogs.js`, old code commented out, two new lines refere
             path_Edit.text = gdd.filePath;
 ```
 
-#### Inconsistent spelling / typo "nebulaes" for "nebulae"
+#### Fix for Inconsistent spelling / typo "nebulaes" for "nebulae"
 
 ```
 $ grep nebulaes -R .
@@ -194,7 +210,7 @@ Here is the set of depdencies to other scripts that are included by `AnnotateIma
 ```
 
 
-As you can see there is no dependency to `AstronomicalCatalogs.jsh` from `AnnotateImage.js` or its sub-scripts.
+There is no direct dependency to `AstronomicalCatalogs.jsh` from `AnnotateImage.js` or its sub-scripts.  `AnnotateImage.js` is an uncomplicated wrapper that instantiates an instance of `AnnotationEngine.js`, which ties to the astrometry code.
 
 And `AstronomicalCatalogs.jsh` does not have a main function to be run standalone.  It is only used by other scripts.  But it is not in fact used by `AnnotateImage.js`.
 
