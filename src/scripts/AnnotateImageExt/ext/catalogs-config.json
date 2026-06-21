@@ -48,6 +48,14 @@
     "fields": ["Name", "RA", "Dec", "Diameter", "Common name"]
   },
   {
+    "className": "HMSTGCatalog",
+    "id": "HMSTG",
+    "name": "HMSTG",
+    "file": "HMSTG-Hartley-et-al-Catalogue-of-Southern-Dark-Clouds-1986-for-PixInsight.csv",
+    "description": "A Catalogue of Southern Dark Clouds (1101 objects) Hartley et al. (1986)",
+    "fields": ["Coordinates", "Name", "Diameter", "MinorAxis", "Density"]
+  },
+  {
     "className": "MWSCCatalog",
     "id": "MWSC",
     "name": "MWSC",
