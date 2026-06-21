@@ -93,31 +93,8 @@ var CatalogRegistry = class
       return null;
    }
 
-  // NEW 
-  static createAndRegisterCatalog(config) {
-      // Dynamically create the class extending your LocalFileCatalog
-      const DynamicCatalogClass = class extends LocalFileCatalog {
-          constructor() {
-              super(config.id, config.name, config.file);
-              this.description = config.description;
-              this.fields = config.fields;
-          }
- 
-          GetConstructor() {
-              // Replicate string behavior for script generation/serialization
-              return "new " + config.className + "()";
-          }
-      };
-
-      // Expose to PJSR's global scope so that eval("new FooCatalog()") works
-      globalThis[config.className] = DynamicCatalogClass;
-
-      // Register a new instance into CatalogRegistry
-      CatalogRegistry.register(new DynamicCatalogClass());
-  }
-
-  // NEW 
-  static loadCatalogsFromJSON(jsonFilePath) {
+   // NEW 
+   static loadCatalogsFromJSON(jsonFilePath) {
       // TODO: not sure whether to keep "catalogs" subdirectory name hard-coded but, 
       // for now, keeps the files separate from the js files dir, relative to LocalFileCatalog path logic
       const CATALOGS_SUBDIR = "catalogs"; // relative to the current js script
@@ -133,35 +110,35 @@ var CatalogRegistry = class
       let catalogsConfig = JSON.parse(jsonText);
 
       for (let i = 0; i < catalogsConfig.length; ++i) {
-          let config = catalogsConfig[i];
+         let config = catalogsConfig[i];
 
-          // Create Catalog subclasses extending LocalFileCatalog dynamically
-          const DynamicCatalogClass = class extends LocalFileCatalog {
+         // Create Catalog subclasses extending LocalFileCatalog dynamically
+         const DynamicCatalogClass = class extends LocalFileCatalog {
 
-              constructor() {
-                  super(config.id, config.name, CATALOGS_SUBDIR + "/" + config.file);
-                  this.description = config.description;
-                  this.fields = config.fields;
-              }
+            constructor() {
+               super(config.id, config.name, CATALOGS_SUBDIR + "/" + config.file);
+               this.description = config.description;
+               this.fields = config.fields;
+            }
 
-              GetConstructor() {
-                  return "new " + config.className + "()";
-              }
-          };
+            GetConstructor() {
+               return "new " + config.className + "()";
+            }
+         };
 
-          // 2. Expose to global scope
-          globalThis[config.className] = DynamicCatalogClass;
+         // 2. Expose to global scope
+         globalThis[config.className] = DynamicCatalogClass;
 
-          // 3. Register it using the existing static method
-          CatalogRegistry.register(new DynamicCatalogClass());
+         // 3. Register it using the existing static method
+         CatalogRegistry.register(new DynamicCatalogClass());
       }
       console.writeln("Successfully loaded " + catalogsConfig.length + " dynamic catalogs.");
   }
 
-   static reset()
-   {
-      CatalogRegistry.#catalogs = [];
-   }
+  static reset()
+  {
+     CatalogRegistry.#catalogs = [];
+  }
 };
 
 CatalogRegistry.reset();

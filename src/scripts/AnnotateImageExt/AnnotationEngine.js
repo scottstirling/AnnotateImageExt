@@ -208,13 +208,14 @@ var AnnotationEngine = class extends PersistentObject
 	   //
 	   //
 	   // TODO: could put lineColor, labelColor, labelSize and visible true/false in the JSON config too per catalog to override defaults
+	   //
       layer = new CatalogLayer( new BFSCatalog );
       layer.visible = true;
       layer.gprops.lineColor = 0xff8080ff;
       layer.gprops.labelColor = 0xff8080ff;
       layer.gprops.labelSize = 16;
       this.layers.push( layer );
-
+     
       layer = new CatalogLayer( new CaldwellCatalog );
       layer.visible = true;
       layer.gprops.lineColor = 0xff8080ff;
@@ -236,7 +237,7 @@ var AnnotationEngine = class extends PersistentObject
       layer.gprops.labelSize = 16;
       this.layers.push( layer );
 
-      layer = new CatalogLayer( new GreenCatalog );
+      layer = new CatalogLayer( new GreenSNRCatalog );
       layer.visible = true;
       layer.gprops.lineColor = 0xff8080ff;
       layer.gprops.labelColor = 0xff8080ff;
@@ -244,6 +245,13 @@ var AnnotationEngine = class extends PersistentObject
       this.layers.push( layer );
 
       layer = new CatalogLayer( new GumCatalog );
+      layer.visible = true;
+      layer.gprops.lineColor = 0xff8080ff;
+      layer.gprops.labelColor = 0xff8080ff;
+      layer.gprops.labelSize = 16;
+      this.layers.push( layer );
+
+      layer = new CatalogLayer( new HMSTCatalog );
       layer.visible = true;
       layer.gprops.lineColor = 0xff8080ff;
       layer.gprops.labelColor = 0xff8080ff;
