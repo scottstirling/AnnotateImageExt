@@ -4,7 +4,7 @@
     "id": "BFS",
     "name": "BFS",
     "file": "BFS-Galactic-HII-Regions-1982-for-PixInsight.csv",
-    "description": "Catalog of HII Regions (361 objects) Blitz, Fich, Stark (1982)",
+    "description": "Catalog of HII Regions (Blitz, Fich & Stark, 1982) (361 objects)",
     "fields": ["Coordinates","Name","Diameter"],
     "visible": "true",
     "labelColor": "0x70ffffff",
@@ -17,7 +17,7 @@
     "id": "Caldwell",
     "name": "Caldwell",
     "file": "Caldwell-Deep-Sky-109-with-OMeara-2002-updates-for-PixInsight.csv",
-    "description": "Caldwell (109 objects) Caldwell and O'Meara (2002)",
+    "description": "Caldwell Objects (Caldwell and O'Meara, 2002) (109 objects)",
     "fields": ["Id", "Name", "Magnitude", "RA", "Dec", "Diameter"]
   },
   {
@@ -25,7 +25,7 @@
     "id": "Cederblad",
     "name": "Cederblad",
     "file": "Cederblad-Bright-Diffuse-Nebulae-1946-for-PixInsight.csv",
-    "description": "Cederblad Bright Diffuse Nebulae (331 objects) (1946)",
+    "description": "Bright Diffuse Nebulae (Cederblad, 1946) (331 objects)",
     "fields": ["Id", "Name", "Magnitude", "RA", "Dec", "Diameter"]
   },
   {
@@ -33,31 +33,44 @@
     "id": "Collinder",
     "name": "Collinder",
     "file": "Collinder-Open-Clusters-1931-for-PixInsight.csv",
-    "description": "Collinder Open Clusters (471 objects) (1931)",
+    "description": "Open Clusters (Collinder, 1931) (471 objects)",
     "fields": ["Id","RA", "Dec", "Diameter", "Name"]
+  },
+  {
+    "className": "DutraBicaCatalog",
+    "id": "DutraBica",
+    "name": "Dutra and Bica",
+    "file": "Dutra-and-Bica-Dust-Clouds-2002-for-PixInsight.csv",
+    "description": "Catalogue of Dust Clouds in the Galaxy (Dutra & Bica, 2002) (5004 objects)",
+    "fields": ["Name","Coordinates", "Diameter", "Common name","Aka1"],
+    "visible": "true",
+    "labelColor": "0xffa500ff",
+    "labelSize": "14",
+    "lineColor": "0xffa500ff",
+    "lineWidth": "4"
   },
   {
     "className": "GreenSNRCatalog",
     "id": "Green",
-    "name": "Green",
+    "name": "Green SNR",
     "file": "Green-SNR-2025-for-PixInsight.csv",
-    "description": "Galactic Super Nova Remnants (310 objects) D. Green (2025)",
-    "fields": ["GId", "Name", "RA", "Dec", "Diameter", "Type", "AKA"]
+    "description": "Galactic Super Nova Remnants (D. Green, 2025) (310 objects)",
+    "fields": ["GId", "Name", "Coordinates", "Diameter", "Type", "AKA"]
   },
   {
     "className": "GumCatalog",
     "id": "Gum",
     "name": "Gum",
     "file": "Gum-Southern_HII_Regions_1955_revised-by-Kevin-Jardine-2009-for-PI.csv",
-    "description": "Gum Southern HII Regions (85 objects) Colin S. Gum (1955)",
-    "fields": ["Name", "RA", "Dec", "Diameter", "Common name"]
+    "description": "Gum Southern HII Regions (Gum, 1955) (85 objects)",
+    "fields": ["Name", "Coordinates", "Diameter", "Common name"]
   },
   {
     "className": "HMSTCatalog",
     "id": "HMST",
     "name": "HMST",
     "file": "HMST-Hartley-et-al-Catalogue-of-Southern-Dark-Clouds-1986-for-PixInsight.csv",
-    "description": "A Catalogue of Southern Dark Clouds (1101 objects) Hartley et al. (1986)",
+    "description": "A Catalogue of Southern Dark Clouds (Hartley et al., 1986) (1101 objects)",
     "fields": ["Coordinates", "Name", "Diameter", "MinorAxis", "Density"]
   },
   {
@@ -65,7 +78,7 @@
     "id": "MWSC",
     "name": "MWSC",
     "file": "Kharchenko-et-al-Clusters-Master-Catalog-2013-for-PixInsight.csv",
-    "description": "Milky Way Star Clusters Catalog (3006 clusters) Kharchenko et al. (2013)",
+    "description": "Milky Way Star Clusters Catalog (Kharchenko et al., 2013) (3006 clusters)",
     "fields": ["Coordinates", "MWSC Id", "Name", "Diameter"]
   },
   {
@@ -73,48 +86,48 @@
     "id": "MBM",
     "name": "MBM",
     "file": "MBM-Molecular-Clouds-1985-Table-1-and-2-for-PixInsight.csv",
-    "description": "Molecular Gas at High_Galactic Latitudes (166 objects) - Magnani, Blitz & Mundi (1985)",
-    "fields": ["Constellation","Complex","Cloud","Name","RA","DEC","Area (deg square)","Diameter","MinorAxis","posAngle","axisRatio"]
+    "description": "Molecular Gas at High_Galactic Latitudes (Magnani, Blitz & Mundi, 1985) (166 objects)",
+    "fields": ["Constellation","Complex","Cloud","Name","Coordinates","Area (deg square)","Diameter","MinorAxis","posAngle","axisRatio"]
   },
   {
     "className": "MelotteCatalog",
     "id": "Melotte",
     "name": "Melotte",
     "file": "Melotte_starclusters-1915-for_PixInsight.csv",
-    "description": "Melotte Star Clusters (245 objects) (1915)",
-    "fields": ["ID","Name", "Diameter", "RA", "Dec"]
+    "description": "Star Clusters (Melotte, 1915) (245 objects)",
+    "fields": ["ID","Name", "Diameter", "Coordinates"]
+  },
+  {
+    "className": "SandqvistLindroosCatalog",
+    "id": "SandqvistLindroos",
+    "name": "Sandqvist & Lindroos",
+    "file": "Sandqvist-and-Lindroos-Southern-Dark-Clouds-1976-for-PixInsight.csv",
+    "description": "\"Southern Dark Clouds\" (Sandqvist & Lindroos, 1976) (42 objects)",
+    "fields": ["Coordinates","Name","Diameter", "Common name"]
   },
   {
     "className": "SandqvistCatalog",
     "id": "Sandqvist",
     "name": "Sandqvist",
     "file": "Sandqvist-More_Southern_Dark_Dust_Clouds-1977-for-PixInsight.csv",
-    "description": "Sandqvist \"More Southern Dark Dust Clouds\" (95 objects) (1977)",
-    "fields": ["ID","Name", "Diameter", "RA", "Dec"]
-  },
-  {
-    "className": "SandqvistLindroosCatalog",
-    "id": "SandqvistLindroos",
-    "name": "SandqvistLindroos",
-    "file": "Sandqvist-and-Lindroos-Southern-Dark-Clouds-1976-for-PixInsight.csv",
-    "description": "Sandqvist & Lindroos \"Southern Dark Clouds\" (42 objects) (1976)",
-    "fields": ["RA","Dec","Name","Diameter", "Common name"]
+    "description": "\"More Southern Dark Dust Clouds\" (Sandqvist, 1977) (95 objects)",
+    "fields": ["ID","Name", "Diameter", "Coordinates"]
   },
   {
     "className": "SFOSouthCatalog",
     "id": "SFOSouth",
     "name": "SFOSouth",
     "file": "SFO-Bright-Rimmed-Clouds-Southern-1994-for-PixInsight.csv",
-    "description": "SFO Bright Rimmed Clouds - south (42 objects) (1994)",
-    "fields": ["RA","Dec","Name","Diameter", "HII region"]
+    "description": "Bright Rimmed Clouds - south (SFO, 1994) (42 objects)",
+    "fields": ["Coordinates","Name","Diameter", "HII region"]
   },
   {
     "className": "SFONorthCatalog",
     "id": "SFONorth",
     "name": "SFONorth",
     "file": "SFO-Bright-Rimmed-Clouds-Northern-1991-for-PixInsight.csv",
-    "description": "SFO Bright Rimmed Clouds - north (44 objects) (1991)",
-    "fields": ["Name","RA","Dec","HII region","HII region size","Distance (kpc)","Diameter"]
+    "description": "Bright Rimmed Clouds - north (SFO, 1991) (44 objects)",
+    "fields": ["Name","Coordinates","HII region","HII region size","Distance (kpc)","Diameter"]
   }
 ]
 
