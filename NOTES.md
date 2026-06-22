@@ -149,6 +149,48 @@ To fix:
 
 TODO: update
 
+Every time the use clicks "OK" on the main AnnotateImage script, it checks whether it is in non-interactive mode and some other conditions, then just before it calls `AnnotationEngine`'s `Render()` function it saves any changed settings, which includes added Custom Catalogs:
+
+```js
+    engine.SaveSettings();
+```
+
+Around here seems to be where things go awry ... 
+
+There is also a `ResetSettings()` function but that is only called when a user explicitly hits the Reset button in the main AnnotateImage dialog.
+
+The `SaveSettings()` function is defined in `AnnotationEngine`, called on the catalog layers too:
+```
+src/scripts/AnnotateImageExt/AnnotationEngine.js:   SaveSettings()
+src/scripts/AnnotateImageExt/AnnotationEngine.js:      super.SaveSettings();
+src/scripts/AnnotateImageExt/AnnotationEngine.js:         this.layers[i].SaveSettings();
+src/scripts/AnnotateImageExt/AnnotateImageExt.js:         engine.SaveSettings();
+```
+
+The Validate() function on the persistent objects (which means they get their fields saved to preferences for the user) only gets called after clicking OK on the main dialog.
+
+I have tested adding a Custom catalog without specifying a file path and if checked to enable the layer, then validate is called and a dialog pops up to the user -- but too late to fix!  It continues running and executes the script.  The Custom catalog that had no path is usually removed / missing on the next run.  But if it was NOT enabled, then it is not validated and it is not removed, and it will be present in the list of added layers on restart.
+
+Not easy to reproduce reliably yet, the situation where it seems ALL custom catalogs get wiped out when one tries to add one with no path enabled ...
+
+Found this in CatalogLayer extension of Layer:
+```js
+   Validate()
+   {           
+      if ( !this.visible )
+         return true;
+      if ( this.catalog.Validate )
+         return this.catalog.Validate();
+      return true;
+   }
+```
+And shortly after that is where all the catalogs get instantiated again like so:
+
+```js
+for ( let i = 0; i < CatalogRegistry.length; ++i )
+   LayerRegistry.register( new CatalogLayer( CatalogRegistry.newCatalog( i ) ) );
+```
+
 #### `Warning: OpenFileDialog.fileName is deprecated: Use OpenFileDialog.filePath instead.`
 
 Every time adding a Custom catalog layer through the legacy AnnotateImageDialog, after adding the file path and clicking OK, a warning is logged to the console:

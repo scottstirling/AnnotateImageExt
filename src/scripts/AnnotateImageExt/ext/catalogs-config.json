@@ -5,7 +5,12 @@
     "name": "BFS",
     "file": "BFS-Galactic-HII-Regions-1982-for-PixInsight.csv",
     "description": "Catalog of HII Regions (361 objects) Blitz, Fich, Stark (1982)",
-    "fields": ["Coordinates","Name","Diameter"]
+    "fields": ["Coordinates","Name","Diameter"],
+    "visible": "true",
+    "labelColor": "0x70ffffff",
+    "labelSize": "14",
+    "lineColor": "0x70ffffff",
+    "lineWidth": "4"
   },
   {
     "className": "CaldwellCatalog",

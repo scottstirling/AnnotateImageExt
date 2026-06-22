@@ -1390,6 +1390,7 @@ var CatalogLayer = class extends Layer
    }
 };
 
+/* CatalogRegistry is defined in AstronomicalCatalogs.js */
 for ( let i = 0; i < CatalogRegistry.length; ++i )
    LayerRegistry.register( new CatalogLayer( CatalogRegistry.newCatalog( i ) ) );
 

@@ -107,6 +107,19 @@ var AnnotationEngine = class extends PersistentObject
       console.writeln( "=".repeat( 98 ) );
    }
 
+   /* Utility function for parsing aRGB strings to numbers below */
+   parseHexStringToColorNumber(hexString) {
+      // Clean up any leading '#', '0x', or '0X'
+      const cleanHex = hexString.replace(/^#|^0x|^0X/, '');
+      // Convert the cleaned hex string into a 32-bit number
+      const rgbaNum = parseInt(cleanHex, 16);
+      // 3. Bit-shift the bytes from RGBA to ARGB
+      // Moves RGB right by 8 bits, and places Alpha (lowest 8 bits) at the front
+      const argbNum = (rgbaNum >>> 8) | ((rgbaNum & 0x000000FF) << 24);
+      // 4. Force to an unsigned 32-bit integer for engine safety
+      return argbNum >>> 0;
+   }
+
    SetDefaults()
    {
       /*
@@ -143,7 +156,7 @@ var AnnotationEngine = class extends PersistentObject
       layer.gprops.labelSize = 14;
       this.layers.push( layer );
 
-      // START TEMPLATE FOR NEW CUSTOM CATALOG LAYER 
+      // START TEMPLATE FOR NEW CUSTOM CATALOG LAYER
       /*
       layer = new CatalogLayer( new FooCatalog );
       layer.visible = true;
@@ -152,161 +165,56 @@ var AnnotationEngine = class extends PersistentObject
       layer.gprops.labelSize = 16;
       this.layers.push( layer );
       */
-      // END TEMPLATE FOR NEW CUSTOM CATALOG LAYER 
+      // END TEMPLATE FOR NEW CUSTOM CATALOG LAYER
 
-      // TODO figure out how to make these dynamic based on catalogs-config.json
-      // or ... from a separate setting somewhere ... hmm ... but this is for the *defaults* available to selected ...
-      // which could be a subset of all available catalogs ... maybe, separately defined. But ... then we're pushing another "layer" haha
-      // of configuration ... for now let's use what's in catalogs-config.json for starters ...
-	   // pseudocode:
-	   //
-	   // parse JSON file and get the list of catalog classes
-	   // for (each catalog class in JSON set) {
-	   //     layer = new CatalogLayer( new <type from name string in JSON> );
-	   //     layer.visible = true;
-           //     layer.gprops.lineColor = 0xff8080ff;
-           //     layer.gprops.labelColor = 0xff8080ff;
-           //     layer.gprops.labelSize = 16;
-           //     this.layers.push( layer );
-	   // }
-	   //
-	   /*
-      let jsonText = File.readTextFile(jsonFilePath); // TODO: get the config JSON file path ...
+      // NEW
+      if (catalogsConfig != null) { // catalogsConfig is initialized and loaded in AstronomicalCatalogs
 
-      // catalogsConfig object encapsulates the parsed JSON config
-      let catalogsConfig = JSON.parse(jsonText);
+	     let catalogConfig = null; // used in the loop below
 
-      for (let i = 0; i < catalogsConfig.length; ++i) {
-          let config = catalogsConfig[i];
+         for (let i = 0; i < catalogsConfig.length; ++i) {
 
-          // Create CatalalogLayers dynamically
-          const DynamicCatalogLayerClass = class extends CatalogLayer {
+            catalogConfig = catalogsConfig[i];
 
-              constructor() {
-                  super(config.id, config.name, CATALOGS_SUBDIR + "/" + config.file);
-	          this.visible = true;
-                  this.gprops.lineColor = 0xff8080ff;
-                  this.gprops.labelColor = 0xff8080ff;
-                  this.gprops.labelSize = 16;
-                  this.description = config.description;
-                  this.fields = config.fields;
-              }
+	        console.writeln("Loading catalog config: " + catalogConfig.name);
 
-              GetConstructor() {
-                  return "new " + config.className + "()";
-              }
-          };
+            layer = new CatalogLayer( CatalogRegistry.newCatalog(catalogConfig.id) );
 
-          // 2. Expose to global scope
-          globalThis[config.className] = DynamicCatalogClass;
+	     if (catalogConfig.visible) {
+                layer.visible = (catalogConfig.visible == "true"); // evaluate string value to a raw boolean
+	     } else {
+	        layer.visible = false;
+	     }
 
-          // 3. Register it using the existing static method
-          CatalogRegistry.register(new DynamicCatalogClass());
+	     if (catalogConfig.labelColor) {
+                // layer.gprops.labelColor = parseInt(catalogConfig.labelColor, 16);
+                layer.gprops.labelColor = this.parseHexStringToColorNumber( catalogConfig.labelColor );
+	     } else {
+	        layer.gprops.labelColor = 0xff8080ff;
+	     }
+
+	     if (catalogConfig.labelSize) {
+                layer.gprops.labelSize = parseInt(catalogConfig.labelSize, 10);
+	     } else {
+	        layer.gprops.labelSize = 14;
+	     }
+
+	     if (catalogConfig.lineColor) {
+                // layer.gprops.lineColor = parseInt(catalogConfig.lineColor, 16);
+                layer.gprops.lineColor = this.parseHexStringToColorNumber( catalogConfig.lineColor );
+	     } else {
+	        layer.gprops.lineColor = 0xff8080ff;
+	     }
+
+	     if (catalogConfig.lineWidth) {
+                layer.gprops.lineWidth = parseInt(catalogConfig.lineWidth, 10);
+	     } else {
+	        layer.gprops.lineWidth = 4;
+	     }
+
+             this.layers.push( layer );
+         }
       }
-      console.writeln("Successfully loaded " + catalogsConfig.length + " dynamic catalogs.");
-	   */
-	   //
-	   //
-	   // TODO: could put lineColor, labelColor, labelSize and visible true/false in the JSON config too per catalog to override defaults
-	   //
-      layer = new CatalogLayer( new BFSCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-     
-      layer = new CatalogLayer( new CaldwellCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new CederbladCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new CollinderCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new GreenSNRCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new GumCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new HMSTCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new MBMCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new MelotteCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new MWSCCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new SandqvistCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new SandqvistLindroosCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new SFOSouthCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
-      layer = new CatalogLayer( new SFONorthCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-
       // END NEW CATALOG LAYERS
 
       layer = new CatalogLayer( new MessierCatalog );

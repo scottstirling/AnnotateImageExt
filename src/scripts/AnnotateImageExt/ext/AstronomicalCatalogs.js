@@ -25,6 +25,11 @@
 
 // ----------------------------------------------------------------------------
 
+/* accessible configuration of dynamically loaded catalof configurations 
+ * after it is parsed and loaded in CatalogRegistry, below. The catalogsConfig
+ * object is available to and used by AnnotationEngine.js. along with CatalogRegistry.*/
+var catalogsConfig = null;
+
 /*
  * Registry providing access to all defined catalog classes.
  */
@@ -107,8 +112,9 @@ var CatalogRegistry = class
       let jsonText = File.readTextFile(jsonFilePath);
 
       // catalogsConfig object encapsulates the parsed JSON config
-	   // TODO: possibly make globally available in scope for layers config per catalog later
-      let catalogsConfig = JSON.parse(jsonText);
+      // TODO: possibly make globally available in scope for layers config per catalog later
+      catalogsConfig = JSON.parse(jsonText);
+      // let catalogsConfig = JSON.parse(jsonText);
 
       for (let i = 0; i < catalogsConfig.length; ++i) {
          let config = catalogsConfig[i];
@@ -1105,14 +1111,15 @@ var LocalFileCatalog = class extends Catalog
 
 // ----------------------------------------------------------------------------
 // NEW
+// Load external configuration file of file-based catalogs
 const CATALOGS_CONFIG_FILENAME = "catalogs-config.json";
 let scriptFileDir = File.extractDirectory(#__FILE__); // built-in PSJR macro to get this current file's location at runtime 
 let catalogsConfigJSON = scriptFileDir + "/" + CATALOGS_CONFIG_FILENAME;
 
 if (File.exists(catalogsConfigJSON)) {
-    console.writeln("Config file exists: " + catalogsConfigJSON);
+    console.writeln("Catalogs config file exists: " + catalogsConfigJSON);
 } else {
-    console.warningln("File not found: " + catalogsConfigJSON);
+    console.warningln("Catalogs config file not found: " + catalogsConfigJSON);
 }
 CatalogRegistry.loadCatalogsFromJSON(catalogsConfigJSON);
 
@@ -4333,10 +4340,10 @@ var CustomCatalog = class extends LocalFileCatalog
          gdd.filters = [["CSV files", "*.csv"], ["Plain text files", "*.txt"], ["Any files", "*"]];
          if ( gdd.execute() )
          {
-            // AnnotateImageExt bug fix, fileName is deprecated
+            // AnnotateImageExt bug fix, fileName is deprecated, use filePath instead
             // this.dialog.activeFrame.object.catalog.catalogPath = gdd.fileName;
+            // path_Edit.text = gdd.fileName;
             this.dialog.activeFrame.object.catalog.catalogPath = gdd.filePath;
-            //path_Edit.text = gdd.fileName;
             path_Edit.text = gdd.filePath;
          }
       };
@@ -4380,6 +4387,3 @@ CatalogRegistry.register( new CustomCatalog );
 // ----------------------------------------------------------------------------
 
 #endif   // __PJSR_AstronomicalCatalogs_js
-
-// ----------------------------------------------------------------------------
-// EOF AstronomicalCatalogs.js - Released 2026-03-26T21:05:13Z
