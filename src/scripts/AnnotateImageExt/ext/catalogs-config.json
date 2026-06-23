@@ -8,7 +8,7 @@
     "fields": ["Coordinates","Name","Diameter"],
     "visible": "true",
     "labelColor": "0x70ffffff",
-    "labelSize": "14",
+    "labelSize": "16",
     "lineColor": "0x70ffffff",
     "lineWidth": "4"
   },
@@ -45,7 +45,7 @@
     "fields": ["Name","Coordinates", "Diameter", "Common name","Aka1"],
     "visible": "true",
     "labelColor": "0xffa500ff",
-    "labelSize": "14",
+    "labelSize": "16",
     "lineColor": "0xffa500ff",
     "lineWidth": "4"
   },
@@ -58,7 +58,7 @@
     "fields": ["GId", "Name", "Coordinates", "Diameter", "Type", "AKA"],
     "visible": "true",
     "labelColor": "0x55ff55ff",
-    "labelSize": "14",
+    "labelSize": "16",
     "lineColor": "0x55ff55ff",
     "lineWidth": "4"
   },
@@ -87,7 +87,7 @@
     "fields": ["Coordinates", "MWSC Id", "Name", "Diameter"],
     "visible": "true",
     "labelColor": "0xffff00ff",
-    "labelSize": "14",
+    "labelSize": "16",
     "lineColor": "0xffff00ff",
     "lineWidth": "4"
   },
