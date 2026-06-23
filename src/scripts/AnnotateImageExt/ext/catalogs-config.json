@@ -2,7 +2,7 @@
   {
     "className": "BFSCatalog",
     "id": "BFS",
-    "name": "BFS",
+    "name": "Blitz, Fich & Stark (BFS)",
     "file": "BFS-Galactic-HII-Regions-1982-for-PixInsight.csv",
     "description": "Catalog of HII Regions (Blitz, Fich & Stark, 1982) (361 objects)",
     "fields": ["Coordinates","Name","Diameter"],
@@ -55,7 +55,12 @@
     "name": "Green SNR",
     "file": "Green-SNR-2025-for-PixInsight.csv",
     "description": "Galactic Super Nova Remnants (D. Green, 2025) (310 objects)",
-    "fields": ["GId", "Name", "Coordinates", "Diameter", "Type", "AKA"]
+    "fields": ["GId", "Name", "Coordinates", "Diameter", "Type", "AKA"],
+    "visible": "true",
+    "labelColor": "0x55ff55ff",
+    "labelSize": "14",
+    "lineColor": "0x55ff55ff",
+    "lineWidth": "4"
   },
   {
     "className": "GumCatalog",
@@ -76,15 +81,20 @@
   {
     "className": "MWSCCatalog",
     "id": "MWSC",
-    "name": "MWSC",
+    "name": "Mlky Way Star Clusters (MWSC)",
     "file": "Kharchenko-et-al-Clusters-Master-Catalog-2013-for-PixInsight.csv",
     "description": "Milky Way Star Clusters Catalog (Kharchenko et al., 2013) (3006 clusters)",
-    "fields": ["Coordinates", "MWSC Id", "Name", "Diameter"]
+    "fields": ["Coordinates", "MWSC Id", "Name", "Diameter"],
+    "visible": "true",
+    "labelColor": "0xffff00ff",
+    "labelSize": "14",
+    "lineColor": "0xffff00ff",
+    "lineWidth": "4"
   },
   {
     "className": "MBMCatalog",
     "id": "MBM",
-    "name": "MBM",
+    "name": "Magnani, Blitz & Mundi (MBM)",
     "file": "MBM-Molecular-Clouds-1985-Table-1-and-2-for-PixInsight.csv",
     "description": "Molecular Gas at High_Galactic Latitudes (Magnani, Blitz & Mundi, 1985) (166 objects)",
     "fields": ["Constellation","Complex","Cloud","Name","Coordinates","Area (deg square)","Diameter","MinorAxis","posAngle","axisRatio"]
@@ -100,7 +110,7 @@
   {
     "className": "RCWCatalog",
     "id": "RCW",
-    "name": "Rodgers, Cambell, Whiteoak (RCW)",
+    "name": "Rodgers, Cambell & Whiteoak (RCW)",
     "file": "RCW-Catalog-of-Halpha-Emission-Regions-in-the-Southern-Milky-Way-1960-for-Pixinsight.csv",
     "description": "Catalog of Hα Emission Regions in the Southern Milky Way (RCW, 1960) (181 objects)",
     "fields": ["Name","Coordinates", "Diameter", "Other name"]
@@ -124,7 +134,7 @@
   {
     "className": "SFOSouthCatalog",
     "id": "SFOSouth",
-    "name": "SFOSouth",
+    "name": "SFO BRC (south)",
     "file": "SFO-Bright-Rimmed-Clouds-Southern-1994-for-PixInsight.csv",
     "description": "Bright Rimmed Clouds - south (SFO, 1994) (42 objects)",
     "fields": ["Coordinates","Name","Diameter", "HII region"]
@@ -132,7 +142,7 @@
   {
     "className": "SFONorthCatalog",
     "id": "SFONorth",
-    "name": "SFONorth",
+    "name": "SFO BRC (north)",
     "file": "SFO-Bright-Rimmed-Clouds-Northern-1991-for-PixInsight.csv",
     "description": "Bright Rimmed Clouds - north (SFO, 1991) (44 objects)",
     "fields": ["Name","Coordinates","HII region","HII region size","Distance (kpc)","Diameter"]
