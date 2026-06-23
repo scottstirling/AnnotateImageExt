@@ -98,6 +98,14 @@
     "fields": ["ID","Name", "Diameter", "Coordinates"]
   },
   {
+    "className": "RCWCatalog",
+    "id": "RCW",
+    "name": "Rodgers, Cambell, Whiteoak (RCW)",
+    "file": "RCW-Catalog-of-Halpha-Emission-Regions-in-the-Southern-Milky-Way-1960-for-Pixinsight.csv",
+    "description": "Catalog of Hα Emission Regions in the Southern Milky Way (RCW, 1960) (181 objects)",
+    "fields": ["Name","Coordinates", "Diameter", "Other name"]
+  },
+  {
     "className": "SandqvistLindroosCatalog",
     "id": "SandqvistLindroos",
     "name": "Sandqvist & Lindroos",
