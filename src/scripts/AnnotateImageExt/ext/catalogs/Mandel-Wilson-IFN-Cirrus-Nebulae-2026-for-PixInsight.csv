@@ -1,10 +1,10 @@
-id,alpha,delta,diameter,minAxis,axisRatio,posAngle,Common name,Source,Notes & Other IDs
-MW1,37.955,+89.264108,600.00,480.00,1.25,45,Polaris Nebula,SIMBAD (Polaris),Planck,Includes Polaris (α UMi); part of Sh 2-178 (HII) and LBN 606; very diffuse cirrus.
-MW2,159.750,+73.400000,480.00,360.00,1.33,125,Angel Nebula,M–W catalogue, survey,Ambient Milky Way cirrus. Not NGC 2170 (Monoceros).
-MW3,142.500,+70.183333,300.00,240.00,1.25,35,Volcano Nebula,M–W, IRIS image,Encompasses cirrus around M81/M82 group.
-MW4,128.750,+60.150000,240.00,180.00,1.33,70,Animal Track Nebula,M–W, DSS,Patchy dust lanes north of Ursa Major.
-MW5,94.500,+64.466667,240.00,180.00,1.33,55,Fish Hook Nebula,M–W, Planck,Curved cirrus (“hook” shape) in Cam.–Lynx.
-MW6,94.750,+74.816667,240.00,180.00,1.33,100,Bay Area Nebula,M–W, IRIS,Diffuse cloud near Camelopardalis.
-MW7,43.750,+81.750000,240.00,180.00,1.33,90,Cow Nebula,M–W, DSS mosaic,Denser IFN region near North Celestial Pole; cluster NGC 188 at one edge.
-MW8,280.250,+40.083333,180.00,120.00,1.50,20,Horns of Vega,M–W, emission survey,"Faint HII region (""Horns of Vega"")."
-MW9,258.500,-77.533,300.00,180.00,1.67,140,South Celestial Serpent,M–W, Planck,Southern IFN near south pole; often called “South Celestial Serpent”.
+id,alpha,delta,magnitude,diameter,axisRatio,posAngle,Common name,minAxis
+MW1,37.96,89.26,,600,1.25,45,Polaris Nebula,480
+MW2,159.75,73.40,,480,1.33,125,Angel Nebula,360
+MW3,142.50,70.18,,300,1.25,35,Volcano Nebula,240
+MW4,128.75,60.15,,240,1.33,70,Animal Track Nebula,180
+MW5,94.50,64.47,,240,1.33,55,Fish Hook Nebula,180
+MW6,94.75,74.82,,240,1.33,100,Bay Area Nebula,180
+MW7,43.75,81.75,,240,1.33,90,Cow Nebula,180
+MW8,280.25,40.08,,180,1.5,20,Horns of Vega,120
+MW9,258.50,-77.53,,300,1.67,140,South Celestial Serpent,180
