@@ -1,0 +1,38 @@
+id,alpha,delta,diameter,majAxis,minAxis,axisRatio,posAngle,Common name
+Local Void,279.50,18.00,9000,,,,,Local Void
+Bootes Void,222.50,46.00,1200,,,,,Bootes Void
+Eridanus Supervoid,48.75,-19.58,600,,,,,CMB Cold Spot
+Virgo Supercluster,187.50,12.00,6600,,,,,Local Supercluster
+Laniakea,243.80,-60.90,6000,,,,,Laniakea Supercluster
+Shapley Supercluster,201.25,-30.00,1800,,,,,Shapley Concentration
+Centaurus Supercluster,195.00,-32.00,2400,,,,,Centaurus Supercluster
+Perseus-Pisces Supercluster,37.50,40.00,3000,,,,,Perseus-Pisces Supercluster
+LMC,80.89,-69.75,600,600,540,0.90,170,Large Magellanic Cloud
+SMC,13.18,-72.82,300,300,180,0.60,45,Small Magellanic Cloud
+Perseus Molecular Cloud,53.75,31.20,360,360,120,0.33,60,Perseus Cloud
+Orion Molecular Cloud,82.50,-04.00,600,,,,,Orion Complex
+Taurus Molecular Cloud,67.50,26.00,900,,,,,Taurus Cloud
+Rho Ophiuchi Cloud,247.00,-24.50,390,390,270,0.69,0,Ophiuchus Complex
+Camelopardalis Cloud,52.50,59.00,600,,,,,Cam Dark Cloud
+Aries Molecular Cloud,43.75,20.00,300,,,,,Aries Cloud
+Great Rift,292.50,10.00,4800,4800,600,0.13,60,Dark Rift
+Cygnus Rift,307.50,40.00,1200,1200,600,0.50,50,Northern Coalsack
+Aquila Rift,285.00,05.00,900,900,300,0.33,45,Aquila Rift
+Vulpecula Rift,292.50,23.00,600,600,300,0.50,50,Vulpecula Rift
+Vela SNR,128.75,-45.16,480,,,,,Vela Supernova Remnant
+Gum Nebula,127.50,-45.00,2160,,,,,Gum 84
+Barnard's Loop,81.75,-03.00,840,840,600,0.71,0,Sh2-276
+Eridanus Superbubble,67.50,-15.00,1200,,,,,Orion-Eridanus Superbubble
+Cygnus Superbubble,307.50,41.00,900,,,,,Cygnus X Region
+Great Attractor,243.75,-60.90,1200,,,,,Great Attractor
+Scorpius-Centaurus Association,232.50,-40.00,1800,,,,,Sco-Cen OB Association
+Orion OB1 Association,82.50,-02.00,900,900,600,0.67,0,Orion OB1
+Perseus OB2 Association,56.25,32.00,600,600,300,0.50,60,Perseus OB2
+Cygnus OB2 Association,308.25,41.30,120,,,,,Cygnus OB2
+Zone of Avoidance,266.25,-29.00,21600,21600,1200,0.05,31.4,Galactic Obscuration Zone
+ZoA (Sagittarius),266.25,-29.00,10800,10800,1200,0.11,31.4,Zone of Avoidance Sag area
+ZoA (Cygnus),307.50,40.00,10800,10800,1200,0.11,36,Zone of Avoidance Cyg area
+ZoA (Perseus),45.00,45.00,10800,10800,1200,0.11,36,Zone of Avoidance Per area
+Sagittarius A*,17.76,-29.01,0.000012,0.000012,0.000006,0.50,82,Supermassive Black Hole
+Sagittarius A,17.76,-29.01,3.5,3.5,2.5,0.71,45,Sgr A Complex
+Galactic Center,266.25,-29.00,,,,,,Sagittarius A

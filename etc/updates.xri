@@ -1,34 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xri version="1.0">
    <description>
-      <h2>Stirling Astrophoto PixInsight Repository</h2>
+      <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
    </description>
-   <!-- ===================================================================== -->
-   <!-- 1. LEGACY RELEASE (PixInsight 1.8.9 through 1.9.3)                    -->
-   <!-- ===================================================================== -->
-   <!-- Serves older SpiderMonkey 2014-compatible script to legacy systems.   -->
-   <!-- Targets all systems w/SpiderMonkey 2014 JS <= PixInsight 1.9.3        -->
-   <platform os="all" arch="noarch" version="1.8.9-1:1.9.3">
-      <package fileName="2026-XX-XX-AnnotateImageExt.tar.gz" sha1="TODO" type="script" releaseDate="TBD">
+   <platform os="all" arch="noarch" version="1.9.4:1.9.10">
+      <package fileName="2026-06-23-AnnotateImageExt.tar.gz" sha1="TODO" type="script" releaseDate="20260623">
 	 <title>AnnotateImageExt, install / update TBD</title>
          <description>
-            <p>TODO</p>
-            <p>For more information on AnnotateImageExt, please refer to:
-	      <ul><li>TBD</li><li>https://github.com/scottstirling/AnnotateImageExt</li></ul>
+            <p>Enhances PixInsight image annotation with several essential updated catalogs and flat file-based catalog and catalog layers configuration.</p>
+            <p>For more information on AnnotateImageExt, please find me on Astrobin (scottstirling) or refer to:
+	      <ul><li>https://github.com/scottstirling/AnnotateImageExt</li></ul>
             </p>
             <p>Copyright (c) 2026 Scott Stirling. All Rights Reserved.</p>
-         </description>
-      </package>
-   </platform>
-   <!-- ===================================================================== -->
-   <!-- 2. MODERN RELEASE (PixInsight 1.9.4 and Newer)                       -->
-   <!-- ===================================================================== -->
-   <!-- Serves the new V8 JavaScript script to all OS platforms universally.  -->
-   <platform os="all" arch="noarch" version="1.9.4:1.9.10">
-      <package fileName="2026-XX-XX-AnnotateImageExt.tar.gz" sha1="TODO" type="script" releaseDate="TBD">
-	 <title>AnnotateImageExt, install / update 2026 TBD</title>
-         <description>
-            <p>Release optimized for the V8 JavaScript engine in PixInsight 1.9.4+.</p>
          </description>
       </package>
    </platform>

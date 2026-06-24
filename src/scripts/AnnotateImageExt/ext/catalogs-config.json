@@ -92,6 +92,14 @@
     "lineWidth": "4"
   },
   {
+    "className": "MandelWilsonCatalog",
+    "id": "MW",
+    "name": "Mandel-Wilson (MW)",
+    "file": "Mandel-Wilson-IFN-Cirrus-Nebulae-2026-for-PixInsight.csv",
+    "description": "Catalogue of Unexplored Nebulae (Mandel-Wilson, 2005) (9 objects)",
+    "fields": ["Name","Coordinates","Diameter","Common Name"]
+  },
+  {
     "className": "MBMCatalog",
     "id": "MBM",
     "name": "Magnani, Blitz & Mundi (MBM)",
@@ -146,6 +154,14 @@
     "file": "SFO-Bright-Rimmed-Clouds-Northern-1991-for-PixInsight.csv",
     "description": "Bright Rimmed Clouds - north (SFO, 1991) (44 objects)",
     "fields": ["Name","Coordinates","HII region","HII region size","Distance (kpc)","Diameter"]
+  },
+  {
+    "className": "VeryLargeObjectsCatalog",
+    "id": "VLO",
+    "name": "Very Large Scale",
+    "file": "Very-Large-Scale-astro-phenomena-2026-Stirling-for-Pixinsight.csv",
+    "description": "Very Large Objects (Stirling, 2026) (31 objects)",
+    "fields": ["Name","Coordinates","Diameter","Common name"]
   }
 ]
 

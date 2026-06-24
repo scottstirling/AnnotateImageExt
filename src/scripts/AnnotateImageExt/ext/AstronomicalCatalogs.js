@@ -102,10 +102,11 @@ var CatalogRegistry = class
    static loadCatalogsFromJSON(jsonFilePath) {
       // TODO: not sure whether to keep "catalogs" subdirectory name hard-coded but, 
       // for now, keeps the files separate from the js files dir, relative to LocalFileCatalog path logic
+	   // and being able to resolve files relative to the working script is helpful/useful
       const CATALOGS_SUBDIR = "catalogs"; // relative to the current js script
 
       if (!File.exists(jsonFilePath)) {
-          console.writeln("** Error: file not found: " + jsonFilePath);
+          console.writeln("** Error: catalogs external configuration file not found at: " + jsonFilePath);
           return;
       }
 
@@ -973,6 +974,8 @@ var LocalFileCatalog = class extends Catalog
          if ( !Parameters.getBoolean( "non_interactive" ) )
             (new MessageBox( "<p>Unable to load local catalog file:</p>" +
                              "<p>" + this.catalogPath + "</p>", TITLE, StdIcon.Error, StdButton.Ok )).execute();
+	      // NEW
+	      throw new Error("LocalFileCatalog: file not found at the specified location; specify a file path, or uncheck or disable the catalog layer.");
          return false;
       }
       return true;
@@ -4302,12 +4305,14 @@ var CustomCatalog = class extends LocalFileCatalog
       {
          if ( !Parameters.getBoolean( "non_interactive" ) )
             (new MessageBox( "CustomCatalog: no file path specified", TITLE, StdIcon.Error, StdButton.Ok )).execute();
+	      throw new Error("CustomCatalog: no file path specified; specify a file path, or uncheck or remove the catalog layer.");
          return false;
       }
       if ( !File.exists( this.catalogPath ) )
       {
          if ( !Parameters.getBoolean( "non_interactive" ) )
             (new MessageBox( "CustomCatalog: No such file exists on the local filesystem", TITLE, StdIcon.Error, StdButton.Ok )).execute();
+	      throw new Error("CustomCatalog: No such file exists on the local filesystem; create the specified file or uncheck or remove the catalog layer.");
          return false;
       }
       return true;
