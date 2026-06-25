@@ -1,12 +1,29 @@
 # AnnotateImage Extended with New Features, Fixes and Catalogs
 
-AnnotateImage is a great tool developed with extensive features by PixInsight user Andres del Pozo and Juan Conejero of PixInsight, often in response to PixInsight Forum user requests.  It has a lot of cool features that I would say almost no one knows about.  I will list a couple existing features that are worth it:
+## Installation
+
+### PixInsight version required:  PixInsight 1.9.4  
+### Repository URL:  https://pixinsight.stirlingastrophoto.com/scripts/AnnotateImageExt/
+
+In PixInsight menus, go to RESOURCES-->Updates-->Manage Repositories and use the "Add" button to add the repository URL (including the slash at the end)
+
+## Introduction
+Before I go into what I've done with `AnnotateImageExt`, I want to recognize `AnnotateImage` as a great tool developed with extensive useful features by PixInsight user Andres del Pozo and lead engineer Juan Conejero of PixInsight, often in rapid response to PixInsight Forum user requests.  I am grateful to them and those who built and helped shaped the tool.  AnnoateImage out-of-the-box has a lot of cool features that more users should know about and try.  I will list a couple existing features that are worth it:
 
 - magnitude filtering on catalogs with magnitude values
 - automated export of annotation details to a text file
 - astronomical catalog layering and prioritization with automatic de-duplication (enabled by default) and highly configurable labels and lines
 - optional label display of auxiliary catalog data, where supported, such as "Common name" or "Diameter" or "Type," etc.
 - built-in catalogs, dynamic Vizier query catalogs and user-defined (in PixInsight CSV format) Custom catalogs
+
+### Limitations
+- Many of the catalogs included with PixInsight for annotation are oriented towards stars and galaxies.  There are only a few nebula catalogs included.  The essential Messier, NGC-IC and NamedStars are there on the file system, and there are precanned Vizier queries and logic to pull in data for Lynds' Bright Nebula (LBN), Lynds Dark Nebula (LDN), Barnard's dark nebula (B) and Sharpless 2 (Sh 2), a popular catalog for astrophotographers but one dated with many notable inaccuracies and miscategorized objects that have been updated and sorted since.
+- All of the PixInsight astronomical catalog to date have very northern celestial hemisphere focused with no built-in support for very well known catalogs of the southern hemisphere.  Many astrophotographers are sharing data and equipment around the world in places like Atacama, Chile and Namibia in Southern Africa and Yunnan Province in China with access to the southern night sky and they are using PixInsight.
+- Astrobin uses PixInsight AnnotateImage as an API and tool to automate annotations for subscribers.  The catalogs and options available through Astrobin are a subset of what is available in PixInsight, but more importantly, there are so many images annotated on Astrobin with an equatorial grid and a bunch of annotated stars or barefly visible PGC galaxies in the background because they imaged some very well-known MBM or Gum or RCW or Sandqvist object that will never show up when Messier, NGC-IC, LDN, LBN, Sharpless, Melotte, Collinder, Cederblad and Barnard (to name a feww) were all working solely in the northern hemisphere until technology and economics and time started bringing astrophotography to more of the globe.
+- Custom catalogs seemed to be the main if not only way to reliably get updated and important catalogs into the PixInsight annotation subsystem
+- Complex catalog layer configuration settings can be wiped out by misconfiguring a Custom catalog path (bug caused by late validation of configuration and persistence of invalid settings), causing frustration and lost time
+- Awareness and appreciation of scale in astronomy, astrophysics and astrophotography through annotations and specialized catalogs is something of interest to me, so I started a catalog of catalogs of what I call *Very Large Scale Astro Phenomena,* a work in progress included in this project.
+
 
 ## New Features
 
@@ -45,6 +62,9 @@ Externalization of catalog registration and layers confifguration to a JSON conf
 - whether the catalog layer is visible in the layers configuration screen by default
 - currently a hard-coded "catalogs" subdirectory for the "system" scripts, but plans to support any file path users want to use to separate from system configs
 
+### Codebase founded on AnnotateImage.js, AnnotationEngine.js and astrometry/AstronomicalCatalogs.js
+
+I started with AnnotateImage v 2.3.0 which came out with PixInsight 1.9.4 and updated the code with the latest build of PixInsight and v 2.3.1 of AnnotateImage this week (6/25/2026).
 
 ### Better error handling for Custom catalog users (see Bugs fixed below for more details) and protection for configuration changes and settings.
 
