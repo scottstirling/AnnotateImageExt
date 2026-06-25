@@ -11,10 +11,11 @@ mkdir -vp ${BUILD_DIR}/src/scripts/${NAME}
 #mkdir -vp ${BUILD_DIR}/doc/scripts/${NAME}
 
 #TODO: update for AnnotateImageExt
-cp -vR src/scripts/${NAME}/* etc/*.xsgn README.md LICENSE ${BUILD_DIR}/src/scripts/${NAME}/
+cp -vR src/scripts/${NAME}/* etc/*.xsgn README.md ${BUILD_DIR}/src/scripts/${NAME}/
 #cp -rv doc/scripts/${NAME}/*.html ${BUILD_DIR}/doc/scripts/${NAME}/
 
-tar -C ${BUILD_DIR} -czvf ${TGZ_FILENAME} doc/ src/
+#tar -C ${BUILD_DIR} -czvf ${TGZ_FILENAME} doc/ src/
+tar -C ${BUILD_DIR} -czvf ${TGZ_FILENAME} src/
 
 echo "sha1sum ${TGZ_FILENAME}: `sha1sum ${TGZ_FILENAME}`"
 

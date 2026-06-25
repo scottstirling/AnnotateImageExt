@@ -120,7 +120,7 @@
     "id": "NamedStarsIAU",
     "name": "Named Stars IAU",
     "file": "NamedStars-IAU-06-24-2026-for-PixInsight.csv",
-    "description": "Named Stars IAU 2026 (IAU, 2026) (3,671 stars)",
+    "description": "Named Stars IAU 2026 (IAU, 2026) (3671 stars)",
     "fields": ["ID","Name", "Diameter", "Coordinates"]
   },
   {
