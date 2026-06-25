@@ -1,10 +1,10 @@
 // ----------------------------------------------------------------------------
 // PixInsight JavaScript Runtime API - PJSR Version 2.0
 // ----------------------------------------------------------------------------
-// GraphicProperties.js - Released 2026-03-26T21:05:57Z
+// GraphicProperties.js - Released 2026-05-11T18:30:06Z
 // ----------------------------------------------------------------------------
 //
-// This file is part of AnnotateImage script version 2.3.0
+// This file is part of AnnotateImage script version 2.3.1
 //
 // Copyright (c) 2013-2026 Andres del Pozo
 // Copyright (c) 2019-2026 Juan Conejero (PTeam)
@@ -252,4 +252,4 @@ var GraphicProperties = class extends PersistentObject
 };
 
 // ----------------------------------------------------------------------------
-// EOF GraphicProperties.js - Released 2026-03-26T21:05:57Z
+// EOF GraphicProperties.js - Released 2026-05-11T18:30:06Z

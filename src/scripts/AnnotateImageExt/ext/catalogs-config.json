@@ -116,6 +116,14 @@
     "fields": ["ID","Name", "Diameter", "Coordinates"]
   },
   {
+    "className": "NamedStarIAUCatalog",
+    "id": "NamedStarsIAU",
+    "name": "Named Stars IAU",
+    "file": "NamedStars-IAU-06-24-2026-for-PixInsight.csv",
+    "description": "Named Stars IAU 2026 (IAU, 2026) (3,671 stars)",
+    "fields": ["ID","Name", "Diameter", "Coordinates"]
+  },
+  {
     "className": "RCWCatalog",
     "id": "RCW",
     "name": "Rodgers, Cambell & Whiteoak (RCW)",

@@ -1,10 +1,10 @@
 // ----------------------------------------------------------------------------
 // PixInsight JavaScript Runtime API - PJSR Version 2.0
 // ----------------------------------------------------------------------------
-// Layer.js - Released 2026-03-26T21:05:57Z
+// Layer.js - Released 2026-05-11T18:30:06Z
 // ----------------------------------------------------------------------------
 //
-// This file is part of AnnotateImage script version 2.3.0
+// This file is part of AnnotateImage script version 2.3.1
 //
 // Copyright (c) 2013-2026 Andres del Pozo
 // Copyright (c) 2019-2026 Juan Conejero (PTeam)
@@ -932,10 +932,42 @@ LayerRegistry.register( new ConstBordersLayer() );
 // ----------------------------------------------------------------------------
 
 /*
- * A Layer to draws objects acquired from a catalog.
+ * A Layer to draw objects acquired from a catalog.
  */
 var CatalogLayer = class extends Layer
 {
+   static LabelStore = class extends Array
+   {
+      constructor()
+      {
+         super();
+      }
+
+      add( label )
+      {
+         let hash = label.hash64();
+         let i = 0;
+         for ( let n = this.length; n > 0; )
+         {
+            let h = n >>> 1;
+            let m = i + h;
+            if ( hash < this[m] )
+               n = h;
+            else
+            {
+               i  = m + 1;
+               n -= h + 1;
+            }
+         }
+         if ( i == this.length || i == 0 || this[i-1] != hash )
+         {
+            this.splice( i, 0, hash );
+            return true;
+         }
+         return false;
+      }
+   };
+
    constructor( catalog )
    {
       super( catalog.name, catalog.description );
@@ -943,7 +975,7 @@ var CatalogLayer = class extends Layer
       this.catalog = catalog;
       this.maxObjects = -1;
       this.properties.push( ["catalog",    ExtDataType.Persistent] );
-      this.properties.push( ["maxObjects", DataType.Uint32] );
+      this.properties.push( ["maxObjects", DataType.Int32] );
       this.gprops.labelFields = catalog.GetDefaultLabels();
    }
 
@@ -1121,6 +1153,8 @@ var CatalogLayer = class extends Layer
       }
 
       if ( this.gprops.showLabels )
+      {
+         let labelStore = new CatalogLayer.LabelStore;
          if ( entities )
          {
             let font = this.newLabelFont( engine.graphicsScale*engine.textScale );
@@ -1132,6 +1166,7 @@ var CatalogLayer = class extends Layer
                                     markerIndex ? markerIndex[i] : -1,
                                     objects[i],
                                     this.gprops.labelFields[l],
+                                    labelStore,
                                     l,
                                     font,
                                     drawInfo[i].size + hole,
@@ -1148,14 +1183,16 @@ var CatalogLayer = class extends Layer
                      this.DrawLabel( g,
                                     objects[i],
                                     this.gprops.labelFields[l],
+                                    labelStore,
                                     l,
                                     drawInfo[i].size + hole,
                                     drawInfo[i].pI,
                                     engine.graphicsScale );
          }
+      }
    }
 
-   createLabelEntities( entities, markerIndex, object, field, align, font, size, pI, graphicsScale )
+   createLabelEntities( entities, markerIndex, object, field, store, align, font, size, pI, graphicsScale )
    {
       if ( field == null || field.length == 0 )
          return;
@@ -1164,18 +1201,28 @@ var CatalogLayer = class extends Layer
       if ( field == "Name" )
       {
          if ( object.name )
+         {
             if ( this.catalog.translateGreekLetters )
                label = [this.catalog.translateGreekLetters( object.name )];
             else
                label = [object.name];
+
+            if ( !store.add( label[0] ) )
+               return;
+         }
       }
       else if ( field == "Common name" )
       {
          if ( object[field] )
+         {
             if ( this.catalog.translateGreekLetters )
                label = [this.catalog.translateGreekLetters( object[field] )];
             else
                label = [object[field]];
+
+            if ( !store.add( label[0] ) )
+               return;
+         }
       }
       else if ( field == "Coordinates" )
       {
@@ -1184,16 +1231,22 @@ var CatalogLayer = class extends Layer
                   DMSangle.FromAngle( object.posRD.y ).ToString( false/*hours*/, precision )];
       }
       else if ( field == "Magnitude" && object.magnitude != null )
+      {
          label = [format( "%.2f", object.magnitude )];
+      }
       else if ( object[field] )
+      {
          label = [object[field]];
+         if ( !store.add( label[0] ) )
+            return;
+      }
 
-      if ( label == null )
+      if ( label === null )
          return;
 
       for ( let line = 0; line < label.length; ++line )
       {
-         let text = label[line].replace( /\s+/, ' ', 'g' );
+         let text = label[line].replaceAll( /\s+/g, ' ' );
          let rect = font.tightBoundingRect( text );
          let width = rect.width;
          let height = 1.3*rect.height;
@@ -1274,7 +1327,7 @@ var CatalogLayer = class extends Layer
       }
    }
 
-   DrawLabel( g, object, field, align, size, pI, graphicsScale )
+   DrawLabel( g, object, field, store, align, size, pI, graphicsScale )
    {
       if ( field == null || field.length == 0 )
          return;
@@ -1282,7 +1335,11 @@ var CatalogLayer = class extends Layer
       if ( field == "Name" )
       {
          if ( object.name )
+         {
             label = [object.name];
+            if ( !store.add( label[0] ) )
+               return;
+         }
       }
       else if ( field == "Coordinates" )
       {
@@ -1291,18 +1348,22 @@ var CatalogLayer = class extends Layer
                   DMSangle.FromAngle( object.posRD.y ).ToString( false/*hours*/, precision )];
       }
       else if ( field == "Magnitude" && object.magnitude != null )
+      {
          label = [format( "%.2f", object.magnitude )];
+      }
       else if ( object[field] )
+      {
          label = [object[field]];
-      else
-         return;
+         if ( !store.add( label[0] ) )
+            return;
+      }
 
-      if ( label == null )
+      if ( label === null )
          return;
 
       for ( let line = 0; line < label.length; ++line )
       {
-         let text = label[line].replace( /\s+/, ' ', 'g' );
+         let text = label[line].replaceAll( /\s+/g, ' ' );
          let rect = g.font.tightBoundingRect( text );
          let width = rect.width;
          let height = 1.3*rect.height;
@@ -1390,7 +1451,6 @@ var CatalogLayer = class extends Layer
    }
 };
 
-/* CatalogRegistry is defined in AstronomicalCatalogs.js */
 for ( let i = 0; i < CatalogRegistry.length; ++i )
    LayerRegistry.register( new CatalogLayer( CatalogRegistry.newCatalog( i ) ) );
 
@@ -1669,39 +1729,22 @@ var TextLayer = class extends Layer
 
    ExpandVariables( metadata, keywords )
    {
-      let expanded = this.text;
-
-      // RA
-      for ( const pos = ''; (pos = expanded.indexOf( "%RA" )) >= 0; )
-         expanded = expanded.replace( "%RA", DMSangle.FromAngle( metadata.ra/15 ).ToString( true ) );
-
-      // DEC
-      for ( const pos = ''; (pos = expanded.indexOf( "%DEC" )) >= 0; )
-         expanded = expanded.replace( "%DEC", DMSangle.FromAngle( metadata.dec ).ToString() );
-
-      // Resolution
-      for ( const pos = ''; (pos = expanded.indexOf( "%RESOLUTION" )) >= 0; )
-         expanded = expanded.replace( "%RESOLUTION", format( "%.3f", metadata.resolution*3600 ) );
-
-      // Resolution
-      for ( const pos = ''; (pos = expanded.indexOf( "%PROJECTION" )) >= 0; )
-         expanded = expanded.replace( "%PROJECTION", metadata.projection.name );
-
-      // Rotation
-      for ( const pos = ''; (pos = expanded.indexOf( "%ROTATION" )) >= 0; )
-      {
-         let rotation = metadata.GetRotation();
-         expanded = expanded.replace( "%ROTATION", format( "%.2f", rotation[0] ) + (rotation[1] ? " (flipped)" : "") );
-      }
+      let rotation = metadata.GetRotation();
+      let expanded = this.text
+         .replaceAll( "%RA", DMSangle.FromAngle( metadata.ra/15 ).ToString( true/*time*/ )
+            ).replaceAll( "%DEC", DMSangle.FromAngle( metadata.dec ).ToString()
+               ).replaceAll( "%RESOLUTION", format( "%.3f", metadata.resolution*3600 )
+                  ).replaceAll( "%PROJECTION", metadata.projection.name
+                     ).replaceAll( "%ROTATION", format( "%.2f", rotation[0] ) + (rotation[1] ? " (flipped)" : "") );
 
       // FITS Keyword
-      for ( const pos = ''; (pos = expanded.indexOf( "%KEY-" )) >= 0; )
+      for ( let pos = 0; (pos = expanded.indexOf( "%KEY-" )) >= 0; )
       {
          let keyIdx = TextLayer.#findKeyword( expanded.substr( pos+5 ), keywords );
          if ( keyIdx >= 0 )
          {
             let value = keywords[keyIdx].value.trim();
-            if ( value.charAt(0) == "'" )
+            if ( value.charAt( 0 ) == "'" )
                value = value.substr( 1 );
             if ( value.charAt( value.length-1 ) == "'" )
                value = value.substr( 0, value.length-1 );
@@ -1718,4 +1761,4 @@ var TextLayer = class extends Layer
 LayerRegistry.register( new TextLayer );
 
 // ----------------------------------------------------------------------------
-// EOF Layer.js - Released 2026-03-26T21:05:57Z
+// EOF Layer.js - Released 2026-05-11T18:30:06Z

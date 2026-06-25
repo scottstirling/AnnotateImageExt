@@ -1,6 +1,13 @@
 // ----------------------------------------------------------------------------
-// AnnotateImageExt.js
+// PixInsight JavaScript Runtime API - PJSR Version 2.0
 // ----------------------------------------------------------------------------
+// AnnotateImage.js - Released 2026-05-11T18:30:06Z
+// ----------------------------------------------------------------------------
+//
+// This file is part of AnnotateImage script version 2.3.1
+//
+// Copyright (c) 2013-2026 Andres del Pozo
+// Copyright (c) 2019-2026 Juan Conejero (PTeam)
 //
 // The use of this source code is governed by the PixInsight Class Library
 // License Version 2.0, which can be found in the LICENSE file included with
@@ -12,10 +19,10 @@
 
 #feature-id    AnnotateImageExt : Astrometry > AnnotateImageExt | Render > AnnotateImageExt
 #feature-icon  @script_icons_dir/AnnotateImage.svg
-#feature-info  A script for annotating astronomical images extended.<br/>\
+#feature-info  An astrometry-based script for annotating astronomical images.<br/>\
                <br/>\
                Copyright &copy; 2012-2026 Andr&eacute;s del Pozo<br/>\
-               Copyright &copy; 2019-2026, Juan Conejero (PTeam) \
+               Copyright &copy; 2019-2026, Juan Conejero (PTeam) <br/>\
                Copyright &copy; 2026, Scott Stirling
 
 CoreApplication.ensureMinimumVersion( 1, 9, 4 );
@@ -77,6 +84,7 @@ function main()
       }
    }
 
+   engine.SaveParameters();
    engine.Render();
 
    ++Runtime.jsScriptResult;
@@ -87,4 +95,5 @@ function main()
 main();
 
 #endif // !USE_ANNOTATE_LIBRARY
-
+// ----------------------------------------------------------------------------
+// EOF AnnotateImage.js - Released 2026-05-11T18:30:06Z

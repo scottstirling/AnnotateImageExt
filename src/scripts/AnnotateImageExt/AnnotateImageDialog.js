@@ -1,10 +1,10 @@
 // ----------------------------------------------------------------------------
 // PixInsight JavaScript Runtime API - PJSR Version 2.0
 // ----------------------------------------------------------------------------
-// AnnotateImageDialog.js - Released 2026-03-26T21:05:57Z
+// AnnotateImageDialog.js - Released 2026-05-11T18:30:06Z
 // ----------------------------------------------------------------------------
 //
-// This file is part of AnnotateImage script version 2.3.0
+// This file is part of AnnotateImage script version 2.3.1
 //
 // Copyright (c) 2013-2026 Andres del Pozo
 // Copyright (c) 2019-2026 Juan Conejero (PTeam)
@@ -176,18 +176,15 @@ var AnnotateDialog = class extends Dialog
       }
 
       // ----------------------------------------------------------------------
-      // Information header
-      // ----------------------------------------------------------------------
 
       this.information_Label = new Label( this );
-      this.information_Label.frameStyle = FrameStyle.Box;
+      this.information_Label.cssId = "SCPInfoLabel";
       this.information_Label.minWidth = 45*this.font.width( 'M' );
-      this.information_Label.margin = 6;
       this.information_Label.wordWrapping = true;
       this.information_Label.useRichText = true;
-      this.information_Label.text = "<p><b>AnnotateImageExt v" + VERSION + "</b> &mdash; "
-         + "A script to annotate astronomical images.<br/>"
-         + "Copyright &copy; 2012-2026 Andr&eacute;s del Pozo | &copy; 2019-2026, Juan Conejero (PTeam)</p>";
+      this.information_Label.text = "<p><b>" + TITLE + " version " + VERSION + "</b><br/>"
+         + "Astrometry-based annotation of astronomical images.<br/>"
+         + "Copyright &copy; 2012-2026 Andr&eacute;s del Pozo | &copy; 2019-2026, Juan Conejero (PTeam) | &copy; 2026, S. Stirling</p>";
 
       // ----------------------------------------------------------------------
       // Layers
@@ -541,7 +538,7 @@ var AnnotateDialog = class extends Dialog
       //
 
       this.dropShadow_CheckBox = new CheckBox( this );
-      this.dropShadow_CheckBox.text = "Drop shadow";
+      this.dropShadow_CheckBox.text = "Drop shadow:";
       this.dropShadow_CheckBox.checked = this.engine.dropShadow;
       this.dropShadow_CheckBox.toolTip = "<p>Generate a drop shadow effect for the entire "
          + "annotation. This can be useful to improve readability of markers and labels over "
@@ -549,12 +546,38 @@ var AnnotateDialog = class extends Dialog
       this.dropShadow_CheckBox.onCheck = function( checked )
       {
          this.dialog.engine.dropShadow = checked;
+         this.dialog.shadowOffset_SpinBox.enabled = checked;
+         this.dialog.verticalShadow_CheckBox.enabled = checked;
+      };
+
+      this.shadowOffset_SpinBox = new SpinBox( this );
+      this.shadowOffset_SpinBox.toolTip = "<p>Drop shadow offset in pixels.</p>";
+      this.shadowOffset_SpinBox.setRange( 1, 8 );
+      this.shadowOffset_SpinBox.value = this.engine.shadowOffset;
+      this.shadowOffset_SpinBox.enabled = this.engine.dropShadow;
+      this.shadowOffset_SpinBox.onValueUpdated = function( value )
+      {
+         this.dialog.engine.shadowOffset = value;
+      };
+
+      this.verticalShadow_CheckBox = new CheckBox( this );
+      this.verticalShadow_CheckBox.text = "Vertical";
+      this.verticalShadow_CheckBox.checked = this.engine.verticalShadow;
+      this.verticalShadow_CheckBox.enabled = this.engine.dropShadow;
+      this.verticalShadow_CheckBox.toolTip = "<p>If vertical shadow is enabled, the drop "
+         + "shadow simulates light coming from the zenith. If disabled, the drop shadow "
+         + "is offset by the specified number of pixels. </p>";
+      this.verticalShadow_CheckBox.onCheck = function( checked )
+      {
+         this.dialog.engine.verticalShadow = checked;
       };
 
       this.dropShadow_Sizer = new HorizontalSizer;
       this.dropShadow_Sizer.spacing = 4;
       this.dropShadow_Sizer.addUnscaledSpacing( this.labelWidth1 + ui4 );
       this.dropShadow_Sizer.add( this.dropShadow_CheckBox );
+      this.dropShadow_Sizer.add( this.shadowOffset_SpinBox );
+      this.dropShadow_Sizer.add( this.verticalShadow_CheckBox );
       this.dropShadow_Sizer.addStretch();
 
       //
@@ -695,7 +718,7 @@ var AnnotateDialog = class extends Dialog
 
       this.observationTime_Y_SpinBox = new SpinBox( this );
       this.observationTime_Y_SpinBox.toolTip = "<p>UTC date of observation, year.</p>";
-      this.observationTime_Y_SpinBox.setRange( -4000, +4000 );
+      this.observationTime_Y_SpinBox.setRange( -5000, +5000 );
       this.observationTime_Y_SpinBox.setFixedWidth( editWidth2 );
 
       this.observationTime_Y_Label = new Label( this );
@@ -851,8 +874,8 @@ var AnnotateDialog = class extends Dialog
       {
          this.dialog.updateEngineProperties();
          (new AnnotateDialog.PreviewDialog( this.dialog,
-                                             this.dialog.engine.RenderPreview(),
-                                             this.dialog.engine.metadata )).execute();
+                                            this.dialog.engine.RenderPreview(),
+                                            this.dialog.engine.metadata )).execute();
       };
 
       this.ok_Button = new PushButton( this );
@@ -905,7 +928,7 @@ var AnnotateDialog = class extends Dialog
       this.sizer.addSpacing( 4 );
       this.sizer.add( this.buttons_Sizer );
 
-      this.windowTitle = "Image Annotation Script";
+      this.windowTitle = TITLE;
 
       this.layers_TreeBox.currentNode = this.layers_TreeBox.child( 0 );
       this.activateLayer( this.layers_TreeBox.child( 0 ) );
@@ -982,9 +1005,11 @@ var AnnotateDialog = class extends Dialog
 
    updateObservationTime()
    {
-      let jd = this.engine.epoch;
+      let jd = this.engine.observationTime;
       if ( !jd )
-         jd = this.engine.epoch = 2451545.0;
+         jd = this.engine.observationTime =
+               this.engine.metadata.observationTime =
+                  this.engine.metadata.startTime = 2451545.0;
       let A = Math.jdToCalendarTime( jd );
       let hh = A[3]*24;
       let mm = Math.frac( hh )*60;
@@ -1018,9 +1043,9 @@ var AnnotateDialog = class extends Dialog
    {
       this.topocentric_CheckBox.checked = this.engine.topocentric;
       this.observerData_Control.enabled = this.engine.topocentric;
-      this.observerData_Control.setLongitude( this.engine.obsLongitude );
-      this.observerData_Control.setLatitude( this.engine.obsLatitude );
-      this.observerData_Control.setAltitude( this.engine.obsHeight );
+      this.observerData_Control.longitude = this.engine.obsLongitude;
+      this.observerData_Control.latitude = this.engine.obsLatitude;
+      this.observerData_Control.altitude = this.engine.obsHeight;
    }
 
    updateEngineProperties()
@@ -1039,11 +1064,13 @@ var AnnotateDialog = class extends Dialog
          this.engine.layers.push( node.frame.object );
       }
 
-      this.engine.epoch = this.observationTime();
+      this.engine.observationTime =
+         this.engine.metadata.observationTime =
+            this.engine.metadata.startTime = this.observationTime();
       this.engine.topocentric = this.topocentric_CheckBox.checked;
-      this.engine.obsLongitude = this.observerData_Control.longitude();
-      this.engine.obsLatitude = this.observerData_Control.latitude();
-      this.engine.obsHeight = this.observerData_Control.altitude();
+      this.engine.obsLongitude = this.observerData_Control.longitude;
+      this.engine.obsLatitude = this.observerData_Control.latitude;
+      this.engine.obsHeight = this.observerData_Control.altitude;
       return true;
    }
 
@@ -1061,4 +1088,4 @@ var AnnotateDialog = class extends Dialog
 };
 
 // ----------------------------------------------------------------------------
-// EOF AnnotateImageDialog.js - Released 2026-03-26T21:05:57Z
+// EOF AnnotateImageDialog.js - Released 2026-05-11T18:30:06Z

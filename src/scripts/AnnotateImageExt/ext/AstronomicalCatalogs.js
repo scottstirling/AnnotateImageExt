@@ -4,7 +4,7 @@
 //  / ____// /_/ / ___/ // _, _/   PixInsight JavaScript Runtime
 // /_/     \____/ /____//_/ |_|    PJSR Version 2.0
 // ----------------------------------------------------------------------------
-// AstronomicalCatalogs.js - Released 2026-03-26T21:05:13Z
+// AstronomicalCatalogs.js - Released 2026-06-20T17:44:05Z
 // ----------------------------------------------------------------------------
 // This file is part of the PixInsight JavaScript Runtime (PJSR).
 // PJSR is an ECMA-262-compliant framework for development of scripts on the
@@ -679,8 +679,8 @@ var DirEditControl = class extends Control
          gdd.caption = "Select XEPH Files Directory";
          if ( gdd.execute() )
          {
-            this.catalog.searchDirPath = gdd.directory;
-            this.path_Edit.text = gdd.directory;
+            this.catalog.searchDirPath = gdd.directoryPath;
+            this.path_Edit.text = gdd.directoryPath;
          }
       };
 
@@ -820,12 +820,18 @@ var CustomXEPHFiles = class extends CatalogWithMagnitudeFilters
       {
          if ( this.searchDirPath.length > 0 )
          {
-            xephFiles = searchDirectory( this.searchDirPath + "/*.xeph" );
-            if ( xephFiles.length == 0 )
-               console.writeln( "<end><cbr><br>* Custom XEPH Files: No ephemeris files were found on directory: <raw>" + this.searchDirPath + "</raw>" );
+            console.writeln( "<end><cbr><br>Searching for XEPH files: <raw>" + this.searchDirPath + "</raw>" );
+            xephFiles = File.searchDirectory( this.searchDirPath + "/*.xeph" );
+            if ( xephFiles.length > 0 )
+            {
+               xephFiles.sort();
+               console.writeln( xephFiles.length.toString() + " XEPH file(s) found." );
+            }
+            else
+               console.warningln( "* Custom XEPH Files: No ephemeris files were found on directory: <raw>" + this.searchDirPath + "</raw>" );
          }
          else
-            console.writeln( "<end><cbr><br>* Custom XEPH Files: No search directory has been specified." );
+            console.criticalln( "* Custom XEPH Files: No search directory has been specified." );
       }
       else
       {
@@ -836,7 +842,7 @@ var CustomXEPHFiles = class extends CatalogWithMagnitudeFilters
          if ( !this.xephFilePath3.isEmpty() )
             xephFiles.push( this.xephFilePath3 );
          if ( xephFiles.length == 0 )
-            console.writeln( "<end><cbr><br>* Custom XEPH Files: No ephemeris files have been specified." );
+            console.criticalln( "<end><cbr><br>* Custom XEPH Files: No ephemeris files have been specified." );
       }
 
       let P = Catalog.newPosition( metadata );
@@ -845,7 +851,7 @@ var CustomXEPHFiles = class extends CatalogWithMagnitudeFilters
       {
          let xephFilePath = xephFiles[j];
          console.writeln( "<end><cbr><br>Searching ephemeris file: <raw>" + xephFilePath + "</raw>" );
-         processEvents();
+         CoreApplication.processEvents();
 
          let E = new EphemerisFile( xephFilePath );
 
@@ -863,7 +869,7 @@ var CustomXEPHFiles = class extends CatalogWithMagnitudeFilters
             if ( !Parameters.getBoolean( "non_interactive" ) )
                (new MessageBox( "<p>Observation time out of range.</p>" +
                                 "<p>Requested time: " + P.TDB.toISOString() + " TDB</p>" +
-                                "<p>The ephemeris file #" + idx.toString() + " covers the following time span:</p>" +
+                                "<p>The ephemeris file #" + (j+1).toString() + " covers the following time span:</p>" +
                                 "<p>Start time: " + E.startTime.toISOString() + " TDB<br/>" +
                                 "End time:   " + E.endTime.toISOString() + " TDB</p>",
                                 TITLE, StdIcon.Error, StdButton.Ok )).execute();
@@ -1111,8 +1117,6 @@ var LocalFileCatalog = class extends Catalog
    }
 };
 
-
-// ----------------------------------------------------------------------------
 // NEW
 // Load external configuration file of file-based catalogs
 const CATALOGS_CONFIG_FILENAME = "catalogs-config.json";
@@ -1125,6 +1129,8 @@ if (File.exists(catalogsConfigJSON)) {
     console.warningln("Catalogs config file not found: " + catalogsConfigJSON);
 }
 CatalogRegistry.loadCatalogsFromJSON(catalogsConfigJSON);
+
+// ----------------------------------------------------------------------------
 
 /*
  * Messier Catalog (local CSV file)
@@ -1170,33 +1176,7 @@ var NGCICCatalog = class extends LocalFileCatalog
 
 CatalogRegistry.register( new NGCICCatalog );
 
-
-// START ---------------------------- TEMPLATE CODE FOR NEW LOCAL FILE CATALOG LAYER
-
-/*
- * Foo-Bar Catalog (local CSV file)
- */
-/*
-var FooBarCatalog = class extends LocalFileCatalog
-{
-   constructor()
-   {
-      super( "Foo-Bar", "Foo-Bar", "Foo-Bar.csv" ); // csv file path in script directory by default
-
-      this.description = "Foo and Bar catalogs (1234 objects)";
-      this.fields = [ "Name", "Coordinates", "Magnitude", "Diameter", "Common name", "PGC", "PGC2", "Messier" ]; // adjust custom fields as desired
-   }
-
-   GetConstructor()
-   {
-      return "new FooBarCatalog()";
-   }
-};
-
-CatalogRegistry.register( new FooBarCatalog );
-*/
-
-// ---------------------------- END TEMPLATE CODE FOR NEW LOCAL FILE CATALOG LAYER
+// ----------------------------------------------------------------------------
 
 /*
  * Named Stars Catalog (local CSV file)
@@ -1532,7 +1512,7 @@ var VizierCatalog = class extends CatalogWithMagnitudeFilters
                   this.bounds = new Rect( object.posRD.x, object.posRD.y, object.posRD.x, object.posRD.y );
             }
             ++querySize;
-            // processEvents();
+            // CoreApplication.processEvents();
             // if ( console.abortRequested )
             //    throw new Error( "<* abort *>" );
          }
@@ -4346,8 +4326,6 @@ var CustomCatalog = class extends LocalFileCatalog
          if ( gdd.execute() )
          {
             // AnnotateImageExt bug fix, fileName is deprecated, use filePath instead
-            // this.dialog.activeFrame.object.catalog.catalogPath = gdd.fileName;
-            // path_Edit.text = gdd.fileName;
             this.dialog.activeFrame.object.catalog.catalogPath = gdd.filePath;
             path_Edit.text = gdd.filePath;
          }
@@ -4392,3 +4370,6 @@ CatalogRegistry.register( new CustomCatalog );
 // ----------------------------------------------------------------------------
 
 #endif   // __PJSR_AstronomicalCatalogs_js
+
+// ----------------------------------------------------------------------------
+// EOF AstronomicalCatalogs.js - Released 2026-06-20T17:44:05Z

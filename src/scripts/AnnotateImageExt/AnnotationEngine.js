@@ -1,10 +1,10 @@
 // ----------------------------------------------------------------------------
 // PixInsight JavaScript Runtime API - PJSR Version 2.0
 // ----------------------------------------------------------------------------
-// AnnotationEngine.js - Released 2026-03-26T21:05:57Z
+// AnnotationEngine.js - Released 2026-05-11T18:30:06Z
 // ----------------------------------------------------------------------------
 //
-// This file is part of AnnotateImage script version 2.3.0
+// This file is part of AnnotateImage script version 2.3.1
 //
 // Copyright (c) 2013-2026 Andres del Pozo
 // Copyright (c) 2019-2026 Juan Conejero (PTeam)
@@ -42,7 +42,8 @@ var AnnotationEngine = class extends PersistentObject
             [ "optimizeLabelPlacement", DataType.Boolean     ],
             [ "dropShadow",             DataType.Boolean     ],
             [ "shadowOffset",           DataType.Uint8       ],
-            [ "epoch",                  DataType.Double      ],
+            [ "verticalShadow",         DataType.Boolean     ],
+            [ "observationTime",        DataType.Double      ],
             [ "topocentric",            DataType.Boolean     ],
             [ "obsLongitude",           DataType.Double      ],
             [ "obsLatitude",            DataType.Double      ],
@@ -65,6 +66,8 @@ var AnnotationEngine = class extends PersistentObject
       this.optimizeLabelPlacement = true;
       this.dropShadow = false;
       this.shadowOffset = 1;
+      this.verticalShadow = true;
+      this.observationTime = 2451545.0;
       this.topocentric = false;
       this.entityInfoPath = null;
       this.scalingFactor = 1.0;
@@ -96,7 +99,7 @@ var AnnotationEngine = class extends PersistentObject
          throw new Error( "The active image has no valid astrometric solution: " + window.mainView.id );
       }
 
-      this.epoch = this.metadata.observationTime ? this.metadata.observationTime : 2451545.0;
+      this.observationTime = this.metadata.observationTime ? this.metadata.observationTime : 2451545.0;
       this.topocentric = this.metadata.topocentric && this.metadata.obsLongitude != null && this.metadata.obsLatitude != null;
       this.obsLongitude = this.topocentric ? this.metadata.obsLongitude : 0;
       this.obsLatitude = this.topocentric ? this.metadata.obsLatitude : 0;
@@ -155,17 +158,6 @@ var AnnotationEngine = class extends PersistentObject
       layer.gprops.labelColor = 0xffffd700;
       layer.gprops.labelSize = 14;
       this.layers.push( layer );
-
-      // START TEMPLATE FOR NEW CUSTOM CATALOG LAYER
-      /*
-      layer = new CatalogLayer( new FooCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xff8080ff;
-      layer.gprops.labelColor = 0xff8080ff;
-      layer.gprops.labelSize = 16;
-      this.layers.push( layer );
-      */
-      // END TEMPLATE FOR NEW CUSTOM CATALOG LAYER
 
       // NEW
       if (catalogsConfig != null) { // catalogsConfig is initialized and loaded in AstronomicalCatalogs
@@ -783,8 +775,10 @@ var AnnotationEngine = class extends PersistentObject
          for ( let y = 0; y < i.height; ++y )
             for ( let x = 0; x < i.width; ++x )
                i[y][x] = Color.alphaF( b[y][x] );
+	 bmpShadow.clear();
 
          shadow.invert();
+	 if ( !this.verticalShadow )
          shadow.shiftBy( this.shadowOffset, this.shadowOffset );
          let G = Matrix.gaussianFilter( this.shadowOffset );
          shadow.convolveSeparable( G.rowVector( G.rows >> 1 ), G.rowVector( G.rows >> 1 ) );
@@ -906,6 +900,7 @@ var AnnotationEngine = class extends PersistentObject
             targetWindow.mainView.endProcess();
             targetWindow.show();
          }
+         raster.bmp.clear();
       }
 
       console.writeln( "<end><cbr>Rendition completed." );
@@ -1114,8 +1109,8 @@ var AnnotationEngine = class extends PersistentObject
 
    synchronizeMetadata()
    {
-      if ( this.epoch != null )
-         this.metadata.observationTime = this.epoch;
+      if ( this.observationTime != null )
+         this.metadata.observationTime = this.observationTime;
       if ( this.topocentric != null )
          this.metadata.topocentric = this.topocentric;
       if ( this.obsLongitude != null )
@@ -1128,4 +1123,4 @@ var AnnotationEngine = class extends PersistentObject
 };
 
 // ----------------------------------------------------------------------------
-// EOF AnnotationEngine.js - Released 2026-03-26T21:05:57Z
+// EOF AnnotationEngine.js - Released 2026-05-11T18:30:06Z   

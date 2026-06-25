@@ -2,6 +2,16 @@
 AnnotateImage Script Changelog
 ===============================================================================
 
+2026/03/30 - 2026/04/21 - v2.3.1
+
+- New drop shadow offset and vertical shadow parameters.
+
+- Prevent generation of duplicate object labels in catalog layers.
+
+- Corrected improper usage of the word "epoch" in our astrometry engine and
+  auxiliary classes.
+
+-------------------------------------------------------------------------------
 2026/03/03 - v2.3.0
 
 - Ported to the new V8 JavaScript runtime on PixInsight 1.9.4 Lockhart.
