@@ -5,7 +5,10 @@
 ### PixInsight version required:  PixInsight 1.9.4  
 ### Repository URL:  https://pixinsight.stirlingastrophoto.com/scripts/AnnotateImageExt/
 
-In PixInsight menus, go to RESOURCES-->Updates-->Manage Repositories and use the "Add" button to add the repository URL (including the slash at the end)
+- In PixInsight menus, go to RESOURCES-->Updates-->Manage Repositories
+- Use the "Add" button to add the repository URL (including the slash at the end): https://pixinsight.stirlingastrophoto.com/scripts/AnnotateImageExt/
+- Go to RESOURCES-->Updates-->Check for Updates and download the update
+- Restart PixInsight to finish the installation
 
 ## Introduction
 Before I go into what I've done with `AnnotateImageExt`, I want to recognize `AnnotateImage` as a great tool developed with extensive useful features by PixInsight user Andres del Pozo and lead engineer Juan Conejero of PixInsight, often in rapid response to PixInsight Forum user requests.  I am grateful to them and those who built and helped shaped the tool.  AnnoateImage out-of-the-box has a lot of cool features that more users should know about and try.  I will list a couple existing features that are worth it:
