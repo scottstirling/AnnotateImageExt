@@ -47,7 +47,7 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 - Magnani, Blitz and Mundy's *Molecular Gas at High Galactic Latitudes* (1985)
 - Mandel (Steve) and Wilson (Michael)'s catalog of nine integrated flux nebulae (IFN) aka galactic cirrus, *Catalogue of Unexplored Nebulae* (2004)
 - Sandqvist, A. and Lindroos, K.P.'s *Southern Dark Clouds* (1976) and Sandqvist's follow up, *More Southern Dark Dust Clouds* (1977)
-- Sugitanixi, Fukui and Ogura (SFO) catalogs of Brightr- Rimmed Clouds in the northern (1991) and southern (1994) hemispheres
+- Sugitanixi, Fukui and Ogura (SFO) catalogs of Bright-Rimmed Clouds in the northern (1991) and southern (1994) hemispheres
 - Stirling (my own) catalog of *Very Large Scale Astro Phenomena*, a work in progress focused on very wide field objects and structures sourced from other catalogs and tradition (2026)
 - Star cluster individual catalogs:
   - Collinder, P.A., *On Structural Properties of Open Clusters and Their Spatial Distribution* (1931)
@@ -55,12 +55,12 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 - Diffuse Nebulae individual catalog:
   - Cederblad, Sven *Catalog of bright diffuse Galactic nebulae* (1945)
 
-### Externalization of catalog registration and layers confifguration
+### Externalization of catalog registration and layers configuration
 
-Externalization of catalog registration and layers confifguration to a JSON configuration file: `catalogs-config.json`, including:
+Externalization of catalog registration and layers configuration to a JSON configuration file: `catalogs-config.json`, including:
 
 - catalog ids, name strings, file names, description strings and label fields
-- catalog layer settings, curently supporting label size, line width, label and line colors per catalog layer
+- catalog layer settings, currently supporting label size, line width, label and line colors per catalog layer
 - all layer and catalog preferences preserved on execution and resettable to defaults via the reset button if desired
 - whether the catalog layer is visible in the layers configuration screen by default
 - currently a hard-coded "catalogs" subdirectory for the "system" scripts, but plans to support any file path users want to use to separate from system configs
