@@ -11,7 +11,7 @@
 - Restart PixInsight to finish the installation
 
 ## Introduction
-Before I go into what I've done with `AnnotateImageExt`, I want to recognize `AnnotateImage` as a great tool developed with extensive useful features by PixInsight user Andres del Pozo and lead engineer Juan Conejero of PixInsight, often in rapid response to PixInsight Forum user requests.  I am grateful to them and those who built and helped shaped the tool.  AnnoateImage out-of-the-box has a lot of cool features that more users should know about and try.  I will list a couple existing features that are worth it:
+Before I go into what I've done with `AnnotateImageExt`, I want to recognize `AnnotateImage` as a great tool developed with extensive useful features by PixInsight user Andres del Pozo and lead engineer Juan Conejero of PixInsight, often in rapid response to PixInsight Forum user requests.  I am grateful to them and those who built and helped shaped the tool.  AnnotateImage out-of-the-box has a lot of cool features that more users should know about and try.  I will list a couple existing features that are worth it:
 
 - magnitude filtering on catalogs with magnitude values
 - automated export of annotation details to a text file
