@@ -3,8 +3,8 @@
    <description>
       <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
    </description>
-   <platform os="all" arch="noarch" version="1.9.4-1695:1.9.10">
-      <package fileName="2026-06-25-AnnotateImageExt.tar.gz" sha1="a8abccb2a70694208dbb44c1aed2e984f9a9dba5" type="script" releaseDate="20260625">
+   <platform os="all" arch="noarch" version="1.9.4.1695:1.9.9">
+      <package fileName="2026-06-26-AnnotateImageExt.tar.gz" sha1="b276778844b2b387b9d7c94ac64588b68aaa3d65" type="script" releaseDate="20260626">
          <title>AnnotateImageExt, install / update TBD</title>
          <description>
             <p>Enhances PixInsight image annotation with several essential updated catalogs and flat file-based catalog and catalog layers configuration.</p>
@@ -16,4 +16,4 @@
       </package>
    </platform>
 </xri>
-<Signature developerId="ScottStirling" timestamp="2026-06-26T12:09:57.418Z" encoding="Base64">IqNOAXEddObxnFuh59CkwcbtSN1q0gjvH8uuTJJWBhCIhxLpQYkrBoEfsqJVJ1qHZG27+Rfyi8DwBwO3th+wCA==</Signature>
+<Signature developerId="ScottStirling" timestamp="2026-06-26T12:38:52.277Z" encoding="Base64">eitZPTuiZcOMAC1UPfbKFPelwbWem5hnIKMLrZRcfW89hBD0ayBQANWOiy0LouMu/dq2hecIV3pcvNiGoF1OBg==</Signature>
