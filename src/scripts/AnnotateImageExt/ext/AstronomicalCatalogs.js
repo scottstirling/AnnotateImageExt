@@ -25,7 +25,7 @@
 
 // ----------------------------------------------------------------------------
 
-/* accessible configuration of dynamically loaded catalof configurations 
+/* accessible configuration of dynamically loaded catalog configurations 
  * after it is parsed and loaded in CatalogRegistry, below. The catalogsConfig
  * object is available to and used by AnnotationEngine.js. along with CatalogRegistry.*/
 var catalogsConfig = null;
