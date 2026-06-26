@@ -2,7 +2,7 @@
 
 ## Installation
 
-### PixInsight version required:  PixInsight 1.9.4  
+### PixInsight version required:  PixInsight 1.9.4, build 1695 (released 6/21/2026)
 ### Repository URL:  https://pixinsight.stirlingastrophoto.com/scripts/AnnotateImageExt/
 
 - In PixInsight menus, go to RESOURCES-->Updates-->Manage Repositories
