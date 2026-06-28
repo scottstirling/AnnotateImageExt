@@ -1,58 +1,50 @@
-id,alpha,delta,diameter,majAxis,minAxis,axisRatio,posAngle,Common name,Type,Source
+id,alpha,delta,diameter,majAxis,minAxis,axisRatio,posAngle,Other name,Type,Source
+Alpha Persei Cluster,51.617,48.975,480,243,243,1,0,Cl Melotte 20,OPEN_CLUSTER,SIMBAD
+Aquila Rift,278,5,1530,1530,300,0.2,45,“[DB2002b] G31.25+2”,RIFT,"Dutra and Bica, 2002"
+Aries Molecular Cloud,43.75,20,300,300,300,1,0,Aries Cloud,MOLECULAR_CLOUD,
+Barnard's Loop,81.75,-3.967,1200,1200,860,0.72,0,Sh2-276,SUPERBUBBLE_COMPONENT,SIMBAD
+Bootes Void,222.5,46,1200,1200,1200,1,0,Bootes Void,VOID,
+Camelopardalis Cloud,52.5,59,600,600,600,1,,Cam Dark Cloud,MOLECULAR_CLOUD,
+Cepheus CO Complex,321.792,73.987,1200,1200,1200,1,,“[DB2002b] G110+16.5”,,"Dutra and Bica, 2002"
+Centaurus Supercluster,195,-32,2400,2400,2400,1,,Centaurus Supercluster,,
+Coma Star Cluster,186.014,25.652,480,480,480,1,,Melotte 111,OPEN_CLUSTER,
+Cygnus OB2 Association,308.25,41.3,120,120,120,1,,Cygnus OB2,OB_ASSOC,
+Cygnus Rift,305.054,36.4,1410,1410,600,0.43,50,"Northern Coalsack, “[DB2002b] G74.75+0”",RIFT,
+Cygnus Superbubble,307.5,41,900,900,900,1,,Cygnus X Region,SUPERBUBBLE,
+Eridanus Superbubble,67.5,-15,1200,1200,1200,1,,Orion-Eridanus Superbubble,SUPERBUBBLE,
+Eridanus Supervoid,48.75,-19.58,600,600,600,1,,CMB Cold Spot,VOID,
 Galactic Center,266.25,-29,0,0,0,0,0,Sagittarius A,GALACTIC_CENTER,
-Sagittarius A*,17.76,-29.01,0.000012,0.000012,0.000006,0.5,82,Supermassive Black Hole,BLACK_HOLE,
-Sagittarius A,17.76,-29.01,3.5,3.5,2.5,0.71,45,Sgr A Complex,,
-Cygnus OB2 Association,308.25,41.3,120,,,,,Cygnus OB2,OB_ASSOC,
-SMC,13.18,-72.82,300,300,180,0.6,45,Small Magellanic Cloud,,
-Aries Molecular Cloud,43.75,20,300,,,,,Aries Cloud,MOLECULAR_CLOUD,
-Perseus Molecular Cloud,53.75,31.2,360,360,120,0.33,60,Perseus Cloud,MOLECULAR_CLOUD,
-Rho Ophiuchi Cloud,247,-24.5,390,390,270,0.69,0,Ophiuchus Complex,MOLECULAR_CLOUD,
-Vela SNR,128.75,-45.16,480,,,,,Vela Supernova Remnant,SNR,
-Vela Supernova Remnant,128.8,-45.2,480,480,480,1.00,,,SNR,Green SNR Catalog
-Alpha Persei Cluster,51,49,480,480,480,1.00,,,OPEN_CLUSTER,Melotte 20
-Coma Star Cluster,186,26,480,480,480,1.00,,,OPEN_CLUSTER,Melotte 111
-Eridanus Supervoid,48.75,-19.58,600,,,,,CMB Cold Spot,VOID,
-LMC,80.89,-69.75,600,600,540,0.9,170,Large Magellanic Cloud,,
-Orion Molecular Cloud,82.5,-4,600,,,,,Orion Complex,MOLECULAR_CLOUD,
-Camelopardalis Cloud,52.5,59,600,,,,,Cam Dark Cloud,MOLECULAR_CLOUD,
-Vulpecula Rift,292.5,23,600,600,300,0.5,50,Vulpecula Rift,RIFT,
-Perseus OB2 Association,56.25,32,600,600,300,0.5,60,Perseus OB2,OB_ASSOC,
-Barnards Loop,83,0,600,600,180,3.33,,,SUPERBUBBLE_COMPONENT,Large-scale Orion studies
-Lambda Orionis Ring,83.8,9.9,600,600,600,1.00,,,SUPERBUBBLE_COMPONENT,Sharpless
-Barnard's Loop,81.75,-3,840,840,600,0.71,0,Sh2-276,SUPERBUBBLE_COMPONENT,
-Taurus Molecular Cloud,67.5,26,900,,,,,Taurus Cloud,MOLECULAR_CLOUD,
-Aquila Rift,285,5,900,900,300,0.33,45,Aquila Rift,RIFT,
-Cygnus Superbubble,307.5,41,900,,,,,Cygnus X Region,SUPERBUBBLE,
-Orion OB1 Association,82.5,-2,900,900,600,0.67,0,Orion OB1,MOLECULAR_CLOUD,
-Perseus Molecular Cloud,54,31,900,900,600,1.50,,,MOLECULAR_CLOUD,Dame et al.
-Bootes Void,222.5,46,1200,,,,,Bootes Void,VOID,
-Cygnus Rift,307.5,40,1200,1200,600,0.5,50,Northern Coalsack,RIFT,
-Eridanus Superbubble,67.5,-15,1200,,,,,Orion-Eridanus Superbubble,SUPERBUBBLE,
-Great Attractor,243.75,-60.9,1200,,,,,Great Attractor,,
-Orion Molecular Cloud Complex,85,-5,1200,1200,900,1.33,,,MOLECULAR_CLOUD,Dame et al.
-Ophiuchus Molecular Cloud,247,-19,1200,1200,600,2.00,,,MOLECULAR_CLOUD,Dame et al.
-Hyades,66.8,15.9,1200,1200,1200,1.00,,,OPEN_CLUSTER,Gaia
-Perseus OB2 Association,53,31,1500,1500,900,1.67,,,OB_ASSOC,de Zeeuw et al. 1999
-Shapley Supercluster,201.25,-30,1800,,,,,Shapley Concentration,,
-Scorpius-Centaurus Association,232.5,-40,1800,,,,,Sco-Cen OB Association,,
-Orion OB1 Association,84,-1,1800,1800,1200,1.50,,,OB_ASSOC,Brown et al.
-Taurus Molecular Cloud,67,25,1800,1800,900,2.00,,,MOLECULAR_CLOUD,Dame et al.
-Gum Nebula,127.5,-45,2160,,,,,Gum 84,,
-Gum Nebula,136,-45,2160,2160,2160,1.00,,,HII_SUPERSHELL,Gum 1955
-Centaurus Supercluster,195,-32,2400,,,,,Centaurus Supercluster,,
-Summer Triangle,293,39,2400,2400,2100,1.14,,,ASTERISM,Traditional
-Orion-Eridanus Superbubble,75,-10,2700,2700,1800,1.50,,,SUPERBUBBLE,Heiles et al.
-Perseus-Pisces Supercluster,37.5,40,3000,,,,,Perseus-Pisces Supercluster,,
-Winter Hexagon,100,10,3600,3600,3000,1.20,,,ASTERISM,Traditional
+Great Attractor,243.75,-60.9,1200,1200,1200,1,0,Great Attractor,,
 Great Rift,292.5,10,4800,4800,600,0.13,60,Dark Rift,,
-Scorpius-Centaurus Association,240,-35,4800,4800,3600,1.33,,,OB_ASSOC,de Zeeuw et al. 1999
-Laniakea,243.8,-60.9,6000,,,,,Laniakea Supercluster,,
-North Polar Spur,330,40,6000,6000,1200,5.00,,,RADIO_LOOP_COMPONENT,Loop I studies
-Virgo Supercluster,187.5,12,6600,,,,,Local Supercluster,,
-Loop I,329,17.5,7200,7200,7200,1.00,,,RADIO_LOOP,Berkhuijsen 1971
-Ursa Major Moving Group,165,55,7200,7200,3600,2.00,,,MOVING_GROUP,Gaia
-Local Void,279.5,18,9000,,,,,Local Void,VOID,
-ZoA (Sagittarius),266.25,-29,10800,10800,1200,0.11,31.4,Zone of Avoidance Sag area,,
-ZoA (Cygnus),307.5,40,10800,10800,1200,0.11,36,Zone of Avoidance Cyg area,,
-ZoA (Perseus),45,45,10800,10800,1200,0.11,36,Zone of Avoidance Per area,,
-Zone of Avoidance,266.25,-29,21600,21600,1200,0.05,31.4,Galactic Obscuration Zone,,
+Gould’s Belt (center),24.63,48.13,0,0,0,0,0,,,
+Gum Nebula,136,-45,2400,2400,1800,0.75,,Gum 16,HII_SUPERSHELL,"Gum, 1955"
+Hyades (Tidal Radius),67.447,16.948,1200,1200,1200,1,0,"Cl Melotte 25, Cl Collinder 50",OPEN_CLUSTER,SIMBAD
+Lambda Orionis Ring,83.8,9.9,600,600,600,1,,,SUPERBUBBLE_COMPONENT,Sharpless
+Laniakea,243.8,-60.9,6000,6000,6000,1,,Laniakea Supercluster,,
+Lindblad’s Ring (center),37.98,60.5,0,0,0,0,0,CAS-Tau OB Association (center),HI_SUPERSHELL,
+LMC,80.89,-69.75,600,600,540,0.9,170,Large Magellanic Cloud,,
+Local Void,279.5,18,9000,9000,9000,1,,Local Void,VOID,
+Loop I,329,17.5,7200,7200,7200,1,,,RADIO_LOOP,"Berkhuijsen, 1971"
+Lupus DN Complex,242,-37.517,1100,1100,1100,1,,“[DB2002b] G340.55+10.61”,,"Dutra and Bica, 2002"
+North Polar Spur,330,40,6000,6000,1200,0.2,,,RADIO_LOOP_COMPONENT,Loop I studies
+Ophiuchus CO Complex,252.463,-23.282,1260,1260,1260,1,,“[DB2002b] G357.5+13.5”,,"Dutra and Bica, 2002"
+Ophiuchus Molecular Cloud,247,-19,1200,1200,600,0.5,,,MOLECULAR_CLOUD,Dame et al.
+Orion Molecular Cloud Complex,85,-5,1200,1200,900,0.75,,Orion Complex,MOLECULAR_CLOUD,Dame et al.
+Orion OB1 Association,84,-1,1800,1800,1200,0.67,,Orion OB1,OB_ASSOC,Brown et al.
+Orion-Eridanus Superbubble,75,-10,2700,2700,1800,0.67,,,SUPERBUBBLE,Heiles et al.
+Perseus Molecular Cloud,53.75,31.2,360,360,120,0.33,60,Perseus Cloud,MOLECULAR_CLOUD,
+Perseus OB2 Association,56.25,32,600,600,300,0.5,60,Perseus OB2,OB_ASSOC,
+Perseus OB2 CO Complex,59.654,32.633,1140,1140,1140,1,,“[DB2002b] G162.5-15.5”,,"Dutra and Bica, 2002"
+Perseus-Pisces Supercluster,37.5,40,3000,3000,3000,1,,Perseus-Pisces Supercluster,,
+Rho Ophiuchi Cloud,247,-24.5,390,390,270,0.69,0,Ophiuchus Complex,MOLECULAR_CLOUD,
+Sagittarius A*,17.76,-29.01,0,0.000012,0.000006,0.5,82,Supermassive Black Hole,BLACK_HOLE,
+Scorpius-Centaurus Association,240,-35,4800,4800,3600,0.75,,Sco-Cen OB Association,OB_ASSOC,"de Zeeuw et al., 1999"
+Shapley Supercluster,201.25,-30,1800,1800,1800,0,,Shapley Concentration,,
+Serpens DN Complex,277.5,-2.25,900,900,900,1,,“[DB2002b] G28.48+3.74”,,"Dutra and Bica, 2002"
+SMC,13.18,-72.82,300,300,180,0.6,45,,,
+Taurus DN Complex,67.75,26.833,850,850,850,1,,“[DB2002b] G171.88-14.53”,MOLECULAR_CLOUD,"Dutra and Bica, 2002"
+Taurus Molecular Cloud,67,25,1800,1800,900,0.5,,,MOLECULAR_CLOUD,Dame et al.
+Ursa Major Moving Group,165,55,7200,7200,3600,0.5,,,MOVING_GROUP,Gaia
+Vela SNR,128.5,-45.833,255,255,255,1,0,"Vela Supernova Remnant, “SNR G263.9-03.3”",SNR,"Green SNR Catalog, 2025"
+Virgo Supercluster,187.5,12,6600,6600,6600,1,,Local Supercluster,,
+Vulpecula Rift,294.221,23.079,540,540,300,0.56,50,"Vulpecula Rift, “[DB2002b] G74.75+0”",RIFT,"Dutra and Bica, 2002"

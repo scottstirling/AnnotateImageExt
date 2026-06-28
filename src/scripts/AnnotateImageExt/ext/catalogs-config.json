@@ -37,6 +37,14 @@
     "fields": ["Id","RA", "Dec", "Diameter", "Name"]
   },
   {
+    "className": "DBWCatalog",
+    "id": "DBW",
+    "name": "DBW",
+    "file": "DWB-Cygnus_X_Region-1969-for-PixInsight.csv",
+    "description": "Cygnus X Region Catalogue... (Dickel, Wendker & Bieritz, 1969) (193 objects)",
+    "fields": ["Coordinates", "Name", "GName", "Diameter"]
+  },
+  {
     "className": "DutraBicaCatalog",
     "id": "DutraBica",
     "name": "Dutra and Bica",
@@ -48,6 +56,22 @@
     "labelSize": "16",
     "lineColor": "0xffa500ff",
     "lineWidth": "4"
+  },
+  {
+    "className": "FeSt1Catalog",
+    "id": "FeSt1",
+    "name": "FeSt1",
+    "file": "FeSt-1-Dark_Nebulae-1984-for-PixInsight.csv",
+    "description": "Catalogue of *dark nebulae* for galactic longitudes 240 to 360 degrees (Feitzinger & Stüwe, 1984) (489 DNe)",
+    "fields": ["Name", "Coordinates", "Diameter", "Area", "Common name"]
+  },
+  {
+    "className": "FeSt2Catalog",
+    "id": "FeSt2",
+    "name": "FeSt2",
+    "file": "FeSt-2-Globules-1984-for-PixInsight.csv",
+    "description": "Catalogue of *globules* for galactic longitudes 240 to 360 degrees, ) (311 globules)",
+    "fields": ["Name", "Coordinates", "Common name"]
   },
   {
     "className": "GreenSNRCatalog",
@@ -79,19 +103,6 @@
     "fields": ["Coordinates", "Name", "Diameter", "MinorAxis", "Density"]
   },
   {
-    "className": "MWSCCatalog",
-    "id": "MWSC",
-    "name": "Mlky Way Star Clusters (MWSC)",
-    "file": "Kharchenko-et-al-Clusters-Master-Catalog-2013-for-PixInsight.csv",
-    "description": "Milky Way Star Clusters Catalog (Kharchenko et al., 2013) (3006 clusters)",
-    "fields": ["Coordinates", "MWSC Id", "Name", "Diameter"],
-    "visible": "true",
-    "labelColor": "0xffff00ff",
-    "labelSize": "16",
-    "lineColor": "0xffff00ff",
-    "lineWidth": "4"
-  },
-  {
     "className": "MandelWilsonCatalog",
     "id": "MW",
     "name": "Mandel-Wilson (MW)",
@@ -116,12 +127,41 @@
     "fields": ["ID","Name", "Diameter", "Coordinates"]
   },
   {
-    "className": "NamedStarIAUCatalog",
-    "id": "NamedStarsIAU",
-    "name": "Named Stars IAU",
-    "file": "NamedStars-IAU-06-24-2026-for-PixInsight.csv",
-    "description": "Named Stars IAU 2026 (IAU, 2026) (3671 stars)",
-    "fields": ["ID","Name", "Diameter", "Coordinates"]
+    "className": "MessierCatalog",
+    "id": "Messier",
+    "name": "Messier",
+    "file": "Messier.csv",
+    "description": "Messier catalog (Messier) (110 objects)",
+    "fields":["Name", "Coordinates", "Magnitude", "Diameter", "Common name", "NGC/IC", "PGC"]
+  },
+  {
+    "className": "MWSCCatalog",
+    "id": "MWSC",
+    "name": "Mlky Way Star Clusters (MWSC)",
+    "file": "Kharchenko-et-al-Clusters-Master-Catalog-2013-for-PixInsight.csv",
+    "description": "Milky Way Star Clusters Catalog (Kharchenko et al., 2013) (3006 clusters)",
+    "fields": ["Coordinates", "MWSC Id", "Name", "Diameter"],
+    "visible": "true",
+    "labelColor": "0xffff00ff",
+    "labelSize": "16",
+    "lineColor": "0xffff00ff",
+    "lineWidth": "4"
+  },
+  {
+    "className": "NGCICCatalog",
+    "id": "NGC-IC",
+    "name": "NGC-IC",
+    "file": "NGC-IC.csv",
+    "description": "NGC and IC catalogs (9933 objects)",
+    "fields": ["Name", "Coordinates", "Magnitude", "Diameter", "Common name", "PGC", "PGC2", "Messier"]
+  },
+  {
+    "className": "PGCCCatalog",
+    "id": "PGCC",
+    "name": "PGCC",
+    "file": "PGCC-Planck_Catalogue_of_Galactic_Cold_Clumps-2016-for-PixInsight.csv",
+    "description": "Planck Catalogue of Galactic Cold Clumps (Planck et al, 2016) (13,242 objects)",
+    "fields": ["Name", "Coordinates", "Diameter", "Dist (kpc)", "Size (pc)", "Common name"]
   },
   {
     "className": "RCWCatalog",
@@ -166,10 +206,10 @@
   {
     "className": "VeryLargeScaleCatalog",
     "id": "VLS",
-    "name": "Very Large Scale",
+    "name": "Very Large Scale Astro Phenomena",
     "file": "Very-Large-Scale-astro-phenomena-2026-Stirling-for-Pixinsight.csv",
-    "description": "Very Large Objects (Stirling, 2026) (31 objects)",
-    "fields": ["Name","Coordinates","Diameter","Common name"]
+    "description": "Very Large Objects (Stirling, 2026) (49 objects)",
+    "fields": ["Coordinates","Name","Diameter","Other name","Type"]
   }
 ]
 

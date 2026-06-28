@@ -1130,54 +1130,6 @@ if (File.exists(catalogsConfigJSON)) {
 }
 CatalogRegistry.loadCatalogsFromJSON(catalogsConfigJSON);
 
-// ----------------------------------------------------------------------------
-
-/*
- * Messier Catalog (local CSV file)
- */
-var MessierCatalog = class extends LocalFileCatalog
-{
-   constructor()
-   {
-      super( "Messier", "Messier", "Messier.csv" );
-
-      this.description = "Messier catalog (110 objects)";
-      this.fields = [ "Name", "Coordinates", "Magnitude", "Diameter", "Common name", "NGC/IC", "PGC" ];
-   }
-
-   GetConstructor()
-   {
-      return "new MessierCatalog()";
-   }
-};
-
-CatalogRegistry.register( new MessierCatalog );
-
-// ----------------------------------------------------------------------------
-
-/*
- * NGC-IC Catalog (local CSV file)
- */
-var NGCICCatalog = class extends LocalFileCatalog
-{
-   constructor()
-   {
-      super( "NGC-IC", "NGC-IC", "NGC-IC.csv" );
-
-      this.description = "NGC and IC catalogs (9933 objects)";
-      this.fields = [ "Name", "Coordinates", "Magnitude", "Diameter", "Common name", "PGC", "PGC2", "Messier" ];
-   }
-
-   GetConstructor()
-   {
-      return "new NGCICCatalog()";
-   }
-};
-
-CatalogRegistry.register( new NGCICCatalog );
-
-// ----------------------------------------------------------------------------
-
 /*
  * Named Stars Catalog (local CSV file)
  */
@@ -1185,7 +1137,14 @@ var NamedStarsCatalog = class extends LocalFileCatalog
 {
    constructor()
    {
-      super( "NamedStars", "NamedStars", "NamedStars.csv" );
+      // TODO 
+      // NamedStars magnitude filtering could be abstracted and applied for other catalogs having magnitude values, 
+      // but quick way forward for a bunch of star name updates AND retention of the magnitude filter is to update 
+      // the CSV file and really no code change needed here, but this is more of a placeholder to look at abstracting 
+      // the magnitude filtering if possible and externalize the file name and other properties to catalog-condigs.json
+      // 
+      // super( "NamedStars", "NamedStars", "NamedStars.csv" );
+      super( "NamedStars", "NamedStars", "NamedStars-IAU-06-24-2026.csv" );
 
       this.description = "Named stars catalog (3671 objects)";
       this.fields = [ "Name", "Coordinates", "Magnitude", "Spectral type", "Common name", "HD", "HIP" ];

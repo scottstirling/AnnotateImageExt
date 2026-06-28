@@ -27,7 +27,7 @@
 
 CoreApplication.ensureMinimumVersion( 1, 9, 4 );
 
-#define VERSION "1.0.0"
+#define VERSION "1.0.1"
 #define TITLE "Annotate Image Ext"
 #define ANNOT_SETTINGS_MODULE "AnnotateImageExt"
 
@@ -41,14 +41,21 @@ CoreApplication.ensureMinimumVersion( 1, 9, 4 );
 #include <pjsr/astrometry/UtilityControls.js>
 #include <pjsr/controls/GeodeticCoordinatesEditor.js>
 #include <pjsr/controls/ImageView.js>
-
 #include "AnnotateImageDialog.js"
 #include "AnnotationEngine.js"
+
+// TODO: how to include and extend PixInsight src/script file paths in a cross-platform and not hard-coded way?
+//#include "/opt/PixInsight/src/scripts/AnnotateImage/Entity.js"
+//#include "/opt/PixInsight/src/scripts/AnnotateImage/GraphicProperties.js"
+//#include "/opt/PixInsight/src/scripts/AnnotateImage/Layer.js"
+
+// unmodified files copied to codebase and included due to PixInsight non-portable paths with src/scripts (above).
+// There is *no way to extend code like this in JS without writing a custom inclusion mechanism*
 #include "Entity.js"
 #include "GraphicProperties.js"
 #include "Layer.js"
 
-// ----------------------------------------------------------------------------
+#include "AsterismsLayer.js"
 
 #ifndef USE_ANNOTATE_LIBRARY
 
