@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xri version="1.0">
-   <description>
-      <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
-   </description>
-   <platform os="all" arch="noarch" version="1.9.4.1695:1.9.9">
-      <package fileName="2026-06-26-AnnotateImageExt.tar.gz" sha1="b276778844b2b387b9d7c94ac64588b68aaa3d65" type="script" releaseDate="20260626">
-         <title>AnnotateImageExt, install / update TBD</title>
-         <description>
-            <p>Enhances PixInsight image annotation with several essential updated catalogs and flat file-based catalog and catalog layers configuration.</p>
-            <p>For more information on AnnotateImageExt, please find me on Astrobin (scottstirling) or refer to:
-	      <ul><li>https://github.com/scottstirling/AnnotateImageExt</li></ul>
-            </p>
-            <p>Copyright (c) 2026 Scott Stirling. All Rights Reserved.</p>
-         </description>
-      </package>
-   </platform>
+  <description>
+     <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
+  </description>
+  <platform os="all" arch="noarch" version="1.9.4.1695:1.9.9">
+    <package fileName="2026-06-28-AnnotateImageExt.tar.gz" sha1="b276778844b2b387b9d7c94ac64588b68aaa3d65" type="script" releaseDate="20260628">
+    <title>AnnotateImageExt, install / update</title>
+    <description>
+    <p>Enhances PixInsight image annotation with several essential updated catalogs and flat file-based catalog and catalog layers configuration.</p>
+    <p>
+    <ul>
+      <li>Merge branch 'main' of github.com:scottstirling/AnnotateImageExt after using the GitHub web UI to make some metadata changes in .github/.</li>
+      <li>Add new catalog files and update comments in main js file</li>
+      <li>Add custom layer of non-constellation asterisms such as the Big Dipper, Little Dipper, Teapot, Winter Hexagon, etc. in AsterismsLayer.js and json data for lines and labels.
+      <br />Updates and fixes to NamedStars after IAU update (fixed Sadr in wrong row, removed dups of Propus).
+      <br />Move out-of-the-box Messier.csv and NGC-IC.csv into ext/catalogs/ to be loaded like the rest of the file catalogs, and remove hard-coded loading, but keep NamedStars updated catalog in parent directory because of its *magnitudes* and customized support for it in ext/AstronomicalCatalogs.js.
+      <br />Updated catalogs-config.json with 4 new catalogs:
+        <ul>
+            <li>catalogs/DWB-Cygnus_X_Region-1969-for-PixInsight.csv</li>
+            <li>catalogs/FeSt-1-Dark_Nebulae-1984-for-PixInsight.csv</li>
+            <li>catalogs/FeSt-2-Globules-1984-for-PixInsight.csv</li>
+            <li>catalogs/PGCC-Planck_Catalogue_of_Galactic_Cold_Clumps-2016-for-PixInsight.csv</li>
+          </ul>
+          <li>Add GitHub funding link for Scott Stirling</li>
+          <li>update dist and code comment typo</li>
+        </ul>
+      </p>
+      <p>For more information on AnnotateImageExt, please find me on Astrobin (scottstirling) or refer to:
+        <ul><li>https://github.com/scottstirling/AnnotateImageExt</li></ul>
+      </p>
+      <p>Copyright (c) 2026 Scott Stirling. All Rights Reserved.</p>
+      </description>
+    </package>
+  </platform>
 </xri>
-<Signature developerId="ScottStirling" timestamp="2026-06-26T12:38:52.277Z" encoding="Base64">eitZPTuiZcOMAC1UPfbKFPelwbWem5hnIKMLrZRcfW89hBD0ayBQANWOiy0LouMu/dq2hecIV3pcvNiGoF1OBg==</Signature>

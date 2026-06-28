@@ -39,13 +39,16 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 - Blitz, Fich and Stark (BFS), *Catalog of CO Radial Velocities toward Galactic H II Regions* (1982)
 - Caldwell's 109 Deep Sky objects with O'Meara updates (2002)
 - Classic complements to Sharpless 2 for the southern hemisphere: 
-  - Gum's *Southern_HII_Regions* (1955)
+  - Gum's *Southern HII Regions* (1955)
   - Rogers, Campbell and Whiteoak (RCW)'s *Catalog of Halpha Emission Regions in the Southern Milky Way* (1960)
 - Dutra and Bica's *Dust Clouds* of 2002, incorporating Barnard, LDN, MBM and more in a comprehensive catalog of dark nebula and molecular clouds with DB2002b ID and "Common name" label options
+- DWB, i.e., Dickela, Hélène R. and Wendker, Heinrich and Bieritz, J.H., *The Cygnus X Region V. Catalogue and Distances of Optically Visible H II Regions* (1969)
 - D. Green's updated *A Catalog of Galactic Supernova Remnants* (2025)
+- FeSt 1, FeSt 2, Feitzinger, J.V. and Stüwe, J.A., *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (1984)
 - Kharchenko et al's *Global Survey of Star Clusters in the Milky Way II*, (2013) containing all the open clusters across catalogs and hemispheres with MWSC ID and "Common name" label options
 - Magnani, Blitz and Mundy's *Molecular Gas at High Galactic Latitudes* (1985)
 - Mandel (Steve) and Wilson (Michael)'s catalog of nine integrated flux nebulae (IFN) aka galactic cirrus, *Catalogue of Unexplored Nebulae* (2004)
+- PGCC, the Planck Collaboration's *Planck 2015 Results. XXVIII. The Planck Catalogue of Galactic Cold Clumps*
 - Sandqvist, A. and Lindroos, K.P.'s *Southern Dark Clouds* (1976) and Sandqvist's follow up, *More Southern Dark Dust Clouds* (1977)
 - Sugitanixi, Fukui and Ogura (SFO) catalogs of Bright-Rimmed Clouds in the northern (1991) and southern (1994) hemispheres
 - Stirling (my own) catalog of *Very Large Scale Astro Phenomena*, a work in progress focused on very wide field objects and structures sourced from other catalogs and tradition (2026)
@@ -54,6 +57,8 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
   - Melotte, P.J., *A Catalogue of Star Clusters shown on Franklin-Adams Chart Plates* (1915) with updated coordinates
 - Diffuse Nebulae individual catalog:
   - Cederblad, Sven *Catalog of bright diffuse Galactic nebulae* (1945)
+- Asterisms layer of well-known, non-constellation asterisms such as the Teapot, Winter Hexagon, Winter Triangle, Great Square, etc.
+- NamedStars catalog updated with IAU name changes of existing stars (no new stars added) up to June, 2026 
 
 ### Externalization of catalog registration and layers configuration
 
@@ -67,7 +72,7 @@ Externalization of catalog registration and layers configuration to a JSON confi
 
 ### Codebase founded on AnnotateImage.js, AnnotationEngine.js and astrometry/AstronomicalCatalogs.js
 
-I started with AnnotateImage v 2.3.0 which came out with PixInsight 1.9.4 and updated the code with the latest build of PixInsight and v 2.3.1 of AnnotateImage this week (6/25/2026).
+I started with AnnotateImage v 2.3.0 which came out with PixInsight 1.9.4 and updated the code with the latest build of PixInsight and v 2.3.1 of AnnotateImage in late June, 2026.
 
 ### Better error handling for Custom catalog users (see Bugs fixed below for more details) and protection for configuration changes and settings.
 
