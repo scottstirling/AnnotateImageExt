@@ -156,6 +156,14 @@
     "fields": ["Name", "Coordinates", "Magnitude", "Diameter", "Common name", "PGC", "PGC2", "Messier"]
   },
   {
+    "className": "PaladiniHIICatalog",
+    "id": "PBD2003",
+    "name": "Paladini HII+(Radio) (PBD2003)",
+    "file": "Paladini-et-al-A_Radio_Catalog_of_Galactic_HII_Regions-2003-for-PI.csv",
+    "description": "A radio catalog of Galactic HII regions... (Paladini et al, 2003) (1442 HIIReg)",
+    "fields": ["Name", "Coordinates", "Diameter"]
+  },
+  {
     "className": "PGCCCatalog",
     "id": "PGCC",
     "name": "PGCC",
@@ -210,6 +218,13 @@
     "file": "Very-Large-Scale-astro-phenomena-2026-Stirling-for-Pixinsight.csv",
     "description": "Very Large Objects (Stirling, 2026) (49 objects)",
     "fields": ["Coordinates","Name","Diameter","Other name","Type"]
+  },
+  {"className": "WISECatalog",
+    "id": "WISE",
+    "name": "WISE Galactic HII",
+    "file": "WISE_Catalog_of_Galactic_HII_Regions-Anderson-et-al-2014-for-PixInsight.csv",
+    "description": "WISE Catalog of Galactic HII Regions (Anderson et al, 2014) (8399  objects)",
+    "fields": ["Name", "Coordinates","WISE_GID","Diameter","HIIName"]
   }
 ]
 

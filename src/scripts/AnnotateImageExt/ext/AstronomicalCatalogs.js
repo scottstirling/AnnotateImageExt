@@ -1144,9 +1144,9 @@ var NamedStarsCatalog = class extends LocalFileCatalog
       // the magnitude filtering if possible and externalize the file name and other properties to catalog-condigs.json
       // 
       // super( "NamedStars", "NamedStars", "NamedStars.csv" );
-      super( "NamedStars", "NamedStars", "NamedStars-IAU-06-24-2026.csv" );
+      super( "NamedStars", "NamedStars IAU 2026", "NamedStars-IAU-06-24-2026.csv" ); // TODO: hardcoded path override
 
-      this.description = "Named stars catalog (3671 objects)";
+      this.description = "Named stars IAU update catalog (3671 objects)";
       this.fields = [ "Name", "Coordinates", "Magnitude", "Spectral type", "Common name", "HD", "HIP" ];
       this.filters = [ "V" ];
       this.magMin = Catalog.NullMag;
