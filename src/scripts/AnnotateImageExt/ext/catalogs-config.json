@@ -216,7 +216,7 @@
     "id": "VLS",
     "name": "Very Large Scale Astro Phenomena",
     "file": "Very-Large-Scale-astro-phenomena-2026-Stirling-for-Pixinsight.csv",
-    "description": "Very Large Objects (Stirling, 2026) (49 objects)",
+    "description": "Very Large Objects (Stirling, 2026) (281 objects)",
     "fields": ["Coordinates","Name","Diameter","Other name","Type"]
   },
   {"className": "WISECatalog",
