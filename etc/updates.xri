@@ -4,10 +4,16 @@
       <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
    </description>
    <platform os="all" arch="noarch" version="1.9.4.1695:1.9.9">
-      <package fileName="2026-07-01-AnnotateImageExt.tar.gz" sha1="3237729596a7a2ca660b582edd86e5b26a636f84" type="script" releaseDate="20260701">
+      <package fileName="2026-07-01-AnnotateImageExt.tar.gz" sha1="55ab468e74899b47b2aadf508ca29e98d5d1df7b" type="script" releaseDate="20260701">
          <title>AnnotateImageExt, install / update</title>
          <description>
-            <p>v1.1.5</p>
+	   <p>v1.2</p>
+             <ul>
+               <li>Fixed DWB Cygnus-X position angle values, which in 1969 original catalog tables were given in galactic center offset degrees rather than equatorial degrees.  A python script quickly converts all of them. Tested in comparison to Figure 1 in DWB's 1969 paper and they look correctly aligned!  Removed gigantic, hard to visualize, Fermi Bubble structures from Very Large Scale catalog.</li>
+               <li>update count of very large scale catalog in json config.</li>
+               <li>add script to log git history to unordered html list</li>
+             </ul> 
+           <p>v1.1.5</p>
             <ul>
                <li>Fix dev issue caused by extra commas in the id / name field, which was causing: &quot;*** Error: /opt/PixInsight/include/pjsr/astrometry/AstrometricMetadata.js:1815: SurfaceSplineEvaluate(): API function error (0x0001): Unknown error
 return this.spline.evaluate( p );
@@ -20,23 +26,22 @@ return this.spline.evaluate( p );
             </ul>
             <p>v1.1</p>
             <p>Enhances PixInsight image annotation with several essential updated catalogs and flat file-based catalog and catalog layers configuration.</p>
-            <p>
-               <ul>
-                  <li>Merge branch &apos;main&apos; of github.com:scottstirling/AnnotateImageExt after using the GitHub web UI to make some metadata changes in .github/.</li>
-                  <li>Add new catalog files and update comments in main js file</li>
-                  <li>Add custom layer of non-constellation asterisms such as the Big Dipper, Little Dipper, Teapot, Winter Hexagon, etc. in AsterismsLayer.js and json data for lines and labels.
+              <ul>
+                <li>Merge branch &apos;main&apos; of github.com:scottstirling/AnnotateImageExt after using the GitHub web UI to make some metadata changes in .github/.</li>
+                <li>Add new catalog files and update comments in main js file</li>
+                <li>Add custom layer of non-constellation asterisms such as the Big Dipper, Little Dipper, Teapot, Winter Hexagon, etc. in AsterismsLayer.js and json data for lines and labels.
         <br/>Updates and fixes to NamedStars after IAU update (fixed Sadr in wrong row, removed dups of Propus).
         <br/>Move out-of-the-box Messier.csv and NGC-IC.csv into ext/catalogs/ to be loaded like the rest of the file catalogs, and remove hard-coded loading, but keep NamedStars updated catalog in parent directory because of its *magnitudes* and customized support for it in ext/AstronomicalCatalogs.js.
         <br/>Updated catalogs-config.json with 4 new catalogs:
         <ul><li>catalogs/DWB-Cygnus_X_Region-1969-for-PixInsight.csv</li><li>catalogs/FeSt-1-Dark_Nebulae-1984-for-PixInsight.csv</li><li>catalogs/FeSt-2-Globules-1984-for-PixInsight.csv</li><li>catalogs/PGCC-Planck_Catalogue_of_Galactic_Cold_Clumps-2016-for-PixInsight.csv</li></ul>
       </li>
-                  <li>Add GitHub funding link for Scott Stirling</li>
-                  <li>update dist and code comment typo</li>
-               </ul>
-            </p>
-            <p>For more information on AnnotateImageExt, please find me on Astrobin (scottstirling) or refer to:
-      <ul><li>https://github.com/scottstirling/AnnotateImageExt</li></ul>
-    </p>
+                <li>Add GitHub funding link for Scott Stirling</li>
+                <li>update dist and code comment typo</li>
+             </ul>
+          </p>
+          <p>For more information on AnnotateImageExt, please find me on Astrobin (scottstirling) or refer to:
+            <ul><li>https://github.com/scottstirling/AnnotateImageExt</li></ul>
+          </p>
             <p>Copyright (c) 2026 Scott Stirling. All Rights Reserved.</p>
          </description>
       </package>

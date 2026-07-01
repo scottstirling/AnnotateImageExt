@@ -18,7 +18,7 @@
     "name": "Caldwell",
     "file": "Caldwell-Deep-Sky-109-with-OMeara-2002-updates-for-PixInsight.csv",
     "description": "Caldwell Objects (Caldwell and O'Meara, 2002) (109 objects)",
-    "fields": ["Id", "Name", "Magnitude", "RA", "Dec", "Diameter"]
+    "fields": ["Name","Coordinates","Diameter","Magnitude"]
   },
   {
     "className": "CederbladCatalog",
@@ -26,7 +26,7 @@
     "name": "Cederblad",
     "file": "Cederblad-Bright-Diffuse-Nebulae-1946-for-PixInsight.csv",
     "description": "Bright Diffuse Nebulae (Cederblad, 1946) (331 objects)",
-    "fields": ["Id", "Coordinates", "Diameter"]
+    "fields": ["Name", "Coordinates", "Diameter"]
   },
   {
     "className": "CollinderCatalog",
@@ -34,7 +34,7 @@
     "name": "Collinder",
     "file": "Collinder-Open-Clusters-1931-for-PixInsight.csv",
     "description": "Open Clusters (Collinder, 1931) (471 objects)",
-    "fields": ["Id","RA", "Dec", "Diameter", "Name"]
+    "fields": ["Name","Coordinates", "Diameter"]
   },
   {
     "className": "DBWCatalog",
@@ -42,7 +42,7 @@
     "name": "DBW",
     "file": "DWB-Cygnus_X_Region-1969-for-PixInsight.csv",
     "description": "Cygnus X Region Catalogue... (Dickel, Wendker & Bieritz, 1969) (193 objects)",
-    "fields": ["Coordinates", "Name", "GName", "Diameter"]
+    "fields": ["Name","Coordinates","Diameter"]
   },
   {
     "className": "DutraBicaCatalog",
@@ -124,7 +124,7 @@
     "name": "Melotte",
     "file": "Melotte_starclusters-1915-for_PixInsight.csv",
     "description": "Star Clusters (Melotte, 1915) (245 objects)",
-    "fields": ["ID","Name", "Diameter", "Coordinates"]
+    "fields": ["Name","Coordinates","Diameter","Long name"]
   },
   {
     "className": "MessierCatalog",
@@ -185,7 +185,7 @@
     "name": "Sandqvist & Lindroos",
     "file": "Sandqvist-and-Lindroos-Southern-Dark-Clouds-1976-for-PixInsight.csv",
     "description": "\"Southern Dark Clouds\" (Sandqvist & Lindroos, 1976) (42 objects)",
-    "fields": ["Coordinates","Name","Diameter", "Common name"]
+    "fields": ["Name","Coordinates","Diameter","Common name"]
   },
   {
     "className": "SandqvistCatalog",
@@ -193,7 +193,7 @@
     "name": "Sandqvist",
     "file": "Sandqvist-More_Southern_Dark_Dust_Clouds-1977-for-PixInsight.csv",
     "description": "\"More Southern Dark Dust Clouds\" (Sandqvist, 1977) (95 objects)",
-    "fields": ["ID","Name", "Diameter", "Coordinates"]
+    "fields": ["Name","Coordinates","Diameter","Common name"]
   },
   {
     "className": "SFOSouthCatalog",
@@ -201,7 +201,7 @@
     "name": "SFO BRC (south)",
     "file": "SFO-Bright-Rimmed-Clouds-Southern-1994-for-PixInsight.csv",
     "description": "Bright Rimmed Clouds - south (SFO, 1994) (42 objects)",
-    "fields": ["Coordinates","Name","Diameter", "HII region"]
+    "fields": ["Name","Coordinates","Diameter","HII region"]
   },
   {
     "className": "SFONorthCatalog",
@@ -216,7 +216,7 @@
     "id": "VLS",
     "name": "Very Large Scale Astro Phenomena",
     "file": "Very-Large-Scale-astro-phenomena-2026-Stirling-for-Pixinsight.csv",
-    "description": "Very Large Objects (Stirling, 2026) (281 objects)",
+    "description": "Very Large Objects (Stirling, 2026) (278 objects)",
     "fields": ["Coordinates","Name","Diameter","Other name","Type"]
   },
   {"className": "WISECatalog",
