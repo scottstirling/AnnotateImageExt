@@ -26,7 +26,7 @@
     "name": "Cederblad",
     "file": "Cederblad-Bright-Diffuse-Nebulae-1946-for-PixInsight.csv",
     "description": "Bright Diffuse Nebulae (Cederblad, 1946) (331 objects)",
-    "fields": ["Id", "Name", "Magnitude", "RA", "Dec", "Diameter"]
+    "fields": ["Id", "Coordinates", "Diameter"]
   },
   {
     "className": "CollinderCatalog",
@@ -140,7 +140,7 @@
     "name": "Mlky Way Star Clusters (MWSC)",
     "file": "Kharchenko-et-al-Clusters-Master-Catalog-2013-for-PixInsight.csv",
     "description": "Milky Way Star Clusters Catalog (Kharchenko et al., 2013) (3006 clusters)",
-    "fields": ["Coordinates", "MWSC Id", "Name", "Diameter"],
+    "fields": ["Name","Coordinates", "Diameter", "MWSC Id"],
     "visible": "true",
     "labelColor": "0xffff00ff",
     "labelSize": "16",
