@@ -100,7 +100,15 @@
     "name": "HMST",
     "file": "HMST-Hartley-et-al-Catalogue-of-Southern-Dark-Clouds-1986-for-PixInsight.csv",
     "description": "A Catalogue of Southern Dark Clouds (Hartley et al., 1986) (1101 objects)",
-    "fields": ["Coordinates", "Name", "Diameter", "MinorAxis", "Density"]
+    "fields": ["Name","Coordinates","Diameter","MinorAxis","Density","DCld Id"]
+  },
+  {
+    "className": "KJardineHIICatalog",
+    "id": "KJardineHII",
+    "name": "Integrated HII Nebulae Catalog, 2013",
+    "file": "An_Integrated_HII_Nebulae_Catalog-Jardine-2013-for-PixInsight.csv",
+    "description": "An Integrated HII Nebulae Catalog (Jardine, K., 2013) (733 objects)",
+    "fields": ["Name", "Coordinates", "Diameter"]
   },
   {
     "className": "MandelWilsonCatalog",
@@ -202,6 +210,14 @@
     "file": "SFO-Bright-Rimmed-Clouds-Southern-1994-for-PixInsight.csv",
     "description": "Bright Rimmed Clouds - south (SFO, 1994) (42 objects)",
     "fields": ["Name","Coordinates","Diameter","HII region"]
+  },
+  {
+    "className": "ShkCompactGroupsCatalog",
+    "id": "ShkCompactGroups",
+    "name": "Shk Compact Groups of Compact Galaxies",
+    "file": "Shakhbazian-et-al-The_Catalog_of_Compact_Groups_of_Compact_Galaxies-1979-for-PixInsight.csv",
+    "description": "Catalog of Compact Groups of Galaxies (Shakhbazian et al, 1979) (377 objects)",
+    "fields": ["Name","Coordinates","Magnitude","Diameter","Common name"]
   },
   {
     "className": "SFONorthCatalog",
