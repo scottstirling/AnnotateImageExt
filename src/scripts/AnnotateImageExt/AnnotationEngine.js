@@ -110,16 +110,15 @@ var AnnotationEngine = class extends PersistentObject
       console.writeln( "=".repeat( 98 ) );
    }
 
-   /* Utility function for parsing aRGB strings to numbers below */
+   /* Utility function for parsing aRGB strings to numbers below.  Would prefer to enter color names or something in the catalogs-config.js, like fonts, maybe a limited set, idk. */
    parseHexStringToColorNumber(hexString) {
-      // Clean up any leading '#', '0x', or '0X'
+      // trim leading '#', '0x', or '0X'
       const cleanHex = hexString.replace(/^#|^0x|^0X/, '');
-      // Convert the cleaned hex string into a 32-bit number
       const rgbaNum = parseInt(cleanHex, 16);
       // 3. Bit-shift the bytes from RGBA to ARGB
       // Moves RGB right by 8 bits, and places Alpha (lowest 8 bits) at the front
       const argbNum = (rgbaNum >>> 8) | ((rgbaNum & 0x000000FF) << 24);
-      // 4. Force to an unsigned 32-bit integer for engine safety
+      // 4. Force to an unsigned 32-bit integer 
       return argbNum >>> 0;
    }
 
@@ -152,31 +151,31 @@ var AnnotationEngine = class extends PersistentObject
       layer.gprops.labelSize = 32;
       this.layers.push( layer );
 
-      layer = new CatalogLayer( new NamedStarsCatalog );
-      layer.visible = true;
-      layer.gprops.lineColor = 0xffffd700;
-      layer.gprops.labelColor = 0xffffd700;
-      layer.gprops.labelSize = 14;
-      this.layers.push( layer );
-
-      // NEW
+      /**
+       * AnnotateImageExt related: when catalogConfig.default = "true", 
+       * add catalog layer from catalogs-confg.js and toggle visible 
+       * (checked -> enabled for display) if visible="true" in the config.
+       */
       if (catalogsConfig != null) { // catalogsConfig is initialized and loaded in AstronomicalCatalogs
 
-	     let catalogConfig = null; // used in the loop below
+         let catalogConfig = null; // used in the loop below
 
          for (let i = 0; i < catalogsConfig.length; ++i) {
 
             catalogConfig = catalogsConfig[i];
 
-	        console.writeln("Loading catalog config: " + catalogConfig.name);
-
+            if (catalogConfig.default) { // catalogs-config.json default="true" (default is false) 
+	        console.writeln("Loading catalog layer for: " + catalogConfig.name);
+	    } else {
+		 return;
+	    }
             layer = new CatalogLayer( CatalogRegistry.newCatalog(catalogConfig.id) );
 
-	     if (catalogConfig.visible) {
-                layer.visible = (catalogConfig.visible == "true"); // evaluate string value to a raw boolean
-	     } else {
-	        layer.visible = false;
-	     }
+	    if (catalogConfig.visible) { // catalogs-config.json visible="true" (default is false) 
+               layer.visible = (catalogConfig.visible == "true"); // evaluate string value to a raw boolean
+	    } else {
+	       layer.visible = false;
+	    }
 
 	     if (catalogConfig.labelColor) {
                 // layer.gprops.labelColor = parseInt(catalogConfig.labelColor, 16);
@@ -209,6 +208,17 @@ var AnnotationEngine = class extends PersistentObject
       }
       // END NEW CATALOG LAYERS
 
+    /****
+     * commented out to stop double adding these legacy default file catalogs,
+     * which are added by default in the catalogs-config.js
+     *
+      layer = new CatalogLayer( new NamedStarsCatalog );
+      layer.visible = true;
+      layer.gprops.lineColor = 0xffffd700;
+      layer.gprops.labelColor = 0xffffd700;
+      layer.gprops.labelSize = 14;
+      this.layers.push( layer );
+
       layer = new CatalogLayer( new MessierCatalog );
       layer.visible = true;
       layer.gprops.lineColor = 0xff8080ff;
@@ -222,6 +232,7 @@ var AnnotationEngine = class extends PersistentObject
       layer.gprops.labelColor = 0xffff8080;
       layer.gprops.labelSize = 16;
       this.layers.push( layer );
+      */
 
       layer = new CatalogLayer( new TychoCatalog );
       layer.visible = false;
@@ -775,11 +786,11 @@ var AnnotationEngine = class extends PersistentObject
          for ( let y = 0; y < i.height; ++y )
             for ( let x = 0; x < i.width; ++x )
                i[y][x] = Color.alphaF( b[y][x] );
-	 bmpShadow.clear();
+         bmpShadow.clear();
 
          shadow.invert();
-	 if ( !this.verticalShadow )
-         shadow.shiftBy( this.shadowOffset, this.shadowOffset );
+         if ( !this.verticalShadow )
+            shadow.shiftBy( this.shadowOffset, this.shadowOffset );
          let G = Matrix.gaussianFilter( this.shadowOffset );
          shadow.convolveSeparable( G.rowVector( G.rows >> 1 ), G.rowVector( G.rows >> 1 ) );
       }
@@ -1123,4 +1134,4 @@ var AnnotationEngine = class extends PersistentObject
 };
 
 // ----------------------------------------------------------------------------
-// EOF AnnotationEngine.js - Released 2026-05-11T18:30:06Z   
+// EOF AnnotationEngine.js - Released 2026-05-11T18:30:06Z

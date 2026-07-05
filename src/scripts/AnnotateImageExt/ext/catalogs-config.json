@@ -5,8 +5,8 @@
     "name": "Blitz, Fich & Stark (BFS)",
     "file": "BFS-Galactic-HII-Regions-1982-for-PixInsight.csv",
     "description": "Catalog of HII Regions (Blitz, Fich & Stark, 1982) (361 objects)",
-    "fields": ["Coordinates","Name","Diameter"],
-    "visible": "true",
+    "fields": ["Name","Coordinates","Diameter"],
+    "visible": "false",
     "labelColor": "0x70ffffff",
     "labelSize": "16",
     "lineColor": "0x70ffffff",
@@ -18,7 +18,9 @@
     "name": "Caldwell",
     "file": "Caldwell-Deep-Sky-109-with-OMeara-2002-updates-for-PixInsight.csv",
     "description": "Caldwell Objects (Caldwell and O'Meara, 2002) (109 objects)",
-    "fields": ["Name","Coordinates","Diameter","Magnitude"]
+    "fields": ["Name","Coordinates","Diameter","Magnitude"],
+    "default": "true",
+    "visible": "true"
   },
   {
     "className": "CederbladCatalog",
@@ -51,6 +53,7 @@
     "file": "Dutra-and-Bica-Dust-Clouds-2002-for-PixInsight.csv",
     "description": "Catalogue of Dust Clouds in the Galaxy (Dutra & Bica, 2002) (5004 objects)",
     "fields": ["Name","Coordinates", "Diameter", "Common name","Aka1"],
+    "default": "true",
     "visible": "true",
     "labelColor": "0xffa500ff",
     "labelSize": "16",
@@ -80,7 +83,8 @@
     "file": "Green-SNR-2025-for-PixInsight.csv",
     "description": "Galactic Super Nova Remnants (D. Green, 2025) (310 objects)",
     "fields": ["GId", "Name", "Coordinates", "Diameter", "Type", "AKA"],
-    "visible": "true",
+    "default": "true",
+    "visible": "false",
     "labelColor": "0x55ff55ff",
     "labelSize": "16",
     "lineColor": "0x55ff55ff",
@@ -108,7 +112,9 @@
     "name": "Integrated HII Nebulae Catalog, 2013",
     "file": "An_Integrated_HII_Nebulae_Catalog-Jardine-2013-for-PixInsight.csv",
     "description": "An Integrated HII Nebulae Catalog (Jardine, K., 2013) (733 objects)",
-    "fields": ["Name", "Coordinates", "Diameter"]
+    "fields": ["Name", "Coordinates", "Diameter"],
+    "default": "true",
+    "visible": "true"
   },
   {
     "className": "MandelWilsonCatalog",
@@ -140,7 +146,8 @@
     "name": "Messier",
     "file": "Messier.csv",
     "description": "Messier catalog (Messier) (110 objects)",
-    "fields":["Name", "Coordinates", "Magnitude", "Diameter", "Common name", "NGC/IC", "PGC"]
+    "fields":["Name", "Coordinates", "Magnitude", "Diameter", "Common name", "NGC/IC", "PGC"],
+    "default": "true"
   },
   {
     "className": "MWSCCatalog",
@@ -149,6 +156,7 @@
     "file": "Kharchenko-et-al-Clusters-Master-Catalog-2013-for-PixInsight.csv",
     "description": "Milky Way Star Clusters Catalog (Kharchenko et al., 2013) (3006 clusters)",
     "fields": ["Name","Coordinates", "Diameter", "MWSC Id"],
+    "default": "true",
     "visible": "true",
     "labelColor": "0xffff00ff",
     "labelSize": "16",
@@ -234,6 +242,7 @@
     "file": "Very-Large-Scale-astro-phenomena-2026-Stirling-for-Pixinsight.csv",
     "description": "Very Large Objects (Stirling, 2026) (278 objects)",
     "fields": ["Coordinates","Name","Diameter","Other name","Type"]
+    "default": "true"
   },
   {"className": "WISECatalog",
     "id": "WISE",
