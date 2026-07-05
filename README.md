@@ -21,12 +21,19 @@ Before I go into what I've done with `AnnotateImageExt`, I want to recognize `An
 
 ### Limitations
 - Many of the catalogs included with PixInsight for annotation are oriented towards stars and galaxies.  There are only a few nebula catalogs included.  The essential Messier, NGC-IC and NamedStars are there on the file system, and there are precanned Vizier queries and logic to pull in data for Lynds' Bright Nebula (LBN), Lynds Dark Nebula (LDN), Barnard's dark nebula (B) and Sharpless 2 (Sh 2), a popular catalog for astrophotographers but one dated with many notable inaccuracies and miscategorized objects that have been updated and sorted since.
+
 - All of the PixInsight astronomical catalog to date have very northern celestial hemisphere focused with no built-in support for very well known catalogs of the southern hemisphere.  Many astrophotographers are sharing data and equipment around the world in places like Atacama, Chile and Namibia in Southern Africa and Yunnan Province in China with access to the southern night sky and they are using PixInsight.
+
 - Astrobin uses PixInsight AnnotateImage as an API and tool to automate annotations for subscribers.  The catalogs and options available through Astrobin are a subset of what is available in PixInsight, but more importantly, there are so many images annotated on Astrobin with an equatorial grid and a bunch of annotated stars or barely visible PGC galaxies in the background because they imaged some very well-known MBM or Gum or RCW or Sandqvist object that will never show up when Messier, NGC-IC, LDN, LBN, Sharpless, Melotte, Collinder, Cederblad and Barnard (to name a few) were all working solely in the northern hemisphere until technology and economics and time started bringing astrophotography to more of the globe.
+
 - Custom catalogs seemed to be the main if not only way to reliably get updated and important catalogs into the PixInsight annotation subsystem
+
 - Complex catalog layer configuration settings can be wiped out by misconfiguring a Custom catalog path (bug caused by late validation of configuration and persistence of invalid settings), causing frustration and lost time
+
 - Vizier queries for LDN, LBN, Barnard and Sharpless are not that crucial as the nebulae catalogs, complete, are a few kilobytes each, and Vizier (and networks in general) is not 100% reliable, and a hanging Vizier query in annotation can freeze PixInsight, discourage users and confuse them as to what is even happening.  Network dependency can be reserved for very large catalogs, such as star and galaxy catalogs with millions to billions of objects, smaller catalog data can reside locally, and ...
+
 - Vizier queries could be externally configurable so that new ones can be defined without always having to write a new function in JavaScript, but this it not currently implemented.
+
 - Awareness and appreciation of scale in astronomy, astrophysics and astrophotography through annotations and specialized catalogs is something of interest to me, so I started a catalog of catalogs of what I call *Very Large Scale Astro Phenomena,* a work in progress included in this project.
 
 
@@ -49,6 +56,7 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 - Gum's *Southern HII Regions* (1955)
 - FeSt 1: Feitzinger, J.V. and Stüwe, J.A., *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (1984) (dark nebula)
 - FeSt 2: Feitzinger, J.V. and Stüwe, J.A., *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (1984) (globules)
+- Kevin Jardine's galaxymap.org *Integrated HII Regions Catalog* crossindex of BSF, Du, Gum, RCW, Sharpless 2, Sivan and more
 - MWSC: Kharchenko et al, *Global Survey of Star Clusters in the Milky Way II*, (2013) containing all the known open clusters across catalogs and hemispheres with MWSC ID and "Common name" label options
 - MBM: i.e., Magnani, Blitz and Mundy's *Molecular Gas at High Galactic Latitudes* (1985)
 - Mandel (Steve) and Wilson (Michael)'s catalog of nine integrated flux nebulae (IFN) aka galactic cirrus, *Catalogue of Unexplored Nebulae* (2004)
