@@ -6,11 +6,11 @@
     "file": "BFS-Galactic-HII-Regions-1982-for-PixInsight.csv",
     "description": "Catalog of HII Regions (Blitz, Fich & Stark, 1982) (361 objects)",
     "fields": ["Name","Coordinates","Diameter"],
-    "visible": "false",
+    "visible": false,
     "labelColor": "0x70ffffff",
-    "labelSize": "16",
+    "labelSize": 16,
     "lineColor": "0x70ffffff",
-    "lineWidth": "4"
+    "lineWidth": 4
   },
   {
     "className": "CaldwellCatalog",
@@ -19,8 +19,8 @@
     "file": "Caldwell-Deep-Sky-109-with-OMeara-2002-updates-for-PixInsight.csv",
     "description": "Caldwell Objects (Caldwell and O'Meara, 2002) (109 objects)",
     "fields": ["Name","Coordinates","Diameter","Magnitude"],
-    "default": "true",
-    "visible": "true"
+    "defaultSet": true,
+    "visible": true
   },
   {
     "className": "CederbladCatalog",
@@ -52,13 +52,13 @@
     "name": "Dutra and Bica",
     "file": "Dutra-and-Bica-Dust-Clouds-2002-for-PixInsight.csv",
     "description": "Catalogue of Dust Clouds in the Galaxy (Dutra & Bica, 2002) (5004 objects)",
-    "fields": ["Name","Coordinates", "Diameter", "Common name","Aka1"],
-    "default": "true",
-    "visible": "true",
+    "fields": ["Name","Coordinates","Diameter","DB2002b","Aka1"],
+    "defaultSet": true,
+    "visible": false,
     "labelColor": "0xffa500ff",
-    "labelSize": "16",
+    "labelSize": 16,
     "lineColor": "0xffa500ff",
-    "lineWidth": "4"
+    "lineWidth": 4
   },
   {
     "className": "FeSt1Catalog",
@@ -66,7 +66,7 @@
     "name": "FeSt1",
     "file": "FeSt-1-Dark_Nebulae-1984-for-PixInsight.csv",
     "description": "Catalogue of *dark nebulae* for galactic longitudes 240 to 360 degrees (Feitzinger & Stüwe, 1984) (489 DNe)",
-    "fields": ["Name", "Coordinates", "Diameter", "Area", "Common name"]
+    "fields": ["Name", "Coordinates", "Diameter", "Area", "Sandqvist"]
   },
   {
     "className": "FeSt2Catalog",
@@ -74,7 +74,7 @@
     "name": "FeSt2",
     "file": "FeSt-2-Globules-1984-for-PixInsight.csv",
     "description": "Catalogue of *globules* for galactic longitudes 240 to 360 degrees, ) (311 globules)",
-    "fields": ["Name", "Coordinates", "Common name"]
+    "fields": ["Name", "Coordinates", "AKA"]
   },
   {
     "className": "GreenSNRCatalog",
@@ -83,12 +83,12 @@
     "file": "Green-SNR-2025-for-PixInsight.csv",
     "description": "Galactic Super Nova Remnants (D. Green, 2025) (310 objects)",
     "fields": ["GId", "Name", "Coordinates", "Diameter", "Type", "AKA"],
-    "default": "true",
-    "visible": "false",
+    "defaultSet": true,
+    "visible": false,
     "labelColor": "0x55ff55ff",
-    "labelSize": "16",
+    "labelSize": 16,
     "lineColor": "0x55ff55ff",
-    "lineWidth": "4"
+    "lineWidth": 4
   },
   {
     "className": "GumCatalog",
@@ -96,7 +96,7 @@
     "name": "Gum",
     "file": "Gum-Southern_HII_Regions_1955_revised-by-Kevin-Jardine-2009-for-PI.csv",
     "description": "Gum Southern HII Regions (Gum, 1955) (85 objects)",
-    "fields": ["Name", "Coordinates", "Diameter", "Common name"]
+    "fields": ["Name", "Coordinates", "Diameter", "Other name"]
   },
   {
     "className": "HMSTCatalog",
@@ -109,12 +109,12 @@
   {
     "className": "KJardineHIICatalog",
     "id": "KJardineHII",
-    "name": "Integrated HII Nebulae Catalog, 2013",
+    "name": "Integrated HII Nebulae Catalog (galaxymap.org)",
     "file": "An_Integrated_HII_Nebulae_Catalog-Jardine-2013-for-PixInsight.csv",
     "description": "An Integrated HII Nebulae Catalog (Jardine, K., 2013) (733 objects)",
     "fields": ["Name", "Coordinates", "Diameter"],
-    "default": "true",
-    "visible": "true"
+    "defaultSet": true,
+    "visible": true
   },
   {
     "className": "MandelWilsonCatalog",
@@ -122,7 +122,7 @@
     "name": "Mandel-Wilson (MW)",
     "file": "Mandel-Wilson-IFN-Cirrus-Nebulae-2026-for-PixInsight.csv",
     "description": "Catalogue of Unexplored Nebulae (Mandel-Wilson, 2005) (9 objects)",
-    "fields": ["Name","Coordinates","Diameter","Common name"]
+    "fields": ["Name","Coordinates","Diameter","Long name"]
   },
   {
     "className": "MBMCatalog",
@@ -147,7 +147,8 @@
     "file": "Messier.csv",
     "description": "Messier catalog (Messier) (110 objects)",
     "fields":["Name", "Coordinates", "Magnitude", "Diameter", "Common name", "NGC/IC", "PGC"],
-    "default": "true"
+    "defaultSet": true,
+    "visible": true
   },
   {
     "className": "MWSCCatalog",
@@ -156,12 +157,12 @@
     "file": "Kharchenko-et-al-Clusters-Master-Catalog-2013-for-PixInsight.csv",
     "description": "Milky Way Star Clusters Catalog (Kharchenko et al., 2013) (3006 clusters)",
     "fields": ["Name","Coordinates", "Diameter", "MWSC Id"],
-    "default": "true",
-    "visible": "true",
+    "defaultSet": true,
+    "visible": true,
     "labelColor": "0xffff00ff",
-    "labelSize": "16",
+    "labelSize": 16,
     "lineColor": "0xffff00ff",
-    "lineWidth": "4"
+    "lineWidth": 4
   },
   {
     "className": "NGCICCatalog",
@@ -169,7 +170,9 @@
     "name": "NGC-IC",
     "file": "NGC-IC.csv",
     "description": "NGC and IC catalogs (9933 objects)",
-    "fields": ["Name", "Coordinates", "Magnitude", "Diameter", "Common name", "PGC", "PGC2", "Messier"]
+    "fields": ["Name", "Coordinates", "Magnitude", "Diameter", "Common name", "PGC", "PGC2", "Messier"],
+    "defaultSet": true,
+     "visible": true
   },
   {
     "className": "PaladiniHIICatalog",
@@ -185,7 +188,7 @@
     "name": "PGCC",
     "file": "PGCC-Planck_Catalogue_of_Galactic_Cold_Clumps-2016-for-PixInsight.csv",
     "description": "Planck Catalogue of Galactic Cold Clumps (Planck et al, 2016) (13,242 objects)",
-    "fields": ["Name", "Coordinates", "Diameter", "Dist (kpc)", "Size (pc)", "Common name"]
+    "fields": ["Name", "Coordinates", "Diameter", "Dist (kpc)", "Size (pc)"]
   },
   {
     "className": "RCWCatalog",
@@ -201,7 +204,7 @@
     "name": "Sandqvist & Lindroos",
     "file": "Sandqvist-and-Lindroos-Southern-Dark-Clouds-1976-for-PixInsight.csv",
     "description": "\"Southern Dark Clouds\" (Sandqvist & Lindroos, 1976) (42 objects)",
-    "fields": ["Name","Coordinates","Diameter","Common name"]
+    "fields": ["Name","Coordinates","Diameter","Other name"]
   },
   {
     "className": "SandqvistCatalog",
@@ -209,7 +212,7 @@
     "name": "Sandqvist",
     "file": "Sandqvist-More_Southern_Dark_Dust_Clouds-1977-for-PixInsight.csv",
     "description": "\"More Southern Dark Dust Clouds\" (Sandqvist, 1977) (95 objects)",
-    "fields": ["Name","Coordinates","Diameter","Common name"]
+    "fields": ["Name","Coordinates","Diameter","Long name"]
   },
   {
     "className": "SFOSouthCatalog",
@@ -220,14 +223,6 @@
     "fields": ["Name","Coordinates","Diameter","HII region"]
   },
   {
-    "className": "ShkCompactGroupsCatalog",
-    "id": "ShkCompactGroups",
-    "name": "Shk Compact Groups of Compact Galaxies",
-    "file": "Shakhbazian-et-al-The_Catalog_of_Compact_Groups_of_Compact_Galaxies-1979-for-PixInsight.csv",
-    "description": "Catalog of Compact Groups of Galaxies (Shakhbazian et al, 1979) (377 objects)",
-    "fields": ["Name","Coordinates","Magnitude","Diameter","Common name"]
-  },
-  {
     "className": "SFONorthCatalog",
     "id": "SFONorth",
     "name": "SFO BRC (north)",
@@ -236,13 +231,21 @@
     "fields": ["Name","Coordinates","HII region","HII region size","Distance (kpc)","Diameter"]
   },
   {
+    "className": "ShkCompactGroupsCatalog",
+    "id": "ShkCompactGroups",
+    "name": "Shk Compact Groups of Compact Galaxies",
+    "file": "Shakhbazian-et-al-The_Catalog_of_Compact_Groups_of_Compact_Galaxies-1979-for-PixInsight.csv",
+    "description": "Catalog of Compact Groups of Galaxies (Shakhbazian et al, 1979) (377 objects)",
+    "fields": ["Name","Coordinates","Magnitude","Diameter","Other name"]
+  },
+  {
     "className": "VeryLargeScaleCatalog",
     "id": "VLS",
     "name": "Very Large Scale Astro Phenomena",
     "file": "Very-Large-Scale-astro-phenomena-2026-Stirling-for-Pixinsight.csv",
     "description": "Very Large Objects (Stirling, 2026) (278 objects)",
     "fields": ["Coordinates","Name","Diameter","Other name","Type"],
-    "default": "true"
+    "defaultSet": true
   },
   {"className": "WISECatalog",
     "id": "WISE",

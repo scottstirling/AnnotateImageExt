@@ -27,7 +27,7 @@
 
 CoreApplication.ensureMinimumVersion( 1, 9, 4 );
 
-#define VERSION "1.2"
+#define VERSION "1.2.2"
 #define TITLE "Annotate Image Ext"
 #define ANNOT_SETTINGS_MODULE "AnnotateImageExt"
 
@@ -50,7 +50,7 @@ CoreApplication.ensureMinimumVersion( 1, 9, 4 );
 //#include "/opt/PixInsight/src/scripts/AnnotateImage/Layer.js"
 
 // unmodified files copied to codebase and included due to PixInsight non-portable paths with src/scripts (above).
-// There is no way to extend code files portably in this JS without writing a custom inclusion mechanism.
+// I do not know if it is better to extend code files portably in this JS without writing a custom inclusion mechanism.
 #include "Entity.js"
 #include "GraphicProperties.js"
 #include "Layer.js"

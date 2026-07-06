@@ -25,10 +25,10 @@
 
 // ----------------------------------------------------------------------------
 
-/* accessible configuration of dynamically loaded catalog configurations 
+/* accessible configuration of dynamically loaded catalog configurations
  * after it is parsed and loaded in CatalogRegistry, below. The catalogsConfig
  * object is available to and used by AnnotationEngine.js. along with CatalogRegistry.*/
-var catalogsConfig = null;
+let catalogsConfig = null;
 
 /*
  * Registry providing access to all defined catalog classes.
@@ -98,11 +98,11 @@ var CatalogRegistry = class
       return null;
    }
 
-   // NEW 
+   // NEW
    static loadCatalogsFromJSON(jsonFilePath) {
-      // TODO: not sure whether to keep "catalogs" subdirectory name hard-coded but, 
+      // TODO: not sure whether to keep "catalogs" subdirectory name hard-coded but,
       // for now, keeps the files separate from the js files dir, relative to LocalFileCatalog path logic
-	   // and being able to resolve files relative to the working script is helpful/useful
+      // and being able to resolve files relative to the working script is helpful/useful
       const CATALOGS_SUBDIR = "catalogs"; // relative to the current js script
 
       if (!File.exists(jsonFilePath)) {
@@ -113,9 +113,7 @@ var CatalogRegistry = class
       let jsonText = File.readTextFile(jsonFilePath);
 
       // catalogsConfig object encapsulates the parsed JSON config
-      // TODO: possibly make globally available in scope for layers config per catalog later
       catalogsConfig = JSON.parse(jsonText);
-      // let catalogsConfig = JSON.parse(jsonText);
 
       for (let i = 0; i < catalogsConfig.length; ++i) {
          let config = catalogsConfig[i];
@@ -127,6 +125,13 @@ var CatalogRegistry = class
                super(config.id, config.name, CATALOGS_SUBDIR + "/" + config.file);
                this.description = config.description;
                this.fields = config.fields;
+           // TODO: test and DEBUG
+           //for (const [key, value] of Object.entries(config)) {
+           //   console.writeln(`${key}: ${value}`); // DEBUG
+           // }
+	           this.defaultSet = config.defaultSet;
+               this.catalogPath = scriptFileDir + "/" + CATALOGS_SUBDIR + "/" + config.file; // hackeriffic sorry
+	           this.visible = config.visible;
             }
 
             GetConstructor() {
@@ -1117,18 +1122,19 @@ var LocalFileCatalog = class extends Catalog
    }
 };
 
-// NEW
-// Load external configuration file of file-based catalogs
-const CATALOGS_CONFIG_FILENAME = "catalogs-config.json";
-let scriptFileDir = File.extractDirectory(#__FILE__); // built-in PSJR macro to get this current file's location at runtime 
-let catalogsConfigJSON = scriptFileDir + "/" + CATALOGS_CONFIG_FILENAME;
+   // NEW
+   // Load external configuration file of file-based catalogs
+   const CATALOGS_CONFIG_FILENAME = "catalogs-config.json";
+   let scriptFileDir = File.extractDirectory(#__FILE__); // built-in PSJR macro to get this current file's location at runtime
+   let catalogsConfigJSON = scriptFileDir + "/" + CATALOGS_CONFIG_FILENAME;
 
-if (File.exists(catalogsConfigJSON)) {
-    console.writeln("Catalogs config file exists: " + catalogsConfigJSON);
-} else {
-    console.warningln("Catalogs config file not found: " + catalogsConfigJSON);
-}
-CatalogRegistry.loadCatalogsFromJSON(catalogsConfigJSON);
+   if (File.exists(catalogsConfigJSON))
+   {
+      console.writeln("Catalogs config file exists: " + catalogsConfigJSON);
+   } else {
+      console.warningln("Catalogs config file not found: " + catalogsConfigJSON);
+   }
+   CatalogRegistry.loadCatalogsFromJSON(catalogsConfigJSON);
 
 /*
  * Named Stars Catalog (local CSV file)
@@ -1137,12 +1143,12 @@ var NamedStarsCatalog = class extends LocalFileCatalog
 {
    constructor()
    {
-      // TODO 
-      // NamedStars magnitude filtering could be abstracted and applied for other catalogs having magnitude values, 
-      // but quick way forward for a bunch of star name updates AND retention of the magnitude filter is to update 
-      // the CSV file and really no code change needed here, but this is more of a placeholder to look at abstracting 
+      // TODO
+      // NamedStars magnitude filtering could be abstracted and applied for other catalogs having magnitude values,
+      // but quick way forward for a bunch of star name updates AND retention of the magnitude filter is to update
+      // the CSV file and really no code change needed here, but this is more of a placeholder to look at abstracting
       // the magnitude filtering if possible and externalize the file name and other properties to catalog-condigs.json
-      // 
+      //
       // super( "NamedStars", "NamedStars", "NamedStars.csv" );
       super( "NamedStars", "NamedStars IAU 2026", "NamedStars-IAU-06-24-2026.csv" ); // TODO: hardcoded path override
 
@@ -4226,10 +4232,15 @@ var CustomCatalog = class extends LocalFileCatalog
    {
       super( "Custom", "Custom", undefined/*filename*/, true/*compatibility*/ );
 
-      this.description = "User-defined catalog";
+      if (catalogPath && !(catalogPath.trim().isEmpty())) // use the catalog file path as default description
+      {
+         this.description = catalogPath;
+         this.catalogPath = catalogPath;
+      } else {
+         this.description = "User-defined catalog";
+      }
       this.fields = [ "Name", "Coordinates", "Magnitude" ];
-
-      this.catalogPath = catalogPath;
+      // this.catalogPath = catalogPath;
       this.properties.push( ["catalogPath", DataType.UTF16String] );
    }
 
@@ -4284,7 +4295,7 @@ var CustomCatalog = class extends LocalFileCatalog
          gdd.filters = [["CSV files", "*.csv"], ["Plain text files", "*.txt"], ["Any files", "*"]];
          if ( gdd.execute() )
          {
-            // AnnotateImageExt bug fix, fileName is deprecated, use filePath instead
+            // AnnotateImageExt fix: fileName is deprecated, use filePath instead
             this.dialog.activeFrame.object.catalog.catalogPath = gdd.filePath;
             path_Edit.text = gdd.filePath;
          }

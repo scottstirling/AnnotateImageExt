@@ -118,14 +118,14 @@ var AnnotationEngine = class extends PersistentObject
       // 3. Bit-shift the bytes from RGBA to ARGB
       // Moves RGB right by 8 bits, and places Alpha (lowest 8 bits) at the front
       const argbNum = (rgbaNum >>> 8) | ((rgbaNum & 0x000000FF) << 24);
-      // 4. Force to an unsigned 32-bit integer 
+      // 4. Force to an unsigned 32-bit integer
       return argbNum >>> 0;
    }
 
    SetDefaults()
    {
       /*
-       * Configure default layer parameters.
+       * Configure default layers and parameters.
        */
       this.layers = [];
 
@@ -152,8 +152,8 @@ var AnnotationEngine = class extends PersistentObject
       this.layers.push( layer );
 
       /**
-       * AnnotateImageExt related: when catalogConfig.default = "true", 
-       * add catalog layer from catalogs-confg.js and toggle visible 
+       * AnnotateImageExt related: when catalogConfig.defaultSet = "true",
+       * add catalog layer from catalogs-confg.js and toggle visible
        * (checked -> enabled for display) if visible="true" in the config.
        */
       if (catalogsConfig != null) { // catalogsConfig is initialized and loaded in AstronomicalCatalogs
@@ -164,20 +164,27 @@ var AnnotationEngine = class extends PersistentObject
 
             catalogConfig = catalogsConfig[i];
 
-            if (catalogConfig.default) { // catalogs-config.json default="true" (default is false) 
-	        console.writeln("Loading catalog layer for: " + catalogConfig.name);
-	    } else {
-		 return;
-	    }
-            layer = new CatalogLayer( CatalogRegistry.newCatalog(catalogConfig.id) );
+        // DEBUG
+           for (const [key, value] of Object.entries(catalogConfig)) {
+              console.writeln(`${key}: ${value}`); // DEBUG
+           }
 
-	    if (catalogConfig.visible) { // catalogs-config.json visible="true" (default is false) 
-               layer.visible = (catalogConfig.visible == "true"); // evaluate string value to a raw boolean
+            if (catalogConfig.defaultSet)
+            { // catalogs-config.json defaultSet=true (default is false)
+	           console.writeln("Loading catalog layer for: " + catalogConfig.name);
+               layer = new CatalogLayer( CatalogRegistry.newCatalog(catalogConfig.id) );
+	        } else {
+		       continue;
+	        }
+	    if (catalogConfig.visible)
+        {      // catalogs-config.json visible="true" (default is false)
+               layer.visible = catalogConfig.visible;
 	    } else {
 	       layer.visible = false;
 	    }
 
-	     if (catalogConfig.labelColor) {
+	     if (catalogConfig.labelColor)
+         {
                 // layer.gprops.labelColor = parseInt(catalogConfig.labelColor, 16);
                 layer.gprops.labelColor = this.parseHexStringToColorNumber( catalogConfig.labelColor );
 	     } else {

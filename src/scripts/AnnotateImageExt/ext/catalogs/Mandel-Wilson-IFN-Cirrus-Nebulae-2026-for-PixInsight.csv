@@ -1,10 +1,10 @@
-id,alpha,delta,magnitude,diameter,axisRatio,posAngle,Common name,minAxis
+id,alpha,delta,magnitude,diameter,axisRatio,posAngle,Long name,minAxis
 MW1,37.96,89.26,,600,1.25,45,Polaris Nebula,480
-MW2,159.75,73.40,,480,1.33,125,Angel Nebula,360
-MW3,142.50,70.18,,300,1.25,35,Volcano Nebula,240
+MW2,159.75,73.4,,480,1.33,125,Angel Nebula,360
+MW3,142.5,70.18,,300,1.25,35,Volcano Nebula,240
 MW4,128.75,60.15,,240,1.33,70,Animal Track Nebula,180
-MW5,94.50,64.47,,240,1.33,55,Fish Hook Nebula,180
+MW5,94.5,64.47,,240,1.33,55,Fish Hook Nebula,180
 MW6,94.75,74.82,,240,1.33,100,Bay Area Nebula,180
 MW7,43.75,81.75,,240,1.33,90,Cow Nebula,180
 MW8,280.25,40.08,,180,1.5,20,Horns of Vega,120
-MW9,258.50,-77.53,,300,1.67,140,South Celestial Serpent,180
+MW9,258.5,-77.53,,300,1.67,140,South Celestial Serpent,180
