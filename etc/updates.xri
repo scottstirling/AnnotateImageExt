@@ -4,9 +4,29 @@
       <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
    </description>
    <platform os="all" arch="noarch" version="1.9.4.1695:1.9.9">
-      <package fileName="2026-07-01b-AnnotateImageExt.tar.gz" sha1="0e70edf6ed318a31ba7aa21eb7cb717d182da3f9" type="script" releaseDate="20260701">
+      <package fileName="2026-07-05-AnnotateImageExt.tar.gz" sha1="" type="script" releaseDate="20260705">
          <title>AnnotateImageExt, install / update</title>
          <description>
+	<p>v1.2.2</p>
+	 <ul>
+	 <li>
+           <ul>
+		 <li>"Name" and "Common name" logic in the script detects whether there is a "Common name" column and will display it by default, as done with Messier and NGC-IC, which sometimes just results in too many duplicate names in the annotation.  I did not realize this was what was happening until today, why by default if there is a Common name column in a catalog, it will automatically be labeled under the name.  I have cleaned this up across the catalogs and just kept "Common name" in Messier and NGC-IC for now.</li>
+
+	 <li>Fixed inverted axisRatio values in PGCC catalog.</li>
+	 <li>Added 2 new external configuration properties for catalog layer configuration in catalogs-config.JSON:
+  <ol>
+    <li>"visible": (default false or undefined) toggles the visibilty checkbox of an enabled catalog layer</li>
+    <li>"defaultSet": (default false or undefined) AnnotateImageExt will include the catalog layer in the "default set" with Grid, Messier, NamedStars, etc.</li>
+   </ol>
+   </li>
+   <li>worked on some other stuff like the Custom catalof naming problem and added some DEBUG and TODO comments</li>
+   <li>cleaned up some old comments and formatting</li>
+  <li>Revised README for AnnotateImageExt updates, Updated README to reflect new features, fixes, and catalog information. Changed section titles and added details about catalog layer visibility and issues fixed.</li>
+  <li>Added new catalogs and updated notes on the annotation subsystem, including issues with southern hemisphere support and Vizier queries.</li>
+  <li>fix missing comma in json</li>
+  <li>update configs and add default="true" option per catalog whether its layer is added to the default set, update field and column ordering in BFS, set Jardine enabled as a default along with Messier, NGC-IC, Calldwell and NamedStars</li>
+</ul>
             <p>v1.2</p>
             <ul>
                <li>Update catalogs-config.json and several catalog header lines and column order to align with conventions.</li>
