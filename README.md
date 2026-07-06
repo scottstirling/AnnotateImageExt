@@ -56,7 +56,8 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 - Gum's *Southern HII Regions* (1955)
 - FeSt 1: Feitzinger, J.V. and Stüwe, J.A., *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (1984) (dark nebula)
 - FeSt 2: Feitzinger, J.V. and Stüwe, J.A., *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (1984) (globules)
-- Kevin Jardine's galaxymap.org *Integrated HII Regions Catalog* crossindex of BSF, Du, Gum, RCW, Sharpless 2, Sivan and more
+- HMST aka DCld: Hartley et al., *Catalogue of Southern Dark Clouds* (1986)
+- Kevin Jardine's galaxymap.org *Integrated HII Nebulae Catalog* (2013), by galaxymap.org astro-mapping maven, Kevin Jardine, a cross-index of BSF, Du, Gum, RCW, Sharpless 2, Sivan and more, listing their most well-known names, updated coordinates and a few "Galaxy Map Nebula" [GMN] original HII regions overlooked in earlier surveys
 - MWSC: Kharchenko et al, *Global Survey of Star Clusters in the Milky Way II*, (2013) containing all the known open clusters across catalogs and hemispheres with MWSC ID and "Common name" label options
 - MBM: i.e., Magnani, Blitz and Mundy's *Molecular Gas at High Galactic Latitudes* (1985)
 - Mandel (Steve) and Wilson (Michael)'s catalog of nine integrated flux nebulae (IFN) aka galactic cirrus, *Catalogue of Unexplored Nebulae* (2004)
@@ -65,6 +66,7 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 - Paladini et al., *A Radio Catalog of Galactic HII Regions for Applications from Decimeter to Millimeter Wavelengths* (2003)
 - PGCC: the Planck Collaboration's *Planck 2015 Results. XXVIII. The Planck Catalogue of Galactic Cold Clumps*
 - RCW: Rogers, Campbell and Whiteoak's *Catalog of Halpha Emission Regions in the Southern Milky Way* (1960)
+- Shk: Shakhbazian's *The Catalog of Compact Groups of Compact Galaxies* (1979) with 377 compact groups
 - SL: Sandqvist, A. and Lindroos, K.P.'s *Southern Dark Clouds* (1976)
 - SDN: Sandqvist, A.'s follow up, *More Southern Dark Dust Clouds* (1977)
 - Stirling (my own) catalog of *Very Large Scale Astro Phenomena*, a work in progress focused on **very wide field** (**currently defined as major axis >= 3°**) objects and structures sourced from well known catalogs, tradition and recent discoveries (2026)
