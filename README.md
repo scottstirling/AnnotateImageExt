@@ -1,4 +1,4 @@
-<img width="1788" height="500" alt="noirlab2521b_combined-github-banner" src="https://github.com/user-attachments/assets/6eefacea-a0e9-4137-9477-76bb3ef6a938" />
+<img width="1788" height="500" alt="noirlab2521b Trifid crop github banner" src="https://github.com/user-attachments/assets/6eefacea-a0e9-4137-9477-76bb3ef6a938" />
 
 # AnnotateImageExt-ended with Features, Fixes and Catalogs
 ## Installation
