@@ -1,7 +1,7 @@
-# AnnotateImage Extended with New Features, Fixes and Catalogs
+<img width="1788" height="500" alt="noirlab2521b_combined-github-banner" src="https://github.com/user-attachments/assets/6eefacea-a0e9-4137-9477-76bb3ef6a938" />
 
+# AnnotateImageExt-ended with Features, Fixes and Catalogs
 ## Installation
-
 ### PixInsight version required:  PixInsight 1.9.4, build 1695 (released 6/21/2026)
 ### Repository URL:  https://pixinsight.stirlingastrophoto.com/scripts/AnnotateImageExt/
 
@@ -71,6 +71,9 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 - SFO: Sugitanixi, Fukui and Ogura, catalogs of *Bright-Rimmed Clouds* in the northern (1991) and southern (1994) hemispheres
 - WISE: Anderson et al., *The WISE catalog of Galactic HII regions* (2014)
 
+Screenshot showing default core catalogs and layers as of 7/5/2026:
+<img width="894" height="838" alt="AnnotateImageExt_20260705_core-defaults" src="https://github.com/user-attachments/assets/e1cddd9b-30fc-4026-a893-a37573eea1c0" />
+
 ### Works in progress: Herbig Haro objects, Magakian Reflection Nebulae cross-ref, Pulsar Wind Nebulae, Wolf-Rayet Nebulae, specialized star catalogs
 
 ### Externalization of catalog registration and layers configuration
@@ -80,8 +83,8 @@ Externalization of catalog registration and layers configuration to a JSON confi
 - catalog ids, name strings, file names, description strings and label fields
 - catalog layer settings, currently supporting label size, line width, label and line colors per catalog layer
 - all layer and catalog preferences preserved on execution and resettable to defaults via the reset button if desired
-- whether the catalog layer is visible in the layers configuration screen by default
-- currently a hard-coded "catalogs" subdirectory for the "system" scripts, but plans to support any file path users want to use to separate from system configs
+- catalog layer visibility default controlled by `"visible": true` in JSON configuration
+- Script subdirectory `catalogs` deployment "system" scripts, but plan to support any file path users want to use to separate from system configs
 
 ### Codebase founded on AnnotateImage.js, AnnotationEngine.js and astrometry/AstronomicalCatalogs.js
 
@@ -91,7 +94,7 @@ I started with AnnotateImage v 2.3.0 which came out with PixInsight 1.9.4 and up
 
 Settings, files and preferences isolated from out-of-the-box AnnotateImage so you can switch between them or use both without conflict.
 
-### Bugs fixed
+### Issues fixed (to be backported to PixInsight PJSR project in GitLab)
 
 #### AnnotateImage layer preferences / settings corrupted if Custom catalog configuration clicks "OK" with empty file path
 
