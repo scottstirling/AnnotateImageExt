@@ -45,33 +45,96 @@ The main features added here are:
 
 Many added, updated astronomy, astrophysics and astrophotography catalogs for PixInsight AnnotateImage, especially those that include coverage of the southern celestial hemisphere, corrected and comprehensive catalogs of catalogs, including (listed with CDS/Vizier/SIMBAD catalog prefixes where available):
 
-- Asterisms layer of well-known, non-constellation asterisms such as the Teapot, Winter Hexagon, Winter Triangle, Great Square, etc.
-- BFS: Blitz, Fich and Stark, *Catalog of CO Radial Velocities toward Galactic H II Regions* (1982)
-- Caldwell's 109 Deep Sky objects with O'Meara updates (2002)
-- Ced: Cederblad, Sven *Catalog of bright diffuse Galactic nebulae* (1945)
-- Col: Collinder, P.A., *On Structural Properties of Open Clusters and Their Spatial Distribution* (1931)
-- [DB2002b]: Dutra and Bica's *Dust Clouds* of 2002, incorporating Barnard, LDN, MBM and more in a comprehensive catalog of dark nebula and molecular clouds with DB2002b ID and "Common name" label options
-- DWB: catalog of Hα emissions in Cygnus, Dickela, Hélène R., Wendker, Heinrich and Bieritz, J.H., *The Cygnus X Region V. Catalogue and Distances of Optically Visible H II Regions* (1969)
-- SNR: Green, D.'s updated *A Catalog of Galactic Supernova Remnants* (2025)
-- Gum's *Southern HII Regions* (1955)
-- FeSt 1: Feitzinger, J.V. and Stüwe, J.A., *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (1984) (dark nebula)
-- FeSt 2: Feitzinger, J.V. and Stüwe, J.A., *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (1984) (globules)
-- HMST aka DCld: Hartley et al., *Catalogue of Southern Dark Clouds* (1986)
-- Kevin Jardine's galaxymap.org *Integrated HII Nebulae Catalog* (2013), by galaxymap.org astro-mapping maven, Kevin Jardine, a cross-index of BSF, Du, Gum, RCW, Sharpless 2, Sivan and more, listing their most well-known names, updated coordinates and a few "Galaxy Map Nebula" [GMN] original HII regions overlooked in earlier surveys
-- MWSC: Kharchenko et al, *Global Survey of Star Clusters in the Milky Way II*, (2013) containing all the known open clusters across catalogs and hemispheres with MWSC ID and "Common name" label options
-- MBM: i.e., Magnani, Blitz and Mundy's *Molecular Gas at High Galactic Latitudes* (1985)
-- Mandel (Steve) and Wilson (Michael)'s catalog of nine integrated flux nebulae (IFN) aka galactic cirrus, *Catalogue of Unexplored Nebulae* (2004)
-- Mel: Melotte, P.J., *A Catalogue of Star Clusters shown on Franklin-Adams Chart Plates* (1915) with updated coordinates
-- NamedStars catalog updated with IAU name changes of existing stars (no new stars added) up to June, 2026 
-- Paladini et al., *A Radio Catalog of Galactic HII Regions for Applications from Decimeter to Millimeter Wavelengths* (2003)
-- PGCC: the Planck Collaboration's *Planck 2015 Results. XXVIII. The Planck Catalogue of Galactic Cold Clumps*
-- RCW: Rogers, Campbell and Whiteoak's *Catalog of Halpha Emission Regions in the Southern Milky Way* (1960)
-- Shk: Shakhbazian's *The Catalog of Compact Groups of Compact Galaxies* (1979) with 377 compact groups
-- SL: Sandqvist, A. and Lindroos, K.P.'s *Southern Dark Clouds* (1976)
-- SDN: Sandqvist, A.'s follow up, *More Southern Dark Dust Clouds* (1977)
-- Stirling (my own) catalog of *Very Large Scale Astro Phenomena*, a work in progress focused on **very wide field** (**currently defined as major axis >= 3°**) objects and structures sourced from well known catalogs, tradition and recent discoveries (2026)
-- SFO: Sugitanixi, Fukui and Ogura, catalogs of *Bright-Rimmed Clouds* in the northern (1991) and southern (1994) hemispheres
-- WISE: Anderson et al., *The WISE catalog of Galactic HII regions* (2014)
+
+
+| Catalog / Layer | Author(s) & Year | Object Type | Description |
+| :--- | :--- | :--- | :--- |
+| **Asterisms Layer** | Various | Asterisms | Well-known, non-constellation patterns (e.g., Teapot, Winter Hexagon, Winter Triangle, Great Square). |
+| **BFS** | Blitz, Fich, & Stark (1982) | H II Regions | *Catalog of CO Radial Velocities toward Galactic H II Regions*. |
+| **Caldwell** | O'Meara (2002 Updates) | Deep-Sky Objects | The classic list of 109 deep-sky objects with updated modern revisions. |
+| **Ced** | Cederblad (1945) | Diffuse Nebulae | *Catalog of bright diffuse Galactic nebulae*. |
+| **Col** | Collinder (1931) | Open Clusters | *On Structural Properties of Open Clusters and Their Spatial Distribution*. |
+| **[DB2002b]** | Dutra & Bica (2002) | Dark Nebulae / Clouds | *Dust Clouds*, incorporating Barnard, LDN, MBM, and more. Features DB2002b ID and "Common name" labels. |
+| **DWB** | Dickel, Wendker, & Bieritz (1969) | Hα Emissions | *The Cygnus X Region V. Catalogue and Distances of Optically Visible H II Regions*. |
+| **SNR** | Green (2025) | Supernova Remnants | An updated, comprehensive edition of *A Catalog of Galactic Supernova Remnants*. |
+| **Gum** | Gum (1955) | H II Regions | *Southern HII Regions*. |
+| **FeSt 1** | Feitzinger & Stüwe (1984) | Dark Nebulae | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees*. |
+| **FeSt 2** | Feitzinger & Stüwe (1984) | Globules | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees*. |
+| **HMST / DCld** | Hartley et al. (1986) | Dark Clouds | *Catalogue of Southern Dark Clouds*. |
+| **Integrated HII** | Jardine, K. (2013) | H II Nebulae | Galaxymap.org compilation cross-indexing BFS, Du, Gum, RCW, Sh2, Sivan, and unique [GMN] regions. |
+| **MWSC** | Kharchenko et al. (2013) | Open Clusters | *Global Survey of Star Clusters in the Milky Way II*. Includes all known open clusters with ID/Common Name. |
+| **MBM** | Magnani, Blitz, & Mundy (1985) | Molecular Gas | *Molecular Gas at High Galactic Latitudes*. |
+| **Mandel-Wilson**| Mandel & Wilson (2004) | IFNs / Cirrus | *Catalogue of Unexplored Nebulae*, featuring nine integrated flux nebulae. |
+| **Mel** | Melotte (1915) | Open Clusters | *A Catalogue of Star Clusters shown on Franklin-Adams Chart Plates* with updated coordinates. |
+| **NamedStars** | IAU (Updated to 2026) | Stars | Star catalog updated with official IAU name changes (no new stars added). |
+| **Paladini** | Paladini et al. (2003) | H II Regions | *A Radio Catalog of Galactic HII Regions for Applications from Decimeter to Millimeter Wavelengths*. |
+| **PGCC** | Planck Collaboration (2015) | Cold Clumps | *Planck 2015 Results. XXVIII. The Planck Catalogue of Galactic Cold Clumps*. |
+| **RCW** | Rogers, Campbell, & Whiteoak (1960) | Hα Emissions | *Catalog of Halpha Emission Regions in the Southern Milky Way*. |
+| **Shk** | Shakhbazian (1979) | Compact Galaxies | *The Catalog of Compact Groups of Compact Galaxies* featuring 377 distinct groups. |
+| **SL** | Sandqvist & Lindroos (1976) | Dark Clouds | *Southern Dark Clouds*. |
+| **SDN** | Sandqvist (1977) | Dark Dust Clouds | *More Southern Dark Dust Clouds* (Follow-up to SL). |
+| **Stirling** | Stirling (2026) | Wide-Field Astro Phenomena | Very large angular scale astro phenomena (major axis $\ge$ 3°). |
+| **SFO** | Sugitani, Fukui, & Ogura (1991/1994) | Bright-Rimmed Clouds| Catalogs covering northern (1991) and southern (1994) hemispheres. |
+| **WISE** | Anderson et al. (2014) | H II Regions | *The WISE catalog of Galactic HII regions*. |
+
+### Categorized Astronomical Catalogs
+
+#### Deep-Sky & Wide-Field Collections
+
+| Catalog / Layer | Author(s) & Year | Description |
+| :--- | :--- | :--- |
+| **Asterisms Layer** | Various | Well-known, non-constellation patterns (e.g., Teapot, Winter Hexagon, Winter Triangle, Great Square). |
+| [**Caldwell**] | O'Meara (2002 Updates) | The classic list of 109 deep-sky objects with updated modern revisions. |
+| **Stirling** | Stirling (2026) | Work-in-progress focused on **very large scale astro phenomena** (major axis $\ge$ 3°). |
+
+#### H II Regions & Hα Emissions
+
+| Catalog / Layer | Author(s) & Year | Description |
+| :--- | :--- | :--- |
+| [**BFS**] | Blitz, Fich, & Stark (1982) | *Catalog of CO Radial Velocities toward Galactic H II Regions*. |
+| [**DWB**] | Dickel, Wendker, & Bieritz (1969) | *The Cygnus X Region V. Catalogue and Distances of Optically Visible H II Regions*. |
+| [**Gum**] | Gum (1955) | *Southern HII Regions*. |
+| [**Integrated HII**](http://galaxymap.org) | Jardine (2013) | Galaxymap.org compilation cross-indexing BFS, Du, Gum, RCW, Sh2, Sivan, and unique [GMN] regions. |
+| [**Paladini**] | Paladini et al. (2003) | *A Radio Catalog of Galactic HII Regions for Applications from Decimeter to Millimeter Wavelengths*. |
+| [**RCW**] | Rogers, Campbell, & Whiteoak (1960) | *Catalog of Halpha Emission Regions in the Southern Milky Way*. |
+| [**WISE**] | Anderson et al. (2014) | *The Wise catalog of Galactic HII regions*. |
+
+#### Dark Nebulae, Molecular Clouds & Cold Clumps
+
+| Catalog / Layer | Author(s) & Year | Description |
+| :--- | :--- | :--- |
+| [**[DB2002b]**] | Dutra & Bica (2002) | *Dust Clouds*, incorporating Barnard, LDN, MBM, and more. Features DB2002b ID and "Common name" labels. |
+| [**FeSt 1**] | Feitzinger & Stüwe (1984) | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (Dark Nebulae section). |
+| [**FeSt 2**] | Feitzinger & Stüwe (1984) | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (Globules section). |
+| [**HMST / DCld**] | Hartley et al. (1986) | *Catalogue of Southern Dark Clouds*. |
+| [**MBM**] | Magnani, Blitz, & Mundy (1985) | *Molecular Gas at High Galactic Latitudes*. |
+| [**PGCC**] | Planck Collaboration (2015) | *Planck 2015 Results. XXVIII. The Planck Catalogue of Galactic Cold Clumps*. |
+| [**SL**] | Sandqvist & Lindroos (1976) | *Southern Dark Clouds*. |
+| [**SDN**] | Sandqvist (1977) | *More Southern Dark Dust Clouds* (Follow-up to SL). |
+| [**SFO**] | Sugitani et al. (1991/1994) | *Bright-Rimmed Clouds* covering northern (1991) and [southern (1994)] hemispheres. |
+
+#### Star Clusters & Stellar Data
+
+| Catalog / Layer | Author(s) & Year | Description |
+| :--- | :--- | :--- |
+| [**Col**] | Collinder (1931) | *On Structural Properties of Open Clusters and Their Spatial Distribution*. |
+| [**MWSC**] | Kharchenko et al. (2013) | *Global Survey of Star Clusters in the Milky Way II*. Includes all known open clusters with ID/Common Name. |
+| [**Mel**] | Melotte (1915) | *A Catalogue of Star Clusters shown on Franklin-Adams Chart Plates* with updated coordinates. |
+| [**NamedStars**](https://iau.org) | IAU (Updated to 2026) | Star catalog updated with official IAU name changes (no new stars added). |
+
+#### Diffuse Nebulae & Supernova Remnants
+
+| Catalog / Layer | Author(s) & Year | Description |
+| :--- | :--- | :--- |
+| [**Ced**] | Cederblad (1945) | *Catalog of bright diffuse Galactic nebulae*. |
+| [**Mandel-Wilson**] | Mandel & Wilson (2004) | *Catalogue of Unexplored Nebulae*, featuring nine integrated flux nebulae (IFNs). |
+| [**SNR**] | Green (2025) | An updated, comprehensive edition of *A Catalog of Galactic Supernova Remnants*. |
+
+#### External Galaxies
+
+| Catalog / Layer | Author(s) & Year | Description |
+| :--- | :--- | :--- |
+| [**Shk**] | Shakhbazian (1979) | *The Catalog of Compact Groups of Compact Galaxies* featuring 377 distinct groups. |
 
 Screenshot showing default core catalogs and layers as of 7/5/2026:
 
