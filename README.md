@@ -72,9 +72,8 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 - WISE: Anderson et al., *The WISE catalog of Galactic HII regions* (2014)
 
 Screenshot showing default core catalogs and layers as of 7/5/2026:
-<img width="894" height="838" alt="AnnotateImageExt_20260705_core-defaults" src="https://github.com/user-attachments/assets/e1cddd9b-30fc-4026-a893-a37573eea1c0" />
 
-### Works in progress: Herbig Haro objects, Magakian Reflection Nebulae cross-ref, Pulsar Wind Nebulae, Wolf-Rayet Nebulae, specialized star catalogs
+<img width="894" height="838" alt="AnnotateImageExt_20260705_core-defaults" src="https://github.com/user-attachments/assets/e1cddd9b-30fc-4026-a893-a37573eea1c0" />
 
 ### Externalization of catalog registration and layers configuration
 
