@@ -157,7 +157,7 @@ Every time the use clicks "OK" on the main AnnotateImage script, it checks wheth
 
 Around here seems to be where things go awry ... 
 
-There is also a `ResetSettings()` function but that is only called when a user explicitly hits the Reset button in the main AnnotateImage dialog.
+There is also a `ResetSettings()` function but that is only called when a user explicitly hits the Reset button in the main AnnotateImageDialog.
 
 The `SaveSettings()` function is defined in `AnnotationEngine`, called on the catalog layers too:
 ```

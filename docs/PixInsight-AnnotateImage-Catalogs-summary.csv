@@ -1,0 +1,40 @@
+catalog,description,count,authors,year,"vizier query, file or xpsd",vizier catalog id,type,"magnitude filter selectors, ranges and (default max)",other options,sky zone
+APASS,"AAVSO Photometric All Sky Survey DR9 (Henden+, 2016, 62 million stars)",62000000,Henden+,2016,vizier,II/336/apass9,stars,,,all
+APASSDR10_XPSD,"APASS Data Release 10 - Local XPSD Server (Henden+, 2018, 128 million stars)",128000000,Henden+,2018,xpsd,,stars,,,all
+APASSDR9_XPSD,"APASS Data Release 9 - Local XPSD Server (Henden+, 2016, 62 million stars)",62000000,Henden+,2016,xpsd,,stars,,,all
+ARP,ARP catalog (592 galaxies),592,"Webb, Dennis J. and Arp, Halton C.",1996,vizier,VII/192/arplist,galaxies,,,
+Asteroids,"DE430/DE440 asteroids (343 objects, ICRS coordinates)",343,PixInsight from JPL DE441 / SB441,2021,file: PixInsight/rsc/eph/core-asteroids.xeph,,asteroids,min – max,,
+Barnard,Barnard's Catalog of Dark Objects in the Sky (349 objects),349,"Barnard, Edward Emerson",1927,vizier,VII/220A/barnard,"nebulae, dark",,,
+BrightStars,"Bright Star Catalog, 5th ed. (9110 stars. Hoffleit+ 1991)",9110,Hoffleit+,1991,vizier,V/50/catalog,stars,min – max (7),,
+CGPN,"Catalogue of Galactic Planetary Nebulae (Kohoutek, 2001) (1759 objects)",1759,Kohoutek,2001,vizier,IV/24/table4,"nebulae, planetary",,,
+CMC14,"Carlsberg Meridian Catalog 14 (CMC14) catalog (95,858,475 stars)",95858475,CMC,2006,vizier,I/304/out,stars,[r’mag|Jmag|Hmag|Ksmag] min – max,,-30 to +50°
+Custom,User-defined catalog,any,user,NA,Any *.csv,,any,,,any
+CustomXEPHFiles,"Custom ephemeris files (XEPH format, ICRS/J2000.0 coordinates)",any,user,NA,Any *.xeph,,ephemerids,,,any
+GaiaDR1,"Gaia Data Release 1 (Gaia collaboration, 2016, 1,142,679,769 sources)",1142679769,Gaia collaboration,2016,vizier,I/337/gaia,stars,,,all
+GaiaDR2,"Gaia Data Release 2 (Gaia collaboration et al., 2018, 1,692,919,135 sources)",1692919135,Gaia collaboration,2018,vizier,I/345/gaia2,stars,,,all
+GaiaDR2_XPSD,"Gaia Data Release 2 - Local XPSD Server (Gaia collaboration et al., 2018, 1,692,919,135 sources)",1692919135,Gaia collaboration,2018,xpsd,,stars,,,all
+GaiaDR3SP_XPSD,"Gaia Data Release 3 - Local XPSD Server (Gaia collaboration et al., 2022, 1,806,254,432 sources)",1806254432,Gaia collaboration,2022,xpsd,,stars,,,all
+GaiaDR3_XPSD,"Gaia Data Release 3 / Mean BP/RP spectra - Local XPSD Server (Gaia collaboration et al., 2022, 219,197,643 sources)",219197643,Gaia collaboration,2022,xpsd,,stars,,,all
+GaiaEDR3_XPSD,"Gaia Early Data Release 3 - Local XPSD Server (Gaia collaboration et al., 2020, 1,806,254,432 sources)",1806254432,Gaia collaboration,2020,xpsd,,stars,,,all
+GCVS,General Catalog of Variable Stars (47969 stars),47969,Samus+,2020,vizier,B/gcvs/gcvs_cat,stars,,,all
+GSC 2.3,"Guide Star Catalog 2.3 catalog (945,592,683 objects)",945592683,STScI,2008,vizier,I/305/out,stars,[Fmag|jmag|Vmag|Nmag|Umag|Bmag] min - max,"Class [All objects, Star, Non-star]",all
+HD Cross-Reference,"HD Cross-Reference (All-Sky Compiled Catalogue of 2.5 million stars (ASCC-2.5 V3)) (2,501,313 stars. Kharchenko+ 2009)",2501313,Kharchenko+,2009,vizier,I/280B/ascc,stars,min – max (14),,all
+Hipparcos,"Hipparcos Main catalog (118,218 stars)",118218,ESA,1997,vizier,I/239/hip_main,stars,[Vtmag|BTmag] min – max,,all
+Kuiper Belt Objects,"DE440 Kuiper Belt Objects (KBOs) (30 objects, ICRS/J2000.0 coordinates)",30,PixInsight from JPL DE441 / SB441,2022,file: PixInsight/rsc/eph/core-kbo.xeph,,asteroids,min – max,,
+LBN,"Lynds' Catalogue of Bright Nebulae (Lynds, 1965) (1125 objects)",1125,"Lynds, Beverly T.",1965,vizier,VII/9/catalog,"nebulae, bright",,,
+LDN,"Lynds' Catalogue of Dark Nebulae (Lynds, 1962) (1791 objects)",1791,"Lynds, Beverly T.",1962,vizier,VII/7A/ldn,"nebulae, dark",,,
+Milliquas,"The Million Quasars (Milliquas) catalogue, version 7.2 (Flesch, 2021) (1,573,824 objects)",1573824,Flesch,2021,vizier,VII/290/catalog,quasars,,,
+NamedStars,"Named Stars IAU catalog (3,672 stars)",3672,IAU-Working Group on Star Names,2016,file: PixInsight/include/pjsr/astrometry/NamedStars.csv,,stars,max,,all
+NOMAD-1 B-V WB,Naval Observatory Merged Astrometric Dataset (NOMAD) star catalog with B-V filtering for white balance,1117612732,Zacharias+,2005,vizier,I/297,stars,[Vmag|Bmag|Rmag] min – max,"B-V filter range, V-R filter range",
+PGC,"PGC HYPERLEDA I catalog of galaxies (Paturel+, 2003) (983,261 galaxies)",983261,Paturel+,2003,vizier,VII/237/pgc,galaxies,,,all
+Planets,"Visible planets (DE440, ICRS coordinates)",8,PixInsight from JPL DE440/LE440,2021,file: PixInsight/rsc/eph/core-fundamental.xeph,,planets,,,
+PPMX,Position and Proper Motions eXtended (PPMX) catalog,18088919,Roeser+,2008,vizier,I/312/sampl,stars,[Cmag|Rmag|Bmag|Vmag|Jmag|Hmag|Kmag] min – max (15),,
+PPMXL,"Position and Proper Motions eXtended (PPMXL) catalog (910,469,430 objects)",910469430,Roeser+,2010,vizier,I/317,stars,[Jmag|Hmag|Kmag|b1mag|b2mag|r1mag|r2mag|imag] min – max (15),,
+SDSS R9,"Sloan Digital Sky Survey (SDSS) Photometric Catalog R9 (469,053,874 objects)",469053874,Adelman-McCarthy+,2012,vizier,V/139,"stars, galaxies",[umag|gmag|rmag|imag|zmag] min – max,"Class [All objects, Stars, Galaxies]",
+SDSS R7,"Sloan Digital Sky Survey (SDSS) Photometric Catalog R7 (357,175,411 objects)",357175411,Adelman-McCarthy+,2009,vizier,II/294,"stars, galaxies",[umag|gmag|rmag|imag|zmag] min – max,"Class [All objects, Stars, Galaxies]",
+Sharpless,Catalog of HII Regions - Sharpless (313 nebulae),313,"Sharpless, Stewart",1959,vizier,VII/20/catalog,"nebulae, HII region",,,north of declination 270
+TYCHO-2,"Tycho-2 catalog (2,539,913 stars)",2539913,Hog+,2000,vizier,I/259/tyc2,stars,[Vtmag|BTmag] min – max,,
+UCAC3,"UCAC3 catalog (100,765,502 objects)",100765502,Zacharias+,2009,vizier,I/315/out,stars,[f.mag|a.mag|Jmag|Hmag|Kmag|Bmag|R2mag|Imag] min – max (15),,
+USNO-B1,"US Naval Observatory USNO-B1.0 catalog (1,045,175,762 objects)",1045175762,Monet+,2003,vizier,I/284/out,stars,[B1tmag|B2mag|R1mag|R2mag|Imag] min – max (15),,all
+VdB,Catalog of Reflection Nebulae - Van den Bergh (159 nebulae),159,"Van den Berg, Sidney",1966,vizier,VII/21/catalog,"nebulae, reflection",min – max,,north of delta = -33°
+WDS,"Washington Visual Double Star Catalog (Mason+ 2001-2020) (156,557 objects)",156557,Mason+,2020,vizier,B/wds/wds,stars,min – max (25),,

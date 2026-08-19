@@ -27,7 +27,7 @@
 
 CoreApplication.ensureMinimumVersion( 1, 9, 4 );
 
-#define VERSION "1.2.2"
+#define VERSION "1.3"
 #define TITLE "Annotate Image Ext"
 #define ANNOT_SETTINGS_MODULE "AnnotateImageExt"
 

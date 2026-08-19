@@ -22,6 +22,8 @@
 #define __PJSR_AstronomicalCatalogs_js
 
 #include <pjsr/astrometry/AstrometricMetadata.js>
+// Fix https://github.com/scottstirling/AnnotateImageExt/issues/25
+#include <pjsr/astrometry/CatalogDownloaderDialog.js>
 
 // ----------------------------------------------------------------------------
 
@@ -1143,16 +1145,16 @@ var NamedStarsCatalog = class extends LocalFileCatalog
 {
    constructor()
    {
-      // TODO
+      // Ext TODO
       // NamedStars magnitude filtering could be abstracted and applied for other catalogs having magnitude values,
       // but quick way forward for a bunch of star name updates AND retention of the magnitude filter is to update
       // the CSV file and really no code change needed here, but this is more of a placeholder to look at abstracting
       // the magnitude filtering if possible and externalize the file name and other properties to catalog-condigs.json
       //
       // super( "NamedStars", "NamedStars", "NamedStars.csv" );
-      super( "NamedStars", "NamedStars IAU 2026", "NamedStars-IAU-06-24-2026.csv" ); // TODO: hardcoded path override
+      super( "NamedStars", "NamedStars IAU+ 2026", "NamedStars-IAU-08-17-2026.csv" ); // Ext override
 
-      this.description = "Named stars IAU update catalog (3671 objects)";
+      this.description = "Named Stars IAU catalog (3,672 stars)";
       this.fields = [ "Name", "Coordinates", "Magnitude", "Spectral type", "Common name", "HD", "HIP" ];
       this.filters = [ "V" ];
       this.magMin = Catalog.NullMag;
@@ -3315,15 +3317,16 @@ CatalogRegistry.register( new GSCCatalog );
 // ----------------------------------------------------------------------------
 
 /*
- * CMC14 catalog
+ * CMC15 catalog
  */
 var CMC14Catalog = class extends VizierCatalog
 {
    constructor()
    {
-      super( "CMC14", "CMC14" );
+      super( "CMC15", "CMC15" );
 
       this.description = "CMC14 catalog (95,858,475 stars)";
+      //this.description = "CMC15 catalog (134,653,515 stars)";
 
       this.catalogMagnitude = 17;
 
@@ -3388,15 +3391,15 @@ CatalogRegistry.register( new CMC14Catalog );
 // ----------------------------------------------------------------------------
 
 /*
- * ARP catalog
+ * Arp catalog
  */
 var ARPCatalog = class extends VizierCatalog
 {
    constructor()
    {
-      super( "ARP", "ARP" );
+      super( "ARP", "Arp" );
 
-      this.description = "ARP catalog (592 galaxies)";
+      this.description = "Arp catalog (592 galaxies)";
 
       this.catalogMagnitude = 17;
 

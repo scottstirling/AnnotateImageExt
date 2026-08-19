@@ -73,7 +73,15 @@
     "id": "FeSt2",
     "name": "FeSt2",
     "file": "FeSt-2-Globules-1984-for-PixInsight.csv",
-    "description": "Catalogue of *globules* for galactic longitudes 240 to 360 degrees, ) (311 globules)",
+    "description": "Catalogue of *globules* for galactic longitudes 240 to 360 degrees (Feitzinger & Stüwe, 1984) (311 globules)",
+    "fields": ["Name", "Coordinates", "AKA"]
+  },
+  {
+    "className": "GGClCatalog",
+    "id": "GGCl",
+    "name": "Corwin GGCl",
+    "file": "GalacticGlobularClusters-GGCl-Corwin-2022-for-PixInsight.csv",
+    "description": "A List of Galactic Globular Clusters (Corwin, 2022) (159 clusters)",
     "fields": ["Name", "Coordinates", "AKA"]
   },
   {
@@ -171,6 +179,16 @@
     "file": "NGC-IC.csv",
     "description": "NGC and IC catalogs (9933 objects)",
     "fields": ["Name", "Coordinates", "Magnitude", "Diameter", "Common name", "PGC", "PGC2", "Messier"],
+    "defaultSet": true,
+     "visible": true
+  },
+  {
+    "className": "OpenNGCCatalog",
+    "id": "OpenNGC",
+    "name": "Open NGC-IC",
+    "file": "OpenNGC-for-PixInsight.csv",
+    "description": "OpenNGC and IC catalogs (13,308 objects)",
+    "fields": ["Name", "Coordinates", "Diameter", "Common name" ],
     "defaultSet": true,
      "visible": true
   },
