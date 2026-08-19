@@ -22,7 +22,6 @@
 #define __PJSR_AstronomicalCatalogs_js
 
 #include <pjsr/astrometry/AstrometricMetadata.js>
-// Fix https://github.com/scottstirling/AnnotateImageExt/issues/25
 #include <pjsr/astrometry/CatalogDownloaderDialog.js>
 
 // ----------------------------------------------------------------------------
@@ -3317,16 +3316,17 @@ CatalogRegistry.register( new GSCCatalog );
 // ----------------------------------------------------------------------------
 
 /*
- * CMC15 catalog
+ * CMC14 catalog
  */
 var CMC14Catalog = class extends VizierCatalog
 {
    constructor()
    {
-      super( "CMC15", "CMC15" );
+      super( "CMC14", "CMC14" );
 
       this.description = "CMC14 catalog (95,858,475 stars)";
-      //this.description = "CMC15 catalog (134,653,515 stars)";
+      //TODO: update and test 
+      // this.description = "CMC15 catalog (134,653,515 stars)";
 
       this.catalogMagnitude = 17;
 
