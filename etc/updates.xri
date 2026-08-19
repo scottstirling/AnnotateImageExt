@@ -8,8 +8,13 @@
          <title>AnnotateImageExt, install / update</title>
          <description>
             <p>v1.3</p>
-
-
+            <ul>
+             <li>Update updates.xri for next release and fix CatalogDownloader problem, https://github.com/scottstirling/AnnotateImageExt/issues/25</li>
+             <li>Add docs/ with some catalog documentation for the built-in PixInsight 1.9.x catalogs, update NamedStars with latest IAU updates and fix bug with offset columns, add Corwin's *Galactic Globular Clusters* (2022), add OpenNGC, update Very Large Scale catalog with more objects and data</li>
+             <li>Add files via upload: Update with star names added by the IAU between June, 2026 and July 16, 2026.</li>
+             <li>Fix common names in NamedStars: Cleaned up the common names by removing some old duplicate name assignments, fixed the common name column offset for the last several hundred rows pointed out in issue #22, restored (removed parentheses) common names that are not actually IAU names, but are ones PixInsight included from tradition outside of the IAU names, e.g., Khan is a name from Adam Block for a star in Scorpius that was in there so I left it in.</li>
+             <li>Changed alt text for GitHub banner image and Updated the alt text for the banner image in README.md.</li>
+            </ul>
             <p>v1.2.2</p>
             <ul>
                <li>&quot;Name&quot; and &quot;Common name&quot; logic in the script detects whether there is a &quot;Common name&quot; column and will display it by default, as done with Messier and NGC-IC, which sometimes just results in too many duplicate names in the annotation.  I did not realize this was what was happening until today, why by default if there is a Common name column in a catalog, it will automatically be labeled under the name.  I have cleaned this up across the catalogs and just kept &quot;Common name&quot; in Messier and NGC-IC for now.</li>
