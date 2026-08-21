@@ -30,7 +30,7 @@ For example, say _Sharpless_ is added twice: once as a layer used to manage the 
 
 The first time it is used, the first _Sharpless_ layer will query the Vizier backend, then the second layer will use the cached query populated by the first one.  This is a contrived case, but it will exercise the cache.  It is contrived because one can manage the labels and markers independently already with just one instance of the catalog layer.
 
-<img width="2000" height="1262" alt="Milky Way core wide field w/LDN annotations" src="https://github.com/user-attachments/assets/ab048dcd-06c2-4426-90d3-c564857c5779" />
+<img width="765" height="483" alt="Milky Way core wide field w/LDN annotations" src="https://github.com/user-attachments/assets/ab048dcd-06c2-4426-90d3-c564857c5779" />
 
 ## `Clear cache` nuance
 
