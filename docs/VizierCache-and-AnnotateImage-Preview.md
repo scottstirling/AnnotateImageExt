@@ -6,19 +6,19 @@ When the user path through **AnnotateImage** is to configure and add catalog lay
 
 `VizierCache` is dereferenced along with the **AnnotateImage** script GUI screen and all of its related objects every time it is closed by clicking "OK" and annotating an image or when hitting "Cancel" and closing the **AnnotateImage** interface, i.e., each `VizierCache` instance is new every time **AnnotateImage** is started from the **SCRIPT** menu. 
 
-So how to make effective use of the cache?   Two answers follow, but one primary use case, which is the **Preview** function on the _lower left_ of the **AnnotateImage** GUI.
+How to make effective use of the cache?   Two answers follow, but one primary use case, which is the **Preview** function on the _lower left_ of the **AnnotateImage** GUI.
 
 ## I. AnnotateImage, Preview and VizierCache
 
 Every time **Preview** runs, **AnnotateImage** gets for the catalog data it needs to render annotations for the image view's field of view (search) radius, center coordinates and selected catalog layers.  The **Preview** function can be run _infinitely_ between tweaks of catalog layer display settings, additions, removals and other configuration changes in the annotated output _before_ clicking the final "OK" to render a new image and exit the script.
   
-    Using **Preview** iteratively on the same image with different settings is the primary use case where the `VizierCache` is most relevant and useful.  **AnnotateImage** will call the `VizierCache.Get(center, fov, id)` function and get cached object data from Vizier query responses every time, except the first time a Vizier-query-based catalog is previewed, e.g., _Arp_, _Barnard_, _LBN_, _LDN_, _Sharpless_, _VdB_ are all Vizier-query catalogs (unlike _Messier_, _NGC-IC_ and _NamedStars_, which are local files in the PixInsight product).
+Using **Preview** iteratively on the same image with different settings is the primary use case where the `VizierCache` is most relevant and useful.  **AnnotateImage** will call the `VizierCache.Get(center, fov, id)` function and get cached object data from Vizier query responses every time, except the first time a Vizier-query-based catalog is previewed, e.g., _Arp_, _Barnard_, _LBN_, _LDN_, _Sharpless_, _VdB_ are all Vizier-query catalogs (unlike _Messier_, _NGC-IC_ and _NamedStars_, which are local files in the PixInsight product).
 
 <img width="799" height="974" alt="VizierCache-Preview-example" src="https://github.com/user-attachments/assets/5bec9e08-1498-40c8-a107-8ca43fd363d8" />
 
 ## II. Same catalog layer added more than once
 
-This is a contrived, but possible scenario, where the same catalog layer can be added multiple times to the annotation layers.  
+A contrived, but possible scenario is one where the same catalog layer can be added multiple times to the annotation layers.  
 
 For example, say _Sharpless_ is added twice: once as a layer used to manage the label font and color with **Show Markers** option disabled ... 
 
