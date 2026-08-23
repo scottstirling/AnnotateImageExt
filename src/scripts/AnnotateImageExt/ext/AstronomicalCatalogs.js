@@ -1988,6 +1988,135 @@ CatalogRegistry.register( new WDSCatalog );
 // ----------------------------------------------------------------------------
 
 /*
+ * Arp catalog
+ */
+var ArpCatalog = class extends VizierCatalog
+{
+   constructor()
+   {
+      super( "Arp", "Arp" );
+
+      this.description = "Arp's Peculiar Galaxies (Arp, 1966 & Webb, 1996) (592 galaxies)";
+
+      this.catalogMagnitude = 17;
+
+      this.fields = [ "Name", "CommonName", "Coordinates", "Magnitude", "MType", "VTmag" ];
+
+      this.properties.push( ["magMin", DataType.Double] );
+      this.properties.push( ["magMax", DataType.Double] );
+      this.properties.push( ["magnitudeFilter", DataType.UTF16String ] );
+
+      this.filters = [ "VTmag" ];
+      this.magnitudeFilter = "VTmag";
+   }
+
+   GetConstructor()
+   {
+      return "new ArpCatalog()";
+   }
+
+   UrlBuilder( center, fov, mirrorServer )
+   {
+      let url=mirrorServer+"viz-bin/asu-tsv?-source=VII/192/arplist&-c=" +
+         format("%f %f",center.x, center.y) +
+         "&-c.r=" + format("%f",fov) +
+         "&-c.u=deg&-out.form=|"+
+         "&-oc.form=dec&-out.add=_RAJ,_DEJ"+
+         "&-out=Arp&-out=Name&-out=VT&-out=dim1&-out=MType" +
+         this.CreateMagFilter( this.magnitudeFilter, this.magMin, this.magMax ) ;
+      return url;
+   }
+
+   ParseRecord( tokens )
+   {
+      if ( tokens.length >= 2 && parseFloat( tokens[0] ) > 0 )
+      {
+         let x = parseFloat( tokens[0] );
+         let y = parseFloat( tokens[1] );
+         if ( x < 0 || x > 360 || y < -90 || y > 90 )
+            return null;
+         if ( this.position !== null )
+         {
+            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
+            x = FMath.deg( q[0] );
+            y = FMath.deg( q[1] );
+         }
+         let diameter = parseFloat( tokens[5] )/60;
+         let record = new CatalogRecord( new Point( x, y ), diameter, "Arp" + tokens[2].trim() );
+         record["CommonName"] = tokens[3].trim();
+         record["VTmag"] = tokens[4].trim();
+         record["MType"] = tokens[6].trim();
+         record.magnitude = parseFloat( record[this.magnitudeFilter] );
+         return record;
+      }
+
+      return null;
+   }
+};
+
+CatalogRegistry.register( new ArpCatalog );
+
+// ----------------------------------------------------------------------------
+
+/*
+ * PGC catalog
+ */
+var PGCCatalog = class extends VizierCatalog
+{
+   constructor()
+   {
+      super( "PGC", "PGC" );
+
+      this.description = "PGC HYPERLEDA I catalog of galaxies (Paturel+, 2003) (983,261 galaxies)";
+
+      this.fields = [ "Name", "Coordinates" ];
+   }
+
+   GetConstructor()
+   {
+      return "new PGCCatalog()";
+   }
+
+   UrlBuilder(center, fov, mirrorServer)
+   {
+      return mirrorServer + "viz-bin/asu-tsv?-source=VII/237/pgc&-c=" +
+         format( "%f %f", center.x, center.y ) +
+         "&-c.r=" + format( "%f", fov ) +
+         "&-c.u=deg&-out.form=|" +
+         format( "&-out.max=%d", this.maxRecords ) +
+         "&-out=PGC&-out=RAJ2000&-out=DEJ2000&-out=logD25&-out=logR25&-out=PA";
+   }
+
+   ParseRecord( tokens )
+   {
+      if ( tokens.length >= 6 && parseFloat( tokens[0] ) > 0 )
+      {
+         let x = DMSangle.FromString( tokens[1] ).GetValue()*15;
+         let y = DMSangle.FromString( tokens[2] ).GetValue();
+         if ( x < 0 || x > 360 || y < -90 || y > 90 )
+            return null;
+         if ( this.position !== null )
+         {
+            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
+            x = FMath.deg( q[0] );
+            y = FMath.deg( q[1] );
+         }
+         let diameter = tokens[3].trim().isEmpty() ? undefined : FMath.pow10( parseFloat( tokens[3] ) )/60/10;
+         let axisRatio = tokens[4].trim().isEmpty() ? undefined : FMath.pow10( parseFloat( tokens[4] ) );
+         let posAngle = tokens[5].trim().isEmpty() ? undefined : parseFloat( tokens[5] );
+         return new CatalogRecord( new Point( x, y ), diameter, "PGC" + tokens[0].trim(),
+                                   undefined/*magnitude*/, axisRatio, posAngle );
+      }
+
+      return null;
+   }
+};
+
+CatalogRegistry.register( new PGCCatalog );
+
+// ----------------------------------------------------------------------------
+
+/*
  * SGA 2020 catalog
  * Authors: John Moustakas et al 2023
  * DOI: 10.3847/1538-4365/acfaa2
@@ -2047,63 +2176,6 @@ var SGA2020Catalog = class extends VizierCatalog
 };
 
 CatalogRegistry.register( new SGA2020Catalog );
-
-// ----------------------------------------------------------------------------
-/*
- * PGC catalog
- */
-var PGCCatalog = class extends VizierCatalog
-{
-   constructor()
-   {
-      super( "PGC", "PGC" );
-
-      this.description = "PGC HYPERLEDA I catalog of galaxies (Paturel+, 2003) (983,261 galaxies)";
-
-      this.fields = [ "Name", "Coordinates" ];
-   }
-
-   GetConstructor()
-   {
-      return "new PGCCatalog()";
-   }
-
-   UrlBuilder(center, fov, mirrorServer)
-   {
-      return mirrorServer + "viz-bin/asu-tsv?-source=VII/237/pgc&-c=" +
-         format( "%f %f", center.x, center.y ) +
-         "&-c.r=" + format( "%f", fov ) +
-         "&-c.u=deg&-out.form=|" +
-         format( "&-out.max=%d", this.maxRecords ) +
-         "&-out=PGC&-out=RAJ2000&-out=DEJ2000&-out=logD25&-out=logR25&-out=PA";
-   }
-
-   ParseRecord( tokens )
-   {
-      if ( tokens.length >= 6 && parseFloat( tokens[0] ) > 0 )
-      {
-         let x = DMSangle.FromString( tokens[1] ).GetValue()*15;
-         let y = DMSangle.FromString( tokens[2] ).GetValue();
-         if ( x < 0 || x > 360 || y < -90 || y > 90 )
-            return null;
-         if ( this.position !== null )
-         {
-            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
-            x = FMath.deg( q[0] );
-            y = FMath.deg( q[1] );
-         }
-         let diameter = tokens[3].trim().isEmpty() ? undefined : FMath.pow10( parseFloat( tokens[3] ) )/60/10;
-         let axisRatio = tokens[4].trim().isEmpty() ? undefined : FMath.pow10( parseFloat( tokens[4] ) );
-         let posAngle = tokens[5].trim().isEmpty() ? undefined : parseFloat( tokens[5] );
-         return new CatalogRecord( new Point( x, y ), diameter, "PGC" + tokens[0].trim(),
-                                   undefined/*magnitude*/, axisRatio, posAngle );
-      }
-
-      return null;
-   }
-};
-
-CatalogRegistry.register( new PGCCatalog );
 
 // ----------------------------------------------------------------------------
 
@@ -2175,6 +2247,178 @@ CatalogRegistry.register( new MilliquasCatalog );
 // ----------------------------------------------------------------------------
 
 /*
+ * Barnard catalog
+ */
+var BarnardCatalog = class extends VizierCatalog
+{
+   constructor()
+   {
+      super( "Barnard", "Barnard" );
+
+      this.description = "Catalog of 349 Dark Objects in the Sky (Barnard, 1927) (349 nebulae)";
+
+      this.fields = [ "Name", "Coordinates" ];
+   }
+
+   GetConstructor()
+   {
+      return "new BarnardCatalog()";
+   }
+
+   UrlBuilder( center, fov, mirrorServer )
+   {
+      return mirrorServer + "viz-bin/asu-tsv?-source=VII/220A/barnard&-c=" +
+         format( "%f %f", center.x, center.y ) +
+         "&-c.eq=J2000&-c.r=" + format( "%f", fov ) +
+         "&-c.u=deg&-out.form=|" +
+         "&-out.add=_RAJ,_DEJ&-out=Barn&-out=Diam";
+   }
+
+   ParseRecord( tokens )
+   {
+      if ( tokens.length >= 4 && parseFloat( tokens[0] ) > 0 )
+      {
+         let x = parseFloat( tokens[0] );
+         let y = parseFloat( tokens[1] );
+         if ( x < 0 || x > 360 || y < -90 || y > 90 )
+            return null;
+         if ( this.position !== null )
+         {
+            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
+            x = FMath.deg( q[0] );
+            y = FMath.deg( q[1] );
+         }
+         let name = "B" + tokens[2].trim();
+         let diam =  parseFloat( tokens[3] );
+         if ( !diam )
+            diam = 0;
+         let record = new CatalogRecord( new Point( x, y ), diam/60, name );
+         return record;
+      }
+
+      return null;
+   }
+};
+
+CatalogRegistry.register( new BarnardCatalog );
+
+// ----------------------------------------------------------------------------
+
+/*
+ * LDN catalog
+ */
+var LDNCatalog = class extends VizierCatalog
+{
+   constructor()
+   {
+      super( "LDN", "LDN" );
+
+      this.description = "Catalogue of Dark Nebulae (LDN) (Lynds, 1962) (1791 nebulae)";
+
+      this.fields = [ "Name", "Coordinates" ];
+   }
+
+   GetConstructor()
+   {
+      return "new LDNCatalog()";
+   }
+
+   UrlBuilder(center, fov, mirrorServer)
+   {
+      return mirrorServer + "viz-bin/asu-tsv?-source=VII/7A/ldn&-c=" +
+         format( "%f %f", center.x, center.y ) +
+         "&-c.r=" + format( "%f", fov ) +
+         "&-c.u=deg&-out.form=|" +
+         format( "&-out.max=%d", this.maxRecords ) +
+         "&-out=recno&-out=LDN&-out=Area&-out=_RA.icrs&-out=_DE.icrs";
+   }
+
+   ParseRecord( tokens )
+   {
+      if ( tokens.length >= 5 && parseInt( tokens[0] ) > 0 )
+      {
+         let x = DMSangle.FromString( tokens[3] ).GetValue()*15;
+         let y = DMSangle.FromString( tokens[4] ).GetValue();
+         if ( x < 0 || x > 360 || y < -90 || y > 90 )
+            return null;
+         if ( this.position !== null )
+         {
+            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
+            x = FMath.deg( q[0] );
+            y = FMath.deg( q[1] );
+         }
+         let diameter = FMath.sqrt( parseFloat( tokens[2] ) );
+         return new CatalogRecord( new Point( x, y ), diameter, "LDN " + tokens[1].trim() );
+      }
+
+      return null;
+   }
+};
+
+CatalogRegistry.register( new LDNCatalog );
+
+
+// ----------------------------------------------------------------------------
+
+/*
+ * Sharpless catalog
+ */
+var SharplessCatalog = class extends VizierCatalog
+{
+   constructor()
+   {
+      super( "Sharpless", "Sharpless" );
+
+      this.description = "Catalogue of HII Regions (Sh2) (Sharpless, 1959) (313 nebulae)";
+
+      this.fields = [ "Name", "Coordinates" ];
+   }
+
+   GetConstructor()
+   {
+      return "new SharplessCatalog()";
+   }
+
+   UrlBuilder( center, fov, mirrorServer )
+   {
+      return mirrorServer + "viz-bin/asu-tsv?-source=VII/20/catalog&-c=" +
+         format( "%f %f", center.x, center.y ) +
+         "&-c.eq=J2000&-c.r=" + format( "%f", fov ) +
+         "&-c.u=deg&-out.form=|" +
+         "&-out.add=_RAJ,_DEJ&-out=Sh2&-out=Diam";
+   }
+
+   ParseRecord( tokens )
+   {
+      if ( tokens.length >= 4 && parseFloat( tokens[0] ) > 0 )
+      {
+         let x = parseFloat( tokens[0] );
+         let y = parseFloat( tokens[1] );
+         if ( x < 0 || x > 360 || y < -90 || y > 90 )
+            return null;
+         if ( this.position !== null )
+         {
+            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
+            x = FMath.deg( q[0] );
+            y = FMath.deg( q[1] );
+         }
+         let name = "Sh2-" + tokens[2].trim();
+         let diam =  parseFloat( tokens[3] );
+         if ( !diam )
+            diam = 0;
+         let record = new CatalogRecord( new Point( x, y ), diam/60, name );
+         return record;
+      }
+
+      return null;
+   }
+};
+
+CatalogRegistry.register( new SharplessCatalog );
+
+// ----------------------------------------------------------------------------
+
+/*
  * LBN catalog
  */
 var LBNCatalog = class extends VizierCatalog
@@ -2183,7 +2427,7 @@ var LBNCatalog = class extends VizierCatalog
    {
       super( "LBN", "LBN" );
 
-      this.description = "Lynds' Catalogue of Bright Nebulae (Lynds, 1965) (1125 objects)";
+      this.description = "Catalogue of Bright Nebulae (LBN) (Lynds, 1965) (1125 objects)";
 
       this.fields = [ "Name", "Other name", "Coordinates" ];
    }
@@ -2232,40 +2476,50 @@ CatalogRegistry.register( new LBNCatalog );
 // ----------------------------------------------------------------------------
 
 /*
- * LDN catalog
+ * VdB catalog
  */
-var LDNCatalog = class extends VizierCatalog
+var VdBCatalog = class extends VizierCatalog
 {
    constructor()
    {
-      super( "LDN", "LDN" );
+      super( "VdB", "VdB" );
 
-      this.description = "Lynds' Catalogue of Dark Nebulae (Lynds, 1962) (1791 objects)";
+      this.description = "Catalog of Reflection Nebulae (Vdb) (Van den Bergh, 1966) (159 nebulae)";
 
-      this.fields = [ "Name", "Coordinates" ];
+      this.catalogMagnitude = 10.5;
+
+      this.fields = [ "Name", "Coordinates", "Magnitude", "DM code", "Type", "Surface bright.", "Spectral type" ];
+
+      this.properties.push( ["magMin", DataType.Double] );
+      this.properties.push( ["magMax", DataType.Double] );
+      this.properties.push( ["magnitudeFilter", DataType.UTF16String] );
+
+      this.filters = [ "Vmag" ];
+      this.magnitudeFilter = "Vmag";
    }
 
    GetConstructor()
    {
-      return "new LDNCatalog()";
+      return "new VdBCatalog()";
    }
 
-   UrlBuilder(center, fov, mirrorServer)
+   UrlBuilder( center, fov, mirrorServer )
    {
-      return mirrorServer + "viz-bin/asu-tsv?-source=VII/7A/ldn&-c=" +
+      return mirrorServer + "viz-bin/asu-tsv?-source=VII/21/catalog&-c=" +
          format( "%f %f", center.x, center.y ) +
-         "&-c.r=" + format( "%f", fov ) +
+         "&-c.eq=J2000&-c.r=" + format( "%f", fov ) +
          "&-c.u=deg&-out.form=|" +
          format( "&-out.max=%d", this.maxRecords ) +
-         "&-out=recno&-out=LDN&-out=Area&-out=_RA.icrs&-out=_DE.icrs";
+         "&-out=_RA&-out=_DE&-out=VdB&-out=DM&-out=Vmag&-out=SpType&-out=Type&-out=SurfBr&-out=BRadMax&-out=RRadMax" +
+         this.CreateMagFilter( "Vmag", this.magMin, this.magMax );
    }
 
    ParseRecord( tokens )
    {
-      if ( tokens.length >= 5 && parseInt( tokens[0] ) > 0 )
+      if ( tokens.length >= 10 && parseFloat( tokens[0] ) > 0 )
       {
-         let x = DMSangle.FromString( tokens[3] ).GetValue()*15;
-         let y = DMSangle.FromString( tokens[4] ).GetValue();
+         let x = parseFloat( tokens[0] );
+         let y = parseFloat( tokens[1] );
          if ( x < 0 || x > 360 || y < -90 || y > 90 )
             return null;
          if ( this.position !== null )
@@ -2274,15 +2528,29 @@ var LDNCatalog = class extends VizierCatalog
             x = FMath.deg( q[0] );
             y = FMath.deg( q[1] );
          }
-         let diameter = FMath.sqrt( parseFloat( tokens[2] ) );
-         return new CatalogRecord( new Point( x, y ), diameter, "LDN " + tokens[1].trim() );
+         let name = "VdB" + tokens[2].trim();
+         let radBlue =  parseFloat( tokens[8] );
+         let radRed =  parseFloat( tokens[9] );
+         let radius = 0; // in arcmin
+         if ( radBlue && radRed )
+            radius = FMath.max( radBlue, radRed );
+         else if ( radRed )
+            radius = radRed;
+         else if ( radBlue )
+            radius = radBlue;
+         let record = new CatalogRecord( new Point( x, y ), radius*2/60, name, parseFloat( tokens[4] ) );
+         record["DM code"] = tokens[3].trim();
+         record["Type"] = tokens[6].trim();
+         record["Surface brightness"] = tokens[7].trim();
+         record["Spectral type"] = tokens[5].trim();
+         return record;
       }
 
       return null;
    }
 };
 
-CatalogRegistry.register( new LDNCatalog );
+CatalogRegistry.register( new VdBCatalog );
 
 // ----------------------------------------------------------------------------
 
@@ -2680,201 +2948,6 @@ var UCAC5Catalog = class extends VizierCatalog
 };
 
 CatalogRegistry.register( new UCAC5Catalog );
-
-// ----------------------------------------------------------------------------
-
-/*
- * VdB catalog
- */
-var VdBCatalog = class extends VizierCatalog
-{
-   constructor()
-   {
-      super( "VdB", "VdB" );
-
-      this.description = "Catalog of Reflection Nebulae - Van den Bergh (159 nebulae)";
-
-      this.catalogMagnitude = 10.5;
-
-      this.fields = [ "Name", "Coordinates", "Magnitude", "DM code", "Type", "Surface bright.", "Spectral type" ];
-
-      this.properties.push( ["magMin", DataType.Double] );
-      this.properties.push( ["magMax", DataType.Double] );
-      this.properties.push( ["magnitudeFilter", DataType.UTF16String] );
-
-      this.filters = [ "Vmag" ];
-      this.magnitudeFilter = "Vmag";
-   }
-
-   GetConstructor()
-   {
-      return "new VdBCatalog()";
-   }
-
-   UrlBuilder( center, fov, mirrorServer )
-   {
-      return mirrorServer + "viz-bin/asu-tsv?-source=VII/21/catalog&-c=" +
-         format( "%f %f", center.x, center.y ) +
-         "&-c.eq=J2000&-c.r=" + format( "%f", fov ) +
-         "&-c.u=deg&-out.form=|" +
-         format( "&-out.max=%d", this.maxRecords ) +
-         "&-out=_RA&-out=_DE&-out=VdB&-out=DM&-out=Vmag&-out=SpType&-out=Type&-out=SurfBr&-out=BRadMax&-out=RRadMax" +
-         this.CreateMagFilter( "Vmag", this.magMin, this.magMax );
-   }
-
-   ParseRecord( tokens )
-   {
-      if ( tokens.length >= 10 && parseFloat( tokens[0] ) > 0 )
-      {
-         let x = parseFloat( tokens[0] );
-         let y = parseFloat( tokens[1] );
-         if ( x < 0 || x > 360 || y < -90 || y > 90 )
-            return null;
-         if ( this.position !== null )
-         {
-            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
-            x = FMath.deg( q[0] );
-            y = FMath.deg( q[1] );
-         }
-         let name = "VdB" + tokens[2].trim();
-         let radBlue =  parseFloat( tokens[8] );
-         let radRed =  parseFloat( tokens[9] );
-         let radius = 0; // in arcmin
-         if ( radBlue && radRed )
-            radius = FMath.max( radBlue, radRed );
-         else if ( radRed )
-            radius = radRed;
-         else if ( radBlue )
-            radius = radBlue;
-         let record = new CatalogRecord( new Point( x, y ), radius*2/60, name, parseFloat( tokens[4] ) );
-         record["DM code"] = tokens[3].trim();
-         record["Type"] = tokens[6].trim();
-         record["Surface brightness"] = tokens[7].trim();
-         record["Spectral type"] = tokens[5].trim();
-         return record;
-      }
-
-      return null;
-   }
-};
-
-CatalogRegistry.register( new VdBCatalog );
-
-// ----------------------------------------------------------------------------
-
-/*
- * Sharpless catalog
- */
-var SharplessCatalog = class extends VizierCatalog
-{
-   constructor()
-   {
-      super( "Sharpless", "Sharpless" );
-
-      this.description = "Catalog of HII Regions - Sharpless (313 nebulae)";
-
-      this.fields = [ "Name", "Coordinates" ];
-   }
-
-   GetConstructor()
-   {
-      return "new SharplessCatalog()";
-   }
-
-   UrlBuilder( center, fov, mirrorServer )
-   {
-      return mirrorServer + "viz-bin/asu-tsv?-source=VII/20/catalog&-c=" +
-         format( "%f %f", center.x, center.y ) +
-         "&-c.eq=J2000&-c.r=" + format( "%f", fov ) +
-         "&-c.u=deg&-out.form=|" +
-         "&-out.add=_RAJ,_DEJ&-out=Sh2&-out=Diam";
-   }
-
-   ParseRecord( tokens )
-   {
-      if ( tokens.length >= 4 && parseFloat( tokens[0] ) > 0 )
-      {
-         let x = parseFloat( tokens[0] );
-         let y = parseFloat( tokens[1] );
-         if ( x < 0 || x > 360 || y < -90 || y > 90 )
-            return null;
-         if ( this.position !== null )
-         {
-            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
-            x = FMath.deg( q[0] );
-            y = FMath.deg( q[1] );
-         }
-         let name = "Sh2-" + tokens[2].trim();
-         let diam =  parseFloat( tokens[3] );
-         if ( !diam )
-            diam = 0;
-         let record = new CatalogRecord( new Point( x, y ), diam/60, name );
-         return record;
-      }
-
-      return null;
-   }
-};
-
-CatalogRegistry.register( new SharplessCatalog );
-
-// ----------------------------------------------------------------------------
-
-/*
- * Barnard catalog
- */
-var BarnardCatalog = class extends VizierCatalog
-{
-   constructor()
-   {
-      super( "Barnard", "Barnard" );
-
-      this.description = "Barnard's Catalog of Dark Objects in the Sky (349 objects)";
-
-      this.fields = [ "Name", "Coordinates" ];
-   }
-
-   GetConstructor()
-   {
-      return "new BarnardCatalog()";
-   }
-
-   UrlBuilder( center, fov, mirrorServer )
-   {
-      return mirrorServer + "viz-bin/asu-tsv?-source=VII/220A/barnard&-c=" +
-         format( "%f %f", center.x, center.y ) +
-         "&-c.eq=J2000&-c.r=" + format( "%f", fov ) +
-         "&-c.u=deg&-out.form=|" +
-         "&-out.add=_RAJ,_DEJ&-out=Barn&-out=Diam";
-   }
-
-   ParseRecord( tokens )
-   {
-      if ( tokens.length >= 4 && parseFloat( tokens[0] ) > 0 )
-      {
-         let x = parseFloat( tokens[0] );
-         let y = parseFloat( tokens[1] );
-         if ( x < 0 || x > 360 || y < -90 || y > 90 )
-            return null;
-         if ( this.position !== null )
-         {
-            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
-            x = FMath.deg( q[0] );
-            y = FMath.deg( q[1] );
-         }
-         let name = "B" + tokens[2].trim();
-         let diam =  parseFloat( tokens[3] );
-         if ( !diam )
-            diam = 0;
-         let record = new CatalogRecord( new Point( x, y ), diam/60, name );
-         return record;
-      }
-
-      return null;
-   }
-};
-
-CatalogRegistry.register( new BarnardCatalog );
 
 // ----------------------------------------------------------------------------
 
@@ -3457,77 +3530,6 @@ var CMC15Catalog = class extends VizierCatalog
 };
 
 CatalogRegistry.register( new CMC15Catalog );
-
-// ----------------------------------------------------------------------------
-
-/*
- * Arp catalog
- */
-var ARPCatalog = class extends VizierCatalog
-{
-   constructor()
-   {
-      super( "ARP", "Arp" );
-
-      this.description = "Arp catalog (592 galaxies)";
-
-      this.catalogMagnitude = 17;
-
-      this.fields = [ "Name", "CommonName", "Coordinates", "Magnitude", "MType", "VTmag" ];
-
-      this.properties.push( ["magMin", DataType.Double] );
-      this.properties.push( ["magMax", DataType.Double] );
-      this.properties.push( ["magnitudeFilter", DataType.UTF16String ] );
-
-      this.filters = [ "VTmag" ];
-      this.magnitudeFilter = "VTmag";
-   }
-
-   GetConstructor()
-   {
-      return "new ARPCatalog()";
-   }
-
-   UrlBuilder( center, fov, mirrorServer )
-   {
-      let url=mirrorServer+"viz-bin/asu-tsv?-source=VII/192/arplist&-c=" +
-         format("%f %f",center.x, center.y) +
-         "&-c.r=" + format("%f",fov) +
-         "&-c.u=deg&-out.form=|"+
-         "&-oc.form=dec&-out.add=_RAJ,_DEJ"+
-         "&-out=Arp&-out=Name&-out=VT&-out=dim1&-out=MType" +
-         this.CreateMagFilter( this.magnitudeFilter, this.magMin, this.magMax ) ;
-      return url;
-   }
-
-   ParseRecord( tokens )
-   {
-      if ( tokens.length >= 2 && parseFloat( tokens[0] ) > 0 )
-      {
-         let x = parseFloat( tokens[0] );
-         let y = parseFloat( tokens[1] );
-         if ( x < 0 || x > 360 || y < -90 || y > 90 )
-            return null;
-         if ( this.position !== null )
-         {
-            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
-            x = FMath.deg( q[0] );
-            y = FMath.deg( q[1] );
-         }
-         let diameter = parseFloat( tokens[5] )/60;
-         let record = new CatalogRecord( new Point( x, y ), diameter, "ARP" + tokens[2].trim() );
-         record["CommonName"] = tokens[3].trim();
-         record["VTmag"] = tokens[4].trim();
-         record["MType"] = tokens[6].trim();
-         record.magnitude = parseFloat( record[this.magnitudeFilter] );
-         return record;
-      }
-
-      return null;
-   }
-};
-
-CatalogRegistry.register( new ARPCatalog );
 
 // ----------------------------------------------------------------------------
 
