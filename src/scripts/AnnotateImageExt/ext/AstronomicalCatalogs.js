@@ -3380,17 +3380,16 @@ CatalogRegistry.register( new GSCCatalog );
 // ----------------------------------------------------------------------------
 
 /*
- * CMC14 catalog
+ * CMC15 catalog
+ * Zone: -40/+50deg
  */
-var CMC14Catalog = class extends VizierCatalog
+var CMC15Catalog = class extends VizierCatalog
 {
    constructor()
    {
-      super( "CMC14", "CMC14" );
+      super( "CMC15", "CMC15" );
 
-      this.description = "CMC14 catalog (95,858,475 stars)";
-      //TODO: update and test 
-      // this.description = "CMC15 catalog (134,653,515 stars)";
+      this.description = "CMC15 catalog (134,653,515 stars)";
 
       this.catalogMagnitude = 17;
 
@@ -3407,17 +3406,19 @@ var CMC14Catalog = class extends VizierCatalog
 
    GetConstructor()
    {
-      return "new CMC14Catalog()";
+      return "new CMC15Catalog()";
    }
 
    UrlBuilder( center, fov, mirrorServer )
    {
-      let url = mirrorServer + "viz-bin/asu-tsv?-source=I/304/out&-c=" +
+      let url = mirrorServer + "viz-bin/asu-tsv?-source=I/327/cmc15&-c=" +
          format( "%f %f",center.x, center.y ) +
          "&-c.r=" + format( "%f", fov ) +
          "&-c.u=deg&-out.form=|" +
          format( "&-out.max=%d", this.maxRecords )+
-         "&-out=CMC14&-out=RAJ2000&-out=DEJ2000" +
+         "&-out=CMC15&-out=RA_ICRS&-out=DE_ICRS" + // TODO: note changed again (underscores) in CMC-15!
+         // "&-out=CMC14&-out=RAICRS&-out=DEICRS" + // TODO: note fix in CMC-14 before moving to 15!
+         // "&-out=CMC14&-out=RAJ2000&-out=DEJ2000" + // TODO: note CMC-14 seems broken in the product, wrong columns??
          "&-out=r'mag&-out=Jmag&-out=Hmag&-out=Ksmag" +
          this.CreateMagFilter( this.magnitudeFilter, this.magMin, this.magMax ) ;
       return url;
@@ -3450,7 +3451,7 @@ var CMC14Catalog = class extends VizierCatalog
    }
 };
 
-CatalogRegistry.register( new CMC14Catalog );
+CatalogRegistry.register( new CMC15Catalog );
 
 // ----------------------------------------------------------------------------
 
