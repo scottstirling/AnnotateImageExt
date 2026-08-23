@@ -2602,43 +2602,46 @@ CatalogRegistry.register( new USNOB1Catalog );
 // ----------------------------------------------------------------------------
 
 /*
- * UCAC3 catalog
+ * UCAC5 catalog
+ * Vizier id: "I/340/ucac5"
+ * Citation: UCAC5 Catalogue (Zacharias+ 2017)
+ * Description: Fifth U.S. Naval Observatory CCD Astrograph Catalog
  */
-var UCAC3Catalog = class extends VizierCatalog
+var UCAC5Catalog = class extends VizierCatalog
 {
    constructor()
    {
-      super( "UCAC3", "UCAC3" );
+      super( "UCAC5", "UCAC5" );
 
-      this.description = "UCAC3 catalog (100,765,502 objects)";
+      this.description = "UCAC5 Catalogue (Zacharias+ 2017) (107,758,513 objects)";
 
-      this.catalogMagnitude = 15;
-      this.magMax = 15;
-      this.fields = [ "Name", "Coordinates", "Magnitude", "f.mag", "a.mag", "Jmag", "Hmag", "Kmag", "Bmag", "R2mag", "Imag" ];
+      this.catalogMagnitude = 16; // UCAC5 change from 15, based on Gaia DR1 data; for accurate data down to magnitude 21, use Gaia DR3.
+      this.magMax = 16;
+      this.fields = [ "Name", "Coordinates", "Magnitude", "f.mag", "Gmag", "Hmag", "Jmag", "Kmag", "Rmag" ]; // NOTE: see notes below on mag changes in UCAC5
 
       this.properties.push( ["magMin",DataType.Double] );
       this.properties.push( ["magMax",DataType.Double] );
       this.properties.push( ["magnitudeFilter", DataType.UTF16String] );
 
-      this.filters = [ "f.mag", "a.mag", "Jmag", "Hmag", "Kmag", "Bmag", "R2mag", "Imag" ];
+      this.filters = [ "f.mag", "Gmag", "Hmag", "Jmag", "Kmag", "Rmag" ]; // NOTE: see notes below on mag removals and changes in UCAC5
       this.magnitudeFilter = "f.mag";
       this.maxFov = 45;
    }
 
    GetConstructor()
    {
-      return "new UCAC3Catalog()";
+      return "new UCAC5Catalog()";
    }
 
    UrlBuilder( center, fov, mirrorServer )
    {
-      return mirrorServer + "viz-bin/asu-tsv?-source=I/315/out&-c=" +
+      return mirrorServer + "viz-bin/asu-tsv?-source=I/340/ucac5&-c=" +
          format( "%f %f", center.x, center.y ) +
          "&-c.r=" + format( "%f", fov ) +
          "&-c.u=deg&-out.form=|" +
          format( "&-out.max=%d", this.maxRecords ) +
-         "&-out=3UC&-out=RAJ2000&-out=DEJ2000&-out=pmRA&-out=pmDE" +
-         "&-out=f.mag&-out=a.mag&-out=Jmag&-out=Hmag&-out=Kmag&-out=Bmag&-out=R2mag&-out=Imag" +
+         "&-out=SrcIDgaia&-out=RAJ2000&-out=DEJ2000&-out=pmRA&-out=pmDE" + // SrcIDgaia replacing 3UC column and id format
+         "&-out=f.mag&-out=Gmag&-out=Hmag&-out=Jmag&-out=Kmag&-out=Rmag" + // Imag, r.mag, Bmag removed in UCAC5; Gmag added, for Gaia mag; R2mag changed to Rmag
          this.CreateMagFilter( this.magnitudeFilter, this.magMin, this.magMax );
    }
 
@@ -2658,15 +2661,15 @@ var UCAC3Catalog = class extends VizierCatalog
             x = FMath.deg( q[0] );
             y = FMath.deg( q[1] );
          }
-         let record = new CatalogRecord( new Point( x, y ), 0/*diameter*/, "3UCAC" + tokens[0].trim(), parseFloat( tokens[5] ) );
+         let record = new CatalogRecord( new Point( x, y ), 0/*diameter*/, "UCAC5 " + tokens[0].trim(), parseFloat( tokens[5] ) ); // using 5UCAC as designation prefix, inserting a space since UCAC5 reverted to Gaia IDs.
          record["f.mag"] = tokens[5].trim();
-         if ( tokens.length >  6 ) record["a.mag"] = tokens[6].trim();
-         if ( tokens.length >  7 ) record.Jmag = tokens[7].trim();
-         if ( tokens.length >  8 ) record.Hmag = tokens[8].trim();
+         if ( tokens.length >  6 ) record.Gmag = tokens[6].trim();
+         if ( tokens.length >  7 ) record.Hmag = tokens[7].trim();
+         if ( tokens.length >  8 ) record.Jmag = tokens[8].trim();
          if ( tokens.length >  9 ) record.Kmag = tokens[9].trim();
-         if ( tokens.length > 10 ) record.Bmag = tokens[10].trim();
-         if ( tokens.length > 11 ) record.R2mag = tokens[11].trim();
-         if ( tokens.length > 12 ) record.Imag = tokens[12].trim();
+         if ( tokens.length > 10 ) record.Rmag = tokens[10].trim();
+         // if ( tokens.length > 11 ) record.R2mag = tokens[11].trim(); // R2mag changed to Rmag and r.mag and Bmag removed, Gmag added
+         // if ( tokens.length > 12 ) record.Imag = tokens[12].trim(); // Imag not present in UCAC5
          if ( record[this.magnitudeFilter] )
             record.magnitude = parseFloat( record[this.magnitudeFilter] );
          return record;
@@ -2676,7 +2679,7 @@ var UCAC3Catalog = class extends VizierCatalog
    }
 };
 
-CatalogRegistry.register( new UCAC3Catalog );
+CatalogRegistry.register( new UCAC5Catalog );
 
 // ----------------------------------------------------------------------------
 
