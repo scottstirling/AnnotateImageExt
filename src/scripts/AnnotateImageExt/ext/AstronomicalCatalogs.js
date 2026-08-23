@@ -126,10 +126,6 @@ var CatalogRegistry = class
                super(config.id, config.name, CATALOGS_SUBDIR + "/" + config.file);
                this.description = config.description;
                this.fields = config.fields;
-           // TODO: test and DEBUG
-           //for (const [key, value] of Object.entries(config)) {
-           //   console.writeln(`${key}: ${value}`); // DEBUG
-           // }
 	           this.defaultSet = config.defaultSet;
                this.catalogPath = scriptFileDir + "/" + CATALOGS_SUBDIR + "/" + config.file; // hackeriffic sorry
 	           this.visible = config.visible;
@@ -1279,12 +1275,12 @@ var VizierCache = class
       this.queries.push( {center: center, fov: fov, id: id, queryResult: queryResult} );
       if ( this.queries.length > this.maxSize )
          this.queries = this.queries.slice( 1 );
-      console.writeln("<b>vizierCache:</b> Add("+center+","+fov+","+id+","+queryResult+")");
+      // DEBUG: console.writeln("<b>vizierCache:</b> Add("+center+","+fov+","+id+","+queryResult+")");
    }
 
    Get( center, fov, id )
    {
-      console.writeln("<b>vizierCache:</b> Get("+center+","+fov+","+id+")");
+      // DEBUG: console.writeln("<b>vizierCache:</b> Get("+center+","+fov+","+id+")");
       for ( let i = 0; i < this.queries.length; ++i )
       {
          let q = this.queries[i];
@@ -1394,8 +1390,8 @@ var VizierCatalog = class extends CatalogWithMagnitudeFilters
          if ( typeof( this.outputFileName ) == "string" )
             if ( !this.outputFileName.isEmpty() )
                if ( File.exists( this.outputFileName ) )
-                  //TODO  File.remove( this.outputFileName ); // TODO: re-enable after testing
-	          console.writeln("Vizier response file: "+this.outputFileName); // TODO remove debug
+                  File.remove( this.outputFileName ); // DEBUG: comment out this line to preserve tmp Vizier response files
+	          // console.writeln("Vizier response file: "+this.outputFileName); // DEBUG
       }
       catch ( x )
       {
@@ -2037,7 +2033,6 @@ var SGA2020Catalog = class extends VizierCatalog
             x = FMath.deg( q[0] );
             y = FMath.deg( q[1] );
          }
-         //let diameter = tokens[3].trim().isEmpty() ? undefined : FMath.pow10( parseFloat( tokens[3] ) )/60/10; // TODO: delete PGC stuff
          let diameter = tokens[3].trim().isEmpty() ? undefined : parseFloat( tokens[3] ) / 60; // TODO: arc minutes unit source, so divide by 60 to convert to degrees for CatalogRecord
          // let axisRatio = tokens[4].trim().isEmpty() ? undefined : parseFloat( tokens[4] );
          let axisRatio = tokens[4].trim().isEmpty() ? undefined : 1 / parseFloat( tokens[4] ); // TODO: SGA 2020 axisRatio is given as BA (minor / major axis) rather than AB (major / minor axis) 
@@ -2045,7 +2040,6 @@ var SGA2020Catalog = class extends VizierCatalog
          let magnitude = tokens[6].trim().isEmpty() ? 18 : parseFloat( tokens[6] ); // TODO: use R_MAG_SB24 for total magnitude, mainly because not all galaxies have SB25 or SB26 magnitude measurements, default to 18 if not set.
          return new CatalogRecord( new Point( x, y ), diameter, tokens[0].trim(),
                                                    magnitude, axisRatio, posAngle );
-                                   // undefined/*magnitude*/, axisRatio, posAngle );
       }
 
       return null;
