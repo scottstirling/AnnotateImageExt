@@ -3381,6 +3381,8 @@ CatalogRegistry.register( new GSCCatalog );
 
 /*
  * CMC15 catalog
+ * Carlsberg Meridian Catalog 15 (CMC15) (CMC, 2011)
+ * Vizier id: "I/327/cmc15"
  * Zone: -40/+50deg
  */
 var CMC15Catalog = class extends VizierCatalog
@@ -3389,7 +3391,7 @@ var CMC15Catalog = class extends VizierCatalog
    {
       super( "CMC15", "CMC15" );
 
-      this.description = "CMC15 catalog (134,653,515 stars)";
+      this.description = "Carlsberg Meridian Catalog 15 (2011) (134,653,515 stars)";
 
       this.catalogMagnitude = 17;
 
@@ -3416,9 +3418,9 @@ var CMC15Catalog = class extends VizierCatalog
          "&-c.r=" + format( "%f", fov ) +
          "&-c.u=deg&-out.form=|" +
          format( "&-out.max=%d", this.maxRecords )+
-         "&-out=CMC15&-out=RA_ICRS&-out=DE_ICRS" + // TODO: note changed again (underscores) in CMC-15!
-         // "&-out=CMC14&-out=RAICRS&-out=DEICRS" + // TODO: note fix in CMC-14 before moving to 15!
-         // "&-out=CMC14&-out=RAJ2000&-out=DEJ2000" + // TODO: note CMC-14 seems broken in the product, wrong columns??
+         "&-out=CMC15&-out=RA_ICRS&-out=DE_ICRS" + // NOTE: CMC-15 coordinate column names changed from CMC-14.
+         // "&-out=CMC14&-out=RAJ2000&-out=DEJ2000" + // NOTE: CMC-14 broken in PixInsight 1.9.x, coordinate column types changed?
+         // "&-out=CMC14&-out=RAICRS&-out=DEICRS" + // FIX: CMC-14 fix tested before moving to 15.
          "&-out=r'mag&-out=Jmag&-out=Hmag&-out=Ksmag" +
          this.CreateMagFilter( this.magnitudeFilter, this.magMin, this.magMax ) ;
       return url;
