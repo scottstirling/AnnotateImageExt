@@ -45,8 +45,6 @@ The main features added here are:
 
 Many added, updated astronomy, astrophysics and astrophotography catalogs for PixInsight AnnotateImage, especially those that include coverage of the southern celestial hemisphere, corrected and comprehensive catalogs of catalogs, including (listed with CDS/Vizier/SIMBAD catalog prefixes where available):
 
-
-
 | Catalog / Layer | Author(s) & Year | Object Type | Description |
 | :--- | :--- | :--- | :--- |
 | **Asterisms Layer** | Various | Asterisms | Well-known, non-constellation patterns (e.g., Teapot, Winter Hexagon, Winter Triangle, Great Square). |
@@ -67,12 +65,14 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 | **Mandel-Wilson**| Mandel & Wilson (2004) | IFNs / Cirrus | *Catalogue of Unexplored Nebulae*, featuring nine integrated flux nebulae. |
 | **Mel** | Melotte (1915) | Open Clusters | *A Catalogue of Star Clusters shown on Franklin-Adams Chart Plates* with updated coordinates. |
 | **NamedStars** | IAU (Updated to 2026) | Stars | Star catalog updated with official IAU name changes (no new stars added). |
+| **OpenNGC** | Verga+ (2026 Updates) |  Open source version of the NGC-IC catalog compiled from contemporary and historical sources. |
 | **Paladini** | Paladini et al. (2003) | H II Regions | *A Radio Catalog of Galactic HII Regions for Applications from Decimeter to Millimeter Wavelengths*. |
 | **PGCC** | Planck Collaboration (2015) | Cold Clumps | *Planck 2015 Results. XXVIII. The Planck Catalogue of Galactic Cold Clumps*. |
 | **RCW** | Rogers, Campbell, & Whiteoak (1960) | Hα Emissions | *Catalog of Halpha Emission Regions in the Southern Milky Way*. |
 | **Shk** | Shakhbazian (1979) | Compact Galaxies | *The Catalog of Compact Groups of Compact Galaxies* featuring 377 distinct groups. |
 | **SL** | Sandqvist & Lindroos (1976) | Dark Clouds | *Southern Dark Clouds*. |
 | **SDN** | Sandqvist (1977) | Dark Dust Clouds | *More Southern Dark Dust Clouds* (Follow-up to SL). |
+| **SGA2020** | Siena Galaxy Atlas 2020 (2023) | Galaxies | Nearby galaxies, derived from `PGC2003`, updated coordinates, `axisRatio`, D26 `diameter` and `posAngle` |
 | **Stirling** | Stirling (2026) | Wide-Field Astro Phenomena | Very large angular scale astro phenomena (major axis $\ge$ 3°). |
 | **SFO** | Sugitani, Fukui, & Ogura (1991/1994) | Bright-Rimmed Clouds| Catalogs covering northern (1991) and southern (1994) hemispheres. |
 | **WISE** | Anderson et al. (2014) | H II Regions | *The WISE catalog of Galactic HII regions*. |
@@ -84,57 +84,59 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 | Catalog / Layer | Author(s) & Year | Description |
 | :--- | :--- | :--- |
 | **Asterisms Layer** | Various | Well-known, non-constellation patterns (e.g., Teapot, Winter Hexagon, Winter Triangle, Great Square). |
-| [**Caldwell**] | O'Meara (2002 Updates) | The classic list of 109 deep-sky objects with updated modern revisions. |
+| **Caldwell** | O'Meara (2002 Updates) | The classic list of 109 deep-sky objects with updated modern revisions. |
+| **OpenNGC** | Verga+ (2026 Updates) |  Open source version of the NGC-IC catalog compiled from contemporary and historical sources. |
 | **Stirling** | Stirling (2026) | Work-in-progress focused on **very large scale astro phenomena** (major axis $\ge$ 3°). |
 
 #### H II Regions & Hα Emissions
 
 | Catalog / Layer | Author(s) & Year | Description |
 | :--- | :--- | :--- |
-| [**BFS**] | Blitz, Fich, & Stark (1982) | *Catalog of CO Radial Velocities toward Galactic H II Regions*. |
-| [**DWB**] | Dickel, Wendker, & Bieritz (1969) | *The Cygnus X Region V. Catalogue and Distances of Optically Visible H II Regions*. |
-| [**Gum**] | Gum (1955) | *Southern HII Regions*. |
+| **BFS** | Blitz, Fich, & Stark (1982) | *Catalog of CO Radial Velocities toward Galactic H II Regions*. |
+| **DWB** | Dickel, Wendker, & Bieritz (1969) | *The Cygnus X Region V. Catalogue and Distances of Optically Visible H II Regions*. |
+| **Gum** | Gum (1955) | *Southern HII Regions*. |
 | [**Integrated HII**](http://galaxymap.org) | Jardine (2013) | Galaxymap.org compilation cross-indexing BFS, Du, Gum, RCW, Sh2, Sivan, and unique [GMN] regions. |
-| [**Paladini**] | Paladini et al. (2003) | *A Radio Catalog of Galactic HII Regions for Applications from Decimeter to Millimeter Wavelengths*. |
-| [**RCW**] | Rogers, Campbell, & Whiteoak (1960) | *Catalog of Halpha Emission Regions in the Southern Milky Way*. |
-| [**WISE**] | Anderson et al. (2014) | *The Wise catalog of Galactic HII regions*. |
+| **Paladini** | Paladini et al. (2003) | *A Radio Catalog of Galactic HII Regions for Applications from Decimeter to Millimeter Wavelengths*. |
+| **RCW** | Rogers, Campbell, & Whiteoak (1960) | *Catalog of Halpha Emission Regions in the Southern Milky Way*. |
+| **WISE** | Anderson et al. (2014) | *The Wise catalog of Galactic HII regions*. |
 
 #### Dark Nebulae, Molecular Clouds & Cold Clumps
 
 | Catalog / Layer | Author(s) & Year | Description |
 | :--- | :--- | :--- |
-| [**[DB2002b]**] | Dutra & Bica (2002) | *Dust Clouds*, incorporating Barnard, LDN, MBM, and more. Features DB2002b ID and "Common name" labels. |
-| [**FeSt 1**] | Feitzinger & Stüwe (1984) | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (Dark Nebulae section). |
-| [**FeSt 2**] | Feitzinger & Stüwe (1984) | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (Globules section). |
-| [**HMST / DCld**] | Hartley et al. (1986) | *Catalogue of Southern Dark Clouds*. |
-| [**MBM**] | Magnani, Blitz, & Mundy (1985) | *Molecular Gas at High Galactic Latitudes*. |
-| [**PGCC**] | Planck Collaboration (2015) | *Planck 2015 Results. XXVIII. The Planck Catalogue of Galactic Cold Clumps*. |
-| [**SL**] | Sandqvist & Lindroos (1976) | *Southern Dark Clouds*. |
-| [**SDN**] | Sandqvist (1977) | *More Southern Dark Dust Clouds* (Follow-up to SL). |
-| [**SFO**] | Sugitani et al. (1991/1994) | *Bright-Rimmed Clouds* covering northern (1991) and [southern (1994)] hemispheres. |
+| **[DB2002b]** | Dutra & Bica (2002) | *Dust Clouds*, incorporating Barnard, LDN, MBM, and more. Features DB2002b ID and "Common name" labels. |
+| **FeSt 1** | Feitzinger & Stüwe (1984) | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (Dark Nebulae section). |
+| **FeSt 2** | Feitzinger & Stüwe (1984) | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees* (Globules section). |
+| **HMST / DCld** | Hartley et al. (1986) | *Catalogue of Southern Dark Clouds*. |
+| **MBM** | Magnani, Blitz, & Mundy (1985) | *Molecular Gas at High Galactic Latitudes*. |
+| **PGCC** | Planck Collaboration (2015) | *Planck 2015 Results. XXVIII. The Planck Catalogue of Galactic Cold Clumps*. |
+| **SL** | Sandqvist & Lindroos (1976) | *Southern Dark Clouds*. |
+| **SDN** | Sandqvist (1977) | *More Southern Dark Dust Clouds* (Follow-up to SL). |
+| **SFO** | Sugitani et al. (1991/1994) | *Bright-Rimmed Clouds* covering northern (1991) and [southern (1994)] hemispheres. |
 
 #### Star Clusters & Stellar Data
 
 | Catalog / Layer | Author(s) & Year | Description |
 | :--- | :--- | :--- |
-| [**Col**] | Collinder (1931) | *On Structural Properties of Open Clusters and Their Spatial Distribution*. |
-| [**MWSC**] | Kharchenko et al. (2013) | *Global Survey of Star Clusters in the Milky Way II*. Includes all known open clusters with ID/Common Name. |
-| [**Mel**] | Melotte (1915) | *A Catalogue of Star Clusters shown on Franklin-Adams Chart Plates* with updated coordinates. |
-| [**NamedStars**](https://iau.org) | IAU (Updated to 2026) | Star catalog updated with official IAU name changes (no new stars added). |
+| **Col** | Collinder (1931) | *On Structural Properties of Open Clusters and Their Spatial Distribution*. |
+| **MWSC** | Kharchenko et al. (2013) | *Global Survey of Star Clusters in the Milky Way II*. Includes all known open clusters with ID/Common Name. |
+| **Mel** | Melotte (1915) | *A Catalogue of Star Clusters shown on Franklin-Adams Chart Plates* with updated coordinates. |
+| [**NamedStars**](https://iau.org) | IAU (Updated to 2026) | PixInsight's NamedStars.csv catalog updated with official IAU name changes (no new stars added) from the past decade or so. |
 
 #### Diffuse Nebulae & Supernova Remnants
 
 | Catalog / Layer | Author(s) & Year | Description |
 | :--- | :--- | :--- |
-| [**Ced**] | Cederblad (1945) | *Catalog of bright diffuse Galactic nebulae*. |
-| [**Mandel-Wilson**] | Mandel & Wilson (2004) | *Catalogue of Unexplored Nebulae*, featuring nine integrated flux nebulae (IFNs). |
-| [**SNR**] | Green (2025) | An updated, comprehensive edition of *A Catalog of Galactic Supernova Remnants*. |
+| **Ced** | Cederblad (1945) | *Catalog of bright diffuse Galactic nebulae*. |
+| **Mandel-Wilson** | Mandel & Wilson (2004) | *Catalogue of Unexplored Nebulae*, featuring nine integrated flux nebulae (IFNs). |
+| **SNR** | Green (2025) | An updated, comprehensive edition of *A Catalog of Galactic Supernova Remnants*. |
 
 #### External Galaxies
 
 | Catalog / Layer | Author(s) & Year | Description |
 | :--- | :--- | :--- |
-| [**Shk**] | Shakhbazian (1979) | *The Catalog of Compact Groups of Compact Galaxies* featuring 377 distinct groups. |
+| **SGA2020** | Siena Galaxy Atlas 2020 (2023) | Nearby galaxies, derived from `PGC2003`, updated coordinates, `axisRatio`, D26 `diameter` and `posAngle`. |
+| **Shk** | Shakhbazian (1979) | *The Catalog of Compact Groups of Compact Galaxies* featuring 377 distinct groups. |
 
 Screenshot showing default core catalogs and layers as of 7/5/2026:
 
@@ -144,15 +146,18 @@ Screenshot showing default core catalogs and layers as of 7/5/2026:
 
 Externalization of catalog registration and layers configuration to a JSON configuration file: `catalogs-config.json`, including:
 
-- catalog ids, name strings, file names, description strings and label fields
-- catalog layer settings, currently supporting label size, line width, label and line colors per catalog layer
-- all layer and catalog preferences preserved on execution and resettable to defaults via the reset button if desired
-- catalog layer visibility default controlled by `"visible": true` in JSON configuration
-- Script subdirectory `catalogs` deployment "system" scripts, but plan to support any file path users want to use to separate from system configs
+  - Catalog ids, name strings, file names, description strings and label fields
+  - Catalog layer settings, currently supporting label size, line width, label and line colors per catalog layer
+  - All layer and catalog preferences preserved on execution and resettable to defaults via the reset button if desired
+  - Catalog layer visibility default controlled by `"visible": true` in JSON configuration
+  - Script subdirectory `catalogs` deployment "system" scripts, but plan to support any file path users want to use to separate from system configs
+  - Catalog JavaScript class code dynamically generated from JSON configuration: *no coding necessary*.
+
+See: [AnnotateImageExt Catalog Configuration Schema](docs/catalogs-config-json-doc.md) 
 
 ### Codebase founded on AnnotateImage.js, AnnotationEngine.js and astrometry/AstronomicalCatalogs.js
 
-I started with AnnotateImage v 2.3.0 which came out with PixInsight 1.9.4 and updated the code with the latest build of PixInsight and v 2.3.1 of AnnotateImage in late June, 2026.
+Forked from AnnotateImage v2.3.0, in PixInsight 1.9.4, and updated with changes from the latest build of PixInsight and v2.3.1 of AnnotateImage in late June, 2026.
 
 ### Better error handling for Custom catalog users (see Bugs fixed below for more details) and protection for configuration changes and settings.
 
@@ -205,3 +210,20 @@ To:
 AstronomicalCatalogs.js:    this.description = "Catalog of Reflection Nebulae - Van den Bergh (159 nebulae)";
 AstronomicalCatalogs.js:    this.description = "Catalog of HII Regions - Sharpless (313 nebulae)";
 ```
+
+#### Update outdated and obsolete Vizier Catalogs
+
+**AnnotateImageExt** updates all of the outdated and obsolete catalogs listed below, which are Vizier-query catalog functions that ship in the PixInsight product:
+
+  - CMC14 (2006) is behind CMC15 (2011) available as `I/327` **and** CMC-14 has a bug in the PixInsight 1.9.4 product Vizier query so it never works (always returns `Catalog CMC14: 0 objects inside the image.`):  
+    - The bug is due to mismatch between the expected coordinate column names in the Vizier query URL: `-out=RAJ2000&-out=DEJ2000` should be `-out=RAICRS&-out=DEICRS`
+    - Note that in CMC-15 the coordinate column names changed **again** to `-out=RA_ICRS&-out=DE_ICRS`
+      - Fixed and tested CMC-14, then replaced with CMC-15 and tested **[DONE 8/22/2026]**
+  - GSC 2.3 (2008) is outdated behind GSC 2.4.2 (2020) available as I/353  **[DONE 8/22/2026]**
+  - Milliquas 7.2 (2021) is marked **obsolete** in Vizier, with v8 (2023) available as VII/294/catalog  **[DONE 8/22/2026]**
+  - UCAC3 (2009) is **obsolete** in Vizier, with UCAC5 (2017) available as I/340 **[DONE 8/23/2026]**
+    - UCAC4 updated UCAC3 with corrections and additional wavelength metrics in 2012, retaining the UCAC identifier scheme
+    - UCAC5 replaced UCAC4 and UCAC3 with more accurate proper motion data derived from Gaia DR1 in 2017
+    - If anyone missed or wanted UCAC4, it would be very similar to UCAC3 _coding-wise_ and the identifiers and magnitude filters
+    - UCAC5 data is derived from Gaia DR1 and is a bit out of date with availability of more modern Gaia 3 (late 2020)
+
