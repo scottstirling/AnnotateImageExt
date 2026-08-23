@@ -4,16 +4,16 @@
       <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
    </description>
    <platform os="all" arch="noarch" version="1.9.4.1695:1.9.9">
-      <package fileName="2026-08-19-AnnotateImageExt.tar.gz" sha1="fefd0a5c477dec2b07e3d4a6af79836170dcb50b" type="script" releaseDate="20260819">
+      <package fileName="2026-08-19-AnnotateImageExt.tar.gz" sha1="7fae31e9d9cbb62cce8322b00c5c9f023ca337a7" type="script" releaseDate="20260819">
          <title>AnnotateImageExt, install / update</title>
          <description>
             <p>v1.3</p>
             <ul>
-             <li>Update updates.xri for next release and fix CatalogDownloader problem, https://github.com/scottstirling/AnnotateImageExt/issues/25</li>
-             <li>Add docs/ with some catalog documentation for the built-in PixInsight 1.9.x catalogs, update NamedStars with latest IAU updates and fix bug with offset columns, add Corwin's *Galactic Globular Clusters* (2022), add OpenNGC, update Very Large Scale catalog with more objects and data</li>
-             <li>Add files via upload: Update with star names added by the IAU between June, 2026 and July 16, 2026.</li>
-             <li>Fix common names in NamedStars: Cleaned up the common names by removing some old duplicate name assignments, fixed the common name column offset for the last several hundred rows pointed out in issue #22, restored (removed parentheses) common names that are not actually IAU names, but are ones PixInsight included from tradition outside of the IAU names, e.g., Khan is a name from Adam Block for a star in Scorpius that was in there so I left it in.</li>
-             <li>Changed alt text for GitHub banner image and Updated the alt text for the banner image in README.md.</li>
+               <li>Update updates.xri for next release and fix CatalogDownloader problem, https://github.com/scottstirling/AnnotateImageExt/issues/25</li>
+               <li>Add docs/ with some catalog documentation for the built-in PixInsight 1.9.x catalogs, update NamedStars with latest IAU updates and fix bug with offset columns, add Corwin&apos;s *Galactic Globular Clusters* (2022), add OpenNGC, update Very Large Scale catalog with more objects and data</li>
+               <li>Add files via upload: Update with star names added by the IAU between June, 2026 and July 16, 2026.</li>
+               <li>Fix common names in NamedStars: Cleaned up the common names by removing some old duplicate name assignments, fixed the common name column offset for the last several hundred rows pointed out in issue #22, restored (removed parentheses) common names that are not actually IAU names, but are ones PixInsight included from tradition outside of the IAU names, e.g., Khan is a name from Adam Block for a star in Scorpius that was in there so I left it in.</li>
+               <li>Changed alt text for GitHub banner image and Updated the alt text for the banner image in README.md.</li>
             </ul>
             <p>v1.2.2</p>
             <ul>
@@ -69,4 +69,4 @@ return this.spline.evaluate( p );
       </package>
    </platform>
 </xri>
-<Signature developerId="ScottStirling" timestamp="2026-07-06T00:55:28.185Z" encoding="Base64">0+mlc3HXAVIr6QBglEXJU7pfFDo00zn+3r+H3X7xQqUZ/InsrTdkx2Zfki/woUa01HH+hX0CeUXfOK8IKfBMAQ==</Signature>
+<Signature developerId="ScottStirling" timestamp="2026-08-19T09:38:52.582Z" encoding="Base64">xZXArOGpV8XiFjbu3UYH1zky7ewt7raw6ICoP46KDQS8nd6Q8YqGkgm5Ry3wCFNOd9p3E851+/IW3nTi/d5HBw==</Signature>

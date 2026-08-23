@@ -1279,10 +1279,12 @@ var VizierCache = class
       this.queries.push( {center: center, fov: fov, id: id, queryResult: queryResult} );
       if ( this.queries.length > this.maxSize )
          this.queries = this.queries.slice( 1 );
+      console.writeln("<b>vizierCache:</b> Add("+center+","+fov+","+id+","+queryResult+")");
    }
 
    Get( center, fov, id )
    {
+      console.writeln("<b>vizierCache:</b> Get("+center+","+fov+","+id+")");
       for ( let i = 0; i < this.queries.length; ++i )
       {
          let q = this.queries[i];
@@ -1299,7 +1301,6 @@ var VizierCache = class
       }
       return null;
    }
-
    Clear()
    {
       this.queries = [];
@@ -1393,7 +1394,8 @@ var VizierCatalog = class extends CatalogWithMagnitudeFilters
          if ( typeof( this.outputFileName ) == "string" )
             if ( !this.outputFileName.isEmpty() )
                if ( File.exists( this.outputFileName ) )
-                  File.remove( this.outputFileName );
+                  //TODO  File.remove( this.outputFileName ); // TODO: re-enable after testing
+	          console.writeln("Vizier response file: "+this.outputFileName); // TODO remove debug
       }
       catch ( x )
       {
@@ -1989,6 +1991,70 @@ CatalogRegistry.register( new WDSCatalog );
 
 // ----------------------------------------------------------------------------
 
+/*
+ * SGA 2020 catalog
+ * Authors: John Moustakas et al 2023
+ * DOI: 10.3847/1538-4365/acfaa2
+ * Vizier id: "J/ApJS/269/3"
+ */
+var SGA2020Catalog = class extends VizierCatalog
+{
+   constructor()
+   {
+      super( "SGA2020", "SGA2020" );
+
+      this.description = "Siena Galaxy Atlas 2020 (Moustakas+, 2023) (383,620 galaxies)";
+
+      this.fields = [ "Name", "Coordinates" ];
+   }
+
+   GetConstructor()
+   {
+      return "new SGA2020Catalog()";
+   }
+
+   UrlBuilder(center, fov, mirrorServer)
+   {
+      return mirrorServer + "viz-bin/asu-tsv?-source=J/ApJS/269/3/sga2020&-c=" +
+         format( "%f %f", center.x, center.y ) +
+         "&-c.r=" + format( "%f", fov ) +
+         "&-c.u=deg&-out.form=|" +
+         format( "&-out.max=%d", this.maxRecords ) +
+         "&-out=Name&-out=RAJ2000&-out=DEJ2000&-out=D26&-out=BA&-out=PA&-out=R_MAG_SB24"; // TODO: document changed "PGC" to "Name" and logD25 to D26 and logR25 to BA and added R_MAG_SB24.
+   }
+
+   ParseRecord( tokens )
+   {
+      if ( tokens.length >= 7 && !tokens[0].isEmpty() ) // TODO: doc that in PGC, the "PGC" value is a numeric ID, but in SGA "Name" is a string.
+      {
+         let x = parseFloat( tokens[1] );
+         let y = parseFloat( tokens[2] );
+         if ( x < 0 || x > 360 || y < -90 || y > 90 )
+            return null;
+         if ( this.position !== null )
+         {
+            let q = this.placeFunction( this.position, new StarPosition( x, y ) );
+            x = FMath.deg( q[0] );
+            y = FMath.deg( q[1] );
+         }
+         //let diameter = tokens[3].trim().isEmpty() ? undefined : FMath.pow10( parseFloat( tokens[3] ) )/60/10; // TODO: delete PGC stuff
+         let diameter = tokens[3].trim().isEmpty() ? undefined : parseFloat( tokens[3] ) / 60; // TODO: arc minutes unit source, so divide by 60 to convert to degrees for CatalogRecord
+         // let axisRatio = tokens[4].trim().isEmpty() ? undefined : parseFloat( tokens[4] );
+         let axisRatio = tokens[4].trim().isEmpty() ? undefined : 1 / parseFloat( tokens[4] ); // TODO: SGA 2020 axisRatio is given as BA (minor / major axis) rather than AB (major / minor axis) 
+         let posAngle = tokens[5].trim().isEmpty() ? undefined : parseFloat( tokens[5] );
+         let magnitude = tokens[6].trim().isEmpty() ? 18 : parseFloat( tokens[6] ); // TODO: use R_MAG_SB24 for total magnitude, mainly because not all galaxies have SB25 or SB26 magnitude measurements, default to 18 if not set.
+         return new CatalogRecord( new Point( x, y ), diameter, tokens[0].trim(),
+                                                   magnitude, axisRatio, posAngle );
+                                   // undefined/*magnitude*/, axisRatio, posAngle );
+      }
+
+      return null;
+   }
+};
+
+CatalogRegistry.register( new SGA2020Catalog );
+
+// ----------------------------------------------------------------------------
 /*
  * PGC catalog
  */
