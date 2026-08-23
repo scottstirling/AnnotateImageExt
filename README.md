@@ -54,27 +54,27 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 | **Col** | Collinder (1931) | Open Clusters | *On Structural Properties of Open Clusters and Their Spatial Distribution*. |
 | **[DB2002b]** | Dutra & Bica (2002) | Dark Nebulae / Clouds | *Dust Clouds*, incorporating Barnard, LDN, MBM, and more. Features DB2002b ID and "Common name" labels. |
 | **DWB** | Dickel, Wendker, & Bieritz (1969) | Hα Emissions | *The Cygnus X Region V. Catalogue and Distances of Optically Visible H II Regions*. |
-| **SNR** | Green (2025) | Supernova Remnants | An updated, comprehensive edition of *A Catalog of Galactic Supernova Remnants*. |
-| **Gum** | Gum (1955) | H II Regions | *Southern HII Regions*. |
 | **FeSt 1** | Feitzinger & Stüwe (1984) | Dark Nebulae | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees*. |
 | **FeSt 2** | Feitzinger & Stüwe (1984) | Globules | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees*. |
+| **Gum** | Gum (1955) | H II Regions | *Southern HII Regions*. |
 | **HMST / DCld** | Hartley et al. (1986) | Dark Clouds | *Catalogue of Southern Dark Clouds*. |
 | **Integrated HII** | Jardine, K. (2013) | H II Nebulae | Galaxymap.org compilation cross-indexing BFS, Du, Gum, RCW, Sh2, Sivan, and unique [GMN] regions. |
+| **Mandel-Wilson**| Mandel & Wilson (2004) | IFNs / Cirrus | *Catalogue of Unexplored Nebulae*, featuring nine integrated flux nebulae. |
 | **MWSC** | Kharchenko et al. (2013) | Open Clusters | *Global Survey of Star Clusters in the Milky Way II*. Includes all known open clusters with ID/Common Name. |
 | **MBM** | Magnani, Blitz, & Mundy (1985) | Molecular Gas | *Molecular Gas at High Galactic Latitudes*. |
-| **Mandel-Wilson**| Mandel & Wilson (2004) | IFNs / Cirrus | *Catalogue of Unexplored Nebulae*, featuring nine integrated flux nebulae. |
 | **Mel** | Melotte (1915) | Open Clusters | *A Catalogue of Star Clusters shown on Franklin-Adams Chart Plates* with updated coordinates. |
 | **NamedStars** | IAU (Updated to 2026) | Stars | Star catalog updated with official IAU name changes (no new stars added). |
 | **OpenNGC** | Verga+ (2026 Updates) |  Open source version of the NGC-IC catalog compiled from contemporary and historical sources. |
 | **Paladini** | Paladini et al. (2003) | H II Regions | *A Radio Catalog of Galactic HII Regions for Applications from Decimeter to Millimeter Wavelengths*. |
 | **PGCC** | Planck Collaboration (2015) | Cold Clumps | *Planck 2015 Results. XXVIII. The Planck Catalogue of Galactic Cold Clumps*. |
 | **RCW** | Rogers, Campbell, & Whiteoak (1960) | Hα Emissions | *Catalog of Halpha Emission Regions in the Southern Milky Way*. |
+| **SDN** | Sandqvist (1977) | Dark Dust Clouds | *More Southern Dark Dust Clouds* (Follow-up to SL). |
+| **SFO** | Sugitani, Fukui, & Ogura (1991/1994) | Bright-Rimmed Clouds| Catalogs covering northern (1991) and southern (1994) hemispheres. |
+| **SGA2020** | Siena Galaxy Atlas 2020 (2023) | Galaxies | Nearby galaxies, derived from `PGC2003`, updated coordinates, `axisRatio`, D26 `diameter` and `posAngle` |
 | **Shk** | Shakhbazian (1979) | Compact Galaxies | *The Catalog of Compact Groups of Compact Galaxies* featuring 377 distinct groups. |
 | **SL** | Sandqvist & Lindroos (1976) | Dark Clouds | *Southern Dark Clouds*. |
-| **SDN** | Sandqvist (1977) | Dark Dust Clouds | *More Southern Dark Dust Clouds* (Follow-up to SL). |
-| **SGA2020** | Siena Galaxy Atlas 2020 (2023) | Galaxies | Nearby galaxies, derived from `PGC2003`, updated coordinates, `axisRatio`, D26 `diameter` and `posAngle` |
+| **SNR** | Green (2025) | Supernova Remnants | An updated, comprehensive edition of *A Catalog of Galactic Supernova Remnants*. |
 | **Stirling** | Stirling (2026) | Wide-Field Astro Phenomena | Very large angular scale astro phenomena (major axis $\ge$ 3°). |
-| **SFO** | Sugitani, Fukui, & Ogura (1991/1994) | Bright-Rimmed Clouds| Catalogs covering northern (1991) and southern (1994) hemispheres. |
 | **WISE** | Anderson et al. (2014) | H II Regions | *The WISE catalog of Galactic HII regions*. |
 
 ### Categorized Astronomical Catalogs
