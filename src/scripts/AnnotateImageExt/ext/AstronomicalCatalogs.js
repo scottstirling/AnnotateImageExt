@@ -2109,6 +2109,8 @@ CatalogRegistry.register( new PGCCatalog );
 
 /*
  * Million Quasars (Milliquas) catalog
+ *
+ *
  */
 var MilliquasCatalog = class extends VizierCatalog
 {
@@ -2116,7 +2118,7 @@ var MilliquasCatalog = class extends VizierCatalog
    {
       super( "Milliquas", "Milliquas" );
 
-      this.description = "The Million Quasars (Milliquas) catalogue, version 7.2 (Flesch, 2021) (1,573,824 objects)";
+      this.description = "The Million Quasars (Milliquas) catalogue, version 8 (Flesch, 2023) (1,021,800 objects)";
 
       this.fields = [ "Name", "Coordinates", "Type", "Rmag", "Bmag", "Redshift" ];
    }
@@ -2128,7 +2130,8 @@ var MilliquasCatalog = class extends VizierCatalog
 
    UrlBuilder(center, fov, mirrorServer)
    {
-      return mirrorServer + "viz-bin/asu-tsv?-source=VII/290/catalog&-c=" +
+      return mirrorServer + "viz-bin/asu-tsv?-source=VII/294/catalog&-c=" +
+      // return mirrorServer + "viz-bin/asu-tsv?-source=VII/290/catalog&-c=" + // TODO: testing ...
          format( "%f %f", center.x, center.y ) +
          "&-c.r=" + format( "%f", fov ) +
          "&-c.u=deg&-out.form=|" +
@@ -3256,7 +3259,7 @@ var GSCCatalog = class extends VizierCatalog
    {
       super( "GSC", "GSC" );
 
-      this.description = "GSC2.3 catalog (945,592,683 objects)";
+      this.description = "GSC2.4.2 catalog (3,485,671,481 objects)";
 
       this.catalogMagnitude = 23;
 
@@ -3315,13 +3318,14 @@ var GSCCatalog = class extends VizierCatalog
 
    UrlBuilder( center, fov, mirrorServer )
    {
-      let url = mirrorServer + "viz-bin/asu-tsv?-source=I/305/out&-c=" +
+      let url = mirrorServer + "viz-bin/asu-tsv?-source=I/353/gsc242&-c=" +
+      //let url = mirrorServer + "viz-bin/asu-tsv?-source=I/305/out&-c=" + // TODO: testing ...
          format( "%f %f", center.x, center.y ) +
          "&-c.r=" + format( "%f", fov ) +
          "&-c.u=deg&-out.form=|" +
          format( "&-out.max=%d", this.maxRecords ) +
-         "&-out=GSC2.3&-out=RAJ2000&-out=DEJ2000&-out=Class" +
-         "&-out=Fmag&-out=jmag&-out=Vmag&-out=Nmag&-out=Umag&-out=Bmag" +
+         "&-out=GSC2&-out=RA_ICRS&-out=DE_ICRS&-out=Class" +  // TODO: doc change RAJ2000 and DEJ2000 to RA_ICRS and DE_ICRS
+         "&-out=Fpgmag&-out=Jmag&-out=Vmag&-out=Nmag&-out=Umag&-out=Bmag" + // TODO: doc change jmag to Jmag and Fmag to Fpgmag
          this.CreateMagFilter( this.magnitudeFilter, this.magMin, this.magMax ) ;
       if ( this.classFilter == 1 )
          url += "&Class==0";
