@@ -4,9 +4,23 @@
       <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
    </description>
    <platform os="all" arch="noarch" version="1.9.4.1695:1.9.9">
-      <package fileName="2026-08-19-AnnotateImageExt.tar.gz" sha1="7fae31e9d9cbb62cce8322b00c5c9f023ca337a7" type="script" releaseDate="20260819">
+      <package fileName="2026-08-23-AnnotateImageExt.tar.gz" sha1="1e7cacd618200fab1ee6c7c3946d38ab30e4ec51" type="script" releaseDate="20260823">
          <title>AnnotateImageExt, install / update</title>
          <description>
+            <p>v1.4</p>
+            <ul>
+               <li>SGA 2020 VizierCatalog added, update to and subset of PGC, with common names, D26 diameters, axisRatio, PA (and work in progress: r_mag_SB24 filter). Update updates.xri from last release.</li>
+               <li>Add UCAC5 and replace UCAC3, outdated.  Even UCAC5 is based on Gaia DR1, which is older (Gaia DR3 is latest).</li>
+               <li>Fix CMC-14 broken catalog in PixInsight 1.9.x due to incorrect coordinate column names in the Vizier query, test, then update to CMC-15 and test and fix another change in the coordinate column names there.</li>
+               <li>Update Milliquas from v7.2 -&gt; v8 and Guide Star Catalog (GSC) from v2.3 to vx2.4.2</li>
+               <li>Add documentation for VizierCache and AnnotateImage Preview: Document the functionality and usage of VizierCache in AnnotateImage, including its role in caching query results and the implications for the Preview feature.</li>
+               <li>Replace banner image in README: Updated image in README and modified dimensions.</li>
+               <li>Update version from 1.3 to 1.4</li>
+               <li>Update README with new fixes, catalogs and documentation.</li>
+               <li>Add first pass at documentation of the catalogs-config.json for AnnotateImageExt.</li>
+               <li>Reorder catalogs listing a bit to be more categorized and listed historically and/or alphabetically. Added a few details and tweaks to names and descriptions to normalize them.</li>
+               <li>Remove and comment out TODOs and DEBUG statements</li>
+            </ul>
             <p>v1.3</p>
             <ul>
                <li>Update updates.xri for next release and fix CatalogDownloader problem, https://github.com/scottstirling/AnnotateImageExt/issues/25</li>
@@ -69,4 +83,4 @@ return this.spline.evaluate( p );
       </package>
    </platform>
 </xri>
-<Signature developerId="ScottStirling" timestamp="2026-08-19T09:38:52.582Z" encoding="Base64">xZXArOGpV8XiFjbu3UYH1zky7ewt7raw6ICoP46KDQS8nd6Q8YqGkgm5Ry3wCFNOd9p3E851+/IW3nTi/d5HBw==</Signature>
+<Signature developerId="ScottStirling" timestamp="2026-08-24T01:43:37.230Z" encoding="Base64">KWFVACs9PYvKwzuA805iAQILtx4A3us/P4VInJsjIvON0v2GaG4HgnjFBCiqsMdL80HQS6kebAPIuS21m0n7Cw==</Signature>
