@@ -86,7 +86,7 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 | **Asterisms Layer** | Various | Well-known, non-constellation patterns (e.g., Teapot, Winter Hexagon, Winter Triangle, Great Square). |
 | **Caldwell** | O'Meara (2002 Updates) | The classic list of 109 deep-sky objects with updated modern revisions. |
 | **OpenNGC** | Verga+ (2026 Updates) |  Open source version of the NGC-IC catalog compiled from contemporary and historical sources. |
-| **Stirling** | Stirling (2026) | Work-in-progress focused on **very large scale astro phenomena** (major axis $\ge$ 3°). |
+| **Stirling** | Stirling (2026) | Work-in-progress focused on **very large scale astro phenomena** (major axis >= 3°). |
 
 #### H II Regions & Hα Emissions
 
@@ -110,17 +110,17 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 | **HMST / DCld** | Hartley et al. (1986) | *Catalogue of Southern Dark Clouds*. |
 | **MBM** | Magnani, Blitz, & Mundy (1985) | *Molecular Gas at High Galactic Latitudes*. |
 | **PGCC** | Planck Collaboration (2015) | *Planck 2015 Results. XXVIII. The Planck Catalogue of Galactic Cold Clumps*. |
-| **SL** | Sandqvist & Lindroos (1976) | *Southern Dark Clouds*. |
 | **SDN** | Sandqvist (1977) | *More Southern Dark Dust Clouds* (Follow-up to SL). |
 | **SFO** | Sugitani et al. (1991/1994) | *Bright-Rimmed Clouds* covering northern (1991) and [southern (1994)] hemispheres. |
+| **SL** | Sandqvist & Lindroos (1976) | *Southern Dark Clouds*. |
 
 #### Star Clusters & Stellar Data
 
 | Catalog / Layer | Author(s) & Year | Description |
 | :--- | :--- | :--- |
 | **Col** | Collinder (1931) | *On Structural Properties of Open Clusters and Their Spatial Distribution*. |
-| **MWSC** | Kharchenko et al. (2013) | *Global Survey of Star Clusters in the Milky Way II*. Includes all known open clusters with ID/Common Name. |
 | **Mel** | Melotte (1915) | *A Catalogue of Star Clusters shown on Franklin-Adams Chart Plates* with updated coordinates. |
+| **MWSC** | Kharchenko et al. (2013) | *Global Survey of Star Clusters in the Milky Way II*. Includes all known open clusters with ID/Common Name. |
 | [**NamedStars**](https://iau.org) | IAU (Updated to 2026) | PixInsight's NamedStars.csv catalog updated with official IAU name changes (no new stars added) from the past decade or so. |
 
 #### Diffuse Nebulae & Supernova Remnants
