@@ -1,4 +1,4 @@
-<img width="1788" height="500" alt="noirlab2521b Trifid crop github banner" src="https://github.com/user-attachments/assets/6eefacea-a0e9-4137-9477-76bb3ef6a938" />
+<img width="1024" height="554" alt="Vera Rubin Virgo wide field annotated SGA2020 crop" src="https://github.com/user-attachments/assets/5e763442-e3b4-4498-98b2-da01815e1791" />
 
 # AnnotateImageExt-ended with Features, Fixes and Catalogs
 ## Installation
