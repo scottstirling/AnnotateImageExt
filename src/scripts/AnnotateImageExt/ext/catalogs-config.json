@@ -51,7 +51,7 @@
     "id": "DutraBica",
     "name": "Dutra and Bica",
     "file": "Dutra-and-Bica-Dust-Clouds-2002-for-PixInsight.csv",
-    "description": "Catalogue of Dust Clouds in the Galaxy (Dutra & Bica, 2002) (5004 objects)",
+    "description": "Catalogue of Dust Clouds in the Galaxy (Dutra & Bica, 2002) (5,004 objects)",
     "fields": ["Name","Coordinates","Diameter","DB2002b","Aka1"],
     "defaultSet": true,
     "visible": false,
@@ -111,7 +111,7 @@
     "id": "HMST",
     "name": "HMST",
     "file": "HMST-Hartley-et-al-Catalogue-of-Southern-Dark-Clouds-1986-for-PixInsight.csv",
-    "description": "A Catalogue of Southern Dark Clouds (Hartley et al., 1986) (1101 objects)",
+    "description": "A Catalogue of Southern Dark Clouds (Hartley et al., 1986) (1,101 objects)",
     "fields": ["Name","Coordinates","Diameter","MinorAxis","Density","DCld Id"]
   },
   {
@@ -163,7 +163,7 @@
     "id": "MWSC",
     "name": "Mlky Way Star Clusters (MWSC)",
     "file": "Kharchenko-et-al-Clusters-Master-Catalog-2013-for-PixInsight.csv",
-    "description": "Milky Way Star Clusters Catalog (Kharchenko et al., 2013) (3006 clusters)",
+    "description": "Milky Way Star Clusters Catalog (Kharchenko et al., 2013) (3,006 clusters)",
     "fields": ["Name","Coordinates", "Diameter", "MWSC Id"],
     "defaultSet": true,
     "visible": true,
@@ -177,7 +177,7 @@
     "id": "NGC-IC",
     "name": "NGC-IC",
     "file": "NGC-IC.csv",
-    "description": "NGC and IC catalogs (9933 objects)",
+    "description": "NGC and IC catalogs (9,933 objects)",
     "fields": ["Name", "Coordinates", "Magnitude", "Diameter", "Common name", "PGC", "PGC2", "Messier"],
     "defaultSet": true,
      "visible": true
@@ -197,7 +197,7 @@
     "id": "PBD2003",
     "name": "Paladini HII+(Radio) (PBD2003)",
     "file": "Paladini-et-al-A_Radio_Catalog_of_Galactic_HII_Regions-2003-for-PI.csv",
-    "description": "A radio catalog of Galactic HII regions... (Paladini et al, 2003) (1442 HIIReg)",
+    "description": "A radio catalog of Galactic HII regions... (Paladini et al, 2003) (1,442 HIIReg)",
     "fields": ["Name", "Coordinates", "Diameter"]
   },
   {
@@ -207,6 +207,14 @@
     "file": "PGCC-Planck_Catalogue_of_Galactic_Cold_Clumps-2016-for-PixInsight.csv",
     "description": "Planck Catalogue of Galactic Cold Clumps (Planck et al, 2016) (13,242 objects)",
     "fields": ["Name", "Coordinates", "Diameter", "Dist (kpc)", "Size (pc)"]
+  },
+  {
+    "className": "PlanetaryCatalog",
+    "id": "PN2026",
+    "name": "PN2026",
+    "file": "maintype-PN-dimmajor-gt-zero-Simbad-08-30-2026-for-PixInsight.csv",
+    "description": "Planetary Nebula 2026 (SIMBAD et al, 2026) (2,491 PN)",
+    "fields": ["Name", "Coordinates", "Diameter"]
   },
   {
     "className": "RCWCatalog",
