@@ -213,7 +213,7 @@
     "id": "PN2026",
     "name": "PN2026",
     "file": "maintype-PN-dimmajor-gt-zero-Simbad-08-30-2026-for-PixInsight.csv",
-    "description": "Planetary Nebula 2026 (SIMBAD et al, 2026) (2,491 PN)",
+    "description": "Planetary Nebulae 2026 (SIMBAD, HASH, et al, 2026) (2,491 PN)",
     "fields": ["Name", "Coordinates", "Diameter"]
   },
   {
