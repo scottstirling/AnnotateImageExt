@@ -209,12 +209,12 @@
     "fields": ["Name", "Coordinates", "Diameter", "Dist (kpc)", "Size (pc)"]
   },
   {
-    "className": "PlanetaryCatalog",
+    "className": "PlanetaryNebulae2026Catalog",
     "id": "PN2026",
     "name": "PN2026",
-    "file": "maintype-PN-dimmajor-gt-zero-Simbad-08-30-2026-for-PixInsight.csv",
+    "file": "PlanetaryNebulae-2026-dimmajor-gt-zero-Simbad-08-30-2026-for-PixInsight.csv",
     "description": "Planetary Nebulae 2026 (SIMBAD, HASH, et al, 2026) (2,491 PN)",
-    "fields": ["Name", "Coordinates", "Diameter"]
+    "fields": ["Name", "Coordinates", "Diameter", "Common name"]
   },
   {
     "className": "RCWCatalog",
@@ -255,14 +255,6 @@
     "file": "SFO-Bright-Rimmed-Clouds-Northern-1991-for-PixInsight.csv",
     "description": "Bright Rimmed Clouds - north (SFO, 1991) (44 objects)",
     "fields": ["Name","Coordinates","HII region","HII region size","Distance (kpc)","Diameter"]
-  },
-  {
-    "className": "ShkCompactGroupsCatalog",
-    "id": "ShkCompactGroups",
-    "name": "Shk Compact Groups of Compact Galaxies",
-    "file": "Shakhbazian-et-al-The_Catalog_of_Compact_Groups_of_Compact_Galaxies-1979-for-PixInsight.csv",
-    "description": "Catalog of Compact Groups of Galaxies (Shakhbazian et al, 1979) (377 objects)",
-    "fields": ["Name","Coordinates","Magnitude","Diameter","Other name"]
   },
   {
     "className": "VeryLargeScaleCatalog",
