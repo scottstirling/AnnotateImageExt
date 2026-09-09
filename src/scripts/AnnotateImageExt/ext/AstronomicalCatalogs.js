@@ -2143,6 +2143,9 @@ var SGA2020Catalog = class extends VizierCatalog
       this.properties.push( ["magMin", DataType.Double] );
       this.properties.push( ["magMax", DataType.Double] );
       this.properties.push( ["magnitudeFilter", DataType.UTF16String] );
+
+      this.filters = [ "rmagSB24" ];
+      this.magnitudeFilter = "rmagSB24";
    }
 
    GetConstructor()
