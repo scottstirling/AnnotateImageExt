@@ -2138,7 +2138,7 @@ var SGA2020Catalog = class extends VizierCatalog
 
       this.description = "Siena Galaxy Atlas 2020 (Moustakas+, 2023) (383,620 galaxies)";
 
-      this.fields = [ "Name", "Coordinates" ];
+      this.fields = [ "Name", "Coordinates", "Magnitude" ];
 
       this.properties.push( ["magMin", DataType.Double] );
       this.properties.push( ["magMax", DataType.Double] );
@@ -2161,7 +2161,7 @@ var SGA2020Catalog = class extends VizierCatalog
          "&-c.u=deg&-out.form=|" +
          format( "&-out.max=%d", this.maxRecords ) +
          "&-out=Name&-out=RAJ2000&-out=DEJ2000&-out=D26&-out=BA&-out=PA&-out=R_MAG_SB24" + // TODO: document changed "PGC" to "Name" and logD25 to D26 and logR25 to BA and added R_MAG_SB24.
-         this.CreateMagFilter( "R_MAG_SB24", this.magMin, this.magMax ); // NOTE: magnitude filter object appends to the formatted query URL
+         this.CreateMagFilter( "R_MAG_SB24", this.magMin, this.magMax ); // NOTE: magnitude filter object appends to the formatted query URL as a parameter encoded expression.  The filter name string must match the VizieR column query name.
    }
 
    ParseRecord( tokens )
