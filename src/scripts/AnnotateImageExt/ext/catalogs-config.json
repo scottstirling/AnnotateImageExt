@@ -193,6 +193,16 @@
      "visible": true
   },
   {
+    "className": "RevisedNGCCatalog",
+    "id": "RevisedNGC",
+    "name": "Revised NGC-IC",
+    "file": "Revised-NGC-IC-2026-Steinicke-for-PixInsight.csv",
+    "description": "Revised NGC and IC catalogs (Steinicke, 2026) (13,308 objects)",
+    "fields": ["Name", "Coordinates", "Diameter", "S", "ID1" ],
+    "defaultSet": true,
+     "visible": true
+  },
+  {
     "className": "PaladiniHIICatalog",
     "id": "PBD2003",
     "name": "Paladini HII+(Radio) (PBD2003)",
