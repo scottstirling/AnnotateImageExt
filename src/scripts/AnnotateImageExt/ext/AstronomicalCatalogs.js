@@ -2067,7 +2067,7 @@ var PGCCatalog = class extends VizierCatalog
 
       this.description = "PGC HYPERLEDA I catalog of galaxies (Paturel+, 2003) (983,261 galaxies)";
 
-      this.catalogMagnitude = 11;
+      this.catalogMagnitude = 25;
 
       this.fields = [ "Name", "Coordinates" ];
 
@@ -2075,8 +2075,8 @@ var PGCCatalog = class extends VizierCatalog
       this.properties.push( ["magMax", DataType.Double] );
       this.properties.push( ["magnitudeFilter", DataType.UTF16String] );
 
-      this.filters = [ "Vmag" ];
-      this.magnitudeFilter = "Vmag";
+      this.filters = [ "logD25" ];
+      this.magnitudeFilter = "logD25";
    }
 
    GetConstructor()
@@ -2091,8 +2091,8 @@ var PGCCatalog = class extends VizierCatalog
          "&-c.r=" + format( "%f", fov ) +
          "&-c.u=deg&-out.form=|" +
          format( "&-out.max=%d", this.maxRecords ) +
-         "&-out=PGC&-out=RAJ2000&-out=DEJ2000&-out=logD25&-out=logR25&-out=PA";
-         // TODO: this.CreateMagFilter( "Vmag", this.magMin, this.magMax );
+         "&-out=PGC&-out=RAJ2000&-out=DEJ2000&-out=logD25&-out=logR25&-out=PA" + // NOTE: using magnitude filter pattern ... testing
+            this.CreateMagFilter( "logD25", this.magMin, this.magMax );
    }
 
    ParseRecord( tokens )
@@ -2137,6 +2137,8 @@ var SGA2020Catalog = class extends VizierCatalog
       super( "SGA2020", "SGA2020" );
 
       this.description = "Siena Galaxy Atlas 2020 (Moustakas+, 2023) (383,620 galaxies)";
+
+      this.catalogMagnitude = 26;
 
       this.fields = [ "Name", "Coordinates", "Magnitude" ];
 
