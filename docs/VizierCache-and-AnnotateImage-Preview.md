@@ -32,7 +32,7 @@ The first time it is used, the first _Sharpless_ layer will query the Vizier bac
 
 <img width="765" height="483" alt="Milky Way core wide field w/LDN annotations" src="https://github.com/user-attachments/assets/ab048dcd-06c2-4426-90d3-c564857c5779" />
 
-## `Clear cache` nuance
+## `Clear cache` button
 
 The `Clear()` function on `VizierCache` is currently unused in the code.  If/when the "Clear cache" button is pressed on the **AnnotateImageDialog.js** GUI, any existing `VizierCache` instance reference in memory is replaced by a new instance of `VizierCache`, which has the same effect of clearing memory, essentially, without calling the `Clear()` function (which resets any existing cache reference to an empty array):
 ```AnnotateImageDialog.js
@@ -43,4 +43,7 @@ The `Clear()` function on `VizierCache` is currently unused in the code.  If/whe
          (new MessageBox( "VizieR cache cleared", TITLE, StdIcon.Information )).execute();
       };
 ```
-A minor enhancement would be to disable the "Clear cache" button until/unless the cache is actually instantiated and contains something (length > 0).
+Note: a minor enhancement would be to disable the "Clear cache" button until/unless the cache is actually instantiated and contains something (length > 0).
+
+## Zero Results Cache Miss
+When there is a `VizierCatalog` layer enabled and "Preview" runs, if there are no objects found in query results, nothing is cached.  Hence, the cache has no record of queries that produce zero results for an enabled layer.  Probably instead the cached query and its empty results should be saved even if the results are zero for a given WCS, so the code can save cycles on fruitless remote queries.
