@@ -46,4 +46,4 @@ The `Clear()` function on `VizierCache` is currently unused in the code.  If/whe
 Note: a minor enhancement would be to disable the "Clear cache" button until/unless the cache is actually instantiated and contains something (length > 0).
 
 ## Zero Results Cache Miss
-When there is a `VizierCatalog` layer enabled and "Preview" runs, if there are no objects found in query results, nothing is cached.  Hence, the cache has no record of queries that produce zero results for an enabled layer.  Probably instead the cached query and its empty results should be saved even if the results are zero for a given WCS, so the code can save cycles on fruitless remote queries.
+When there is a `VizierCatalog` layer enabled and "Preview" runs, if there are no objects found in query results, nothing is cached.  Hence, the cache has no record of queries that produce an empty result for an enabled layer.  Probably instead the cached query and its empty result should be cached, even if the results are zero for a given WCS, so the code can find the zero result and avert a remote call to VizieR if "Preview" is called again and/or when the final image is rendered.
