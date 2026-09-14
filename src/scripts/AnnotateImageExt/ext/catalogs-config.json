@@ -219,12 +219,12 @@
     "fields": ["Name", "Coordinates", "Diameter", "Dist (kpc)", "Size (pc)"]
   },
   {
-    "className": "PlanetaryNebulae2026Catalog",
-    "id": "PN2026",
-    "name": "PN2026",
-    "file": "PlanetaryNebulae-2026-dimmajor-gt-zero-Simbad-08-30-2026-for-PixInsight.csv",
-    "description": "Planetary Nebulae 2026 (SIMBAD, HASH, et al, 2026) (2,491 PN)",
-    "fields": ["Name", "Coordinates", "Diameter", "Common name"]
+    "className": "HASHPN2026Catalog",
+    "id": "HASHPN2026",
+    "name": "HASH PN 4.6 2026",
+    "file": "HASH_PN_DB_4.6_True-Likely_and-newCandidates-MajD_gt_zero-09-13-2026-for-PixInsight.csv",
+    "description": "HASH 4.6 Planetary Nebulae 2026 (HASH 4.6, 2026) (4,316 PN)",
+    "fields": ["Name", "Coordinates", "Diameter", "PNGId", "PNstat", "Common name"]
   },
   {
     "className": "RCWCatalog",

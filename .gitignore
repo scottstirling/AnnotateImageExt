@@ -1,3 +1,4 @@
 build/
 dist/
 *.gz
+.~lock.*.csv#
