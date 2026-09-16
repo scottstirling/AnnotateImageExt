@@ -71,7 +71,7 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 | **RCW** | Rogers, Campbell, & Whiteoak (1960) | Hα Emissions | *Catalog of Halpha Emission Regions in the Southern Milky Way*. |
 | **SDN** | Sandqvist (1977) | Dark Dust Clouds | *More Southern Dark Dust Clouds* (Follow-up to SL). |
 | **SFO** | Sugitani, Fukui, & Ogura (1991/1994) | Bright-Rimmed Clouds| Catalogs covering northern (1991) and southern (1994) hemispheres. |
-| **SGA2020** | Siena Galaxy Atlas 2020 (2023) | Galaxies | Nearby galaxies, derived from `PGC2003`, updated coordinates, `axisRatio`, D26 `diameter` and `posAngle` |
+| **SGA2020** (w/magnitude filter) | Siena Galaxy Atlas 2020 (2023) | Galaxies | Nearby galaxies, derived from `PGC2003`, updated coordinates, `axisRatio`, D26 `diameter` and `posAngle` |
 | **SL** | Sandqvist & Lindroos (1976) | Dark Clouds | *Southern Dark Clouds*. |
 | **SNR** | Green (2025) | Supernova Remnants | An updated, comprehensive edition of *A Catalog of Galactic Supernova Remnants*. |
 | **Stirling** | Stirling (2026) | Wide-Field Astro Phenomena | Very large angular scale astro phenomena (major axis $\ge$ 3°). |
@@ -86,7 +86,7 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 | **Asterisms Layer** | Various | Well-known, non-constellation patterns (e.g., Teapot, Winter Hexagon, Winter Triangle, Great Square). |
 | **Caldwell** | O'Meara (2002 Updates) | The classic list of 109 deep-sky objects with updated modern revisions. |
 | **OpenNGC** | Verga+ (2026 Updates) |  Open source version of the NGC-IC catalog compiled from contemporary and historical sources. |
-| **Stirling** | Stirling (2026) | Work-in-progress focused on **very large scale astro phenomena** (major axis >= 3°). |
+| **Stirling** | Stirling (2026) | Work-in-progress focused on **very large scale astro phenomena** `(major axis >= 3°)`. |
 
 #### H II Regions & Hα Emissions
 
@@ -141,7 +141,7 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 
 | Catalog / Layer | Author(s) & Year | Description |
 | :--- | :--- | :--- |
-| **SGA2020** | Siena Galaxy Atlas 2020 (2023) | 383,620 **nearby galaxies**, subset derived from `PGC2003` with updated coordinates, `axisRatio`, D26 `diameter` and `posAngle` measurements. **NOTE: Andromeda Galaxy, LMC, SMC were excluded from SGA 2020 in the criteria for data requirements.** A more comprehensive **SGA 2025** is expected in the next year or so. |
+| **SGA2020** (w/magnitude filter) | Siena Galaxy Atlas 2020 (2023) | 383,620 **nearby galaxies**, subset derived from `PGC2003` with updated coordinates, `axisRatio`, D26 `diameter` and `posAngle` measurements. **NOTE: Andromeda Galaxy, LMC, SMC were excluded from SGA 2020 in the criteria for data requirements.** A more comprehensive **SGA 2025** is expected in the next year or so. |
 
 #### Update outdated and obsolete Vizier Catalogs
 
