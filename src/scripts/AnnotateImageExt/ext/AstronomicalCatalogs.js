@@ -2067,7 +2067,7 @@ var PGCCatalog = class extends VizierCatalog
 
       this.description = "PGC HYPERLEDA I catalog of galaxies (Paturel+, 2003) (983,261 galaxies)";
 
-      // this.catalogMagnitude = 25;
+      this.catalogMagnitude = 25;
 
       this.fields = [ "Name", "Coordinates" ];
 
@@ -2091,66 +2091,6 @@ var PGCCatalog = class extends VizierCatalog
    {
       return "new PGCCatalog()";
    }
-/**
-   GetEditControls( parent )
-   {
-      let controls = super.GetEditControls( parent );
-
-      // Class filter
-      let class_Label = new Label( parent );
-      class_Label.text = "Class:";
-      class_Label.textAlignment = TextAlignment.Right | TextAlignment.VertCenter;
-      class_Label.minWidth = parent.labelWidth1;
-      this.class_Label = class_Label;
-
-      let class_Combo = new ComboBox( parent );
-      class_Combo.editEnabled = false;
-      class_Combo.toolTip = "<p>Filter the objects of the catalog by class.</p>";
-      class_Combo.onItemSelected = function ()
-      {
-         this.dialog.activeFrame.object.catalog.classFilter = class_Combo.currentItem;
-         this.dialog.activeFrame.object.catalog.bounds = null;
-      };
-      class_Combo.addItem( "All objects" );
-      class_Combo.addItem( "Stars" );
-      class_Combo.addItem( "Galaxies" );
-      class_Combo.currentItem = this.classFilter;
-      this.class_Combo = class_Combo;
-
-      let classSizer = new HorizontalSizer;
-      classSizer.scaledSpacing = 4;
-      classSizer.add( class_Label );
-      classSizer.add( class_Combo );
-      classSizer.addStretch();
-      this.classSizer = classSizer;
-
-      // range slider for diameter
-      let diameter_NumericControl = new NumericControl( this );
-      diameter_NumericControl.real = true;
-      diameter_NumericControl.label.text = "Diameter:";
-      diameter_NumericControl.label.minWidth = this.labelWidth1;
-      diameter_NumericControl.setRange( 0.1, 5 );
-      diameter_NumericControl.slider.setRange( 0, 180 );
-      diameter_NumericControl.slider.scaledMinWidth = 250;
-      diameter_NumericControl.setPrecision( 1 );
-      diameter_NumericControl.edit.minWidth = this.editWidth;
-      diameter_NumericControl.setValue( this.engine.graphicsScale );
-      diameter_NumericControl.toolTip = "<p>Diameter of galaxies to filter out.</p>";
-      diameter_NumericControl.onValueUpdated = function( value )
-      {
-         diamMin = value;
-      };
-
-      diameterSizer = new HorizontalSizer;
-      diameterSizer.spacing = 4;
-      diameterSizer.add( diameter_NumericControl );
-      diameterSizer.addStretch();
-      this.diameterSizer = diameterSizer;
-
-      controls.push( classSizer );
-      //controls.push( diameterSizer );
-      return controls;
-   } */
 
    UrlBuilder(center, fov, mirrorServer)
    {
@@ -2159,8 +2099,7 @@ var PGCCatalog = class extends VizierCatalog
          "&-c.r=" + format( "%f", fov ) +
          "&-c.u=deg&-out.form=|" +
          format( "&-out.max=%d", this.maxRecords ) +
-         "&-out=PGC&-out=RAJ2000&-out=DEJ2000&-out=logD25&-out=logR25&-out=PA" + // NOTE: using magnitude filter pattern ... testing
-            this.CreateDiamFilter( "logD25", this.diamMin, this.diamMax );
+         "&-out=PGC&-out=RAJ2000&-out=DEJ2000&-out=logD25&-out=logR25&-out=PA";
    }
 
    ParseRecord( tokens )
@@ -2197,6 +2136,8 @@ CatalogRegistry.register( new PGCCatalog );
  * Authors: John Moustakas et al 2023
  * DOI: 10.3847/1538-4365/acfaa2
  * Vizier id: "J/ApJS/269/3"
+ * NOTE: due to SGA 2020 data criteria, several large galaxies such as Andromeda, LMC, SMC and various other well-known galaxies may be missing from SGA 2020. 
+ * A newer and more complete release is due with SGA 2025 planned for 2027.
  */
 var SGA2020Catalog = class extends VizierCatalog
 {
