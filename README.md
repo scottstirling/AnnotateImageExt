@@ -57,6 +57,7 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 | **FeSt 1** | Feitzinger & Stüwe (1984) | Dark Nebulae | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees*. |
 | **FeSt 2** | Feitzinger & Stüwe (1984) | Globules | *Catalogue of dark nebulae and globules for galactic longitudes 240 to 360 degrees*. |
 | **Gum** | Gum (1955) | H II Regions | *Southern HII Regions*. |
+| **HASH PN 4.6 2026** | Parker, Bojičić, & Frew (2016) | Planetary Nebulae | *HASH: the Hong Kong/AAO/Strasbourg Hα planetary nebula database. Journal of Physics: Conference Series, 728(3), 032008. DOI: 10.1088/1742-6596/728/3/032008*. |
 | **HMST / DCld** | Hartley et al. (1986) | Dark Clouds | *Catalogue of Southern Dark Clouds*. |
 | **Integrated HII** | Jardine, K. (2013) | H II Nebulae | Galaxymap.org compilation cross-indexing BFS, Du, Gum, RCW, Sh2, Sivan, and unique [GMN] regions. |
 | **Mandel-Wilson**| Mandel & Wilson (2004) | IFNs / Cirrus | *Catalogue of Unexplored Nebulae*, featuring nine integrated flux nebulae. |
@@ -71,7 +72,6 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 | **SDN** | Sandqvist (1977) | Dark Dust Clouds | *More Southern Dark Dust Clouds* (Follow-up to SL). |
 | **SFO** | Sugitani, Fukui, & Ogura (1991/1994) | Bright-Rimmed Clouds| Catalogs covering northern (1991) and southern (1994) hemispheres. |
 | **SGA2020** | Siena Galaxy Atlas 2020 (2023) | Galaxies | Nearby galaxies, derived from `PGC2003`, updated coordinates, `axisRatio`, D26 `diameter` and `posAngle` |
-| **Shk** | Shakhbazian (1979) | Compact Galaxies | *The Catalog of Compact Groups of Compact Galaxies* featuring 377 distinct groups. |
 | **SL** | Sandqvist & Lindroos (1976) | Dark Clouds | *Southern Dark Clouds*. |
 | **SNR** | Green (2025) | Supernova Remnants | An updated, comprehensive edition of *A Catalog of Galactic Supernova Remnants*. |
 | **Stirling** | Stirling (2026) | Wide-Field Astro Phenomena | Very large angular scale astro phenomena (major axis $\ge$ 3°). |
@@ -131,12 +131,34 @@ Many added, updated astronomy, astrophysics and astrophotography catalogs for Pi
 | **Mandel-Wilson** | Mandel & Wilson (2004) | *Catalogue of Unexplored Nebulae*, featuring nine integrated flux nebulae (IFNs). |
 | **SNR** | Green (2025) | An updated, comprehensive edition of *A Catalog of Galactic Supernova Remnants*. |
 
+#### Planetary Nebulae
+
+| Catalog / Layer | Author(s) & Year | Description |
+| :--- | :--- | :--- |
+| **HASH PN 4.6 2026** | Parker, Bojičić, & Frew (2016) | *HASH: the Hong Kong/AAO/Strasbourg Hα planetary nebula database. Journal of Physics: Conference Series, 728(3), 032008. DOI: 10.1088/1742-6596/728/3/032008*. **AnnotateImageExt** currently contains annotation data for 4,316 `True`, `Likely` and `New candidate` planetary nebulae with `MajDiam > 0` |
+
 #### External Galaxies
 
 | Catalog / Layer | Author(s) & Year | Description |
 | :--- | :--- | :--- |
-| **SGA2020** | Siena Galaxy Atlas 2020 (2023) | Nearby galaxies, derived from `PGC2003`, updated coordinates, `axisRatio`, D26 `diameter` and `posAngle`. |
-| **Shk** | Shakhbazian (1979) | *The Catalog of Compact Groups of Compact Galaxies* featuring 377 distinct groups. |
+| **SGA2020** | Siena Galaxy Atlas 2020 (2023) | 383,620 **nearby galaxies**, subset derived from `PGC2003` with updated coordinates, `axisRatio`, D26 `diameter` and `posAngle` measurements. **NOTE: Andromeda Galaxy, LMC, SMC were excluded from SGA 2020 in the criteria for data requirements.** A more comprehensive **SGA 2025** is expected in the next year or so. |
+
+#### Update outdated and obsolete Vizier Catalogs
+
+**AnnotateImageExt** updates the outdated and obsolete catalogs listed below, which are Vizier-query catalog functions that ship in the PixInsight product:
+
+  - **CMC15 (2011):** CMC14 (2006) is behind **CMC15 (2011)** available as `I/327` **and** CMC-14 has a bug in the PixInsight 1.9.4 product Vizier query so it never works (always returns `Catalog CMC14: 0 objects inside the image.`):  
+    - The bug is due to mismatch between the expected coordinate column names in the Vizier query URL: `-out=RAJ2000&-out=DEJ2000` should be `-out=RAICRS&-out=DEICRS`
+    - Note that in CMC-15 the coordinate column names changed **again** to `-out=RA_ICRS&-out=DE_ICRS`
+      - Fixed and tested CMC-14, then replaced with CMC-15 and tested **[DONE 8/22/2026]**
+  - **GSC 2.4.2 (2020):** GSC 2.3 (2008) is outdated behind **GSC 2.4.2 (2020)** available as I/353  **[DONE 8/22/2026]**
+  - **Milliquas 8 (2023):** Milliquas 7.2 (2021) is marked **obsolete** in Vizier, with **Milliquas v8 (2023)** available as VII/294/catalog  **[DONE 8/22/2026]**
+  - **UCAC5 (2017):** UCAC3 (2009) is **obsolete** in Vizier, with **UCAC5 (2017)** available as I/340 **[DONE 8/23/2026]**
+    - UCAC4 updated UCAC3 with corrections and additional wavelength metrics in 2012, retaining the UCAC identifier scheme
+    - UCAC5 replaced UCAC4 and UCAC3 with more accurate proper motion data derived from Gaia DR1 in 2017
+    - If anyone missed or wanted UCAC4, it would be very similar to UCAC3 _coding-wise_ and the identifiers and magnitude filters
+    - UCAC5 data is derived from Gaia DR1 and is a bit out of date with availability of more modern Gaia 3 (late 2020)
+
 
 Screenshot showing default core catalogs and layers as of 7/5/2026:
 
@@ -210,20 +232,4 @@ To:
 AstronomicalCatalogs.js:    this.description = "Catalog of Reflection Nebulae - Van den Bergh (159 nebulae)";
 AstronomicalCatalogs.js:    this.description = "Catalog of HII Regions - Sharpless (313 nebulae)";
 ```
-
-#### Update outdated and obsolete Vizier Catalogs
-
-**AnnotateImageExt** updates all of the outdated and obsolete catalogs listed below, which are Vizier-query catalog functions that ship in the PixInsight product:
-
-  - CMC14 (2006) is behind CMC15 (2011) available as `I/327` **and** CMC-14 has a bug in the PixInsight 1.9.4 product Vizier query so it never works (always returns `Catalog CMC14: 0 objects inside the image.`):  
-    - The bug is due to mismatch between the expected coordinate column names in the Vizier query URL: `-out=RAJ2000&-out=DEJ2000` should be `-out=RAICRS&-out=DEICRS`
-    - Note that in CMC-15 the coordinate column names changed **again** to `-out=RA_ICRS&-out=DE_ICRS`
-      - Fixed and tested CMC-14, then replaced with CMC-15 and tested **[DONE 8/22/2026]**
-  - GSC 2.3 (2008) is outdated behind GSC 2.4.2 (2020) available as I/353  **[DONE 8/22/2026]**
-  - Milliquas 7.2 (2021) is marked **obsolete** in Vizier, with v8 (2023) available as VII/294/catalog  **[DONE 8/22/2026]**
-  - UCAC3 (2009) is **obsolete** in Vizier, with UCAC5 (2017) available as I/340 **[DONE 8/23/2026]**
-    - UCAC4 updated UCAC3 with corrections and additional wavelength metrics in 2012, retaining the UCAC identifier scheme
-    - UCAC5 replaced UCAC4 and UCAC3 with more accurate proper motion data derived from Gaia DR1 in 2017
-    - If anyone missed or wanted UCAC4, it would be very similar to UCAC3 _coding-wise_ and the identifiers and magnitude filters
-    - UCAC5 data is derived from Gaia DR1 and is a bit out of date with availability of more modern Gaia 3 (late 2020)
 
