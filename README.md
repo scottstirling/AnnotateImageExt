@@ -233,3 +233,44 @@ AstronomicalCatalogs.js:    this.description = "Catalog of Reflection Nebulae - 
 AstronomicalCatalogs.js:    this.description = "Catalog of HII Regions - Sharpless (313 nebulae)";
 ```
 
+## Acknowledgements
+
+The following resources have been used to source, validate, test and produce these catalogs for **AnnotateImageExt**:
+
+### HASH Planetary Nebulae Database 4.6
+
+This project has made use of the **HASH PN database** at [hashpn.space](hashpn.space).
+
+  - Parker, Q. A., Bojičić, I. S., & Frew, D. J. (2016). **HASH: the Hong Kong/AAO/Strasbourg Hα planetary nebula database**. *Journal of Physics: Conference Series*, 728(3), 032008. [DOI: 10.1088/1742-6596/728/3/032008](https://doi.org)
+
+
+### Vizier
+
+This project has made use of the **VizieR** catalogue access tool, **CDS**, Strasbourg, France (**DOI: 10.26093/cds/vizier**). The original description of the VizieR service was published in 2000, *A&AS* 143, 23.
+
+  - Ochsenbein, F., Bauer, P., & Marcout, J. (2000). **The VizieR database of astronomical catalogues**. *Astronomy and Astrophysics Supplement Series*, 143(1), 23-32. 
+
+### SIMBAD
+
+This project has made use of the **SIMBAD** database, operated at **CDS**, Strasbourg, France.
+
+  - Wenger, M., Ochsenbein, F., Egret, D., Dubois, P., Bonnarel, F., Borde, S., ... & Laloë, S. (2000). **The SIMBAD astronomical database: The CDS reference database for identification of astronomical objects.** *Astronomy and Astrophysics Supplement Series*, 143(1), 9-22.
+
+### OpenNGC
+
+This project has made use of **OpenNGC**, a license-friendly database containing positions and metadata of NGC and IC objects compiled by **Mattia Verga** (licensed under CC-BY-SA-4.0).
+
+Verga, M. (2017). **OpenNGC: A license friendly NGC/IC objects database.** [GitHub Repository](https://github.com/mattiaverga/OpenNGC). **DOI: 10.21938/y.1ejWUD_MQ6b_eDFoVbbw.**
+
+### Revised NGC
+
+This project has made use of the **Revised New General Catalogue and Index Catalogue** (Revised NGC/IC) compiled and maintained by **Dr. Wolfgang Steinicke**, with permission.
+
+  - Steinicke, W. (2026). **Revised New General Catalogue and Index Catalogue.** Available from: http://www.klima-luft.de/steinicke/ngcic/ngcic_e.htm
+
+### GalaxyMap Integrated HII Regions
+
+This project has made use of the Integrated Nebula Catalog and HII region compilations hosted at [GalaxyMap.org](https://galaxymap.org), created and maintained by Kevin Jardine. Materials are utilized in accordance with the Creative Commons Attribution 4.0 International license.
+
+  - Jardine, K. (2013). **An Integrated Nebula Catalog**. Galaxy Map. Available from: http://galaxymap.org/drupal/node/216
+
