@@ -4,27 +4,27 @@
       <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
    </description>
    <platform os="all" arch="noarch" version="1.9.4.1695:1.9.4.1695">
-      <package fileName="2026-09-16-AnnotateImageExt.tar.gz" sha1="TODO" type="script" releaseDate="20260916">
+      <package fileName="2026-09-16-AnnotateImageExt.tar.gz" sha1="83c817490531b9b923d8f05c1b54486b05f7dd1a" type="script" releaseDate="20260916">
          <title>AnnotateImageExt, install / update</title>
          <description>
-		 <p>v1.5</p>
-<ul>
-    <li>update README with acks</li>
-    <li>Update README for new version</li>
-    <li>Remove commented code from PGC and update code comment for SGA 2020.</li>
-    <li>Remove SIMBAD-derived PN catalog and replace with HASH 4.6 derived PNe catalog containing True, Likely and New candidate PNe as of 9/14/2026.</li>
-    <li>Revise cache-related sections in documentation: Updated section titles and clarified cache behavior in Vizier documentation.</li>
-    <li>Update version to 1.5.  Remove "Diameter" from fields for SGA because for some reason it doesn't work and seems like a nuance deeper in the catalog class hierarchy to investigate.</li>
-    <li>Fix, broke mag filter for SGA 2020 in previous commit</li>
-    <li>SGA 2020: implement <b>R_MAG_SB24</b> magnitude filter. Update object count for Revised NGC.</li>
-    <li>Add <i>Revised NGC</i> by Wolfgang Steinicke, with his permission.  Rename Planetary Nebulae catalog.</li>
-    <li>Rename Planetary Nebulae catalog and remove Shakhbazian, which is just a bit dated.</li>
-    <li>Testing PA for NGC 40, the HASH 4.6 value of 24 degrees is an accurate fit, unlike the value from SIMBAD.</li>
-    <li>Update Planetary config name with plural "Nebulae"</li>
-    <li>remove column, add Common name and Other name columns with a few values for Messier and NGC low hangers</li>
-    <li>Fix 13 PN with incorrect values for min and major axes and add notes, fix PN catalog with posAngle and diameters https://github.com/scottstirling/AnnotateImageExt/issues/30</li>
-    <li>Remove older NamedStars revision, add new Planetary Nebula catalog queried from SIMBAD where <i>maintype=PN &amp; dimmajor > 0</i>.</li>
-  </ul>
+            <p>v1.5</p>
+            <ul>
+               <li>update README with acks</li>
+               <li>Update README for new version</li>
+               <li>Remove commented code from PGC and update code comment for SGA 2020.</li>
+               <li>Remove SIMBAD-derived PN catalog and replace with HASH 4.6 derived PNe catalog containing True, Likely and New candidate PNe as of 9/14/2026.</li>
+               <li>Revise cache-related sections in documentation: Updated section titles and clarified cache behavior in Vizier documentation.</li>
+               <li>Update version to 1.5.  Remove &quot;Diameter&quot; from fields for SGA because for some reason it doesn&apos;t work and seems like a nuance deeper in the catalog class hierarchy to investigate.</li>
+               <li>Fix, broke mag filter for SGA 2020 in previous commit</li>
+               <li>SGA 2020: implement <b>R_MAG_SB24</b> magnitude filter. Update object count for Revised NGC.</li>
+               <li>Add <i>Revised NGC</i> by Wolfgang Steinicke, with his permission.  Rename Planetary Nebulae catalog.</li>
+               <li>Rename Planetary Nebulae catalog and remove Shakhbazian, which is just a bit dated.</li>
+               <li>Testing PA for NGC 40, the HASH 4.6 value of 24 degrees is an accurate fit, unlike the value from SIMBAD.</li>
+               <li>Update Planetary config name with plural &quot;Nebulae&quot;</li>
+               <li>remove column, add Common name and Other name columns with a few values for Messier and NGC low hangers</li>
+               <li>Fix 13 PN with incorrect values for min and major axes and add notes, fix PN catalog with posAngle and diameters https://github.com/scottstirling/AnnotateImageExt/issues/30</li>
+               <li>Remove older NamedStars revision, add new Planetary Nebula catalog queried from SIMBAD where <i>maintype=PN &amp; dimmajor &gt; 0</i>.</li>
+            </ul>
             <p>v1.4</p>
             <ul>
                <li>SGA 2020 VizierCatalog added, update to and subset of PGC, with common names, D26 diameters, axisRatio, PA (and work in progress: r_mag_SB24 filter). Update updates.xri from last release.</li>
@@ -101,4 +101,4 @@ return this.spline.evaluate( p );
       </package>
    </platform>
 </xri>
-<Signature developerId="ScottStirling" timestamp="2026-08-24T01:48:46.845Z" encoding="Base64">bQLy+rYdREyL8F9JRv4n0AfjVPjCKI4Xe5x5tSptvDlUX4Xe6xBUeYWOGPBmBWEu5N/0OKuTeLG/LnRVVsEgDA==</Signature>
+<Signature developerId="ScottStirling" timestamp="2026-09-16T19:53:22.175Z" encoding="Base64">S/MSpOrxXY5TELgXE9qSZSNVlst4MeptItZ7P4p+KgOMY5eZ5p2FFms5TmP6jZGi6kD/k/zptyugCEkqj7CUCA==</Signature>
