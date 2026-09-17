@@ -274,3 +274,9 @@ This project has made use of the Integrated Nebula Catalog and HII region compil
 
   - Jardine, K. (2013). **An Integrated Nebula Catalog**. Galaxy Map. Available from: http://galaxymap.org/drupal/node/216
 
+### Astrophotographers
+
+These astrophotographers helped with images for testing and demonstrating annotations, particularly planetary nebulae and Ced 211 (aka R Aqr):
+
+  - Goodhew, Peter: https://www.astrobin.com/users/PeterGoodhew/
+  - Post, MJ: https://www.astrobin.com/users/M.J./
