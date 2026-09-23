@@ -3,10 +3,16 @@
    <description>
       <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
    </description>
-   <platform os="all" arch="noarch" version="1.9.4.1695:1.9.4.1695">
-      <package fileName="2026-09-16-AnnotateImageExt.tar.gz" sha1="83c817490531b9b923d8f05c1b54486b05f7dd1a" type="script" releaseDate="20260916">
+   <platform os="all" arch="noarch" version="1.9.4.1695:1.9.5">
+      <package fileName="2026-09-22-AnnotateImageExt.tar.gz" sha1="TODO" type="script" releaseDate="20260922">
          <title>AnnotateImageExt, install / update</title>
          <description>
+	    <p>v1.5.1</p>
+	    <ul>
+              <li>PixInsight 1.9.5 out-of-the-box <b>AnnotateImage</b> script (including new documentation!) now has caught up all the point source catalog versions and added several (Caldwell, Cederblad, Collinder, SGA 2020, WISE-HII), though the Cederblad is Vizier-based, and there are errors in Cederblad that we aim to correct in this project's file-based version. (see Ced 211 aka R Aquarii). This version of <b>AnnotateImageExt</b> has no new catalogs and none removed (yet), but will be trimming and aligning coverage with PixInsight product changes as they come.</li>
+              <li>Add MJ Post and Peter Goodhew to Acknowledgements for use of their images from Astrobin for testing.</li>
+              <li>Cederblad file-based catalog: Ced 211 updated coordinates and angular dimensions from HASH 4.6 where it is aka PNG 066.5-70.3, with status of symbiotic star.  The coordinates concurr with SIMBAD for R Aqr.  The dimensions in HASH are more generous than in Cederblad's original (1947), 2.1 vs 1.5 arc minutes, and the coordinates in HASH and SIMBAD are more accurate and precise than Cederblad's original (which I originally pulled from VizieR's Catalog of bright diffuse Galactic nebulae (Cederblad, 1946).</li>
+            </ul>
             <p>v1.5</p>
             <ul>
                <li>update README with acks</li>
