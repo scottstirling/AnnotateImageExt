@@ -222,8 +222,8 @@
     "className": "HASHPN2026Catalog",
     "id": "HASHPN2026",
     "name": "HASH PN 4.6 2026",
-    "file": "HASH_PN_DB_4.6_True-Likely_and-newCandidates-MajD_gt_zero-09-13-2026-for-PixInsight.csv",
-    "description": "HASH 4.6 Planetary Nebulae 2026 (HASH 4.6, 2026) (4,316 PN)",
+    "file": "HASH_PN_DB_4.6_True-Likely_and-newCandidates-MajD_gt_zero-09-28-2026-for-PixInsight.csv",
+    "description": "HASH 4.6 Planetary Nebulae 2026 (HASH 4.6, 2026) (4,386 PN)",
     "fields": ["Name", "Coordinates", "Diameter", "PNGId", "PNstat", "Common name"]
   },
   {
