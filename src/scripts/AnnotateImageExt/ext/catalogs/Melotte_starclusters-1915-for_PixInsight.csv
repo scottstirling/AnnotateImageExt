@@ -15,7 +15,7 @@ Mel 13,34.7571637995518,57.1455836657537,36,NGC 869,,Cr 24,Double cluster,
 Mel 14,35.6170338977604,57.107568041236,36,NGC 884,,Cr 25,Double cluster,
 Mel 15,38.1943335834546,61.4432131888312,20,--,,,,
 Mel 16,40.6814534453912,61.5449543378374,18,NGC 1027,,Cr 30,,
-Mel 17,40.5074398908561,42.7783758143984,30,NGC 1039,M 34,Cr 31,,"See note to Mel 18.  The diameters of Mel 17 and Mel 18 were mistakenly transposed ny Melotte from the NGC, according to Raab and Collinder  (1931).  Melotte gave 7 arc minutes for Mel 17 aka NGC 1039, but it should be 30 arc minutes.  And vice-versa for Mel 18 aka NGC 1245."
+Mel 17,40.5074398908561,42.7783758143984,30,NGC 1039,M 34,Cr 31,,"See note to Mel 18.  The diameters of Mel 17 and Mel 18 were mistakenly transposed by Melotte from the NGC, according to Raab and Collinder  (1931).  Melotte gave 7 arc minutes for Mel 17 aka NGC 1039, but it should be 30 arc minutes.  And vice-versa for Mel 18 aka NGC 1245."
 Mel 18,48.6740094107383,47.2405885826215,7,NGC 1245,,Cr 38,,"Collinder  (1931) Cr 38 aka NGC 1245 note says: “Diameter and description confused by Melotte.” And refers to note in Collinder 31, which continues: ”As pointed out by Raab, Melotte evidently has confused the diameters and descriptions of NGC 1039 and 1245.”"
 Mel 19,48.0582320391223,-55.225271933009,5,NGC 1261,,,,
 Mel 20,50.5090711123969,48.6106481278798,300,--,,Cr 39,Perseus cluster,"Diameter derived from Melotte’s note: “The large extended cluster in Perseus, covering an area 5 degrees square.”  Trumpler (1930) gives an angular diameter of 240 arc minutes.  Collinder (1931) gives 220x180”"
@@ -23,11 +23,11 @@ Mel 21,52.9137319464211,37.325318360557,15,NGC 1342,,Cr 40,,
 Mel 22,56.7358282428985,24.1114326819845,110,--,M 45,Cr 42,Pleiades,
 Mel 23,63.845249762324,51.236995685433,25,NGC 1528,,Cr 47,,
 Mel 24,64.7600986866632,58.2965412607457,6,IC 361,,Cr 48,,
-Mel 25,64.9198159288265,15.6256062420128,330,--,,Cr 50,Hyades-Taurus cluster,Hyades cluster diameter estimated. Trumpler (1930) gives 400 arc minutes angular diameter. Collinder (1931) gives 360x300 arc minutes. 
+Mel 25,67.4471,16.9481,330,--,,Cr 50,Hyades-Taurus cluster,Hyades cluster diameter estimated. Trumpler (1930) gives 400 arc minutes angular diameter. Collinder (1931) gives 360x300 arc minutes.
 Mel 26,71.5115160698849,19.0666398196972,40,NGC 1647,,Cr 54,,
 Mel 27,72.7597018112378,43.6899522289699,15,NGC 1664,,Cr 56,,
 Mel 28,75.9174255986559,23.8092984886569,45,NGC 1746,,Cr 57,,
-Mel 29,77.6660182244926,16.5257846031395,15,NGC 1807,,Cr 59,,"Trumpler (p. 175, 1930): “The cluster Melotte 29 should undoubtedly be identified with this [NGC 1817] and not NGC 1807.”  Collinder (1931) includes both in his catalog as Cr 59 and Cr 60. "
+Mel 29,77.6660182244926,16.5257846031395,15,(NGC 1817),,Cr 60,,"Trumpler (p. 175, 1930): “The cluster Melotte 29 should undoubtedly be identified with this [NGC 1817] and not NGC 1807.”  Collinder (1931) includes both NGC 1807 and NGC 1817 as Cr 59 and Cr 60, respectively.  To Trumpler’s point, the diameters from each author match up better with NGC 1817, a 20’ open cluster, than NGC 1807, 5.4’, a much smaller nearby asterism."
 Mel 30,78.5219528505882,-40.0352410303728,8,NGC 1851,,,,
 Mel 31,79.5397090131705,33.3755851898774,67.7,--,,,,"Diameter from note: “A few bright stars forming an extended cluster scattered over an area 1 degree square.  14, 16, 19 Aurigae are included.” Intended center of coordinates “16 Aurigae”"
 Mel 32,80.0281187741742,39.3380120111535,9,NGC 1857,,Cr 61,,
@@ -39,7 +39,7 @@ Mel 37,84.030061487898,34.1325734684368,12,NGC 1960,M 36,Cr 71,,
 Mel 38,88.0854589853486,32.5432127460948,20,NGC 2099,M 37,Cr 75,,
 Mel 39,90.7419742482735,49.9022233533016,5,NGC 2126,,Cr 78,,
 Mel 40,91.8546907265038,24.0894155302052,4,NGC 2158,,Cr 81,,
-Mel 41,98.2801307150038,24.2771815896957,40,NGC 2168,M 35,Cr 82,,
+Mel 41,92.2208,24.3333,40,NGC 2168,M 35,Cr 82,,
 Mel 42,93.7951749821143,39.8549449195184,6,NGC 2192,,Cr 86,,
 Mel 43,93.4572818069045,12.8065922478622,5,NGC 2194,,Cr 87,,
 Mel 44,93.9182704434766,-18.6493986504709,9,NGC 2204,,Cr 88,,
@@ -50,7 +50,7 @@ Mel 48,99.6368720626804,10.8801116255883,3,NGC 2259,,Cr 108,,
 Mel 49,100.251912064202,9.89083102696837,30,NGC 2264,,Cr 112,,
 Mel 50,100.810315340761,26.9696933490092,5,NGC 2266,,Cr 113,,
 Mel 51,102.331976690031,41.0561022418602,15,NGC 2281,,Cr 116,,
-Mel 52,101.74943738712,-20.7415970605343,30,NGC 2287,M 14,Cr 118,,
+Mel 52,101.74943738712,-20.7415970605343,30,NGC 2287,M 41,Cr 118,,Editor: Melotte’s description mistakenly transposes the Messier number.  He says it’s “M. 14. Large open cluster.  Fine example of Class II.” but the coordinates given are for Messier 41.
 Mel 53,102.235271580055,-36.0137936389602,2,NGC 2298,,,,
 Mel 54,102.935687334746,0.464788181785428,15,NGC 2301,,Cr 119,,
 Mel 55,103.757721323657,18.0078093238796,4,NGC 2304,,Cr 120,,
@@ -150,7 +150,7 @@ Mel 148,248.124031061953,-13.0471209740893,7,NGC 6171,,,,
 Mel 149,250.095913491306,-43.3643518186903,7,NGC 6192,,Cr 309,,
 Mel 150,250.418002570458,36.4593117522421,12,NGC 6205,M 13,,,
 Mel 151,251.797970750069,-1.94659166905693,9,NGC 6218,M 12,,,
-Mel 152,252.678191171134,-44.7241768979389,3,NGC 6222,,Cr 314,,"Trumpler (p. 175, 1930): “NGC 6216 – Melotte 152 should be identified with this [NGC 6216] and not with NGC 6222.” Trumpler lists 3.8 arc minutes angular diameter for NGC 6216."
+Mel 152,252.678191171134,-44.7241768979389,3,(NGC 6216),,Cr 314,,"Trumpler (p. 175, 1930): “NGC 6216 – Melotte 152 should be identified with this [NGC 6216] and not with NGC 6222.” Trumpler lists 3.8 arc minutes angular diameter for NGC 6216. Collinder (1931, p. B37) notes that NGC 6222 (Mel. 152) and NGC 6216 are “probably one and the same.”  Archinal and Hynes (2003, pp. 175-176) conclude that NGC 6222 is an unidentifiable cluster of 20’ diameter observed by Herschel, but they agree with Trumpler and Collinder that NGC 6216 is the only cluster matching the location and dimensions recorded by all: from Herschel to Melotte to Trumpler and Collinder."
 Mel 153,253.504700657116,-41.7996343984303,135.4,NGC 6231,,Cr 315,,Diameter derived from note: “extending over a field 2 degrees square”
 Mel 154,253.34666184839,-22.1832213140575,1.5,NGC 6235,,,,
 Mel 155,253.918698575932,-39.4956204478243,10,NGC 6242,,Cr 317,,
@@ -177,14 +177,14 @@ Mel 175,264.411976955074,-3.24389907284522,6,NGC 6402,M 14,,,
 Mel 176,265.158561032279,-53.6735287774913,18,NGC 6397,,,,
 Mel 177,264.87193373858,-36.9413312205327,6,NGC 6400,,Cr 342,,
 Mel 178,265.004488932956,-32.2063878685352,25,NGC 6405,M 6,Cr 341,,
-Mel 179,266.575156519767,5.71079647359329,60,(IC 4665),,Cr 349,,"Mel 179 note: “A few bright stars forming a very open cluster.  Not in NGC, but noted by Bailey.”"
+Mel 179,266.575156519767,5.71079647359329,60,(IC 4665),,Cr 349,,"Mel 179 note: “A few bright stars forming a very open cluster.  Not in NGC, but noted by Bailey.”  Collinder does not mention Melotte’s identifier or diameter in his notes for Cr 349 at the exact same coordinates, but catalogs it as IC 4665. So did Trumpler (1930, Table 16, p. 174)."
 Mel 180,267.550345485098,-37.0487345741177,1.5,NGC 6441,,,,
 Mel 181,267.679510404592,-30.213679804335,6,NGC 6451,,Cr 352,,
 Mel 182,268.234396421821,-22.3411613664689,12,NGC 6469,,Cr 353,,
 Mel 183,268.492545341547,-34.8060941334277,60,NGC 6475,M 7,Cr 354,,
 Mel 184,269.222658131498,-19.0147155378129,25,NGC 6494,M 23,Cr 356,,
 Mel 185,269.773085572356,-44.2444122679353,1.5,NGC 6496,,,,
-Mel 186,270.152388363044,2.92873065842599,360,--,,Cr 359,,Diameter derived from note: “covering an area about 6 degrees square” in Ophiuchus
+Mel 186,270.152388363044,2.92873065842599,360,--,,Cr 359,,Diameter estimate from note: “covering an area about 6 degrees square” in Ophiuchus
 Mel 187,270.8507482644,-27.8993970110055,5,NGC 6520,,Cr 361,,Note: “in the brightest part of Sagittarius cloud.”
 Mel 188,271.161536481937,-22.4960623933219,10,NGC 6531,M 21,Cr 363,,
 Mel 189,270.952968541084,0.303052919210148,0.75,NGC 6535,,,,
@@ -202,7 +202,7 @@ Mel 200,276.138150411361,-24.8645642595189,5,NGC 6626,M 28,,,
 Mel 201,276.892537992712,6.56095162823311,20,NGC 6633,,Cr 380,,
 Mel 202,277.831430656923,-32.348654399581,2,NGC 6637,M 69,,,
 Mel 203,277.971104580832,-23.4634405935182,1,NGC 6642,,Cr 381,,
-Mel 204,277.924186217565,-19.2469995605457,40,(IC 4725),M 25,Cr 382,,"Collinder  (B41, 1931) Cr 382 aka IC 4725 note says: “IC 4725. -D. Mel. 40 arc minutes,” and it appears Collinder identifies it with this object."
+Mel 204,277.924186217565,-19.2469995605457,40,(IC 4725),M 25,Cr 382,,"Collinder  (B41, 1931) Cr 382 aka IC 4725 note says: “IC 4725. -D. Mel. 40 arc minutes,” and it appears Collinder identifies it with this object. Trumpler gives diameter 35’ for IC 4725 at the same coordinates."
 Mel 205,278.1489958846,-16.8947105200554,10,NGC 6645,,Cr 383,,
 Mel 206,278.357485184198,-10.392380469418,8,NGC 6649,,Cr 384,,"Note: “A number of faint stars near would, if included, make the diameter 15 arc minutes”"
 Mel 207,278.939296162533,-32.9880179395517,1,NGC 6652,,,,
@@ -225,7 +225,7 @@ Mel 223,295.331098291369,40.1844701732541,6,NGC 6819,,Cr 403,,
 Mel 224,297.771137675495,23.0881698951021,8,NGC 6830,,Cr 406,,
 Mel 225,298.05409444229,29.4075645627502,4,NGC 6834,,Cr 407,,
 Mel 226,298.439804781553,18.7770780694008,4,NGC 6838,M 71,Cr 409,,
-Mel 227,303.577349210275,-79.3075874465306,67.7,--,,Cr 411,,Diameter derived from note: “A few bright stars forming a coarse cluster scattered over an area 1 degree square.”  Trumpler (1930) angular diameter is 60 arc minutes.
+Mel 227,303.577349210275,-79.3075874465306,67.7,--,,Cr 411,,Diameter estimate from note: “A few bright stars forming a coarse cluster scattered over an area 1 degree square.”  Trumpler (1930) angular diameter is 60’ and Collinder Cr 411 is 80’x60’ at 120 degree position angle.
 Mel 228,301.524740395009,-21.9149572652961,2,NGC 6864,M 75,,,
 Mel 229,300.945040591125,43.9995657865227,6,NGC 6866,,Cr 412,,
 Mel 230,308.550114104725,7.40901980005168,1.5,NGC 6934,,,,
