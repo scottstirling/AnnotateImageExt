@@ -3,12 +3,17 @@
    <description>
       <h2>Stirling Astrophoto PixInsight Repository for AnnotateImageExt</h2>
    </description>
-   <platform os="all" arch="noarch" version="1.9.4.1695:1.9.5">
-      <package fileName="2026-11-01-AnnotateImageExt.tar.gz" sha1="" type="script" releaseDate="20261101">
+   <platform os="all" arch="noarch" version="1.9.4.1695:1.9.6">
+      <package fileName="2026-11-01-AnnotateImageExt.tar.gz" sha1="a86e21e0476f31f51c3fb02bf96a34a86fe32328" type="script" releaseDate="20261101">
          <title>AnnotateImageExt, install / update</title>
          <description>
-	    <p>v1.6</p>
-
+            <p>v1.6</p>
+            <ul>
+               <li>NOTICE: many significant changes in PixInsight since 1.9.5, and many changes to the Certified Developer terms and conditions.  I have not updated anything in response to any of the changes in the platform or in the PixInsight Certified Developer terms and conditions.  This update is just to preserve functionality as the script and catalogs are still good on PixInsight 1.9.6.  I will work on a more comprehensive update soon.  I may need to change the name of the script.  No one has asked me to yet but it is close to the out of the box script name.  I am considering, planning separating the annotation script from the catalogs.  But that is a TODO.  Right now, this release is just to keep things working with an updated signed release for PixInsight 1.9.6 that came out last week.</li>
+               <li>Minor updates, more coming for open clusters soon ...</li>
+               <li>Fix for missing commas breaking Cederblad, overhaul of Melotte, minor updates in Collinder until next big update.</li>
+               <li>HASH: Removed LAMOST survey PN candidates because they are all placeholders for more data and they sometimes overlap with known PN, e.g., Abell 21, the Medusa Nebula in Gemini overlaps with a LAMOST entity that has default values and overtakes the annotation for, likely, a duplicate. Update config for new file. Removed previous csv.</li>
+            </ul>
             <p>v1.5.1</p>
             <ul>
                <li>PixInsight 1.9.5 out-of-the-box <b>AnnotateImage</b> script (including new documentation!) now has caught up all the point source catalog versions and added several (Caldwell, Cederblad, Collinder, SGA 2020, WISE-HII), though the Cederblad is Vizier-based, and there are errors in Cederblad that we aim to correct in this project&apos;s file-based version. (see Ced 211 aka R Aquarii). This version of <b>AnnotateImageExt</b> has no new catalogs and none removed (yet), but will be trimming and aligning coverage with PixInsight product changes as they come.</li>
@@ -109,4 +114,4 @@ return this.spline.evaluate( p );
       </package>
    </platform>
 </xri>
-<Signature developerId="ScottStirling" timestamp="2026-09-23T02:55:25.082Z" encoding="Base64">4gQ1UlIdCXwGed5EjqcgDMI/21Ur07BRKCRYopghcNNSjThStXfrZBAaLlMXveEA1wuzPk8Q4SqWPe4egFSiCA==</Signature>
+<Signature developerId="ScottStirling" timestamp="2026-11-01T16:14:01.345Z" encoding="Base64">fFZAHSSPpAthA0vwwlTzuqFoTpVZDDuAtd/A2YXYMfnMdlgNtquBAe8euhROQn4em+G9zfZjT+vLTW8pkbusCg==</Signature>
