@@ -115,11 +115,11 @@
     "fields": ["Name","Coordinates","Diameter","MinorAxis","Density","DCld Id"]
   },
   {
-    "className": "KJardineHIICatalog",
-    "id": "KJardineHII",
-    "name": "Integrated HII Nebulae Catalog (galaxymap.org)",
-    "file": "An_Integrated_HII_Nebulae_Catalog-Jardine-2013-for-PixInsight.csv",
-    "description": "An Integrated HII Nebulae Catalog (Jardine, K., 2013) (733 objects)",
+    "className": "HIIRegionsCatalog",
+    "id": "HIIRegions",
+    "name": "HII Regions Nebulae",
+    "file": "HII_Regions_Nebulae_Catalog-for-PixInsight.csv",
+    "description": "HII Regions Nebulae Catalog (730 objects)",
     "fields": ["Name", "Coordinates", "Diameter"],
     "defaultSet": true,
     "visible": true
