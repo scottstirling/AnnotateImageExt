@@ -157,9 +157,9 @@ Mel 155,253.918698575932,-39.4956204478243,10,NGC 6242,,Cr 317,II,,
 Mel 156,254.781034634992,-52.7054855378282,6,NGC 6253,,Cr 321,II,,
 Mel 157,254.293518320097,-4.10690586969884,10,NGC 6254,M 10,,I,,
 Mel 158,255.184375233163,-44.6675747201064,15,NGC 6259,,Cr 322,II,,
-Mel 159,255.280267676464,-29.2322598820567,8,NGC 6266,,,I,,
+Mel 159,255.3025,-30.1117,8,NGC 6266,,,I,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 160,255.645288642884,-26.2620052007089,5,NGC 6273,,,I,,
-Mel 161,256.199120383377,-37.8908671883043,9,NGC 6281,,Cr 324,III,,
+Mel 161,256.196666666667,-37.8878,9,NGC 6281,,Cr 324,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 162,256.128566425011,-24.7573858285456,1.5,NGC 6284,,,I,,
 Mel 163,256.280740635335,-22.7058453386767,1.5,NGC 6287,,,I,,
 Mel 164,257.551143111917,-26.5607403418186,2.5,NGC 6293,,,I,,
@@ -175,23 +175,23 @@ Mel 173,261.929296944989,-5.06790511286148,6,NGC 6366,,,I,,
 Mel 174,264.078069275247,-44.7329699902237,3,NGC 6388,,,I,,
 Mel 175,264.411976955074,-3.24389907284522,6,NGC 6402,M 14,,I,,
 Mel 176,265.158561032279,-53.6735287774913,18,NGC 6397,,,I,,
-Mel 177,264.87193373858,-36.9413312205327,6,NGC 6400,,Cr 342,III,,
-Mel 178,265.004488932956,-32.2063878685352,25,NGC 6405,M 6,Cr 341,II,,
+Mel 177,265.05,-36.9617,6,NGC 6400,,Cr 342,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 178,265.083333333333,-32.2583,25,NGC 6405,M 6,Cr 341,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 179,266.575156519767,5.71079647359329,60,(IC 4665),,Cr 349,IV,,"Mel 179 note: “A few bright stars forming a very open cluster.  Not in NGC, but noted by Bailey.”  Collinder does not mention Melotte’s identifier or diameter in his notes for Cr 349 at the exact same coordinates, but catalogs it as IC 4665. So did Trumpler (1930, Table 16, p. 174)."
 Mel 180,267.550345485098,-37.0487345741177,1.5,NGC 6441,,,I,,
 Mel 181,267.679510404592,-30.213679804335,6,NGC 6451,,Cr 352,II,,
-Mel 182,268.234396421821,-22.3411613664689,12,NGC 6469,,Cr 353,II,,
+Mel 182,268.235416666667,-22.3119,12,NGC 6469,,Cr 353,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 183,268.492545341547,-34.8060941334277,60,NGC 6475,M 7,Cr 354,II,,
-Mel 184,269.222658131498,-19.0147155378129,25,NGC 6494,M 23,Cr 356,II,,
+Mel 184,269.233333333333,-19.0117,25,NGC 6494,M 23,Cr 356,II,,
 Mel 185,269.773085572356,-44.2444122679353,1.5,NGC 6496,,,I,,
 Mel 186,270.152388363044,2.92873065842599,360,--,,Cr 359,IV,,Diameter estimate from note: “covering an area about 6 degrees square” in Ophiuchus
-Mel 187,270.8507482644,-27.8993970110055,5,NGC 6520,,Cr 361,II,,Note: “in the brightest part of Sagittarius cloud.”
-Mel 188,271.161553,-22.496057,10,NGC 6531,M 21,Cr 363,III,,
+Mel 187,270.854166666667,-27.8911,5,NGC 6520,,Cr 361,II,,Note: “in the brightest part of Sagittarius cloud.”
+Mel 188,271.055416666667,-22.5,10,NGC 6531,M 21,Cr 363,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 189,270.952968541084,0.303052919210148,0.75,NGC 6535,,,I,,
 Mel 190,271.205007195828,-7.57820770934104,4.8,NGC 6539,,,I,,"No diameter given. Set to 4.8’ per SIMBAD and its source, a 2019 reference: 2019MNRAS.489.3093S”"
 Mel 191,272.013502193618,-43.7225895678721,7,NGC 6541,,,I,,
-Mel 192,271.84068,-25.006267,1,NGC 6544,,Cr 366,I,,"Mel 192 note: “A bright nebulous knot in the great star cloud in Sagittarius.  Probably a globular cluster, but doubtful on this scale of photograph as there is a clustering of small stars here.  Classed as a nebula in NGC.”"
-Mel 193,272.351523,-25.918023,1.5,NGC 6553,,,I,,
+Mel 192,271.835833333333,-24.9969,1,NGC 6544,,Cr 366,I,,"Mel 192 note: “A bright nebulous knot in the great star cloud in Sagittarius.  Probably a globular cluster, but doubtful on this scale of photograph as there is a clustering of small stars here.  Classed as a nebula in NGC.”"
+Mel 193,272.315,-25.9072,1.5,NGC 6553,,,I,,
 Mel 194,272.575680031482,-31.76621087552,0.75,NGC 6558,,Cr 368,I,,"Mel 194 note: “Very small.  In richest part of Sagittarius star cloud, and hardly looks like a globular cluster.  Difficult to decide on this scale photograph.  Classed as a globular cluster in NGC.”"
 Mel 195,273.426325678901,-31.8246186074928,1.5,NGC 6569,,,I,,
 Mel 196,274.648239204555,-52.2145688799717,2,NGC 6584,,,I,,
