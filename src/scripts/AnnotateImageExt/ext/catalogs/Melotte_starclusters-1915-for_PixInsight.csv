@@ -24,22 +24,22 @@ Mel 22,56.7358282428985,24.1114326819845,110,--,M 45,Cr 42,IV,Pleiades,
 Mel 23,63.845249762324,51.236995685433,25,NGC 1528,,Cr 47,II,,
 Mel 24,64.7600986866632,58.2965412607457,6,IC 361,,Cr 48,II,,
 Mel 25,64.919845,15.625571,330,--,,Cr 50,IV,Hyades-Taurus cluster,"Hyades cluster diameter estimated. Trumpler (1930) gives 400 arc minutes angular diameter. Collinder (1931) gives 360x300 arc minutes.  All give the same coordinates (B1900) as 4h 14m, +15 23 for the center of the Hyades, which are the coordinates of the "
-Mel 26,71.5115160698849,19.0666398196972,40,NGC 1647,,Cr 54,II,,
+Mel 26,71.4258333333333,19.1192,40,NGC 1647,,Cr 54,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 27,72.7597018112378,43.6899522289699,15,NGC 1664,,Cr 56,II,,
-Mel 28,75.9174255986559,23.8092984886569,45,NGC 1746,,Cr 57,II,,
-Mel 29,77.6660182244926,16.5257846031395,15,(NGC 1817),,Cr 60,II,,"Trumpler (p. 175, 1930): “The cluster Melotte 29 should undoubtedly be identified with this [NGC 1817] and not NGC 1807.”  Collinder (1931) includes both NGC 1807 and NGC 1817 as Cr 59 and Cr 60, respectively.  To Trumpler’s point, the diameters from each author match up better with NGC 1817, a 20’ open cluster, than NGC 1807, 5.4’, a much smaller nearby asterism."
+Mel 28,75.9583333333333,23.77,45,NGC 1746,,Cr 57,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 29,78.1125,16.6833,15,(NGC 1817),,Cr 60,II,,"Trumpler (p. 175, 1930): “The cluster Melotte 29 should undoubtedly be identified with this [NGC 1817] and not NGC 1807.”  Collinder (1931) includes both NGC 1807 and NGC 1817 as Cr 59 and Cr 60, respectively.  To Trumpler’s point, the diameters from each author match up better with NGC 1817, a 20’ open cluster, than NGC 1807, 5.4’, a much smaller nearby asterism.  Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 30,78.5219528505882,-40.0352410303728,8,NGC 1851,,,I,,
-Mel 31,79.5397090131705,33.3755851898774,67.7,--,,,IV,,"Diameter from note: “A few bright stars forming an extended cluster scattered over an area 1 degree square.  14, 16, 19 Aurigae are included.” Center is 16 Aurigae."
-Mel 32,80.0281187741742,39.3380120111535,9,NGC 1857,,Cr 61,III,,
-Mel 33,81.4422189200691,33.3907421347258,12,NGC 1893,,Cr 63,III,,
-Mel 34,81.0545637653448,-24.5251124732771,4.5,NGC 1904,M 79,,I,,
-Mel 35,82.0199697924778,35.3186636145061,5,NGC 1907,,Cr 66,II,,
-Mel 36,82.1776153768558,35.8338525100795,20,NGC 1912,M 38,Cr 67,II,,
-Mel 37,84.030061487898,34.1325734684368,12,NGC 1960,M 36,Cr 71,II,,
-Mel 38,88.0854589853486,32.5432127460948,20,NGC 2099,M 37,Cr 75,II,,
-Mel 39,90.7419742482735,49.9022233533016,5,NGC 2126,,Cr 78,III,,
-Mel 40,91.8546907265038,24.0894155302052,4,NGC 2158,,Cr 81,II,,
-Mel 41,92.2208,24.3333,40,NGC 2168,M 35,Cr 82,II,,
+Mel 31,79.54166,33.37361,67.7,--,,,IV,,"Diameter from note: “A few bright stars forming an extended cluster scattered over an area 1 degree square.  14, 16, 19 Aurigae are included.” Center is 16 around Aurigae.  Coordinates updated from SIMBAD (Nov, 2026)."
+Mel 32,80.0208333333333,39.3433,9,NGC 1857,,Cr 61,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 33,80.69,33.4144,12,NGC 1893,,Cr 63,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 34,81.0441666666667,-24.5236,4.5,NGC 1904,M 79,,I,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 35,82.01875,35.3256,5,NGC 1907,,Cr 66,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 36,82.1791666666667,35.855,20,NGC 1912,M 38,Cr 67,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 37,84.07375,34.1408,12,NGC 1960,M 36,Cr 71,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 38,88.07625,32.5531,20,NGC 2099,M 37,Cr 75,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 39,90.6370833333333,49.8658,5,NGC 2126,,Cr 78,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 40,91.8566666666667,24.0961,4,NGC 2158,,Cr 81,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 41,92.25,24.35,40,NGC 2168,M 35,Cr 82,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 42,93.7951749821143,39.8549449195184,6,NGC 2192,,Cr 86,II,,
 Mel 43,93.4572818069045,12.8065922478622,5,NGC 2194,,Cr 87,II,,
 Mel 44,93.9182704434766,-18.6493986504709,9,NGC 2204,,Cr 88,II,,
@@ -48,7 +48,7 @@ Mel 46,97.3702290538708,-31.2835262173126,4,NGC 2243,,Cr 98,II,,
 Mel 47,98.0780257535637,4.86149141109165,40,NGC 2244,,Cr 99,IV,,
 Mel 48,99.6368720626804,10.8801116255883,3,NGC 2259,,Cr 108,III,,
 Mel 49,100.251912064202,9.89083102696837,30,NGC 2264,,Cr 112,IV,,
-Mel 50,100.810315340761,26.9696933490092,5,NGC 2266,,Cr 113,II,,
+Mel 50,100.83,26.9694,5,NGC 2266,,Cr 113,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 51,102.331976690031,41.0561022418602,15,NGC 2281,,Cr 116,II,,
 Mel 52,101.74943738712,-20.7415970605343,30,NGC 2287,M 41,Cr 118,II,,Editor: Melotte’s description mistakenly transposes the Messier number.  He says it’s “M. 14. Large open cluster.  Fine example of Class II.” but the coordinates given are for Messier 41.
 Mel 53,102.235271580055,-36.0137936389602,2,NGC 2298,,,I,,
@@ -134,26 +134,26 @@ Mel 132,229.364930730983,-21.017951699835,6,NGC 5897,,,I,,
 Mel 133,229.63922281221,2.08472813421094,15,NGC 5904,M 5,,I,,
 Mel 134,232.006484431906,-50.6663865808678,4.5,NGC 5927,,,I,,
 Mel 135,233.869814908446,-50.6521602247093,1,NGC 5946,,,I,,
-Mel 136,236.510207536948,-37.7639039798371,5,NGC 5986,,,I,,
+Mel 136,236.514583333333,-37.7856,5,NGC 5986,,,I,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 137,238.057197676006,-56.4694747578753,4,NGC 5999,,Cr 293,II,,
 Mel 138,238.965653359234,-57.4288314338528,3,NGC 6005,,Cr 294,II,,
 Mel 139,240.927203654763,-60.4963056402228,10,NGC 6025,,Cr 296,III,,
 Mel 140,243.311711788793,-54.2086384266016,15,NGC 6067,,Cr 298,II,,
-Mel 141,244.722781692751,-57.8969018190775,20,NGC 6087,,Cr 300,III,,
-Mel 142,244.265999767171,-22.9816445572352,5,NGC 6093,M 80,,I,,
-Mel 143,246.442431815328,-72.2018958839606,5,NGC 6101,,,I,,
-Mel 144,245.90670851065,-26.5174538072678,20,NGC 6121,M 4,,I,,
-Mel 145,246.414625316868,-40.6637883845491,25,NGC 6124,,Cr 301,II,,
-Mel 146,246.941788000756,-49.1431309629502,9,NGC 6134,,Cr 303,II,,
-Mel 147,246.828358057512,-26.0426138470702,5,NGC 6144,,,I,,
+Mel 141,244.715833333333,-57.8997,20,NGC 6087,,Cr 300,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 142,244.260416666667,-22.9744,5,NGC 6093,M 80,,I,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 143,246.4525,-72.2011,5,NGC 6101,,,I,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 144,245.897916666667,-26.5247,20,NGC 6121,M 4,,I,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 145,246.321666666667,-40.6669,25,NGC 6124,,Cr 301,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 146,246.931666666667,-49.1642,9,NGC 6134,,Cr 303,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 147,246.80875,-26.0242,5,NGC 6144,,,I,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 148,248.124031061953,-13.0471209740893,7,NGC 6171,,,I,,
 Mel 149,250.095913491306,-43.3643518186903,7,NGC 6192,,Cr 309,II,,
 Mel 150,250.418002570458,36.4593117522421,12,NGC 6205,M 13,,I,,
 Mel 151,251.797970750069,-1.94659166905693,9,NGC 6218,M 12,,I,,
 Mel 152,252.678191171134,-44.7241768979389,3,(NGC 6216),,Cr 314,III,,"Trumpler (p. 175, 1930): “NGC 6216 – Melotte 152 should be identified with this [NGC 6216] and not with NGC 6222.” Trumpler lists 3.8 arc minutes angular diameter for NGC 6216. Collinder (1931, p. B37) notes that NGC 6222 (Mel. 152) and NGC 6216 are “probably one and the same.”  Archinal and Hynes (2003, pp. 175-176) conclude that NGC 6222 is an unidentifiable cluster of 20’ diameter observed by Herschel, but they agree with Trumpler and Collinder that NGC 6216 is the only cluster matching the location and dimensions recorded by all: from Herschel to Melotte to Trumpler and Collinder."
-Mel 153,253.504700657116,-41.7996343984303,135.4,NGC 6231,,Cr 315,IV,,Diameter derived from note: “extending over a field 2 degrees square”
+Mel 153,253.540833333333,-41.825,135.4,NGC 6231,,Cr 315,IV,,"Diameter derived from note: “extending over a field 2 degrees square”  Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 154,253.34666184839,-22.1832213140575,1.5,NGC 6235,,,I,,
-Mel 155,253.918698575932,-39.4956204478243,10,NGC 6242,,Cr 317,II,,
+Mel 155,253.8775,-39.4669,10,NGC 6242,,Cr 317,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 156,254.781034634992,-52.7054855378282,6,NGC 6253,,Cr 321,II,,
 Mel 157,254.293518320097,-4.10690586969884,10,NGC 6254,M 10,,I,,
 Mel 158,255.184375233163,-44.6675747201064,15,NGC 6259,,Cr 322,II,,
@@ -195,14 +195,14 @@ Mel 193,272.315,-25.9072,1.5,NGC 6553,,,I,,
 Mel 194,272.575680031482,-31.76621087552,0.75,NGC 6558,,Cr 368,I,,"Mel 194 note: “Very small.  In richest part of Sagittarius star cloud, and hardly looks like a globular cluster.  Difficult to decide on this scale photograph.  Classed as a globular cluster in NGC.”"
 Mel 195,273.426325678901,-31.8246186074928,1.5,NGC 6569,,,I,,
 Mel 196,274.648239204555,-52.2145688799717,2,NGC 6584,,,I,,
-Mel 197,274.616057223092,-18.4122925811452,4,NGC 6603,M 24,Cr 374,II,,"Note: “A distinct cluster, almost globular, in the star cloud. Curious.”"
-Mel 198,274.717316767346,-13.7777400340751,25,NGC 6611,M 16,Cr 375,IV,,
+Mel 197,274.6,-18.4067,4,NGC 6603,M 24,Cr 374,II,,"Note: “A distinct cluster, almost globular, in the star cloud. Curious.”  Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 198,274.6875,-13.7983,25,NGC 6611,M 16,Cr 375,IV,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 199,275.930990748253,-30.3502320865249,2,NGC 6624,,,I,,
 Mel 200,276.138150411361,-24.8645642595189,5,NGC 6626,M 28,,I,,
 Mel 201,276.892537992712,6.56095162823311,20,NGC 6633,,Cr 380,III,,
 Mel 202,277.831430656923,-32.348654399581,2,NGC 6637,M 69,,I,,
-Mel 203,277.971104580832,-23.4634405935182,1,NGC 6642,,Cr 381,I,,"Mel 203 note: “Appears to be a globular cluster, but difficult to decide.  Strongly condensed.  Resembles other small globular clusters in star cloud in Sagittarius and surrounding region.  Classed as a globular cluster in NGC.”"
-Mel 204,277.924186217565,-19.2469995605457,40,(IC 4725),M 25,Cr 382,II,,"Collinder  (B41, 1931) Cr 382 aka IC 4725 note says: “IC 4725. -D. Mel. 40 arc minutes,” and it appears Collinder identifies it with this object. Trumpler gives diameter 35’ for IC 4725 at the same coordinates."
+Mel 203,277.97625,-23.4758,1,NGC 6642,,Cr 381,I,,"Mel 203 note: “Appears to be a globular cluster, but difficult to decide.  Strongly condensed.  Resembles other small globular clusters in star cloud in Sagittarius and surrounding region.  Classed as a globular cluster in NGC.”  Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 204,277.9375,-19.12,40,(IC 4725),M 25,Cr 382,II,,"Collinder  (B41, 1931) Cr 382 aka IC 4725 note says: “IC 4725. -D. Mel. 40 arc minutes,” and it appears Collinder identifies it with this object. Trumpler gives diameter 35’ for IC 4725 at the same coordinates.  Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 205,278.1489958846,-16.8947105200554,10,NGC 6645,,Cr 383,II,,
 Mel 206,278.357485184198,-10.392380469418,8,NGC 6649,,Cr 384,II,,"Note: “A number of faint stars near would, if included, make the diameter 15 arc minutes”"
 Mel 207,278.939296162533,-32.9880179395517,1,NGC 6652,,,I,,
