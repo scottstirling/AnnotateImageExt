@@ -1,4 +1,4 @@
-id,alpha,delta,diameter,axisRatio,posAngle,simbadDiameter,otherName,,,,,
+id,alpha,delta,diameter,axisRatio,posAngle,simbadDiameter,otherName,,,,,Note
 Cr 1,6.3225,61.321944,5,,,,,,,,,
 Cr 2,7.475417,60.209722,21,,,,,,,,,
 Cr 3,7.820417,63.352778,7,,,,NGC 133,,,,,
@@ -49,7 +49,7 @@ Cr 46,62.477917,49.517222,9,,,,,,,,,
 Cr 47,63.82875,51.211389,23,,,,,,,,,
 Cr 48,64.75,58.3,6,,,,,,,,,
 Cr 49,65.234583,50.255278,18,,,,,,,,,
-Cr 50,64.919845,15.625571,360,,,,Melotte 25,Hyades,,,,
+Cr 50,64.919845,15.625571,360,,,,Melotte 25,Hyades,,,,"Historically centered on gamma Tauri aka Prima Hyadum, coordinates given as such in Bailey, Melotte, Trumpler and others for many years.  In the 2000s SIMBAD has updated the center coordinates based on Gaia astrometric data, which offsets it from Prima Hyadum several arc minutes."
 Cr 51,68,43.848056,37,,,,,,,,,
 Cr 52,68.72625,45.269722,5,,,,,,,,,
 Cr 53,70.152083,50.461667,5,,,3.8,NGC 1624,,,,,
@@ -426,9 +426,9 @@ Cr 423,307.875417,60.662222,7,,,,,,,,,
 Cr 424,308.610833,28.282778,31,,,,,,,,,
 Cr 425,314.124583,45.473056,5,,,,,,,,,
 Cr 426,314.732917,-12.635556,2.8,,,,,,,,,
-Cr 427,314.875,68.166667,4,,,,,,,,,
+Cr 427,315.397917,68.169722,5,1.11111111111111,170,4,,,,,,"Cr 427 and Cr 429 are duplicates of a 5’ diameter cluster within the NGC 7023 reflection nebula (Iris nebula).  Dimensions and position angle taken from Collinder’s 1931 catalog, which distinguishes the cluster from the nebula but at the same center coordinates."
 Cr 428,315.8,44.583333,13,,,,,,,,,
-Cr 429,315.397917,68.169722,18,,,,,,,,,
+Cr 429,315.397917,68.169722,5,1.11111111111111,170,18,,,,,,"Cr 427 and Cr 429 are duplicates of a 5’ diameter cluster within the NGC 7023 reflection nebula (Iris nebula).  Dimensions and position angle taken from Collinder’s 1931 catalog, which distinguishes the cluster from the nebula but at the same center coordinates."
 Cr 430,316.802083,50.875556,5,,,,,,,,,
 Cr 431,317.69875,45.621944,25,,,,,,,,,
 Cr 432,318.025,47.733333,8,,,,,,,,,
