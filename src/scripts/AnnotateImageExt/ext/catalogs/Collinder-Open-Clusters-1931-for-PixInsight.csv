@@ -58,13 +58,13 @@ Cr 55,72.120417,10.930278,20,,,,,,,,,
 Cr 56,72.785,43.674444,18,,,,,,,,,
 Cr 57,75.959167,23.767778,42,,,,,,,,,
 Cr 58,77.02375,37.022778,6,,,,,,,,,
-Cr 59,77.67125,16.531111,17,,,,,,,,,
+Cr 59,77.67125,16.531111,17,,,,NGC 1807,Melotte 29,,,,"SIMBAD has done something weird with Collinder 59, 61 and NGC 1807 vs 1875, which I need to unwind … TODO!"
 Cr 60,78.109583,16.684167,16,,,,NGC 1817,,,,,
-Cr 61,80.022917,39.343611,5,,,15,NGC 1807,,,,,
-Cr 62,80.625,41,28,,,,,,,,,
+Cr 61,80.0208333333333,39.3433,10,,,,NGC 1857,Melotte 32,,,,"SIMBAD lists Collinder 61 as NGC 1807, but I do not know why.  It should be NGC 1857, which is also Melotte 32.  Melotte listed a diameter of 9’ for it.  Collinder and Lundmark both measured 8’ x 6’ for it. SIMBAD lists 15’ diameter, but that is for NGC 1807.  Revised NGC lists 10’ for NGC 1857.  Updated diameter and coordinates to match Revised NGC (Steinicke, 2026)."
+Cr 62,80.577,41.025,28,,,,,,,,,"Coordinates updated from SIMBAD’s reference 2013A&A...558A..53K, which aligns with MWSC."
 Cr 63,80.687917,33.420278,11,,,,,,,,,
 Cr 64,81.475833,46.490278,2.5,,,3,NGC 1883,,,,,
-Cr 65,81.270833,15.699722,220,,,,,,,,,
+Cr 65,81.525,16.7,240,,,,,,,,,"Coordinates updated from SIMBAD’s reference 2009MNRAS.399.2146W, which aligns with MWSC.  The diameter 240’ comes from Collinder’s original measurement.  The center coordinates are offset quite a bit from what MWSC has."
 Cr 66,82.01875,35.325556,6,,,,,,,,,
 Cr 67,82.177083,35.855,21,,,,,,,,,
 Cr 68,82.8575,34.245,4,,,,,,,,,
