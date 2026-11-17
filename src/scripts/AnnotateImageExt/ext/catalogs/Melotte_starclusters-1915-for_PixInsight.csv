@@ -6,10 +6,10 @@ Mel 4,15.5803100660241,-70.8457429524611,10,NGC 362,,,I,,
 Mel 5,15.8648676293653,-72.063190279637,8,NGC 371,,,I,,
 Mel 6,18.9141016080618,58.8124613819341,4,NGC 436,,Cr 11,III,,
 Mel 7,19.7714064653195,58.326488287249,10,NGC 457,,Cr 12,II,,
-Mel 8,23.3061529596076,60.6978083194494,5,NGC 581,M 103,Cr 14,III,,
-Mel 9,26.0192392938022,61.8872854915354,5,NGC 654,,Cr 18,III,,
-Mel 10,26.0489906614717,60.7037880226013,5,NGC 659,,Cr 19,III,,
-Mel 11,26.5154491903196,61.2352091030502,11,NGC 663,,Cr 20,II,,
+Mel 8,23.3458333333333,60.6583,5,NGC 581,M 103,Cr 14,III,,
+Mel 9,25.9975,61.8828,5,NGC 654,,Cr 18,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)."
+Mel 10,26.1,60.67,5,NGC 659,,Cr 19,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)."
+Mel 11,26.5708333333333,61.2183,11,NGC 663,,Cr 20,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)."
 Mel 12,29.3958333333333,37.8333,45,NGC 752,,Cr 23,II,,"Coordinates updated from Revised NGC (Steinicke, 2026). Revised NGC diameter = 75’ vs Melotte’s original 45’ and Collinder’s 45’ x 37’ (and PA 140 deg) vs Lundmark’s 50’ x 50’.  Editor: based on personal observation and astrometric image data, the 75’ estimate is a better fit for this object than 45’ is."
 Mel 13,34.7571637995518,57.1455836657537,36,NGC 869,,Cr 24,II,Double cluster,
 Mel 14,35.6170338977604,57.107568041236,36,NGC 884,,Cr 25,II,Double cluster,
@@ -69,8 +69,8 @@ Mel 67,114.064858683174,-20.6055510297544,8,NGC 2421,,Cr 151,II,,
 Mel 68,114.14987444199,-14.4893719708368,25,NGC 2422,,Cr 152,II,,
 Mel 69,114.608228196634,21.57471186899,7,NGC 2420,,Cr 154,II,,
 Mel 70,114.28098708359,-13.8571785777749,20,NGC 2423,,Cr 153,III,,
-Mel 71,114.397926155245,-12.0581427661529,8,--,,Cr 155,II,,"Mel 71 note: “A small, well-defined cluster of faint stars.  Condensed towards centre.”"
-Mel 72,114.610857919851,-10.6766433060647,5,--,,Cr 156,III,,"Mel 72 note: “A small, loose clustering of faint stars.  Not well defined.”  Collinder (p. B31, 1931) notes: “Triangular shape.”"
+Mel 71,114.3829,12.065,9,--,,Cr 155,II,,"Mel 71 note: “A small, well-defined cluster of faint stars.  Condensed towards centre.”  Coordinagtes and diameter updated from SIMBAD (11/2026)."
+Mel 72,114.6179,-10.6981,6.4,--,,Cr 156,III,,"Mel 72 note: “A small, loose clustering of faint stars.  Not well defined.”  Collinder (p. B31, 1931) notes: “Triangular shape.”  Coordinates and diameter updated from SIMBAD for Melotte 72 entry (11/2026)."
 Mel 73,115.231811671157,-19.0824953808601,4,NGC 2432,,Cr 157,III,,
 Mel 74,115.220358477053,-31.6496691470713,9,NGC 2439,,Cr 158,II,,
 Mel 75,115.448168637927,-14.8175536485862,24,NGC 2437,M 46,Cr 159,II,,

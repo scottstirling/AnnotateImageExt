@@ -1,24 +1,24 @@
 id,alpha,delta,diameter,axisRatio,posAngle,simbadDiameter,otherName,otherName2,otherName3,otherName4,otherName5,Note
-Cr 1,6.3225,61.321944,5,,,,NGC 103,,,,,
-Cr 2,7.475417,60.209722,21,,,,NGC 129,,,,,
-Cr 3,7.820417,63.352778,7,,,,NGC 133,,,,,
+Cr 1,6.3225,61.321944,5,,,,NGC 103,,,,,"Collinder 1 coordinates and dimensions (5’ x 5’) consistent with RNGC.  Collinder (1931) only has Lundmark’s estimate of 5’ x 4’ at 120 degree angle.  TODO: test position angle and min, maj values from Collinder."
+Cr 2,7.49166666666667,60.2117,21,,,,NGC 129,,,,,"Coordinates updated from Revised NGC (Steinicke, 2026). Revised NGC diameter = 12’. Collinder (1931) has 11’ x 11’ from Lundmark and 10’ x 7’ at 165 degree angle from Collinder.  TODO: test position angle and min, maj values from Collinder."
+Cr 3,7.825,63.3517,7,,,,NGC 133,,,,,"Collinder 3 aka NGC 133.  Archinal and Hynes (2003) diameter 15’.  SIMBAD diameter 32.6’ (from 2020A&A...633A..99C).  Collinder (1931) has Lundmark: 9’ x 6’ at 150 degree angle and Collinder at 8’ x 5’ at 145 degree angle.  Coordinates updated from RNGC (Steinicke, 2026) where diameter is 3’.  SIMBAD has no angular dimensions for this object."
 Cr 4,7.877917,61.509444,1.2,,,,NGC 136,,,,,
-Cr 5,8.26625,63.309167,6,,,,NGC 146,,,,,
-Cr 6,11.87375,85.241389,13,,,,NGC 188,,,,,
-Cr 7,10.884583,61.790278,15,,,12,NGC 225,,,,,Collinder dimensions 15’ x 10’ and posAngle 75.
+Cr 5,8.2625,63.3017,6,,,9,NGC 146,,,,,"Collinder 5 aka NGC 146.  Archinal and Hynes (2003) diameter 5’.  SIMBAD diameter 9’ (from 2020A&A...633A..99C).  Collinder (1931) has Lundmark: 8’ x 6’ at 70 degree angle and Collinder at 6’ x 6’ (no angle).  Coordinates updated from RNGC (Steinicke, 2026) where diameter is 5’."
+Cr 6,11.875,85.2583,15,,,32.6,NGC 188,Melotte 2,Caldwell 1,Raab 1,,"Collinder 6 aka NGC 188 aka Caldwell 1 aka Raab 1 aka Melotte 2.  Archinal and Hynes (2003) diameter 15’.  SIMBAD diameter 32.6’ (from 2020A&A...633A..99C).  Collinder (1931) only has Lundmark data: 18’ x 18’ at 100 degree angle (?).  The given angle seems incorrect or misplaced since the object is listed in Collinder as min = maj axis.  Coordinates updated from RNGC (Steinicke, 2026) where diameter is 15’."
+Cr 7,10.9,61.7667,15,,,12,NGC 225,,,,,"Collinder 7 dimensions 15’ x 10’ and posAngle 75.  Coordinates and diameter updated from RNGC (Steinicke, 2026)."
 Cr 8,13.247083,56.621944,30,,,,NGC 281,,,,,
 Cr 9,16.607917,62.228889,3,,,,NGC 366,,,,,
 Cr 10,17.062083,61.583333,6,,,11.2,NGC 381,,,,,
 Cr 11,18.990417,58.817222,5,,,,NGC 436,,,,,
 Cr 12,19.885833,58.290833,13,,,,NGC 457,,,,,
-Cr 13,22.37125,63.308333,4.4,,,,NGC 559,,,,,
-Cr 14,23.340833,60.658056,6,,,,NGC 581,,,,,
-Cr 15,23.925,61.283333,7.4,,,,Trumpler 1,,,,,
+Cr 13,22.3791666666667,63.3017,7,,,,NGC 559,,,,,"Coordinates updated from Revised NGC (Steinicke, 2026). Revised NGC diameter = 7’. Collinder (1931) has 7.5’ x 7.5’ from Lundmark and 12’ x 9’ at 90 degree angle from Collinder.  TODO: test position angle and min, maj values from Collinder."
+Cr 14,23.3458333333333,60.6583,6,,,,NGC 581,Melotte 8,Messier 103,,,"Coordinates updated from Revised NGC (Steinicke, 2026). Revised NGC diameter = 6’. Collinder (1931) has 6’ x 6’ from Lundmark and 6’ x 5’ at 140 degree angle from Collinder.  TODO: test position angle and min, maj values from Collinder."
+Cr 15,23.9167,61.283333,4,,,3.7,Trumpler 1,,,,,"Coordinates updated from SIMBAD (11/2026). Collinder (1931) has 4’ x 4’ from Lundmark, no reading from Collinder himself for it."
 Cr 16,24.09875,64.536667,3,,,,NGC 609,,,,,
 Cr 17,25.762917,64.036667,3.5,,,3.6,NGC 637,,,,,
-Cr 18,25.9975,61.882778,5,,,,NGC 654,,,,,
-Cr 19,26.095833,60.669167,5,,,,NGC 659,,,,,
-Cr 20,26.566667,61.218333,16,,,,NGC 663,,,,,
+Cr 18,25.9975,61.882778,5,,,,NGC 654,Melotte 9,,,,
+Cr 19,26.1,60.67,6,,,7.7,NGC 659,Melotte 10,,,,"Coordinates updated from Revised NGC (Steinicke, 2026). Revised NGC diameter = 6’. Collinder (1931) has 5’ x 5’ from Lundmark and 3’ x 2’ at 110 degree angle from Collinder.  TODO: test position angle and min, maj values from Collinder."
+Cr 20,26.566667,61.218333,16,,,,NGC 663,Melotte 11,,,,
 Cr 21,27.55,27.083333,7,,,,--,,,,,
 Cr 22,29.624583,55.474722,11,,,,NGC 744,,,,,
 Cr 23,29.3958333333333,37.8333,50,,,58.2,NGC 752,Melotte 12,,,,"Coordinates updated from Revised NGC (Steinicke, 2026). Revised NGC diameter = 75’ vs Melotte’s original 45’ and Collinder’s 45’ x 37’ (and PA 140 deg) vs Lundmark’s 50’ x 50’.  Editor: based on personal observation and astrometric image data, the 75’ estimate is a better fit for this object than 45’ is.  SIMBAD (Nov, 2026) lists an angular size of 58.2’ x 58.2’ derived from a 2020 paper updating membership of 150 clusters based on Gaia DR2 data: 2020A&A...633A..99C."
@@ -94,19 +94,18 @@ Cr 92,95.725,5.116667,11,,,,--,,,,,
 Cr 93,96.8125,-4.8475,29,,,,NGC 2232,,,,,
 Cr 94,97.415,6.8308,8,,,8.4,NGC 2236,,,,,"Coordinates and diameter updated from Revised NGC (Steinicke, 2026). Revised NGC diameter is 8’ vs Collinder 4’ and Lundmark 7’."
 Cr 95,97.625,9.933333,27,,,20.5,--,,,,,
-Cr 96,97.575,2.8666667,12,,,,--,,,,,"Elongation angle common between Lundmark and Collinder of 12’ x 4’, with elongation angle of 45 and 40 degrees, respectively.  Archinal and Hynes give diameter of 12’.  No angular dimensions in SIMBAD."
-Cr 97,97.7420833,5.825,25,,,,--,,,,,"Coordinates updated from Archinal and Hynes (p. 61, 2003) and max angular dimension 25’ same in original Collinder and Archinal and Hynes.  SIMBAD gives no angular size and gives different coordinates (ICRS 97.825, +05.9167) based on 2009MNRAS.399.2146W."
+Cr 96,97.575,2.8666667,12,3,40,--,--,,,,,"Elongation angle common between Lundmark and Collinder of 12’ x 4’, with elongation angle of 45 and 40 degrees, respectively.  Archinal and Hynes give diameter of 12’.  No angular dimensions in SIMBAD. Coordinates adopted from Archinal and Hynes.  The SIMBAD coordinates do not match up as well."
+Cr 97,97.7420833,5.825,25,1.25,70,,--,,,,,"Coordinates updated from Archinal and Hynes (p. 61, 2003) and max angular dimension 25’ same in both Collinder (1931) and Archinal and Hynes (2003).  SIMBAD gives no angular size and gives different coordinates (ICRS 97.825, +05.9167) based on 2009MNRAS.399.2146W.  Lundmark and Collinder (1931) both give 70 degree elongation angle. Using Collinder’s min axis of 20’ as a better fit for annotation."
 Cr 98,97.39375,-31.281389,5,,,,NGC 2243,,,,,
 Cr 99,98.0791666666667,4.8567,24,,,88,NGC 2244,Melotte 47,NGC 2239,,,"Rosette Nebula (NGC 2237) surrounds NGC 2244 aka Melotte 47 also aka NGC 2239.  Collinder measured 20’, Lundmark 25’ (both in 1931), Melotte 40’ (in 1915) for the same cluster.  The angular diameter was updated in SIMBAD based on Gaia analysis of the cluster, which extends coincident with the brightest nebulosity to 88’ (see https://www.aanda.org/articles/aa/full_html/2022/08/aa43146-22/T3.html).  Coordinates and diameter updated from Revised NGC (Steinicke, 2026)."
 Cr 100,98.457917,-5.084444,7,,,,NGC 2250,,,,,
 Cr 101,98.660417,8.366389,10,,,,NGC 2251,,,,,
-Cr 102,98.5825,5.3228,18,,,,NGC 2252,,,,,"Coordinates and diameter updated from Revised NGC (Steinicke, 2026). Revised NGC diameter: 18’.  Collinder catalog’s (1931) Cr 103 dimensions are Lundmark at 20’ x 20’ vs Collinder himself at 7’ x 7’.  That is an unusual disparity between their two sets of values and makes me wonder if they were even looking at the same object.  Collinder’s note (p. B28) lists diameters from Reinmuth at 16’ and Lundmark at 15’.  Yet, in the catalog entry, the values listed are different from the note.  The remainder of the note states: “Irregular object.  Lk: Clear cut absorption on prec. Side.” Hm. Yet the dimensions given are not irregular.  However, the entry Cr 101 is irregular and listed with Lundmark dimensions of 15’ x 6’, with Collinder’s of 12’ x 5’ – both agreeing on a elongation angle of 140 degrees.  I think it likely that the note for Cr 102 is meant to go with the object in Cr 101."
+Cr 102,98.5825,5.3227778,18,,,,NGC 2252,,,,,"Coordinates (98.5825, +5.3228) and diameter updated from Revised NGC (Steinicke, 2026), which matches Archinal and Hynes (2003). Revised NGC diameter: 18’.  Collinder (1931) Cr 103 dimensions are Lundmark at 20’ x 20’ vs Collinder at 7’ x 7’.  That is an unusual disparity between their two sets of values and makes me wonder if they were looking at the same object.  Collinder’s note (p. B28) lists diameters from Reinmuth at 16’ and Lundmark at 15’.  Yet, in the catalog entry, the values listed are different from the note.  The remainder of the note states: “Irregular object.  Lk: Clear cut absorption on prec. Side.” Yet the dimensions given are not irregular.  However, the entry Cr 101 is irregular and listed with Lundmark dimensions of 15’ x 6’, with Collinder’s of 12’ x 5’ – both agreeing on a elongation angle of 140 degrees.  I think it likely that the note for Cr 102 is meant to go with the object in Cr 101.  Here adopted the SIMBAD coordinates over RNGC. "
 Cr 103,98.9441666666667,7.6708,6,,,,NGC 2254,,,,,"Coordinates and diameter updated from Revised NGC (Steinicke, 2026). Revised NGC diameter: 6’.  Collinder dimensions: 4’ x 4’."
-Cr 104simbad,99.112,4.773,21,,,,--,,,,,TODO: pick best
-Cr 104,99.125,4.816667,21,,,,--,,,,,
+Cr 104,99.1,4.82,25,5,360,--,--,,,,,"Collinder 104 coordinates updated from SIMBAD (11/2026).  Archinal and Hynes list diameter at 20’.  SIMBAD has no angular size for it.  Collinder and Lundmark classed this object as “Chain” in their typology and give very elongated dimensions: 22’ x 1.5’ at 0 degree angle (Lundmark) and 16’ x 1’ at 0 degree angle (Collinder).  After some testing with images I’ve chosen Lundmark’s max axis of 22’, shared angle of 0 (aka 360) degrees, and my own esimtated axis ratio and coordinates."
 Cr 105,99.4,9.433333,8,,,16.1,Trumpler 5,,,,,
-Cr 106,99.275,5.9666667,35,,,22.3,--,,,,,"SIMBAD angular size is 22.3’ and coordinates (ICRS 99.2779, +06.0019).  Archinal and Hynes diameter is 35’.  Collinder and Lundmark both estimated max diameter of 50’.  Editor: tough call but after some comparisons decided to go with Archinal and Hynes’ coordinates and diameter."
-Cr 107,99.425,4.733333,40,,,46.8,--,,,,,"SIMBAD coordinates agree with Archinal and Hynes within 0.02 arc minutes in declination, same exact RA.  Archinal and Hynes diameter given as 30’.  SIMBAD ref 2020A&A...633A..99C gives angular size of 46.8’ while Collinder and Lundmark give 40’ x 30’.  Archinal and Hynes note DSFG: “Probably not a cluster.”  Note that depending on the definition of its angular size, Collinder 107 will overlap with Collinder 104."
+Cr 106,99.275,6.0019,50,1.25,90,22.3,--,,,,,"SIMBAD angular size is 22.3’ and coordinates (ICRS 99.2779, +06.0019).  Archinal and Hynes diameter is 35’.  Collinder and Lundmark both estimated max diameter of 50’.  Editor: tough call but after some comparisons decided to go with Archinal and Hynes’ coordinates (99.275, 5.9666667) and diameter."
+Cr 107,99.425,4.733333,40,1.33333333333333,120,46.8,--,,,,,"SIMBAD coordinates agree with Archinal and Hynes within 0.02 arc minutes in declination, same exact RA.  Archinal and Hynes diameter given as 30’.  SIMBAD ref 2020A&A...633A..99C gives angular size of 46.8’ while Lundmark and Collinder (1931) both estimated 40’ x 30’ (used here) at 70 and 120 degree angle (respectively).   Note that depending on the definition of its angular size, Collinder 107 overlaps with Collinder 104.  Testing shows that Collinder’s angle of 120 (-/+) fits well.  Archinal and Hynes note DSFG: “Probably not a cluster.”"
 Cr 108,99.589167,10.883611,4.5,,,,NGC 2259,,,,,
 Cr 109,99.90875,1.143611,3.5,,,5.3,NGC 2262,,,,,
 Cr 110,99.6771,2.0689,18,,,18.8,--,,,,,"Coordinates updated from SIMBAD optical coordinates (11/11/2026).  Angular size in SIMBAD (18.8’) is from 2020A&A...633A..99C.  Archinal and Hynes (2003) diameter is 18’, Collinder gives 15’ x 9’ elongated to 0 degrees, and Lundmark gives 12’ x 12’."
@@ -155,7 +154,7 @@ Cr 152,114.145833,-14.4825,29,,,,,,,,,
 Cr 153,114.277917,-13.871389,19,,,,,,,,,
 Cr 154,114.599583,21.574167,10,,,6.4,NGC 2420,,,,,
 Cr 155,114.375,-12.066667,9,,,9,Melotte 71,,,,,
-Cr 156,114.6,-10.683333,9,,,,,,,,,
+Cr 156,114.6179,-10.6981,6.4,,,,Melotte 72,,,,,Collinder 156 and 467 are most likely duplicates referring to Melotte 72. See note for Cr 467.  Coordinates and diameter here from SIMBAD data for Melotte 72 (11/2026).
 Cr 157,115.224167,-19.085833,7,,,7.4,NGC 2432,,,,,
 Cr 158,115.189167,-31.6925,10,,,,,,,,,
 Cr 159,115.445,-14.81,27,,,,,,,,,
@@ -461,12 +460,13 @@ Cr 458,358.525,61.766667,6,,,,,,,,,
 Cr 459,359.189583,61.4,4,,,,,,,,,
 Cr 460,359.35,56.708333,25,,,,,,,,,
 Cr 461,359.600833,61.208333,5,,,,,,,,,
-Cr 462,9.89875,61.094444,5,,,,,,,,,
-Cr 463 (20a),27.1,71.95,1,,,,,,,,,
-Cr 464 (60a),80.5,73,120,,,,,,,,,
+Cr 462,9.89875,61.094444,5,,,9.5,NGC 189,,,,,Collinder 462  RNGC coordinates and diameter (5’).  SIMBAD (11/2026) 9.5’ x 9.5’ per 2020A&A...633A..99C.  Collinder (1931) only lists Lundmark dimensions of 4’ x 4’.
+Cr 463 (20a),27.0308,71.7381,57,,,73,--,,,,,"Collinder 463 updated coordinates from SIMBAD (11/2026), 57’ diameter from Archinal and Hynes (2003). SIMBAD lists optical diameter of 73’ from 2020A&A...633A..99C.  Collinder (1931) only has Lundmark values: 45’ x 28’ at 95 degree angle. TODO: test diameters and angle."
+Cr 464 (60a),78.1625,73.97472,180,3,80,--,,,,,,"Collinder 464 coordinate conversion to (80.5, +73) does not map well to current location.  SIMBAD coordinates adopted here from ingested reference 2014A&A...564A..79D.  No angular size details available in SIMBAD.  Only Lundmark’s measurements are included in Collinder (1931) for this object, with 180’ x 60’ at 60 degree angle.  Archinal and Hynes list diameter of 120’ (p. 55, Table 4.1, 2003).  Centered on BN Camelopardalis (HD 32650).
+"
 Cr 465 (127a),106.8,-10.616667,9,,,,,,,,,
 Cr 466 (127b),106.825,-10.816667,4,,,,,,,,,
-Cr 467 (156a),114.620833,-10.55,5,,,,,,,,,
+Cr 467 (156a),114.6179,-10.6981,6.4,,,,Melotte 72,,,,,"Collinder 467 is Melotte 72, researched and argued in Archinal and Hynes (p. 146, 2003).  Collinder listed Cr 156 as Melotte 72 and listed Cr 457 as (156a), indicating proximity to Cr 156. Size: 2’ x 2’ (Lundmark) and 3’ x 3’ (Collinder). Melotte sized it at 5’ diameter.  SIMBAD sizes it at 6.4’ x 6.4’ per 2020A&A...633A..99C.  Coordinates and diameter accepted from SIMBAD here."
 Cr 468 (364a),271.65,-27.466667,0.9,,,,,,,,,
 Cr 469 (370a),274.1375,-18.309444,2.6,,,,,,,,,
 Cr 470 (442a),328.35,47.266667,9,,,,,,,,,
