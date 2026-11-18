@@ -4,7 +4,7 @@ Cr 2,7.49166666666667,60.2117,21,,,,NGC 129,,,,,"Coordinates updated from Revise
 Cr 3,7.825,63.3517,7,,,,NGC 133,,,,,"Collinder 3 aka NGC 133.  Archinal and Hynes (2003) diameter 15’.  SIMBAD diameter 32.6’ (from 2020A&A...633A..99C).  Collinder (1931) has Lundmark: 9’ x 6’ at 150 degree angle and Collinder at 8’ x 5’ at 145 degree angle.  Coordinates updated from RNGC (Steinicke, 2026) where diameter is 3’.  SIMBAD has no angular dimensions for this object."
 Cr 4,7.877917,61.509444,1.2,,,,NGC 136,,,,,
 Cr 5,8.2625,63.3017,6,,,9,NGC 146,,,,,"Collinder 5 aka NGC 146.  Archinal and Hynes (2003) diameter 5’.  SIMBAD diameter 9’ (from 2020A&A...633A..99C).  Collinder (1931) has Lundmark: 8’ x 6’ at 70 degree angle and Collinder at 6’ x 6’ (no angle).  Coordinates updated from RNGC (Steinicke, 2026) where diameter is 5’."
-Cr 6,11.875,85.2583,15,,,32.6,NGC 188,Melotte 2,Caldwell 1,Raab 1,,"Collinder 6 aka NGC 188 aka Caldwell 1 aka Raab 1 aka Melotte 2.  Archinal and Hynes (2003) diameter 15’.  SIMBAD diameter 32.6’ (from 2020A&A...633A..99C).  Collinder (1931) only has Lundmark data: 18’ x 18’ at 100 degree angle (?).  The given angle seems incorrect or misplaced since the object is listed in Collinder as min = maj axis.  Coordinates updated from RNGC (Steinicke, 2026) where diameter is 15’."
+Cr 6,11.875,85.2583,18,,,32.6,NGC 188,Melotte 2,Caldwell 1,Raab 1,,"Collinder 6 aka NGC 188 aka Caldwell 1 aka Raab 1 aka Melotte 2.  Archinal and Hynes (2003) diameter 15’.  SIMBAD diameter 32.6’ (from 2020A&A...633A..99C).  Collinder (1931) only has Lundmark data: 18’ x 18’ at 100 degree angle (?).  The given angle seems incorrect or misplaced since the object is listed in Collinder as min = maj axis.  Coordinates updated from RNGC (Steinicke, 2026) where diameter is 15’.  Lundmark’s diameter adopted here fro best visual fit."
 Cr 7,10.9,61.7667,15,,,12,NGC 225,,,,,"Collinder 7 dimensions 15’ x 10’ and posAngle 75.  Coordinates and diameter updated from RNGC (Steinicke, 2026)."
 Cr 8,13.247083,56.621944,30,,,,NGC 281,,,,,
 Cr 9,16.607917,62.228889,3,,,,NGC 366,,,,,
@@ -59,8 +59,8 @@ Cr 57,75.959167,23.767778,42,,,,NGC 1746,,,,,
 Cr 58,77.02375,37.022778,6,,,,NGC 1778,,,,,
 Cr 59,77.67125,16.531111,17,,,,NGC 1807,Melotte 29,,,,"SIMBAD has done something weird with Collinder 59, 61 and NGC 1807 vs 1875, which I need to unwind … TODO!"
 Cr 60,78.109583,16.684167,16,,,,NGC 1817,,,,,
-Cr 61,80.0208333333333,39.3433,10,,,,NGC 1857,Melotte 32,,,,"SIMBAD lists Collinder 61 as NGC 1807, but I think it should be NGC 1857, which is aka Melotte 32.  Melotte listed a diameter of 9’ for it.  Collinder and Lundmark both measured 8’ x 6’ for it. SIMBAD lists 15’ diameter, but that is for NGC 1807.  Revised NGC lists 10’ for NGC 1857.  Updated diameter and coordinates to match Revised NGC (Steinicke, 2026)."
-Cr 62,80.2208333,41.0808333,35,,,,--,,,,,"Coordinates updated from SIMBAD’s reference 2013A&A...558A..53K (which is the MWSC).  MWSC diameter: 28’.  I updated the diameter to 35’ based on Collinder’s original catalogue and visual inspection of the cluster.  Lundmark said 35’ x 22’ at 100 degree angle.  Collinder put 30’ x 30’ at 135 degree angle, but since it’s a circular specification, the position angle from Collinder doesn’t make sense unless maybe there is a typo in his angular dimensions estimate."
+Cr 61,80.0208333333333,39.3433,8,1.33333333333333,165,,NGC 1857,Melotte 32,,,,"SIMBAD lists Collinder 61 as NGC 1807, but it should be NGC 1857, which is aka Melotte 32.  Melotte listed a diameter of 9’ for it.  Collinder and Lundmark both measured 8’ x 6’ for it. SIMBAD lists 15’ diameter, but that is for NGC 1807.  Revised NGC lists 10’ for NGC 1857.  Updated diameter and coordinates to match Revised NGC (Steinicke, 2026)."
+Cr 62,80.2208333,41.0808333,35,1.59090909090909,100,,--,,,,,"Coordinates updated from SIMBAD’s reference 2013A&A...558A..53K (which is the MWSC).  MWSC diameter: 28’.  I updated the diameter to 35’ based on Collinder’s original catalogue and visual inspection of the cluster.  Lundmark said 35’ x 22’ at 100 degree angle.  Collinder put 30’ x 30’ at 135 degree angle, but since it’s a circular specification, the position angle from Collinder doesn’t make sense unless maybe there is a typo in his angular dimensions estimate.  TODO: test A&H coordinates location …"
 Cr 63,80.687917,33.420278,11,,,,NGC 1893,,,,,
 Cr 64,81.475833,46.490278,2.5,,,3,NGC 1883,,,,,
 Cr 65,81.525,16.7,240,,,,--,,,,,"Coordinates updated from SIMBAD’s reference 2009MNRAS.399.2146W, which aligns with MWSC.  The diameter 240’ comes from Collinder’s original measurement.  The center coordinates are offset quite a bit from what MWSC has."
@@ -187,7 +187,7 @@ Cr 185,125.625,-36.166667,8,,,15,,,,,,
 Cr 186,125.789583,-32.975278,2,,,,,,,,,
 Cr 187,126.05,-29.15,7,,,,,,,,,
 Cr 188,129.312083,-29.950278,11,,,10.4,NGC 2627,,,,,
-Cr 189,130.0925,19.671944,95,,,,,,,,,
+Cr 189,130.1,19.67,120,,,118.2,NGC 2632,M 44,Melotte 88,Praesepe,Beehive cluster,"Melotte’s (1915) diameter of 120’ derived from his note (in British idiom): “Extends over a field quite 2 degrees square.” Collinder interprets Mel 88’s description as 120’ in his own notes (p. B32, 1931), but himself measures 80’, quotes Trumpler for 90’, Raab for 160’ and Lundmark for 100’ (but in the catalogue Lundmark’s value is 95’), Bailey for 60’; quite a range, uncertain angular size between 60 to 160 arc minutes.  RNGC (Steinicke, 2026) lists 70’.  SIMBAD lists 118.2’ from 2020A&A...633A..99C.  Coordinates updated from Revised NGC (Steinicke, 2026)."
 Cr 190,129.608333,-34.771667,3,,,6.8,NGC 2635,,,,,
 Cr 191,130.0875,-53.089167,60,,,,,,,,,
 Cr 192,130.629167,-48.108333,7,,,25.1,IC 2395,,,,,
