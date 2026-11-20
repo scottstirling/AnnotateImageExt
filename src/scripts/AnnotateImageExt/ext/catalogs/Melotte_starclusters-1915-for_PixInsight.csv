@@ -14,7 +14,7 @@ Mel 12,29.3958333333333,37.8333,45,NGC 752,,Cr 23,II,,"Coordinates updated from 
 Mel 13,34.7571637995518,57.1455836657537,36,NGC 869,,Cr 24,II,Double cluster (W),
 Mel 14,35.6170338977604,57.107568041236,36,NGC 884,,Cr 25,II,Double cluster (E),
 Mel 15,38.1943335834546,61.4432131888312,20,--,,,III,,
-Mel 16,40.6814534453912,61.5449543378374,18,NGC 1027,,Cr 30,III,,
+Mel 16,40.64625,61.594444,18,NGC 1027,,Cr 30,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)."
 Mel 17,40.5074398908561,42.7783758143984,30,NGC 1039,M 34,Cr 31,II,,"See note to Mel 18.  The diameters of Mel 17 and Mel 18 were mistakenly transposed by Melotte from the NGC, according to Raab (1922) and Collinder  (1931).  Melotte gave 7 arc minutes for Mel 17 aka NGC 1039, but it should be 30 arc minutes.  And vice-versa for Mel 18 aka NGC 1245."
 Mel 18,48.6740094107383,47.2405885826215,7,NGC 1245,,Cr 38,II,,"Collinder  (1931) Cr 38 aka NGC 1245 note says: “Diameter and description confused by Melotte.” And refers to note in Collinder 31, which continues: ”As pointed out by Raab, Melotte evidently has confused the diameters and descriptions of NGC 1039 and 1245.”"
 Mel 19,48.0582320391223,-55.225271933009,5,NGC 1261,,,I,,
@@ -45,7 +45,7 @@ Mel 43,93.4572818069045,12.8065922478622,5,NGC 2194,,Cr 87,II,,
 Mel 44,93.8875,-18.665,9,NGC 2204,,Cr 88,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 45,95.205,-7.2839,8,NGC 2215,,Cr 90,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 46,97.3933333333333,-31.2814,4,NGC 2243,,Cr 98,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
-Mel 47,98.0791666666667,4.8567,40,NGC 2244,NGC 2239,Cr 99,IV,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
+Mel 47,98.0791666666667,4.8567,40,NGC 2244,,Cr 99,IV,NGC 2239,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 48,99.63875,10.8825,3,NGC 2259,,Cr 108,III,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 49,100.2425,9.8956,30,NGC 2264,,Cr 112,IV,,"Coordinates updated from Revised NGC (Steinicke, 2026)"
 Mel 50,100.83,26.9694,5,NGC 2266,,Cr 113,II,,"Coordinates updated from Revised NGC (Steinicke, 2026)"

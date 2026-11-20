@@ -28,13 +28,13 @@ Cr 26,38.175,61.45,22,,,13.3,IC 1805,,,,,Heart Nebula,
 Cr 27,38.12875,44.593611,7,,,,NGC 956,,,,,,
 Cr 28,38.329167,57.569722,11,,,,NGC 957,,,,,,
 Cr 29,39.325,55.983333,20,,,,--,,,Trumpler 2,,,
-Cr 30,40.64625,61.594444,20,,,,NGC 1027,,,,,,
+Cr 30,40.64625,61.594444,20,,,,NGC 1027,,Melotte 16,,,IC 1824,"Collinder 30: classed as a “nebulous cluster” with 40 stars by both authors, Collinder and Lundmark gave similar dimensions but widely different interpretations of angle of elongation: 24’ x 16’ at 110 degrees (Lundmark) vs 22’ x 18’ at 45 degrees (Collinder).  RNGC diameter: 15’.  Archinal and Hynes diameter: 15’.  TODO: test best fit in image …"
 Cr 31,40.530833,42.746111,35,,,,NGC 1039,,,,,,
-Cr 32,42.8,60.433333,12,,,24,IC 1848,,,,,,
-Cr 33,44.825,60.4,39,,,,--,,,,,,
-Cr 34,45.225,60.416667,25,,,,--,,,,,,
+Cr 32,42.825,60.4083,20,1.33333333333333,90,24,IC 1848,,,,,,"Collinder 32: in the belly of the Soul Nebula.  RNGC (Steinicke, 2026) diameter: 18’, same as Archinal and Hynes.  Coordinates updated from RNGC.  Collinder (p. B4, 1931) lists 20’ x 15’ at 90 degrees, Lundmark 20’ x 8’ at 85 degrees."
+Cr 33,44.825,60.4,100,1.66666666666667,75,,--,,,,,,Collinder 33: head of the Soul Nebula. TODO: test and update …
+Cr 34,45.225,60.416667,60,1.33333333333333,135,,--,,,,,,Collinder 34: at the top of the head of the Soul Nebula.  TODO: test and update …
 Cr 35,46.482083,44.383056,1.5,,,3,NGC 1193,,,,,,
-Cr 36,47.95,63.25,23,,,,--,,,Trumpler 3,,,
+Cr 36,47.95,63.25,29,1.61111111111111,35,,--,,,Trumpler 3,,,"Collinder 36: diameter values from Collinder (p. B4, 1931) 29’ x 18’ at 0 degrees from Lundmark and 20’ x 13’ at 35 degrees from Collinder.  Archinal and Hynes list diameter at 15’.  Lundmark’s angular dimension values adopted here with Collinder’s position angle."
 Cr 37,47.919583,53.348333,2,,,,NGC 1220,,,,,,
 Cr 38,48.672917,47.238889,10,,,,NGC 1245,,,,,,
 Cr 39,50.5,49,185,,,243,--,,Melotte 20,,,Alpha Persei Moving Cluster,"Typed as a Moving Group, SIMBAD angular diameter increased based on “2020A&A...633A..99C” which is “Clusters and mirages: cataloguing stellar aggregates in the Milky Way” (2020) by Anders and Cantat-Gaudin"
