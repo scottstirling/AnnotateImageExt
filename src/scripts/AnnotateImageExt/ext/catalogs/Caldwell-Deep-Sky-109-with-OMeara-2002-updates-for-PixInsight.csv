@@ -8,7 +8,7 @@ C 6,269.65,66.6333,0.5,8.1,planetary nebula,NGC 6543,,,Cat’s Eye Nebula,,,
 C 7,114.225,65.6,23.8,7.3,galaxy,NGC 2403,,,Fireworks Galaxy,,,
 C 8,22.375,63.3,7,9.5,open cluster,NGC 559,,13,Ghost’s Goblet,,,
 C 9,344.2,62.6167,50,10,emission nebula,,,,Cave Nebula,Sh 2-155,,
-C 10,26.5,61.25,15,6.7,open cluster,NGC 663,Mel 11,Cr 20,Horseshoe Cluster,,,
+C 10,26.5708333333333,61.2183,15,6.7,open cluster,NGC 663,Mel 11,Cr 20,Horseshoe Cluster,,,"Coordinates updated from RNGC (Steinicke, 2026)"
 C 11,350.175,61.2,15,10,emission nebula,NGC 7635,,,Bubble Nebula,,,
 C 12,308.7,60.15,11.2,8.8,galaxy,NGC 6946,,,Firecracker Galaxy,,,
 C 13,19.775,58.3333,20,6.4,open cluster,NGC 457,Mel 7,Cr 12,ET Cluster,Phi Cas Cluster,,
@@ -35,7 +35,7 @@ C 33,314.1,31.7167,60,7.5,super nova remnant,NGC 6992,,,Veil Nebula (E),Network 
 C 34,311.425,30.7167,70,7.9,super nova remnant,NGC 6960,,,Veil Nebula (W),Witch’s Broom,,
 C 35,195.025,27.9833,2.8,11.535,galaxy,NGC 4889,,,,,,
 C 36,189,27.9667,11.3,10,galaxy,NGC 4559,,,,,,
-C 37,303,26.4833,20,8.1,open cluster,NGC 6885,,Cr 417,,,,
+C 37,303,26.4833,20,8.1,open cluster,NGC 6885,,Cr 417,,,,"SJ O’Meara (2002) documents uncertainty historically between the coordinates and diameters of NGC 6882 and NGC 6885 and put in substantial effort to clarify it, deciding that NGC 6882 is either a duplicate of NGC 6885 or an error in coordinates originating with Herschel."
 C 38,189.075,25.9833,16.2,9.6,,,,,,,,
 C 39,112.3,20.9167,0.7,9.2,,,,,,,,
 C 40,170.025,18.35,3,11,,,,,,,,
